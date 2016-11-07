@@ -81,10 +81,6 @@ extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
             }
             
             print("\(symbol) \(permission.identifier) \(symbol)")
-            
-            DispatchQueue.main.async {
-                //self.permissionsTV.reloadRows(at: [indexPath], with: .automatic)
-            }
         }
     }
     
@@ -94,5 +90,12 @@ extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerView = UIView(frame: CGRect(x: 0, y: 0, width: self.permissionsTV.bounds.size.width, height: 80))
+        headerView.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
+        
+        return headerView
     }
 }
