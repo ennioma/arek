@@ -1,0 +1,15 @@
+PODS:
+  - SnapKit (3.0.2)
+  - Watchdog (3.0)
+
+DEPENDENCIES:
+  - SnapKit (~> 3.0.2)
+  - Watchdog (~> 3.0)
+
+SPEC CHECKSUMS:
+  SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
+  Watchdog: 141185b6b3a332a9f5721ea42dfa9681cf2d7c6b
+
+PODFILE CHECKSUM: d5906a7b368c4cf0929be1c28c3e4bec6a0dd29f
+
+COCOAPODS: 1.1.1
