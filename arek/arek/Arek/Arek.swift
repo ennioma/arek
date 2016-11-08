@@ -19,7 +19,7 @@ protocol ArekPermissionProtocol {
     var reEnablePopupData: ArekPopupData { get }
     
     // MARK: Logic
-    func status(completion: ArekPermissionResponse)
+    func status(completion: @escaping ArekPermissionResponse)
     func manage(completion: @escaping ArekPermissionResponse)
     func askForPermission(completion: @escaping ArekPermissionResponse)
     

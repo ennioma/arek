@@ -81,6 +81,10 @@ extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
             }
             
             print("\(symbol) \(permission.identifier) \(symbol)")
+            
+            DispatchQueue.main.async {
+                tableView.reloadRows(at: [indexPath], with: .automatic)
+            }
         }
     }
     

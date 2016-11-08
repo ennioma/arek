@@ -36,7 +36,7 @@ class ArekBaseLocation: ArekPermissionProtocol {
         }
     }
     
-    func status(completion: ArekPermissionResponse) {
+    func status(completion: @escaping ArekPermissionResponse) {
         guard CLLocationManager.locationServicesEnabled() else { return completion(.NotDetermined) }
         
         switch CLLocationManager.authorizationStatus() {

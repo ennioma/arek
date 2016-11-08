@@ -34,7 +34,7 @@ class ArekCamera: ArekPermissionProtocol {
         }
     }
 
-    func status(completion: ArekPermissionResponse) {
+    func status(completion: @escaping ArekPermissionResponse) {
         switch AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) {
         case .notDetermined:
             return completion(.NotDetermined)
