@@ -1,23 +1,25 @@
 //
-//  ArekPhoto.swift
-//  Arek
+//  ArekNotifications.swift
+//  arek
 //
-//  Created by Ennio Masi on 29/10/2016.
+//  Created by Ennio Masi on 08/11/2016.
 //  Copyright © 2016 ennioma. All rights reserved.
 //
 
 import Foundation
-import Photos
+import UserNotifications
 
-class ArekPhoto: ArekPermissionProtocol {
+class ArekNotifications: ArekPermissionProtocol {
     var permission: ArekPermission!
     var configuration: ArekConfiguration
-    var identifier: String = "ArekPhoto"
+    var identifier: String = "ArekNotifications"
     var initialPopupData: ArekPopupData = ArekPopupData(title: "I'm 📷", message: "enable")
     var reEnablePopupData: ArekPopupData = ArekPopupData(title: "I'm 📷", message: "re enable 🙏")
     
+    var notificationOptions: UNAuthorizationOptions = [.alert, .badge]
+    
     init() {
-        self.configuration = ArekConfiguration(frequency: .OnceADay, presentInitialPopup: false, presentReEnablePopup: true)
+        self.configuration = ArekConfiguration(frequency: .Always, presentInitialPopup: false, presentReEnablePopup: true)
         self.permission = ArekPermission(permission: self)
     }
     
@@ -35,26 +37,29 @@ class ArekPhoto: ArekPermissionProtocol {
     }
     
     func status(completion: @escaping ArekPermissionResponse) {
-        switch PHPhotoLibrary.authorizationStatus() {
-        case .notDetermined:
-            return completion(.NotDetermined)
-        case .restricted, .denied:
-            return completion(.Denied)
-        case.authorized:
-            return completion(.Authorized)
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                return completion(.NotDetermined)
+            case .denied:
+                return completion(.Denied)
+            case .authorized:
+                return completion(.Authorized)
+            }
         }
     }
     
     func askForPermission(completion: @escaping ArekPermissionResponse) {
-        PHPhotoLibrary.requestAuthorization { (status) in
-            switch status {
-            case .notDetermined:
-                return completion(.NotDetermined)
-            case .restricted, .denied:
-                return completion(.Denied)
-            case.authorized:
+        UNUserNotificationCenter.current().requestAuthorization(options: notificationOptions) { (granted, error) in
+            if granted {
                 return completion(.Authorized)
             }
+            
+            if let _ = error {
+                return completion(.NotDetermined)
+            }
+            
+            return completion(.Denied)
         }
     }
 }

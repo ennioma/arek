@@ -20,7 +20,7 @@ class ArekEvent: ArekBaseEvent {
         super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
     }
 
-    override func status(completion: (ArekPermissionStatus) -> Void) {
+    override func status(completion: @escaping ArekPermissionResponse) {
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
         case .notDetermined:
             return completion(.NotDetermined)
