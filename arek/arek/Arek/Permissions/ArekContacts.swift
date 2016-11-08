@@ -34,7 +34,7 @@ class ArekContacts: ArekPermissionProtocol {
         }
     }
     
-    func status(completion: ArekPermissionResponse) {
+    func status(completion: @escaping ArekPermissionResponse) {
         switch Contacts.CNContactStore.authorizationStatus(for: CNEntityType.contacts) {
         case .authorized:
             return completion(.Authorized)
