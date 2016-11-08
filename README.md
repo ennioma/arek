@@ -1,4 +1,4 @@
-[![N|Solid](https://drive.google.com/open?id=0B8yWuyscNtEtSFc2OEZPaTNxVWc)](https://drive.google.com/open?id=0B8yWuyscNtEtSFc2OEZPaTNxVWc)
+[![N|Solid](https://github.com/ennioma/arek/blob/master/resources/arek.png?raw=true)](https://github.com/ennioma/arek/blob/master/resources/arek.png?raw=true)
 
 AREK is a clean and easy to use wrapper over any kind of iOS permission.
 
