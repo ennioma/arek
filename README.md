@@ -16,6 +16,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 * Location (Always)
 * Location (When in use)
 * Microphone
+* Notifications
 * Photo
 * Reminders
 
@@ -50,3 +51,28 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
         }
     }        
 ```
+
+# Permission Configuration
+Each permission type included in AREK is configurable through the *ArekConfiguration* struct. Each permission has a default configuration, so if you
+are happy with the basic configuration you don't have to take care about how it works behind the scenes.
+
+An *ArekConfiguration* is made up by:
+
+> **frequency**: ArekPermissionFrequency (.Always, .EveryHour, .OnceADay, .OnceAWeek, .JustOnce)
+This frequency value is related to how often you want to the user to re-enable a permission if that one has been disallowed.
+
+> Set by default to **.OnceADay**
+
+
+----------
+
+>**presentInitialPopup**: Bool
+This is an initial popup used to ask **kindly** to the user to allow a permission. This is useful to avoid burning the possibility to show the system popup.
+
+>Set by default to **true**
+
+----------
+>**presentReEnablePopup**: Bool
+This is the popup used to **kindly** to the user to re-enable that permission. The *frequency* value is related to this popup.
+
+>Set by defaul to **true**
