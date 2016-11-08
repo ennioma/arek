@@ -10,7 +10,7 @@ import Foundation
 
 struct ArekConfiguration {
     var frequency: ArekPermissionFrequency = .OnceADay
-    var presentInitialPopup: Bool = false
+    var presentInitialPopup: Bool = true
     var presentReEnablePopup: Bool = true
     
     private let week = 60.0*60.0*24.0*7.0
