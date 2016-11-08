@@ -38,7 +38,7 @@ class ArekHealth: ArekPermissionProtocol {
         }
     }
     
-    func status(completion: (ArekPermissionStatus) -> Void) {
+    func status(completion: @escaping ArekPermissionResponse) {
         guard let objectType = self.hkObjectType else {
             return completion(.NotDetermined)
         }

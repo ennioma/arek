@@ -35,7 +35,7 @@ class ArekBaseEvent: ArekPermissionProtocol {
         }
     }
     
-    func status(completion: (ArekPermissionStatus) -> Void) {
+    func status(completion: @escaping ArekPermissionResponse) {
         NSException(name:NSExceptionName(rawValue: "Don't call status directly EMBaseEvent"), reason:"Implement always on the other one", userInfo:nil).raise()
     }
     
