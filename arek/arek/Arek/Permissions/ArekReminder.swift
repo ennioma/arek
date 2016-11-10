@@ -12,12 +12,12 @@ import EventKit
 class ArekReminder: ArekBaseEvent {
     override init() {
         super.init()
-        
+        super.permission = self
         self.identifier = "ArekReminder"
     }
     
     required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
     }
     
     override func status(completion: @escaping ArekPermissionResponse) {

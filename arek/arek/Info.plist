@@ -30,6 +30,10 @@
 	<string>Test message to ask 🙏 to access Photo Library</string>
 	<key>NSRemindersUsageDescription</key>
 	<string>Test message to ask 🙏 to access Reminders</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Test message to ask 🙏 to access Camera</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Test message to ask 🙏 to access Location</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>

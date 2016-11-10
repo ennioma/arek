@@ -22,6 +22,7 @@ class ArekLocationAlways: ArekBaseLocation {
     }
 
     override func askForPermission(completion: @escaping ArekPermissionResponse) {
-        self.locationManager.requestAlwaysAuthorization()
+        self.completion = completion
+        self.requestAlwaysAuthorization()
     }
 }

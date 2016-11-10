@@ -12,69 +12,43 @@ import UIKit
 typealias ArekPermissionResponse = (ArekPermissionStatus) -> Void
 
 protocol ArekPermissionProtocol {
-    var permission: ArekPermission! { get }
-    var configuration: ArekConfiguration { get }
     var identifier: String { get }
-    var initialPopupData: ArekPopupData { get }
-    var reEnablePopupData: ArekPopupData { get }
     
     // MARK: Logic
     func status(completion: @escaping ArekPermissionResponse)
     func manage(completion: @escaping ArekPermissionResponse)
     func askForPermission(completion: @escaping ArekPermissionResponse)
-    
-    init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?)
-    
-    func manageInitialPopup(completion: @escaping ArekPermissionResponse)
-    func presentReEnablePopup()
 }
 
-extension ArekPermissionProtocol {
-    func manage(completion: @escaping ArekPermissionResponse) {
-        self.permission.manage(completion: completion)
+class ArekBasePermission {
+    var configuration: ArekConfiguration
+    var initialPopupData: ArekPopupData
+    var reEnablePopupData: ArekPopupData
+    var permission: ArekPermissionProtocol!
+    
+    init() {
+        self.configuration = ArekConfiguration(frequency: .OnceADay, presentInitialPopup:
+            true, presentReEnablePopup: true)
+        
+        self.initialPopupData = ArekPopupData()
+        self.reEnablePopupData = ArekPopupData()
     }
     
-    func manageInitialPopup(completion: @escaping ArekPermissionResponse) {
+    required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
+        self.configuration = configuration
+        self.initialPopupData = initialPopupData
+        self.reEnablePopupData = reEnablePopupData
+    }
+    
+    internal func manageInitialPopup(completion: @escaping ArekPermissionResponse) {
         if self.configuration.presentInitialPopup {
-            self.permission.presentInitialPopup(title: self.initialPopupData.title, message: self.initialPopupData.message, completion: completion)
+            self.presentInitialPopup(title: self.initialPopupData.title, message: self.initialPopupData.message, completion: completion)
         } else {
-            self.askForPermission(completion: completion)
+            self.permission.status(completion: completion)
         }
     }
     
-    func presentReEnablePopup() {
-        if self.configuration.canPresentReEnablePopup(permission: self.permission.permission) {
-            self.permission.presentReEnablePopup(title: self.reEnablePopupData.title, message: self.reEnablePopupData.message)
-        }
-    }
-}
-
-struct ArekPermission {
-    var permission: ArekPermissionProtocol
-    
-    init(permission: ArekPermissionProtocol) {
-        self.permission = permission
-    }
-    
-    func manage(completion: @escaping ArekPermissionResponse) {
-        permission.status { (status) in
-            switch status {
-            case .NotDetermined:
-                self.permission.manageInitialPopup(completion: completion)
-                NSLog("⁉️Current Permission NotDetermined")
-                break
-            case .Denied:
-                self.permission.presentReEnablePopup()
-                NSLog("⛔️Current Permission Denied")
-                return completion(.Denied)
-            case .Authorized:
-                NSLog("✅Current Permission Authorized")
-                return completion(.Authorized)
-            }
-        }
-    }
-    
-    internal func presentInitialPopup(title: String, message: String, completion: @escaping ArekPermissionResponse) {
+    private func presentInitialPopup(title: String, message: String, completion: @escaping ArekPermissionResponse) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let allow = UIAlertAction(title: "Enable", style: .default) { (action) in
@@ -99,7 +73,13 @@ struct ArekPermission {
         }
     }
     
-    internal func presentReEnablePopup(title: String, message: String) {
+    private func presentReEnablePopup() {
+        if self.configuration.canPresentReEnablePopup(permission: self.permission) {
+            self.presentReEnablePopup(title: self.reEnablePopupData.title, message: self.reEnablePopupData.message)
+        }
+    }
+
+    private func presentReEnablePopup(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let allow = UIAlertAction(title: "Allow", style: .default) { (action) in
@@ -121,6 +101,22 @@ struct ArekPermission {
             }
             
             topController.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    internal func managePermission(status: ArekPermissionStatus, completion: @escaping ArekPermissionResponse) {
+        switch status {
+        case .NotDetermined:
+            self.manageInitialPopup(completion: completion)
+            NSLog("⁉️Current Permission NotDetermined")
+            break
+        case .Denied:
+            self.presentReEnablePopup()
+            NSLog("⛔️Current Permission Denied")
+            return completion(.Denied)
+        case .Authorized:
+            NSLog("✅Current Permission Authorized")
+            return completion(.Authorized)
         }
     }
 }

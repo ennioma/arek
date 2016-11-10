@@ -11,7 +11,7 @@ import UIKit
 class DemoViewController: UIViewController {
     weak var permissionsTV: UITableView!
     
-    let permissions: Array<ArekPermissionProtocol> = [ArekPhoto(), ArekReminder(), ArekNotifications()]
+    let permissions: Array<ArekPermissionProtocol> = [ArekCamera(), ArekPhoto(), ArekLocationAlways(), ArekMicrophone()]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
