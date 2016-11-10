@@ -9,29 +9,19 @@
 import Foundation
 import Contacts
 
-class ArekContacts: ArekPermissionProtocol {
-    var permission: ArekPermission!
-    var configuration: ArekConfiguration
+class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
     var identifier: String = "ArekContacts"
-    var initialPopupData: ArekPopupData = ArekPopupData(title: "I'm 📕", message: "enable")
-    var reEnablePopupData: ArekPopupData = ArekPopupData(title: "I'm 📕", message: "re enable 🙏")
-    
-    init() {
-        self.configuration = ArekConfiguration(frequency: .OnceADay, presentInitialPopup: false, presentReEnablePopup: true)
-        self.permission = ArekPermission(permission: self)
+
+    override init() {
+        super.init()
+        super.permission = self
+        
+        self.initialPopupData = ArekPopupData(title: "Contacs service", message: "enable")
+        self.reEnablePopupData = ArekPopupData(title: "Contacts service", message: "re enable 🙏")
     }
     
     required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        self.configuration = configuration
-        self.permission = ArekPermission(permission: self)
-        
-        if let initialPopupData = initialPopupData {
-            self.initialPopupData = initialPopupData
-        }
-        
-        if let reEnablePopupData = reEnablePopupData {
-            self.reEnablePopupData = reEnablePopupData
-        }
+        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
     }
     
     func status(completion: @escaping ArekPermissionResponse) {
@@ -45,9 +35,16 @@ class ArekContacts: ArekPermissionProtocol {
         }
     }
     
+    func manage(completion: @escaping ArekPermissionResponse) {
+        self.status { (status) in
+            self.managePermission(status: status, completion: completion)
+        }
+    }
+    
     func askForPermission(completion: @escaping ArekPermissionResponse) {
         Contacts.CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler:  { (granted, error) in
             if granted {
+                NSLog("Contacts authorized by user ✅")
                 return completion(.Authorized)
             }
             
@@ -55,6 +52,7 @@ class ArekContacts: ArekPermissionProtocol {
                 return completion(.NotDetermined)
             }
             
+            NSLog("Contacts authorized by user ⛔️")
             return completion(.Denied)
         })
     }
