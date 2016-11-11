@@ -21,6 +21,7 @@ class ArekLocationWhenInUse: ArekBaseLocation {
     }
     
     override func askForPermission(completion: @escaping ArekPermissionResponse) {
-        self.locationManager.requestWhenInUseAuthorization()
+        self.completion = completion
+        self.requestWhenInUseAuthorization()
     }
 }

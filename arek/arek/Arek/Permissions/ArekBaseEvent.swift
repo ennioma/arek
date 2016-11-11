@@ -10,36 +10,30 @@ import Foundation
 
 import EventKit
 
-class ArekBaseEvent: ArekPermissionProtocol {
-    var permission: ArekPermission!
-    var configuration: ArekConfiguration
+class ArekBaseEvent: ArekBasePermission, ArekPermissionProtocol {
+    
     var identifier: String = "ArekBaseEvent"
-    var initialPopupData: ArekPopupData = ArekPopupData(title: "I'm 📅", message: "enable")
-    var reEnablePopupData: ArekPopupData = ArekPopupData(title: "I'm 📅", message: "re enable 🙏")
-
-    init() {
-        self.configuration = ArekConfiguration(frequency: .OnceADay, presentInitialPopup: false, presentReEnablePopup: true)
-        self.permission = ArekPermission(permission: self)
+    
+    override init() {
+        super.init()
+        super.permission = self
     }
     
     required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        self.configuration = configuration
-        self.permission = ArekPermission(permission: self)
-        
-        if let initialPopupData = initialPopupData {
-            self.initialPopupData = initialPopupData
-        }
-        
-        if let reEnablePopupData = reEnablePopupData {
-            self.reEnablePopupData = reEnablePopupData
+        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
+    }
+    
+    func manage(completion: @escaping ArekPermissionResponse) {
+        self.status { (status) in
+            self.managePermission(status: status, completion: completion)
         }
     }
     
-    func status(completion: (ArekPermissionStatus) -> Void) {
-        NSException(name:NSExceptionName(rawValue: "Don't call status directly EMBaseEvent"), reason:"Implement always on the other one", userInfo:nil).raise()
+    func status(completion: @escaping ArekPermissionResponse) {
+        fatalError("status(configuration) has not been implemented")
     }
     
     func askForPermission(completion: @escaping ArekPermissionResponse) {
-        NSException(name:NSExceptionName(rawValue: "Don't call askForPermission directly EMBaseEvent"), reason:"Implement always on the other one", userInfo:nil).raise()
+        fatalError("askForPermission(configuration) has not been implemented")
     }
 }

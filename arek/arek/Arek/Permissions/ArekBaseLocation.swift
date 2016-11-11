@@ -9,34 +9,34 @@
 import Foundation
 import CoreLocation
 
-class ArekBaseLocation: ArekPermissionProtocol {
-    var permission: ArekPermission!
-    var configuration: ArekConfiguration
+class ArekBaseLocation: ArekBasePermission, ArekPermissionProtocol {
     var identifier: String = "ArekBaseLocation"
-    var initialPopupData: ArekPopupData = ArekPopupData(title: "I'm 📍", message: "enable")
-    var reEnablePopupData: ArekPopupData = ArekPopupData(title: "I'm 📍", message: "re enable 🙏")
-
-    let locationManager = CLLocationManager()
+    var completion: ArekPermissionResponse? {
+        willSet {
+            locationDelegate = ArekBaseLocationDelegate(permission: self, completion: newValue!)
+        }
+    }
+    var locationDelegate: ArekBaseLocationDelegate?
     
-    init() {
-        self.configuration = ArekConfiguration(frequency: .OnceADay, presentInitialPopup: false, presentReEnablePopup: true)
-        self.permission = ArekPermission(permission: self)
+    override init() {
+        super.init()
+        super.permission = self
+        
+        self.initialPopupData = ArekPopupData(title: "Location service", message: "enable")
+        self.reEnablePopupData = ArekPopupData(title: "Location service", message: "re enable 🙏")
     }
     
     required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        self.configuration = configuration
-        self.permission = ArekPermission(permission: self)
-        
-        if let initialPopupData = initialPopupData {
-            self.initialPopupData = initialPopupData
-        }
-        
-        if let reEnablePopupData = reEnablePopupData {
-            self.reEnablePopupData = reEnablePopupData
+        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
+    }
+    
+    func manage(completion: @escaping ArekPermissionResponse) {
+        self.status { (status) in
+            self.managePermission(status: status, completion: completion)
         }
     }
     
-    func status(completion: ArekPermissionResponse) {
+    func status(completion: @escaping ArekPermissionResponse) {
         guard CLLocationManager.locationServicesEnabled() else { return completion(.NotDetermined) }
         
         switch CLLocationManager.authorizationStatus() {
@@ -50,6 +50,18 @@ class ArekBaseLocation: ArekPermissionProtocol {
     }
     
     func askForPermission(completion: @escaping ArekPermissionResponse) {
-        NSException(name:NSExceptionName(rawValue: "Don't call askForPermission directly EMLocation"), reason:"Implement always on the other one", userInfo:nil).raise()
+        fatalError("askForPermission(configuration) has not been implemented")
+    }
+    
+    func requestAlwaysAuthorization() {
+        if let delegate = self.locationDelegate {
+            delegate.locationManager.requestAlwaysAuthorization()
+        }
+    }
+    
+    func requestWhenInUseAuthorization() {
+        if let delegate = self.locationDelegate {
+            delegate.locationManager.requestWhenInUseAuthorization()
+        }
     }
 }

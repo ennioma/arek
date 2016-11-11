@@ -11,14 +11,10 @@ import UIKit
 class DemoViewController: UIViewController {
     weak var permissionsTV: UITableView!
     
-    let permissions: Array<ArekPermissionProtocol> = [ArekPhoto(), ArekReminder()]
+    let permissions: Array<ArekPermissionProtocol> = [ArekCamera(), ArekPhoto(), ArekLocationAlways(), ArekMicrophone()]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
-        /*reminder.status { (status) in
-            self.prettyLbl(status: status)
-        }*/
     }
     
     override func viewDidLoad() {
@@ -35,14 +31,6 @@ class DemoViewController: UIViewController {
         self.view.addSubview(self.permissionsTV)
         
         self.tableLayout()
-        /*
-         TODO:
-         - import Snapkit
-         - add an extension for this VC for layout
-         - implement a cell for each reminder
-         - check missing events
-         - publish :D
-         */
     }
 }
 

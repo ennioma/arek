@@ -9,32 +9,22 @@
 import Foundation
 import Photos
 
-class ArekPhoto: ArekPermissionProtocol {
-    var permission: ArekPermission!
-    var configuration: ArekConfiguration
+class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
     var identifier: String = "ArekPhoto"
-    var initialPopupData: ArekPopupData = ArekPopupData(title: "I'm 📷", message: "enable")
-    var reEnablePopupData: ArekPopupData = ArekPopupData(title: "I'm 📷", message: "re enable 🙏")
     
-    init() {
-        self.configuration = ArekConfiguration(frequency: .Always, presentInitialPopup: false, presentReEnablePopup: true)
-        self.permission = ArekPermission(permission: self)
+    override init() {
+        super.init()
+        super.permission = self
+        
+        self.initialPopupData = ArekPopupData(title: "Photo service", message: "enable")
+        self.reEnablePopupData = ArekPopupData(title: "Photo service", message: "re enable 🙏")
     }
     
     required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        self.configuration = configuration
-        self.permission = ArekPermission(permission: self)
-        
-        if let initialPopupData = initialPopupData {
-            self.initialPopupData = initialPopupData
-        }
-        
-        if let reEnablePopupData = reEnablePopupData {
-            self.reEnablePopupData = reEnablePopupData
-        }
+        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
     }
     
-    func status(completion: (ArekPermissionStatus) -> Void) {
+    func status(completion: @escaping ArekPermissionResponse) {
         switch PHPhotoLibrary.authorizationStatus() {
         case .notDetermined:
             return completion(.NotDetermined)
@@ -42,6 +32,12 @@ class ArekPhoto: ArekPermissionProtocol {
             return completion(.Denied)
         case.authorized:
             return completion(.Authorized)
+        }
+    }
+    
+    func manage(completion: @escaping ArekPermissionResponse) {
+        self.status { (status) in
+            self.managePermission(status: status, completion: completion)
         }
     }
     

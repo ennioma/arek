@@ -9,32 +9,19 @@
 import Foundation
 import AVFoundation
 
-class ArekMicrophone: ArekPermissionProtocol {
-    var permission: ArekPermission!
-    var configuration: ArekConfiguration
+class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
     var identifier: String = "ArekMicrophone"
-    var initialPopupData: ArekPopupData = ArekPopupData(title: "I'm 🎙", message: "enable")
-    var reEnablePopupData: ArekPopupData = ArekPopupData(title: "I'm 🎙", message: "re enable 🙏")
     
-    init() {
-        self.configuration = ArekConfiguration(frequency: .OnceADay, presentInitialPopup: false, presentReEnablePopup: true)
-        self.permission = ArekPermission(permission: self)
+    override init() {
+        super.init()
+        super.permission = self
     }
     
     required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        self.configuration = configuration
-        self.permission = ArekPermission(permission: self)
-        
-        if let initialPopupData = initialPopupData {
-            self.initialPopupData = initialPopupData
-        }
-        
-        if let reEnablePopupData = reEnablePopupData {
-            self.reEnablePopupData = reEnablePopupData
-        }
+        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
     }
     
-    func status(completion: ArekPermissionResponse) {
+    func status(completion: @escaping ArekPermissionResponse) {
         switch AVAudioSession.sharedInstance().recordPermission() {
         case AVAudioSessionRecordPermission.denied:
             return completion(.Denied)
@@ -47,13 +34,19 @@ class ArekMicrophone: ArekPermissionProtocol {
         }
     }
     
+    func manage(completion: @escaping ArekPermissionResponse) {
+        self.status { (status) in
+            self.managePermission(status: status, completion: completion)
+        }
+    }
+    
     func askForPermission(completion: @escaping ArekPermissionResponse) {
         AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
             if granted {
                 return completion(.Authorized)
+            } else {
+                return completion(.Denied)
             }
-            
-            return completion(.Denied)
         }
     }
 }

@@ -9,40 +9,31 @@
 import Foundation
 import HealthKit
 
-class ArekHealth: ArekPermissionProtocol {
-    var permission: ArekPermission!
-    var configuration: ArekConfiguration
+class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
+    
     var identifier: String = "ArekHealth"
-    var initialPopupData: ArekPopupData = ArekPopupData(title: "I'm 📈", message: "enable")
-    var reEnablePopupData: ArekPopupData = ArekPopupData(title: "I'm 📈", message: "re enable 🙏")
     
     var hkObjectType: HKObjectType?
     var hkSampleTypesToShare: Set<HKSampleType>?
     var hkSampleTypesToRead: Set<HKSampleType>?
     
-    init() {
-        self.configuration = ArekConfiguration(frequency: .OnceADay, presentInitialPopup: false, presentReEnablePopup: true)
-        self.permission = ArekPermission(permission: self)
+    override init() {
+        super.init()
+        super.permission = self
+        
+        self.initialPopupData = ArekPopupData(title: "I'm 📈", message: "enable")
+        self.reEnablePopupData = ArekPopupData(title: "I'm 📈", message: "re enable 🙏")
     }
     
     required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        self.configuration = configuration
-        self.permission = ArekPermission(permission: self)
-        
-        if let initialPopupData = initialPopupData {
-            self.initialPopupData = initialPopupData
-        }
-        
-        if let reEnablePopupData = reEnablePopupData {
-            self.reEnablePopupData = reEnablePopupData
-        }
+        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
     }
     
-    func status(completion: (ArekPermissionStatus) -> Void) {
+    func status(completion: @escaping ArekPermissionResponse) {
         guard let objectType = self.hkObjectType else {
             return completion(.NotDetermined)
         }
-
+        
         switch HKHealthStore().authorizationStatus(for: objectType) {
         case .notDetermined:
             return completion(.NotDetermined)
@@ -50,6 +41,12 @@ class ArekHealth: ArekPermissionProtocol {
             return completion(.Denied)
         case .sharingAuthorized:
             return completion(.Authorized)
+        }
+    }
+    
+    func manage(completion: @escaping ArekPermissionResponse) {
+        self.status { (status) in
+            self.managePermission(status: status, completion: completion)
         }
     }
     

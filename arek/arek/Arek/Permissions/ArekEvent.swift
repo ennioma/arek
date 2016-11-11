@@ -12,15 +12,18 @@ import EventKit
 class ArekEvent: ArekBaseEvent {
     override init() {
         super.init()
+        super.permission = self
         
+        self.initialPopupData = ArekPopupData(title: "Events service", message: "enable")
+        self.reEnablePopupData = ArekPopupData(title: "Events notifications service", message: "re enable 🙏")
         self.identifier = "ArekEvent"
     }
     
     required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
     }
-
-    override func status(completion: (ArekPermissionStatus) -> Void) {
+    
+    override func status(completion: @escaping ArekPermissionResponse) {
         switch EKEventStore.authorizationStatus(for: EKEntityType.event) {
         case .notDetermined:
             return completion(.NotDetermined)
