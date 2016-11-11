@@ -10,27 +10,85 @@ import XCTest
 @testable import arek
 
 class arekTests: XCTestCase {
+    var vc: DemoViewController!
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
     }
     
     override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
         super.tearDown()
     }
     
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+    func testCameraInitialisation() {
+        let camera = ArekCamera()
+        
+        self.checkStatusNotDetermined(permission: camera)
     }
     
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
+    func testContactsInitialiszation() {
+        let contact = ArekContacts()
+        
+        self.checkStatusNotDetermined(permission: contact)
+    }
+    
+    func testEventsInitialisation() {
+        let event = ArekEvent()
+        
+        self.checkStatusNotDetermined(permission: event)
+    }
+    
+    func testHealthInitialisation() {
+        let health = ArekHealth()
+        
+        self.checkStatusNotDetermined(permission: health)
+    }
+    
+    func testLocationAlwaysInitialisation() {
+        let location = ArekLocationAlways()
+        
+        self.checkStatusNotDetermined(permission: location)
+    }
+    
+    func testLocationInUseInitialisation() {
+        let location = ArekLocationWhenInUse()
+        
+        self.checkStatusNotDetermined(permission: location)
+    }
+    
+    func testMicrophoneInitialisation() {
+        let microphone = ArekMicrophone()
+        
+        self.checkStatusAuthorized(permission: microphone)
+    }
+    
+    func testPhotoInitialisation() {
+        let photo = ArekPhoto()
+        
+        self.checkStatusNotDetermined(permission: photo)
+    }
+    
+    func testReminderInitialisation() {
+        let reminder = ArekReminder()
+        
+        self.checkStatusNotDetermined(permission: reminder)
+    }
+    
+    func testNotificationsInitialisation() {
+        let notification = ArekNotifications()
+        
+        self.checkStatusNotDetermined(permission: notification)
+    }
+    
+    func checkStatusNotDetermined(permission: ArekPermissionProtocol) {
+        permission.status { (status) in
+            XCTAssertEqual(status, ArekPermissionStatus.NotDetermined)
         }
     }
     
+    private func checkStatusAuthorized(permission: ArekPermissionProtocol) {
+        permission.status { (status) in
+            XCTAssertEqual(status, ArekPermissionStatus.Authorized)
+        }
+    }
 }
