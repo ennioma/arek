@@ -33,6 +33,7 @@
 		F583E3A31DD126ED0021EC8F /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583E3A21DD126ED0021EC8F /* DemoViewController.swift */; };
 		F583E3A51DD127ED0021EC8F /* DemoViewController+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583E3A41DD127ED0021EC8F /* DemoViewController+Table.swift */; };
 		F5BC25301DD1CFDD00408F2F /* ArekNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC252F1DD1CFDD00408F2F /* ArekNotifications.swift */; };
+		F5C077A71DDB694C0026CA0A /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C077A61DDB694C0026CA0A /* DemoTests.swift */; };
 		F5DAC66F1DD4DAD200A9F27B /* ArekBaseLocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DAC66E1DD4DAD200A9F27B /* ArekBaseLocationDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		F583E3A21DD126ED0021EC8F /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoViewController.swift; path = DemoCode/DemoViewController.swift; sourceTree = "<group>"; };
 		F583E3A41DD127ED0021EC8F /* DemoViewController+Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DemoViewController+Table.swift"; path = "DemoCode/DemoViewController+Table.swift"; sourceTree = "<group>"; };
 		F5BC252F1DD1CFDD00408F2F /* ArekNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArekNotifications.swift; path = Arek/Permissions/ArekNotifications.swift; sourceTree = "<group>"; };
+		F5C077A61DDB694C0026CA0A /* DemoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
 		F5DAC66E1DD4DAD200A9F27B /* ArekBaseLocationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArekBaseLocationDelegate.swift; path = Arek/Utilities/ArekBaseLocationDelegate.swift; sourceTree = "<group>"; };
 		FBCEC4DEA08CA231DB8D7359 /* Pods-arekTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-arekTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-arekTests/Pods-arekTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC18F7835191876242871760 /* Pods-arek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-arek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-arek/Pods-arek.debug.xcconfig"; sourceTree = "<group>"; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				F583E3641DD1263C0021EC8F /* arekTests.swift */,
+				F5C077A61DDB694C0026CA0A /* DemoTests.swift */,
 				F583E3661DD1263C0021EC8F /* Info.plist */,
 			);
 			path = arekTests;
@@ -503,6 +506,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F5C077A71DDB694C0026CA0A /* DemoTests.swift in Sources */,
 				F583E3651DD1263C0021EC8F /* arekTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
