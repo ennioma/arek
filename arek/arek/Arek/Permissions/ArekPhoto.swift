@@ -21,7 +21,8 @@ class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
     }
     
     required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
+        super.init(configuration: configuration, initialPopupData: ArekPopupData(), reEnablePopupData: ArekPopupData())
+        super.permission = self
     }
     
     func status(completion: @escaping ArekPermissionResponse) {
