@@ -12,7 +12,7 @@
 		F583E3501DD1263C0021EC8F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583E34F1DD1263C0021EC8F /* AppDelegate.swift */; };
 		F583E3571DD1263C0021EC8F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F583E3561DD1263C0021EC8F /* Assets.xcassets */; };
 		F583E35A1DD1263C0021EC8F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F583E3581DD1263C0021EC8F /* LaunchScreen.storyboard */; };
-		F583E3651DD1263C0021EC8F /* arekTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583E3641DD1263C0021EC8F /* arekTests.swift */; };
+		F583E3651DD1263C0021EC8F /* ArekInitialisersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583E3641DD1263C0021EC8F /* ArekInitialisersTests.swift */; };
 		F583E3701DD1263C0021EC8F /* arekUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583E36F1DD1263C0021EC8F /* arekUITests.swift */; };
 		F583E3801DD126A80021EC8F /* Arek.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583E37F1DD126A80021EC8F /* Arek.swift */; };
 		F583E38E1DD126CC0021EC8F /* ArekBaseEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583E3831DD126CC0021EC8F /* ArekBaseEvent.swift */; };
@@ -33,7 +33,7 @@
 		F583E3A31DD126ED0021EC8F /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583E3A21DD126ED0021EC8F /* DemoViewController.swift */; };
 		F583E3A51DD127ED0021EC8F /* DemoViewController+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = F583E3A41DD127ED0021EC8F /* DemoViewController+Table.swift */; };
 		F5BC25301DD1CFDD00408F2F /* ArekNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BC252F1DD1CFDD00408F2F /* ArekNotifications.swift */; };
-		F5C077A71DDB694C0026CA0A /* DemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C077A61DDB694C0026CA0A /* DemoTests.swift */; };
+		F5C077A71DDB694C0026CA0A /* DemoCameraTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5C077A61DDB694C0026CA0A /* DemoCameraTests.swift */; };
 		F5DAC66F1DD4DAD200A9F27B /* ArekBaseLocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5DAC66E1DD4DAD200A9F27B /* ArekBaseLocationDelegate.swift */; };
 /* End PBXBuildFile section */
 
@@ -65,7 +65,7 @@
 		F583E3591DD1263C0021EC8F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F583E35B1DD1263C0021EC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F583E3601DD1263C0021EC8F /* arekTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arekTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F583E3641DD1263C0021EC8F /* arekTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arekTests.swift; sourceTree = "<group>"; };
+		F583E3641DD1263C0021EC8F /* ArekInitialisersTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArekInitialisersTests.swift; sourceTree = "<group>"; };
 		F583E3661DD1263C0021EC8F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F583E36B1DD1263C0021EC8F /* arekUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arekUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F583E36F1DD1263C0021EC8F /* arekUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = arekUITests.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 		F583E3A21DD126ED0021EC8F /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DemoViewController.swift; path = DemoCode/DemoViewController.swift; sourceTree = "<group>"; };
 		F583E3A41DD127ED0021EC8F /* DemoViewController+Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "DemoViewController+Table.swift"; path = "DemoCode/DemoViewController+Table.swift"; sourceTree = "<group>"; };
 		F5BC252F1DD1CFDD00408F2F /* ArekNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArekNotifications.swift; path = Arek/Permissions/ArekNotifications.swift; sourceTree = "<group>"; };
-		F5C077A61DDB694C0026CA0A /* DemoTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoTests.swift; sourceTree = "<group>"; };
+		F5C077A61DDB694C0026CA0A /* DemoCameraTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoCameraTests.swift; sourceTree = "<group>"; };
 		F5DAC66E1DD4DAD200A9F27B /* ArekBaseLocationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArekBaseLocationDelegate.swift; path = Arek/Utilities/ArekBaseLocationDelegate.swift; sourceTree = "<group>"; };
 		FBCEC4DEA08CA231DB8D7359 /* Pods-arekTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-arekTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-arekTests/Pods-arekTests.debug.xcconfig"; sourceTree = "<group>"; };
 		FC18F7835191876242871760 /* Pods-arek.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-arek.debug.xcconfig"; path = "Pods/Target Support Files/Pods-arek/Pods-arek.debug.xcconfig"; sourceTree = "<group>"; };
@@ -180,8 +180,8 @@
 		F583E3631DD1263C0021EC8F /* arekTests */ = {
 			isa = PBXGroup;
 			children = (
-				F583E3641DD1263C0021EC8F /* arekTests.swift */,
-				F5C077A61DDB694C0026CA0A /* DemoTests.swift */,
+				F583E3641DD1263C0021EC8F /* ArekInitialisersTests.swift */,
+				F5C077A61DDB694C0026CA0A /* DemoCameraTests.swift */,
 				F583E3661DD1263C0021EC8F /* Info.plist */,
 			);
 			path = arekTests;
@@ -506,8 +506,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F5C077A71DDB694C0026CA0A /* DemoTests.swift in Sources */,
-				F583E3651DD1263C0021EC8F /* arekTests.swift in Sources */,
+				F5C077A71DDB694C0026CA0A /* DemoCameraTests.swift in Sources */,
+				F583E3651DD1263C0021EC8F /* ArekInitialisersTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -586,7 +586,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -629,7 +629,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

@@ -69,7 +69,7 @@ class ArekBasePermission {
         if self.configuration.presentInitialPopup {
             self.presentInitialPopup(title: self.initialPopupData.title, message: self.initialPopupData.message, completion: completion)
         } else {
-            self.permission.status(completion: completion)
+            self.permission.askForPermission(completion: completion)
         }
     }
     
@@ -77,7 +77,6 @@ class ArekBasePermission {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let allow = UIAlertAction(title: "Enable", style: .default) { (action) in
-            NSLog("Navigate back to callback")
             self.permission.askForPermission(completion: completion)
             alert.dismiss(animated: true, completion: nil)
         }
@@ -98,9 +97,11 @@ class ArekBasePermission {
         }
     }
     
-    private func presentReEnablePopup() {
+    private func presentReEnablePopup() {        
         if self.configuration.canPresentReEnablePopup(permission: self.permission) {
             self.presentReEnablePopup(title: self.reEnablePopupData.title, message: self.reEnablePopupData.message)
+        } else {
+            print("🚨 Arek here: for \(self) present re-enable disallowed")
         }
     }
 
