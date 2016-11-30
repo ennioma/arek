@@ -76,3 +76,19 @@ This is an initial popup used to ask **kindly** to the user to allow a permissio
 This is the popup used to **kindly** to the user to re-enable that permission. The *frequency* value is related to this popup.
 
 >Set by defaul to **true**
+
+# How to install AREK
+## CocoaPods
+You could add to your Podfile the line
+
+>pod 'arek', '~> 0.0.4'
+
+## Add AREK source code to your project
+Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.com/ennioma/arek/tree/master/arek/arek/Arek) folder to your project.
+
+🙏 Take care about adding the ArekHealth class to your project. It includes HealthKit in your project, so if you do this without using HealthKit, your app will be rejected during the AppStore review.
+ 
+# TODO:
+* split podfile.spec in submodules to let the devs to add only the desired permissions
+* add support to carthage
+* add tests to every permission type  
