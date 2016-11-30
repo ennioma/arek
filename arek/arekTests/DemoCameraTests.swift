@@ -82,19 +82,4 @@ class DemoCameraTests: XCTestCase {
         
         self.exp.fulfill()
     }
-    
-    internal func checkNativePopupData() {
-        XCTAssertTrue(UIApplication.shared.keyWindow?.rootViewController?.presentedViewController is UIAlertController)
-        //XCTAssertTrue(self.vc.presentedViewController is UIAlertController)
-        
-        let ac = UIApplication.shared.keyWindow?.rootViewController?.presentedViewController as? UIAlertController
-        
-        /*XCTAssertTrue(ac.title == "\"arek\" Would Like to Access Your Photos")
-        XCTAssertTrue(ac.message == "Test message to ask 🙏 to access Photo Library")
-        XCTAssertTrue(ac.actions.count == 2)
-        XCTAssertTrue(ac.actions[0].title == "Don't Allow")
-        XCTAssertTrue(ac.actions[1].title == "OK")*/
-        
-        self.exp.fulfill()
-    }
 }
