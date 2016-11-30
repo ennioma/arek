@@ -78,7 +78,7 @@ This is the popup used to **kindly** to the user to re-enable that permission. T
 >Set by defaul to **true**
 
 # How to install AREK
-## Cocoapods
+## CocoaPods
 You could add to your Podfile the line
 
 >pod 'arek', '~> 0.0.4'
