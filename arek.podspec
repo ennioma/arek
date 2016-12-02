@@ -10,5 +10,5 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = "9.0"
   s.source       = { :git => "https://github.com/ennioma/arek.git", :tag => s.version.to_s }
 
-  s.source_files  = "arek/arek/Arek/**/*.swift"
+  s.source_files  = "./Library/Core/*.swift", "./Library/Core/**/*.swift", "./Library/Permissions/*.swift", "./Library/Permissions/**/*.swift"
 end
