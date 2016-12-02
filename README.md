@@ -23,7 +23,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 # How to use AREK
 ## Check permission status
 ```swift
-    let permission = EMPhoto()
+    let permission = ArekPhoto()
 
     permission.status { (status) in
         switch status {
@@ -38,7 +38,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 ```
 ## Request permission
 ```swift
-    let permission = EMEvent()
+    let permission = ArekEvent()
 
     permission.manage { (status) in
         switch status {
