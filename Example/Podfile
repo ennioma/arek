@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'arek_Example' do
+  pod 'arek', :path => '../'
+
+  target 'arek_Tests' do
+    inherit! :search_paths
+
+    pod 'FBSnapshotTestCase'
+  end
+end
