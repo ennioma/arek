@@ -9,4 +9,61 @@ Pod::Spec.new do |s|
   s.social_media_url   = "https://twitter.com/ennioma"
   s.ios.deployment_target = '9.0'
   s.source_files = 'arek/Classes/**/*', 'arek/Classes/Core/**/*', 'arek/Classes/Permissions/**/*'
+
+  s.subspec 'Core' do |ss|
+    ss.source_files = 'arek/Classes/Core/**/*.swift'
+  end
+
+  s.subspec 'Camera' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekCamera.swift'
+    ss.frameworks = 'AVFoundation'
+  end
+
+  s.subspec 'Contacts' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekContacts.swift'
+    ss.frameworks = 'AddressBook'
+  end
+
+  s.subspec 'Events' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/Event/**.swift'
+    ss.frameworks = 'EventKit'
+  end
+
+  s.subspec 'Health' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekHealth.swift'
+    ss.frameworks = 'HealthKit'
+  end
+
+  s.subspec 'Location' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/Location/*.swift'
+    ss.frameworks = 'CoreLocation'
+  end
+
+  s.subspec 'Microphone' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekMicrophone.swift'
+    ss.frameworks = 'AVFoundation'
+  end
+
+  s.subspec 'Notification' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekNotifications.swift'
+  end
+
+  s.subspec 'Photos' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekPhoto.swift'
+    ss.frameworks = 'AssetsLibrary'
+  end
+
+  s.subspec 'Reminders' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/Event/**.swift'
+    ss.frameworks = 'EventKit'
+  end
 end
