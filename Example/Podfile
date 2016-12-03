@@ -5,7 +5,5 @@ target 'arek_Example' do
 
   target 'arek_Tests' do
     inherit! :search_paths
-
-    pod 'FBSnapshotTestCase'
   end
 end
