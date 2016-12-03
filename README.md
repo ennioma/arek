@@ -34,7 +34,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
         case .NotDetermined:
             print("! 🤔 !" )
         }
-    } 
+    }
 ```
 ## Request permission
 ```swift
@@ -81,13 +81,16 @@ This is the popup used to **kindly** to the user to re-enable that permission. T
 ## CocoaPods
 You could add to your Podfile the line
 
->pod 'arek', '~> 0.0.4'
+>use_frameworks!
+>target 'MyTarget' do
+>    pod 'arek', '~> 0.0.5'
+>end
 
 ## Add AREK source code to your project
 Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.com/ennioma/arek/tree/master/arek/arek/Arek) folder to your project.
 
 🙏 Take care about adding the ArekHealth class to your project. It includes HealthKit in your project, so if you do this without using HealthKit, your app will be rejected during the AppStore review.
- 
+
 # TODO:
 * split podfile.spec in submodules to let the devs to add only the desired permissions
 * add support to carthage

@@ -1,0 +1,16 @@
+PODS:
+  - arek (0.0.5)
+
+DEPENDENCIES:
+  - arek (from `../`)
+
+EXTERNAL SOURCES:
+  arek:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  arek: 4280849c84ad1ebc7856b81833fd67824b81e290
+
+PODFILE CHECKSUM: b27997d77226e34263dda5be0a6bba5f344a937b
+
+COCOAPODS: 1.1.1
