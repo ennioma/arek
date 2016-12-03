@@ -1,23 +1,16 @@
 PODS:
-  - arek (0.0.4)
-  - FBSnapshotTestCase (2.1.4):
-    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
-  - FBSnapshotTestCase/Core (2.1.4)
-  - FBSnapshotTestCase/SwiftSupport (2.1.4):
-    - FBSnapshotTestCase/Core
+  - arek (0.0.5)
 
 DEPENDENCIES:
   - arek (from `../`)
-  - FBSnapshotTestCase
 
 EXTERNAL SOURCES:
   arek:
     :path: "../"
 
 SPEC CHECKSUMS:
-  arek: e812ed385038ee23f33d5320ca6d00377583814b
-  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  arek: 4280849c84ad1ebc7856b81833fd67824b81e290
 
-PODFILE CHECKSUM: 05da5b1994980922357a245df362a334f0cc40e2
+PODFILE CHECKSUM: b27997d77226e34263dda5be0a6bba5f344a937b
 
 COCOAPODS: 1.1.1
