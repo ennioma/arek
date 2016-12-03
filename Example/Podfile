@@ -1,7 +1,13 @@
 use_frameworks!
 
 target 'arek_Example' do
-  pod 'arek', :path => '../'
+  pod 'arek/Core', :path => '../'
+  pod 'arek/Camera', :path => '../'
+  pod 'arek/Contacts', :path => '../'
+  pod 'arek/Location', :path => '../'
+  pod 'arek/Microphone', :path => '../'
+  pod 'arek/Photos', :path => '../'
+  pod 'arek/Notification', :path => '../'
 
   target 'arek_Tests' do
     inherit! :search_paths
