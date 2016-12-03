@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'arek'
-  s.version          = '0.0.4'
+  s.version          = '0.0.5'
   s.summary          = 'AREK is a clean and easy to use wrapper over any kind of iOS permission.'
   s.homepage         = 'https://github.com/ennioma/arek'
   s.license          = { :type => 'unlicense'}
