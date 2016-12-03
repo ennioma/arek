@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-import SnapKit
-
 extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
     private var cellId: String {
         get {
@@ -29,9 +27,7 @@ extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableLayout() {
-        self.permissionsTV.snp.makeConstraints { (make) -> Void in
-            make.edges.equalTo(self.view)
-        }
+        self.permissionsTV.frame = self.view.bounds
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

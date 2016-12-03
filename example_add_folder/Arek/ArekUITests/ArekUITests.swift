@@ -1,14 +1,14 @@
 //
-//  arekUITests.swift
-//  arekUITests
+//  ArekUITests.swift
+//  ArekUITests
 //
-//  Created by Ennio Masi on 07/11/2016.
+//  Created by Ennio Masi on 03/12/2016.
 //  Copyright © 2016 ennioma. All rights reserved.
 //
 
 import XCTest
 
-class arekUITests: XCTestCase {
+class ArekUITests: XCTestCase {
         
     override func setUp() {
         super.setUp()
