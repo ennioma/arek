@@ -1,5 +1,7 @@
 [![N|Solid](https://github.com/ennioma/arek/blob/master/arek/Assets/arek.png?raw=true)](https://github.com/ennioma/arek/blob/master/arek/Assets/arek.png?raw=true)
 
+![Platform Version](https://cocoapod-badges.herokuapp.com/p/arek/badge.png) ![Pod Version](https://cocoapod-badges.herokuapp.com/v/arek/0.0.6/badge.png) ![License](https://cocoapod-badges.herokuapp.com/l/arek/badge.png) [![Swift Version](https://img.shields.io/badge/Swift-3.0.x-orange.svg)]()
+
 AREK is a clean and easy to use wrapper over any kind of iOS permission.
 
 * show a native popup used to avoid to burn the possibility to ask to iOS the *real* permission
