@@ -89,9 +89,17 @@ You could add to your Podfile the line
 >end
 
 ## Add AREK source code to your project
-Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.com/ennioma/arek/tree/master/arek/arek/Arek) folder to your project.
+Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.com/ennioma/arek/tree/master/arek/Classes) folder to your project.
 
 🙏 Take care about adding the ArekHealth class to your project. It includes HealthKit in your project, so if you do this without using HealthKit, your app will be rejected during the AppStore review.
+
+## Contribute
+
+Contributions are welcome 🙌  If you'd like to improve this projects I've shared with the community, just open an issue or raise a PR.
+
+## License
+
+AREK is available under the MIT license. See the LICENSE file for more info.
 
 # TODO:
 * split podfile.spec in submodules to let the devs to add only the desired permissions
