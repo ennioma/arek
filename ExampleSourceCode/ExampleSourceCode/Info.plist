@@ -22,8 +22,6 @@
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>UIMainStoryboardFile</key>
-	<string>Main</string>
 	<key>UIRequiredDeviceCapabilities</key>
 	<array>
 		<string>armv7</string>
@@ -34,5 +32,13 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>Test message to ask 🙏 to access Photo Library</string>
+    <key>NSRemindersUsageDescription</key>
+    <string>Test message to ask 🙏 to access Reminders</string>
+    <key>NSCameraUsageDescription</key>
+    <string>Test message to ask 🙏 to access Camera</string>
+    <key>NSLocationAlwaysUsageDescription</key>
+    <string>Test message to ask 🙏 to access Location</string>
 </dict>
 </plist>
