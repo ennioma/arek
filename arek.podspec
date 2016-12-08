@@ -20,6 +20,12 @@ Pod::Spec.new do |s|
     ss.frameworks = 'AVFoundation'
   end
 
+  s.subspec 'CloudKit' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekCloudKit.swift'
+    ss.frameworks = 'CloudKit'
+  end
+
   s.subspec 'Contacts' do |ss|
     ss.dependency 'arek/Core'
     ss.source_files = 'arek/Classes/Permissions/ArekContacts.swift'

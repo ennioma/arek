@@ -34,6 +34,8 @@
 		75B2C1EB1DFA13F600856E76 /* ArekBaseLocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2C1D61DFA13F600856E76 /* ArekBaseLocationDelegate.swift */; };
 		75B2C1EC1DFA13F600856E76 /* ArekLocationAlways.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2C1D71DFA13F600856E76 /* ArekLocationAlways.swift */; };
 		75B2C1ED1DFA13F600856E76 /* ArekLocationWhenInUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2C1D81DFA13F600856E76 /* ArekLocationWhenInUse.swift */; };
+		75BE32121DFA170E000A4060 /* ArekCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE32111DFA170E000A4060 /* ArekCloudKit.swift */; };
+		75BE32151DFA1750000A4060 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE32141DFA1750000A4060 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +89,8 @@
 		75B2C1D61DFA13F600856E76 /* ArekBaseLocationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekBaseLocationDelegate.swift; sourceTree = "<group>"; };
 		75B2C1D71DFA13F600856E76 /* ArekLocationAlways.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekLocationAlways.swift; sourceTree = "<group>"; };
 		75B2C1D81DFA13F600856E76 /* ArekLocationWhenInUse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekLocationWhenInUse.swift; sourceTree = "<group>"; };
+		75BE32111DFA170E000A4060 /* ArekCloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekCloudKit.swift; sourceTree = "<group>"; };
+		75BE32141DFA1750000A4060 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75BE32151DFA1750000A4060 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,6 +126,7 @@
 				75405DA71DFA13A600A2BFDB /* ExampleSourceCodeTests */,
 				75405DB21DFA13A600A2BFDB /* ExampleSourceCodeUITests */,
 				75405D911DFA13A600A2BFDB /* Products */,
+				75BE32131DFA174F000A4060 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -218,6 +224,7 @@
 			isa = PBXGroup;
 			children = (
 				75B2C1CA1DFA13F600856E76 /* ArekCamera.swift */,
+				75BE32111DFA170E000A4060 /* ArekCloudKit.swift */,
 				75B2C1CB1DFA13F600856E76 /* ArekContacts.swift */,
 				75B2C1CC1DFA13F600856E76 /* ArekHealth.swift */,
 				75B2C1CD1DFA13F600856E76 /* ArekMicrophone.swift */,
@@ -248,6 +255,14 @@
 				75B2C1D81DFA13F600856E76 /* ArekLocationWhenInUse.swift */,
 			);
 			path = Location;
+			sourceTree = "<group>";
+		};
+		75BE32131DFA174F000A4060 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75BE32141DFA1750000A4060 /* CloudKit.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -407,6 +422,7 @@
 				75B2C1BA1DFA13E800856E76 /* DemoViewController.swift in Sources */,
 				75B2C1E01DFA13F600856E76 /* ArekPopupData.swift in Sources */,
 				75B2C1E81DFA13F600856E76 /* ArekEvent.swift in Sources */,
+				75BE32121DFA170E000A4060 /* ArekCloudKit.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
