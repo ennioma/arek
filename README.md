@@ -106,6 +106,4 @@ Contributions are welcome 🙌  If you'd like to improve this projects I've shar
 AREK is available under the MIT license. See the LICENSE file for more info.
 
 # TODO:
-* split podfile.spec in submodules to let the devs to add only the desired permissions
-* add support to carthage
 * add tests to every permission type  
