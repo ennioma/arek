@@ -88,9 +88,9 @@ This is the popup used to **kindly** to the user to re-enable that permission. T
 Add AREK to your Podfile 
 
 ```ruby
->use_frameworks!
->target 'MyTarget' do
->    pod 'arek', '~> 0.0.7'
+use_frameworks!
+target 'MyTarget' do
+    pod 'arek', '~> 0.0.7'
 end
 ```
 
