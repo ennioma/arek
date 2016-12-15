@@ -85,12 +85,16 @@ This is the popup used to **kindly** to the user to re-enable that permission. T
 
 # How to install AREK
 ## CocoaPods
-You could add to your Podfile the line
+Add AREK to your Podfile 
 
 >use_frameworks!
 >target 'MyTarget' do
->    pod 'arek', '~> 0.0.5'
+>    pod 'arek', '~> 0.0.7'
 >end
+
+## Carthage
+
+> github "ennioma/arek" ~> 0.0.7
 
 ## Add AREK source code to your project
 Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.com/ennioma/arek/tree/master/arek/Classes) folder to your project.
