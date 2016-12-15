@@ -87,14 +87,22 @@ This is the popup used to **kindly** to the user to re-enable that permission. T
 ## CocoaPods
 Add AREK to your Podfile 
 
+```ruby
 >use_frameworks!
 >target 'MyTarget' do
 >    pod 'arek', '~> 0.0.7'
->end
+end
+```
+
+```bash
+$ pod install
+```
 
 ## Carthage
 
-> github "ennioma/arek" ~> 0.0.7
+```ruby
+github "ennioma/arek" ~> 0.0.7
+```
 
 ## Add AREK source code to your project
 Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.com/ennioma/arek/tree/master/arek/Classes) folder to your project.
