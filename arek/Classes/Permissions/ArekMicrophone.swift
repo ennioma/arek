@@ -15,10 +15,21 @@ public class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
     override public init() {
         super.init()
         super.permission = self
+        self.initialPopupData = ArekPopupData(title: "I'm 🎤", message: "enable")
+        self.reEnablePopupData = ArekPopupData(title: "I'm 🎤", message: "re enable 🙏")
     }
     
     required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
+        super.init()
+        self.permission = self
+        self.configuration = configuration
+        if let initialPopupData = initialPopupData {
+            self.initialPopupData = initialPopupData
+        }
+        
+        if let reEnablePopupData = reEnablePopupData {
+            self.reEnablePopupData = reEnablePopupData
+        }
     }
     
     public func status(completion: @escaping ArekPermissionResponse) {
