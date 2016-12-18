@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'arek'
-  s.version          = '0.0.7'
+  s.version          = '0.0.8'
   s.summary          = 'AREK is a clean and easy to use wrapper over any kind of iOS permission.'
   s.homepage         = 'https://github.com/ennioma/arek'
   s.license          = { :type => 'MIT', :file => 'LICENSE'}
@@ -18,6 +18,12 @@ Pod::Spec.new do |s|
     ss.dependency 'arek/Core'
     ss.source_files = 'arek/Classes/Permissions/ArekCamera.swift'
     ss.frameworks = 'AVFoundation'
+  end
+
+  s.subspec 'CloudKit' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekCloudKit.swift'
+    ss.frameworks = 'CloudKit'
   end
 
   s.subspec 'Contacts' do |ss|
