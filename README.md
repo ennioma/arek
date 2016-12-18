@@ -91,7 +91,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 0.0.7'
+    pod 'arek', '~> 0.0.9'
 end
 ```
 
@@ -102,7 +102,7 @@ $ pod install
 ## Carthage
 
 ```ruby
-github "ennioma/arek" ~> 0.0.7
+github "ennioma/arek" ~> 0.0.9
 ```
 
 ## Add AREK source code to your project
