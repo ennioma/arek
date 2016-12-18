@@ -9,8 +9,8 @@
 import UIKit
 import CloudKit
 
-class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
-    var identifier = "ArekCloudKit"
+open class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
+    public var identifier = "ArekCloudKit"
 
     override public init() {
         super.init()
@@ -20,11 +20,11 @@ class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
         self.reEnablePopupData = ArekPopupData(title: "Contacts service", message: "re enable 🙏")
     }
     
-    required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
+    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
         fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
     }
     
-    func status(completion: @escaping ArekPermissionResponse) {
+    open func status(completion: @escaping ArekPermissionResponse) {
         CKContainer.default().status(forApplicationPermission: CKApplicationPermissions.userDiscoverability, completionHandler: { applicationPermissionStatus, error in
             
             if let _ = error {
@@ -45,17 +45,33 @@ class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
 
     }
     
-    func manage(completion: @escaping ArekPermissionResponse) {
+    open func manage(completion: @escaping ArekPermissionResponse) {
         self.status { (status) in
             self.managePermission(status: status, completion: completion)
         }
     }
     
-    func askForPermission(completion: @escaping ArekPermissionResponse) {
-        CKContainer.default().accountStatus { (applicationPermissionStatus, error) in
-            switch applicationPermissionStatus {
+    open func askForPermission(completion: @escaping ArekPermissionResponse) {
+        CKContainer.default().accountStatus { (accountStatus, error) in
+            if let _ = error {
+                print("accountStatus error: \(error)")
+                return completion(.NotDetermined)
+            }
+            switch accountStatus {
             case .available, .restricted:
-                return completion(.Authorized)
+                CKContainer.default().requestApplicationPermission(CKApplicationPermissions.userDiscoverability,  completionHandler: { applicationPermissionStatus, error in
+                    if let _ = error {
+                        return completion(.NotDetermined)
+                    }
+                    switch applicationPermissionStatus {
+                    case .denied:
+                        return completion(.Denied)
+                    case .granted:
+                        return completion(.Authorized)
+                    case .couldNotComplete, .initialState:
+                        return completion(.NotDetermined)
+                    }
+                })
             case .noAccount:
                 return completion(.Denied)
             case .couldNotDetermine:

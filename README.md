@@ -1,6 +1,10 @@
 [![N|Solid](https://github.com/ennioma/arek/blob/master/arek/Assets/arek.png?raw=true)](https://github.com/ennioma/arek/blob/master/arek/Assets/arek.png?raw=true)
 
-![Platform Version](https://cocoapod-badges.herokuapp.com/p/arek/badge.png) ![Pod Version](https://cocoapod-badges.herokuapp.com/v/arek/0.0.6/badge.png) ![License](https://cocoapod-badges.herokuapp.com/l/arek/badge.png) [![Swift Version](https://img.shields.io/badge/Swift-3.0.x-orange.svg)]()
+![Platform Version](https://cocoapod-badges.herokuapp.com/p/arek/badge.png)
+![Pod Version](https://cocoapod-badges.herokuapp.com/v/arek/0.0.6/badge.png)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+![License](https://cocoapod-badges.herokuapp.com/l/arek/badge.png)
+[![Swift Version](https://img.shields.io/badge/Swift-3.0.x-orange.svg)]()
 
 AREK is a clean and easy to use wrapper over any kind of iOS permission.
 
@@ -82,12 +86,24 @@ This is the popup used to **kindly** to the user to re-enable that permission. T
 
 # How to install AREK
 ## CocoaPods
-You could add to your Podfile the line
+Add AREK to your Podfile 
 
->use_frameworks!
->target 'MyTarget' do
->    pod 'arek', '~> 0.0.5'
->end
+```ruby
+use_frameworks!
+target 'MyTarget' do
+    pod 'arek', '~> 0.0.7'
+end
+```
+
+```bash
+$ pod install
+```
+
+## Carthage
+
+```ruby
+github "ennioma/arek" ~> 0.0.7
+```
 
 ## Add AREK source code to your project
 Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.com/ennioma/arek/tree/master/arek/Classes) folder to your project.
@@ -101,5 +117,4 @@ Contributions are welcome 🙌  If you'd like to improve this projects I've shar
 AREK is available under the MIT license. See the LICENSE file for more info.
 
 # TODO:
-[] add support to carthage
 [] add tests to every permission type  
