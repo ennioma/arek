@@ -9,7 +9,7 @@
 import UIKit
 import CloudKit
 
-open class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
+class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
     public var identifier = "ArekCloudKit"
 
     override public init() {
@@ -24,7 +24,7 @@ open class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
         fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
     }
     
-    open func status(completion: @escaping ArekPermissionResponse) {
+    func status(completion: @escaping ArekPermissionResponse) {
         CKContainer.default().status(forApplicationPermission: CKApplicationPermissions.userDiscoverability, completionHandler: { applicationPermissionStatus, error in
             
             if let _ = error {
@@ -45,13 +45,13 @@ open class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
 
     }
     
-    open func manage(completion: @escaping ArekPermissionResponse) {
+    func manage(completion: @escaping ArekPermissionResponse) {
         self.status { (status) in
             self.managePermission(status: status, completion: completion)
         }
     }
     
-    open func askForPermission(completion: @escaping ArekPermissionResponse) {
+    func askForPermission(completion: @escaping ArekPermissionResponse) {
         CKContainer.default().accountStatus { (accountStatus, error) in
             if let _ = error {
                 print("accountStatus error: \(error)")

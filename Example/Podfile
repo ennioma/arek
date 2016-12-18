@@ -3,6 +3,7 @@ use_frameworks!
 target 'arek_Example' do
   pod 'arek/Core', :path => '../'
   pod 'arek/Camera', :path => '../'
+  pod 'arek/CloudKit', :path => '../'
   pod 'arek/Contacts', :path => '../'
   pod 'arek/Location', :path => '../'
   pod 'arek/Microphone', :path => '../'
