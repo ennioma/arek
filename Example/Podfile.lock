@@ -1,18 +1,18 @@
 PODS:
-  - arek/Camera (0.0.8):
+  - arek/Camera (0.0.9):
     - arek/Core
-  - arek/CloudKit (0.0.8):
+  - arek/CloudKit (0.0.9):
     - arek/Core
-  - arek/Contacts (0.0.8):
+  - arek/Contacts (0.0.9):
     - arek/Core
-  - arek/Core (0.0.8)
-  - arek/Location (0.0.8):
+  - arek/Core (0.0.9)
+  - arek/Location (0.0.9):
     - arek/Core
-  - arek/Microphone (0.0.8):
+  - arek/Microphone (0.0.9):
     - arek/Core
-  - arek/Notification (0.0.8):
+  - arek/Notification (0.0.9):
     - arek/Core
-  - arek/Photos (0.0.8):
+  - arek/Photos (0.0.9):
     - arek/Core
 
 DEPENDENCIES:
@@ -30,7 +30,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  arek: 991d9929883ff644253064e3c392c4be540eed1c
+  arek: 852616a0c07e451eb5ea3058f42aa46d2bce016d
 
 PODFILE CHECKSUM: 92839c7cc0ef62b9462321d33b3f51a5171920b6
 
