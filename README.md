@@ -15,17 +15,18 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 🚨 AREK is a **Swift 3** and **XCode 8** compatible project🚨
 
 # Implemented permissions
-[x] Camera
-[x] CloudKit
-[x] Contacts
-[x] Events (Calendar)
-[x] Health
-[x] Location (Always)
-[x] Location (When in use)
-[x] Microphone
-[x] Notifications
-[x] Photo
-[x] Reminders
+
+- [x] Camera
+- [x] CloudKit
+- [x] Contacts
+- [x] Events (Calendar)
+- [x] Health
+- [x] Location (Always)
+- [x] Location (When in use)
+- [x] Microphone
+- [x] Notifications
+- [x] Photo
+- [x] Reminders
 
 # How to use AREK
 ## Check permission status
