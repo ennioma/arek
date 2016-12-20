@@ -24,6 +24,7 @@
 		7F368AC31E0968A1002EFD27 /* ArekSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F368AC21E0968A1002EFD27 /* ArekSpeechRecognizer.swift */; };
 		7F368AC61E096CAA002EFD27 /* ArekReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F368AC51E096CAA002EFD27 /* ArekReminders.swift */; };
 		7F368AC91E0970DA002EFD27 /* ArekMediaLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F368AC81E0970DA002EFD27 /* ArekMediaLibrary.swift */; };
+		7F368ACC1E0973F7002EFD27 /* ArekEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F368ACB1E0973F7002EFD27 /* ArekEvents.swift */; };
 		8BC6150EAD75717B2822710D8B8F17E1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE36D7B1E7E284C0B01F4D5D3A5864B /* CoreLocation.framework */; };
 		8D51E0A6C8199070F5B58E51F406FEFA /* ArekLocationWhenInUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A535E42C3D29A35911CEA99C7EE6B8D /* ArekLocationWhenInUse.swift */; };
 		9640F1C1852009D1853B562C0EFFBB77 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18B2074C60172F312DCCDA7EE79D8A /* CloudKit.framework */; };
@@ -84,6 +85,7 @@
 		7F368AC21E0968A1002EFD27 /* ArekSpeechRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArekSpeechRecognizer.swift; path = arek/Classes/Permissions/ArekSpeechRecognizer.swift; sourceTree = "<group>"; };
 		7F368AC51E096CAA002EFD27 /* ArekReminders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArekReminders.swift; path = arek/Classes/Permissions/ArekReminders.swift; sourceTree = "<group>"; };
 		7F368AC81E0970DA002EFD27 /* ArekMediaLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArekMediaLibrary.swift; path = arek/Classes/Permissions/ArekMediaLibrary.swift; sourceTree = "<group>"; };
+		7F368ACB1E0973F7002EFD27 /* ArekEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArekEvents.swift; path = arek/Classes/Permissions/ArekEvents.swift; sourceTree = "<group>"; };
 		802D719E1BD426B036AE03C6CCC08385 /* Pods-arek_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-arek_Tests.modulemap"; sourceTree = "<group>"; };
 		850C94D40DE720FB19D95B0F13D37891 /* arek-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "arek-dummy.m"; sourceTree = "<group>"; };
 		8BB49D10D048417B558DAACBBD7C6308 /* arek-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "arek-prefix.pch"; sourceTree = "<group>"; };
@@ -230,6 +232,14 @@
 			name = MediaLibrary;
 			sourceTree = "<group>";
 		};
+		7F368ACA1E0973D8002EFD27 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				7F368ACB1E0973F7002EFD27 /* ArekEvents.swift */,
+			);
+			name = Events;
+			sourceTree = "<group>";
+		};
 		880C4338177D10B694B3D8E3C9E2BD40 /* Pods-arek_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +306,7 @@
 				A14A3033B5D994CEF2D931D9E8297252 /* CloudKit */,
 				905E92AAEBD5B33461CF6CEBBE8A423C /* Contacts */,
 				FFC99B3B075D95B124F5F19460C9851E /* Core */,
+				7F368ACA1E0973D8002EFD27 /* Events */,
 				1AD05DFB3276166DB6FA7044AB5514DC /* Location */,
 				7F368AC71E0970C0002EFD27 /* MediaLibrary */,
 				F773B03F84ED39E548666F8705B0CB1A /* Microphone */,
@@ -516,6 +527,7 @@
 				7F368AC61E096CAA002EFD27 /* ArekReminders.swift in Sources */,
 				3E5510C553E95A2B8EF1015FD0F97113 /* ArekContacts.swift in Sources */,
 				6AD7B6C0A2A08CF17863F2DEA452B6DA /* ArekLocationAlways.swift in Sources */,
+				7F368ACC1E0973F7002EFD27 /* ArekEvents.swift in Sources */,
 				8D51E0A6C8199070F5B58E51F406FEFA /* ArekLocationWhenInUse.swift in Sources */,
 				4AB1FC99358F733BAB517BA0FDF102D3 /* ArekMicrophone.swift in Sources */,
 				A7D070083E151E48D00A321805486890 /* ArekNotifications.swift in Sources */,

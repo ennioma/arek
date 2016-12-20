@@ -30,19 +30,23 @@ open class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
     }
     
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
-        Contacts.CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler:  { (granted, error) in
-            if granted {
-                print("🎫 permission authorized by user ✅")
-                return completion(.Authorized)
-            }
-            
+        Contacts.CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler:  { (_, error) in
             if let _ = error {
-                print("🎫 permission not determined 🤔")
+                print("🎫 permission not determined 🤔, error: \(error)")
                 return completion(.NotDetermined)
             }
             
-            print("🎫 permission denied by user ⛔️")
-            return completion(.Denied)
+            switch Contacts.CNContactStore.authorizationStatus(for: CNEntityType.contacts) {
+            case .authorized:
+                print("🎫 permission authorized by user ✅")
+                return completion(.Authorized)
+            case .denied, .restricted:
+                print("🎫 permission denied by user ⛔️")
+                return completion(.Denied)
+            case .notDetermined:
+                print("🎫  permission not determined 🤔")
+                return completion(.NotDetermined)
+            }
         })
     }
 }
