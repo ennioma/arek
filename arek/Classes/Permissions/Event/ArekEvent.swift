@@ -14,7 +14,7 @@ public  class ArekEvent: ArekBaseEvent {
         super.init()
         super.permission = self
         
-        self.initialPopupData = ArekPopupData(title: "Events service", message: "enable")
+        self.initialPopupData = ArekPopupData(title: "Events notifications service", message: "enable")
         self.reEnablePopupData = ArekPopupData(title: "Events notifications service", message: "re enable 🙏")
         self.identifier = "ArekEvent"
     }
