@@ -19,8 +19,8 @@ public  class ArekEvent: ArekBaseEvent {
         self.identifier = "ArekEvent"
     }
     
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
+    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
     }
     
     override public func status(completion: @escaping ArekPermissionResponse) {

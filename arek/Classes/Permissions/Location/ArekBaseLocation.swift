@@ -26,8 +26,9 @@ public class ArekBaseLocation: ArekBasePermission, ArekPermissionProtocol {
         self.reEnablePopupData = ArekPopupData(title: "Location service", message: "re enable 🙏")
     }
     
-    public required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
+    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+        super.permission = self
     }
     
     public func manage(completion: @escaping ArekPermissionResponse) {

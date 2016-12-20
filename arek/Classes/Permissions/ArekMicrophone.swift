@@ -19,17 +19,9 @@ public class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
         self.reEnablePopupData = ArekPopupData(title: "I'm 🎤", message: "re enable 🙏")
     }
     
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        super.init()
-        self.permission = self
-        self.configuration = configuration
-        if let initialPopupData = initialPopupData {
-            self.initialPopupData = initialPopupData
-        }
-        
-        if let reEnablePopupData = reEnablePopupData {
-            self.reEnablePopupData = reEnablePopupData
-        }
+    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+        super.permission = self
     }
     
     public func status(completion: @escaping ArekPermissionResponse) {

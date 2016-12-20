@@ -22,8 +22,9 @@ public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
         self.reEnablePopupData = ArekPopupData(title: "Push notifications service", message: "re enable 🙏")
     }
     
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
+    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+        super.permission = self
     }
     
     public func status(completion: @escaping ArekPermissionResponse) {
