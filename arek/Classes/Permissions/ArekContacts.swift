@@ -36,12 +36,6 @@ class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
         }
     }
     
-    func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
     func askForPermission(completion: @escaping ArekPermissionResponse) {
         Contacts.CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler:  { (granted, error) in
             if granted {

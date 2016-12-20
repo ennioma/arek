@@ -23,13 +23,7 @@ public class ArekBaseEvent: ArekBasePermission, ArekPermissionProtocol {
         super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
         super.permission = self
     }
-    
-    public func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
+
     public func status(completion: @escaping ArekPermissionResponse) {
         fatalError("status(configuration) has not been implemented")
     }

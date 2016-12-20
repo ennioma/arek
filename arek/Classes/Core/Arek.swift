@@ -134,6 +134,12 @@ public class ArekBasePermission {
         }
     }
     
+    public func manage(completion: @escaping ArekPermissionResponse) {
+        (self as? ArekPermissionProtocol)?.status { (status) in
+            self.managePermission(status: status, completion: completion)
+        }
+    }
+    
     internal func managePermission(status: ArekPermissionStatus, completion: @escaping ArekPermissionResponse) {
         switch status {
         case .NotDetermined:

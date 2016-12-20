@@ -50,12 +50,6 @@ public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
         }
     }
     
-    public func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
     public func askForPermission(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { (granted, error) in
