@@ -11,4 +11,8 @@ import Foundation
 public struct ArekPopupData {
     var title: String!
     var message: String!
+    public init(title: String = "", message: String = "") {
+        self.title = title
+        self.message = message
+    }
 }
