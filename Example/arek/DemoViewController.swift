@@ -12,7 +12,7 @@ import arek
 class DemoViewController: UIViewController {
     weak var permissionsTV: UITableView!
     
-    let permissions: Array<ArekPermissionProtocol> = [ArekCamera(), ArekCloudKit(), ArekContacts(), ArekLocationAlways(), ArekMicrophone(), ArekNotifications(), ArekPhoto(), ArekSpeechRecognizer(), ArekReminders()]
+    let permissions: Array<ArekPermissionProtocol> = [ArekCamera(), ArekCloudKit(), ArekContacts(), ArekLocationAlways(), ArekMicrophone(), ArekNotifications(), ArekPhoto(), ArekSpeechRecognizer(), ArekReminders(), ArekMediaLibrary()]
     
     override func viewDidLoad() {
         super.viewDidLoad()

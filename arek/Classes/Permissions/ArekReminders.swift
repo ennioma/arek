@@ -43,7 +43,7 @@ open class ArekReminders: ArekBasePermission, ArekPermissionProtocol {
                 print("🎗 permission authorized by user ✅")
                 return completion(.Authorized)
             case .restricted, .denied:
-                print("🎗 permission denied by iOS ⛔️")
+                print("🎗 permission denied by user ⛔️")
                 return completion(.Denied)
             case .notDetermined:
                 print("🎗 permission not determined 🤔")
