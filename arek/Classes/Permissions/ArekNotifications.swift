@@ -60,7 +60,7 @@ public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { (granted, error) in
                 if granted {
-                    NSLog("Notifications permission authorized by user ✅")
+                    print("Notifications permission authorized by user ✅")
                     return completion(.Authorized)
                 }
                 
@@ -68,7 +68,7 @@ public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
                     return completion(.NotDetermined)
                 }
                 
-                NSLog("Notifications permission authorized by user ⛔️")
+                print("Notifications permission authorized by user ⛔️")
                 return completion(.Denied)
             }
         } else if #available(iOS 9.0, *) {

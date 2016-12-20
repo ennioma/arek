@@ -44,10 +44,10 @@ public class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
     public func askForPermission(completion: @escaping ArekPermissionResponse) {
         AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { (authorized) in
             if authorized {
-                NSLog("📷 permission authorized by user ✅")
+                print("📷 permission authorized by user ✅")
                 return completion(.Authorized)
             } else {
-                NSLog("📷 permission denied by user ⛔️")
+                print("📷 permission denied by user ⛔️")
                 return completion(.Denied)
             }
         }

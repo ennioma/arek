@@ -16,8 +16,8 @@ class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
         super.init()
         super.permission = self
         
-        self.initialPopupData = ArekPopupData(title: "Contacs service", message: "enable")
-        self.reEnablePopupData = ArekPopupData(title: "Contacts service", message: "re enable 🙏")
+        self.initialPopupData = ArekPopupData(title: "Contacts Service", message: "enable")
+        self.reEnablePopupData = ArekPopupData(title: "Contacts Service", message: "re enable 🙏")
     }
     
     required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
@@ -45,7 +45,7 @@ class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
     func askForPermission(completion: @escaping ArekPermissionResponse) {
         Contacts.CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler:  { (granted, error) in
             if granted {
-                NSLog("Contacts authorized by user ✅")
+                print("Contacts permission authorized by user ✅")
                 return completion(.Authorized)
             }
             
@@ -53,7 +53,7 @@ class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
                 return completion(.NotDetermined)
             }
             
-            NSLog("Contacts authorized by user ⛔️")
+            print("Contacts authorized by user ⛔️")
             return completion(.Denied)
         })
     }

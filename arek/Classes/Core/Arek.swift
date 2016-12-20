@@ -138,14 +138,14 @@ public class ArekBasePermission {
         switch status {
         case .NotDetermined:
             self.manageInitialPopup(completion: completion)
-            NSLog("⁉️Current Permission NotDetermined")
+            print("⁉️Current Permission NotDetermined")
             break
         case .Denied:
             self.presentReEnablePopup()
-            NSLog("⛔️Current Permission Denied")
+            print("⛔️Current Permission Denied")
             return completion(.Denied)
         case .Authorized:
-            NSLog("✅Current Permission Authorized")
+            print("✅Current Permission Authorized")
             return completion(.Authorized)
         }
     }
