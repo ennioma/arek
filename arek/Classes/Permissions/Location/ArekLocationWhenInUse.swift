@@ -12,12 +12,7 @@ import CoreLocation
 public class ArekLocationWhenInUse: ArekBaseLocation {
     override public init() {
         super.init()
-        
         self.identifier = "ArekLocationWhenInUse"
-    }
-    
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
     }
     
     override public func askForPermission(completion: @escaping ArekPermissionResponse) {

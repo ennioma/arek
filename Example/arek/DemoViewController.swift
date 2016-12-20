@@ -7,17 +7,12 @@
 //
 
 import UIKit
-
 import arek
 
 class DemoViewController: UIViewController {
     weak var permissionsTV: UITableView!
     
-    let permissions: Array<ArekPermissionProtocol> = [ArekCamera(), ArekPhoto(), ArekLocationAlways(), ArekMicrophone(), ArekNotifications()]
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-    }
+    let permissions: Array<ArekPermissionProtocol> = [ArekCamera(), ArekCloudKit(), ArekContacts(), ArekLocationAlways(), ArekMicrophone(), ArekNotifications(), ArekPhoto()]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,7 +24,6 @@ class DemoViewController: UIViewController {
         permissionsTV.register(UITableViewCell.self, forCellReuseIdentifier: "PermissionCell")
         
         self.permissionsTV = permissionsTV
-        
         self.view.addSubview(self.permissionsTV)
         
         self.tableLayout()

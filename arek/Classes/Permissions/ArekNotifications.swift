@@ -16,14 +16,8 @@ public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
     
     override public init() {
         super.init()
-        super.permission = self
-        
         self.initialPopupData = ArekPopupData(title: "Push notifications service", message: "enable")
         self.reEnablePopupData = ArekPopupData(title: "Push notifications service", message: "re enable 🙏")
-    }
-    
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
     }
     
     public func status(completion: @escaping ArekPermissionResponse) {
@@ -48,26 +42,21 @@ public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
             return completion(.Authorized)
         }
     }
-    
-    public func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
+        
     public func askForPermission(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { (granted, error) in
                 if granted {
-                    NSLog("Notifications permission authorized by user ✅")
+                    print("Push notifications permission authorized by user ✅")
                     return completion(.Authorized)
                 }
                 
                 if let _ = error {
+                    print("Push notifications permission not determined 🤔")
                     return completion(.NotDetermined)
                 }
                 
-                NSLog("Notifications permission authorized by user ⛔️")
+                print("Push notifications permission denied by user ⛔️")
                 return completion(.Denied)
             }
         } else if #available(iOS 9.0, *) {
@@ -76,3 +65,4 @@ public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
         }
     }
 }
+

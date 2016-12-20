@@ -14,6 +14,7 @@
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		75BCA2821DF34D5F008DE0E9 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCA2801DF34D5F008DE0E9 /* DemoViewController.swift */; };
 		75BCA2831DF34D5F008DE0E9 /* DemoViewController+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCA2811DF34D5F008DE0E9 /* DemoViewController+Table.swift */; };
+		7F826DD51E093A0700420AB7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F826DD41E093A0700420AB7 /* CloudKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,8 @@
 		75BCA2801DF34D5F008DE0E9 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		75BCA2811DF34D5F008DE0E9 /* DemoViewController+Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DemoViewController+Table.swift"; sourceTree = "<group>"; };
 		79B545C944A596DEFDE61F89 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		7F826DD31E0939FA00420AB7 /* arek_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = arek_Example.entitlements; sourceTree = "<group>"; };
+		7F826DD41E093A0700420AB7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		8FC7D6EEDE91A2965CEDDF3C /* Pods-arek_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-arek_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-arek_Tests/Pods-arek_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7608EDDBACEC07502992048 /* Pods-arek_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-arek_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-arek_Example/Pods-arek_Example.release.xcconfig"; sourceTree = "<group>"; };
 		EE2E8EA2B5C0B968D0B2947A /* Pods-arek_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-arek_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-arek_Example/Pods-arek_Example.debug.xcconfig"; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0969B7F71956220365C4C913 /* Pods_arek_Example.framework in Frameworks */,
+				7F826DD51E093A0700420AB7 /* CloudKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +85,7 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
+				7F826DD31E0939FA00420AB7 /* arek_Example.entitlements */,
 				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for arek */,
 				607FACE81AFB9204008FA782 /* Tests */,
@@ -150,6 +155,7 @@
 		C7DD4ECCB1FF8CFDDAB5DB55 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7F826DD41E093A0700420AB7 /* CloudKit.framework */,
 				09987171283D3DB332FC0737 /* Pods_arek_Example.framework */,
 				4139DE1F5A7A74D4CA7DDB01 /* Pods_arek_Tests.framework */,
 			);
@@ -212,10 +218,20 @@
 				TargetAttributes = {
 					607FACCF1AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 443FV7F3ZK;
 						LastSwiftMigration = 0810;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					607FACE41AFB9204008FA782 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = 443FV7F3ZK;
 						LastSwiftMigration = 0810;
 						TestTargetID = 607FACCF1AFB9204008FA782;
 					};
@@ -474,10 +490,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = arek_Example.entitlements;
+				DEVELOPMENT_TEAM = 443FV7F3ZK;
 				INFOPLIST_FILE = arek/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ennioma.arek-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.mirabeau.arek-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -489,10 +507,12 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = arek_Example.entitlements;
+				DEVELOPMENT_TEAM = 443FV7F3ZK;
 				INFOPLIST_FILE = arek/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				MODULE_NAME = ExampleApp;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.ennioma.arek-Example";
+				PRODUCT_BUNDLE_IDENTIFIER = "nl.mirabeau.arek-Example";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -503,6 +523,7 @@
 			baseConfigurationReference = 8FC7D6EEDE91A2965CEDDF3C /* Pods-arek_Tests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 443FV7F3ZK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -524,6 +545,7 @@
 			baseConfigurationReference = 59358A8477E69F5C48E44137 /* Pods-arek_Tests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = 443FV7F3ZK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

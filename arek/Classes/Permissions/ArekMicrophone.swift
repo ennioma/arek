@@ -14,13 +14,10 @@ public class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
     
     override public init() {
         super.init()
-        super.permission = self
+        self.initialPopupData = ArekPopupData(title: "I'm 🎤", message: "enable")
+        self.reEnablePopupData = ArekPopupData(title: "I'm 🎤", message: "re enable 🙏")
     }
-    
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
-    }
-    
+        
     public func status(completion: @escaping ArekPermissionResponse) {
         switch AVAudioSession.sharedInstance().recordPermission() {
         case AVAudioSessionRecordPermission.denied:
@@ -33,18 +30,14 @@ public class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
             return completion(.NotDetermined)
         }
     }
-    
-    public func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
+        
     public func askForPermission(completion: @escaping ArekPermissionResponse) {
         AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
             if granted {
+                print("🎤 permission authorized by user ✅")
                 return completion(.Authorized)
             } else {
+                print("🎤 permission denied by user ⛔️")
                 return completion(.Denied)
             }
         }

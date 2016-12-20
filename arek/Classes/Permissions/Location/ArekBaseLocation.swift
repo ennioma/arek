@@ -20,35 +20,26 @@ public class ArekBaseLocation: ArekBasePermission, ArekPermissionProtocol {
     
     override public init() {
         super.init()
-        super.permission = self
-        
-        self.initialPopupData = ArekPopupData(title: "Location service", message: "enable")
-        self.reEnablePopupData = ArekPopupData(title: "Location service", message: "re enable 🙏")
+        self.initialPopupData = ArekPopupData(title: "I'm 🌍", message: "enable")
+        self.reEnablePopupData = ArekPopupData(title: "I'm 🌍", message: "re enable 🙏")
     }
-    
-    public required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
-    }
-    
-    public func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
+            
     public func status(completion: @escaping ArekPermissionResponse) {
         guard CLLocationManager.locationServicesEnabled() else { return completion(.NotDetermined) }
         
         switch CLLocationManager.authorizationStatus() {
         case .notDetermined:
+            print("🌍 permission not determined 🤔")
             return completion(.NotDetermined)
         case .restricted, .denied:
+            print("🌍 permission denied by user ⛔️")
             return completion(.Denied)
         case .authorizedAlways, .authorizedWhenInUse:
+            print("🌍 permission authorized by user ✅")
             return completion(.Authorized)
         }
     }
-    
+
     public func askForPermission(completion: @escaping ArekPermissionResponse) {
         fatalError("askForPermission(configuration) has not been implemented")
     }

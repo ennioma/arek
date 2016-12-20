@@ -15,16 +15,18 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 🚨 AREK is a **Swift 3** and **XCode 8** compatible project🚨
 
 # Implemented permissions
-* Camera
-* Contacts
-* Events (Calendar)
-* Health
-* Location (Always)
-* Location (When in use)
-* Microphone
-* Notifications
-* Photo
-* Reminders
+
+- [x] Camera
+- [x] CloudKit
+- [x] Contacts
+- [x] Events (Calendar)
+- [x] Health
+- [x] Location (Always)
+- [x] Location (When in use)
+- [x] Microphone
+- [x] Notifications
+- [x] Photo
+- [x] Reminders
 
 # How to use AREK
 ## Check permission status
@@ -90,7 +92,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 0.0.7'
+    pod 'arek', '~> 0.0.9'
 end
 ```
 
@@ -101,7 +103,7 @@ $ pod install
 ## Carthage
 
 ```ruby
-github "ennioma/arek" ~> 0.0.7
+github "ennioma/arek" ~> 0.0.9
 ```
 
 ## Add AREK source code to your project
@@ -110,13 +112,10 @@ Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.
 🙏 Take care about adding the ArekHealth class to your project. It includes HealthKit in your project, so if you do this without using HealthKit, your app will be rejected during the AppStore review.
 
 ## Contribute
-
 Contributions are welcome 🙌  If you'd like to improve this projects I've shared with the community, just open an issue or raise a PR.
 
 ## License
-
 AREK is available under the MIT license. See the LICENSE file for more info.
 
 # TODO:
-* Add CloudKit permission
-* add tests to every permission type  
+[] add tests to every permission type  
