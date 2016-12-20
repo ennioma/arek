@@ -46,12 +46,6 @@ class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
 
     }
     
-    func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
     func askForPermission(completion: @escaping ArekPermissionResponse) {
         CKContainer.default().accountStatus { (accountStatus, error) in
             if let _ = error {

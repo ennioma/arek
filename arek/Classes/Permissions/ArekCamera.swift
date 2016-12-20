@@ -35,12 +35,6 @@ public class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
         }
     }
     
-    public func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
     public func askForPermission(completion: @escaping ArekPermissionResponse) {
         AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { (authorized) in
             if authorized {

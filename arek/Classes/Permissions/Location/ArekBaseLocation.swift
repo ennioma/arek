@@ -31,12 +31,6 @@ public class ArekBaseLocation: ArekBasePermission, ArekPermissionProtocol {
         super.permission = self
     }
     
-    public func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
     public func status(completion: @escaping ArekPermissionResponse) {
         guard CLLocationManager.locationServicesEnabled() else { return completion(.NotDetermined) }
         

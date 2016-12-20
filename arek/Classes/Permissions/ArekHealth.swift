@@ -44,13 +44,7 @@ public class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
             return completion(.Authorized)
         }
     }
-    
-    public func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
+
     public func askForPermission(completion: @escaping ArekPermissionResponse) {
         HKHealthStore().requestAuthorization(toShare: self.hkSampleTypesToShare, read: self.hkSampleTypesToRead) { (success, error) in
             if success {
