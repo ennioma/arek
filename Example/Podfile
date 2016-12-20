@@ -5,10 +5,14 @@ target 'arek_Example' do
   pod 'arek/Camera', :path => '../'
   pod 'arek/CloudKit', :path => '../'
   pod 'arek/Contacts', :path => '../'
+  pod 'arek/Events', :path => '../'
   pod 'arek/Location', :path => '../'
+  pod 'arek/MediaLibrary', :path => '../'
   pod 'arek/Microphone', :path => '../'
-  pod 'arek/Photos', :path => '../'
   pod 'arek/Notification', :path => '../'
+  pod 'arek/Photos', :path => '../'
+  pod 'arek/Reminders', :path => '../'
+  pod 'arek/SpeechRecognizer', :path => '../'
 
   target 'arek_Tests' do
     inherit! :search_paths
