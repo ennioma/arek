@@ -21,6 +21,7 @@
 		6AD7B6C0A2A08CF17863F2DEA452B6DA /* ArekLocationAlways.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C096B96E47CEF27B7C914431DFB85C6 /* ArekLocationAlways.swift */; };
 		703BE949D72A65B143F9C2913622FB08 /* ArekPermissionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6087E8C37AF4335D59D756718728BFD /* ArekPermissionStatus.swift */; };
 		7A441F1CF45EE4A4E708500E308201FD /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 062BDD5B9D984B4FD5BEE1CB892CDA1A /* AVFoundation.framework */; };
+		7F368AC31E0968A1002EFD27 /* ArekSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F368AC21E0968A1002EFD27 /* ArekSpeechRecognizer.swift */; };
 		8BC6150EAD75717B2822710D8B8F17E1 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FE36D7B1E7E284C0B01F4D5D3A5864B /* CoreLocation.framework */; };
 		8D51E0A6C8199070F5B58E51F406FEFA /* ArekLocationWhenInUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9A535E42C3D29A35911CEA99C7EE6B8D /* ArekLocationWhenInUse.swift */; };
 		9640F1C1852009D1853B562C0EFFBB77 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BE18B2074C60172F312DCCDA7EE79D8A /* CloudKit.framework */; };
@@ -78,6 +79,7 @@
 		7BB7748363B5E72DE8EC8FC2BC112179 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7C096B96E47CEF27B7C914431DFB85C6 /* ArekLocationAlways.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ArekLocationAlways.swift; path = arek/Classes/Permissions/Location/ArekLocationAlways.swift; sourceTree = "<group>"; };
 		7C430DF92CFBA6AD8E9F1B400852CD54 /* Pods-arek_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-arek_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
+		7F368AC21E0968A1002EFD27 /* ArekSpeechRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ArekSpeechRecognizer.swift; path = arek/Classes/Permissions/ArekSpeechRecognizer.swift; sourceTree = "<group>"; };
 		802D719E1BD426B036AE03C6CCC08385 /* Pods-arek_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-arek_Tests.modulemap"; sourceTree = "<group>"; };
 		850C94D40DE720FB19D95B0F13D37891 /* arek-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "arek-dummy.m"; sourceTree = "<group>"; };
 		8BB49D10D048417B558DAACBBD7C6308 /* arek-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "arek-prefix.pch"; sourceTree = "<group>"; };
@@ -200,6 +202,14 @@
 			);
 			sourceTree = "<group>";
 		};
+		7F368AC11E09687F002EFD27 /* SpeechRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				7F368AC21E0968A1002EFD27 /* ArekSpeechRecognizer.swift */,
+			);
+			name = SpeechRecognizer;
+			sourceTree = "<group>";
+		};
 		880C4338177D10B694B3D8E3C9E2BD40 /* Pods-arek_Example */ = {
 			isa = PBXGroup;
 			children = (
@@ -262,6 +272,7 @@
 		B712B06D80B5623CF54504661074B8A8 /* arek */ = {
 			isa = PBXGroup;
 			children = (
+				7F368AC11E09687F002EFD27 /* SpeechRecognizer */,
 				F5F4172D1D723DAACD9599AA15437B3F /* Camera */,
 				A14A3033B5D994CEF2D931D9E8297252 /* CloudKit */,
 				905E92AAEBD5B33461CF6CEBBE8A423C /* Contacts */,
@@ -473,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3B38F1C3137D04600449C05874A2728D /* arek-dummy.m in Sources */,
+				7F368AC31E0968A1002EFD27 /* ArekSpeechRecognizer.swift in Sources */,
 				A064CA7143B19A6A63E227F9F951ADC3 /* Arek.swift in Sources */,
 				D395C76C6457D1937181C499020CD982 /* ArekBaseLocation.swift in Sources */,
 				FEEBFE24105C65D3DAE40209C0AB36BE /* ArekBaseLocationDelegate.swift in Sources */,
