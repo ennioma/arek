@@ -8,12 +8,12 @@
 
 import UIKit
 
-import arek
+import HealthKit
 
 class DemoViewController: UIViewController {
     weak var permissionsTV: UITableView!
     
-    let permissions: Array<ArekPermissionProtocol> = [ArekCamera(), ArekCloudKit(), ArekContacts(), ArekEvents(), ArekHealth(), ArekLocationAlways(), ArekMediaLibrary(), ArekMicrophone(), ArekNotifications(), ArekPhoto(), ArekReminders(), ArekSpeechRecognizer()]
+    var permissions: Array<ArekPermissionProtocol> = [ArekCamera(), ArekContacts(), ArekEvents(), ArekLocationAlways(), ArekMediaLibrary(), ArekMicrophone(), ArekNotifications(), ArekPhoto(), ArekReminders(), ArekSpeechRecognizer()]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
