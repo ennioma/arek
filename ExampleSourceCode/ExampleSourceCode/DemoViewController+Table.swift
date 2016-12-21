@@ -36,10 +36,10 @@ extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
     
     @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let permission = self.permissions[indexPath.row]
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId)
             ?? UITableViewCell(style: .default, reuseIdentifier: cellId)
-
+        
         cell.textLabel?.textAlignment = .center
         
         var symbol = ""
@@ -65,7 +65,7 @@ extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
         let permission = self.permissions[indexPath.row]
         
         var symbol = ""
-
+        
         permission.manage { (status) in
             switch status {
             case .Authorized:
