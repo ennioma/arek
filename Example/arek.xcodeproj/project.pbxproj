@@ -86,12 +86,12 @@
 			isa = PBXGroup;
 			children = (
 				7F098B8C1E0A746700931032 /* arek_Example.entitlements */,
-				607FACF51AFB993E008FA782 /* Podspec Metadata */,
 				607FACD21AFB9204008FA782 /* Example for arek */,
-				607FACE81AFB9204008FA782 /* Tests */,
-				607FACD11AFB9204008FA782 /* Products */,
-				07872756BF36D7162CDBDC4C /* Pods */,
 				C7DD4ECCB1FF8CFDDAB5DB55 /* Frameworks */,
+				07872756BF36D7162CDBDC4C /* Pods */,
+				607FACF51AFB993E008FA782 /* Podspec Metadata */,
+				607FACD11AFB9204008FA782 /* Products */,
+				607FACE81AFB9204008FA782 /* Tests */,
 			);
 			sourceTree = "<group>";
 		};

@@ -11,7 +11,7 @@ import UIKit
 class DemoViewController: UIViewController {
     weak var permissionsTV: UITableView!
     
-    let permissions: Array<ArekPermissionProtocol> = [ArekCamera(), ArekPhoto(), ArekLocationAlways(), ArekMicrophone(), ArekNotifications()]
+    let permissions: Array<ArekPermissionProtocol> = [ArekCamera(), ArekCloudKit(), ArekContacts(), ArekEvents(), ArekHealth(), ArekLocationAlways(), ArekMediaLibrary(), ArekMicrophone(), ArekNotifications(), ArekPhoto(), ArekReminders(), ArekSpeechRecognizer()]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -19,7 +19,7 @@ class DemoViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         let permissionsTV = UITableView()
         permissionsTV.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         permissionsTV.dataSource = self

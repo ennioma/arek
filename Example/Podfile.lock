@@ -1,16 +1,52 @@
 PODS:
+  - arek/Camera (0.0.9):
+    - arek/Core
+  - arek/CloudKit (0.0.9):
+    - arek/Core
+  - arek/Contacts (0.0.9):
+    - arek/Core
   - arek/Core (0.0.9)
+  - arek/Events (0.0.9):
+    - arek/Core
+  - arek/Health (0.0.9):
+    - arek/Core
+  - arek/Location (0.0.9):
+    - arek/Core
+  - arek/MediaLibrary (0.0.9):
+    - arek/Core
+  - arek/Microphone (0.0.9):
+    - arek/Core
+  - arek/Notifications (0.0.9):
+    - arek/Core
+  - arek/Photos (0.0.9):
+    - arek/Core
+  - arek/Reminders (0.0.9):
+    - arek/Core
+  - arek/SpeechRecognizer (0.0.9):
+    - arek/Core
 
 DEPENDENCIES:
+  - arek/Camera (from `../`)
+  - arek/CloudKit (from `../`)
+  - arek/Contacts (from `../`)
   - arek/Core (from `../`)
+  - arek/Events (from `../`)
+  - arek/Health (from `../`)
+  - arek/Location (from `../`)
+  - arek/MediaLibrary (from `../`)
+  - arek/Microphone (from `../`)
+  - arek/Notifications (from `../`)
+  - arek/Photos (from `../`)
+  - arek/Reminders (from `../`)
+  - arek/SpeechRecognizer (from `../`)
 
 EXTERNAL SOURCES:
   arek:
     :path: "../"
 
 SPEC CHECKSUMS:
-  arek: 385a38d75816b08b901155834825ac6cf3bdb6cd
+  arek: de5ceee765bbd86e02319b3c8738c56187c32333
 
-PODFILE CHECKSUM: e9c8666f2882d1d8ff287cb3b2487c5683378119
+PODFILE CHECKSUM: 3736cec9e89c7c97921dc51b92460c482ccd8b13
 
-COCOAPODS: 1.2.0.beta.1
+COCOAPODS: 1.1.1

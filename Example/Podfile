@@ -13,7 +13,7 @@ target 'arek_Example' do
   pod 'arek/Notifications', :path => '../'
   pod 'arek/Photos', :path => '../'
   pod 'arek/Reminders', :path => '../'
-  pod 'arek/SpeachRecognizer', :path => '../'
+  pod 'arek/SpeechRecognizer', :path => '../'
 
   target 'arek_Tests' do
     inherit! :search_paths
