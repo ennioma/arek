@@ -9,7 +9,7 @@
 import Foundation
 import AVFoundation
 
-public class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
+open class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
     public var identifier: String = "ArekMicrophone"
     
     public init() {
@@ -17,7 +17,7 @@ public class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
                    reEnablePopupData: ArekPopupData(title: "I'm 🎤", message: "re enable 🙏"))
     }
         
-    public func status(completion: @escaping ArekPermissionResponse) {
+    open func status(completion: @escaping ArekPermissionResponse) {
         switch AVAudioSession.sharedInstance().recordPermission() {
         case AVAudioSessionRecordPermission.denied:
             return completion(.Denied)
@@ -30,15 +30,14 @@ public class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
         }
     }
         
-    public func askForPermission(completion: @escaping ArekPermissionResponse) {
+    open func askForPermission(completion: @escaping ArekPermissionResponse) {
         AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
             if granted {
                 print("🎤 permission authorized by user ✅")
                 return completion(.Authorized)
-            } else {
-                print("🎤 permission denied by user ⛔️")
-                return completion(.Denied)
             }
+            print("🎤 permission denied by user ⛔️")
+            return completion(.Denied)
         }
     }
 }

@@ -9,7 +9,7 @@
 import Foundation
 import HealthKit
 
-public class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
+open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
     
     public var identifier: String = "ArekHealth"
     
@@ -22,7 +22,7 @@ public class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
                    reEnablePopupData: ArekPopupData(title: "I'm 📈", message: "re enable 🙏"))
     }
     
-    public func status(completion: @escaping ArekPermissionResponse) {
+    open func status(completion: @escaping ArekPermissionResponse) {
         guard let objectType = self.hkObjectType else {
             return completion(.NotDetermined)
         }
@@ -37,13 +37,23 @@ public class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
         }
     }
         
-    public func askForPermission(completion: @escaping ArekPermissionResponse) {
-        HKHealthStore().requestAuthorization(toShare: self.hkSampleTypesToShare, read: self.hkSampleTypesToRead) { (success, error) in
-            if success {
-                return completion(.Authorized)
-            } else if let _ = error {
-                return completion(.Denied)
+    open func askForPermission(completion: @escaping ArekPermissionResponse) {
+        if self.hkSampleTypesToRead == nil && self.hkSampleTypesToShare == nil {
+            print("📈 no permissions specified 🤔")
+            return completion(.NotDetermined)
+        }
+        HKHealthStore().requestAuthorization(toShare: self.hkSampleTypesToShare, read: self.hkSampleTypesToRead) { (granted, error) in
+            if let _ = error {
+                print("📈 permission not determined 🤔 error: \(error)")
+                return completion(.NotDetermined)
             }
+            
+            if granted {
+                print("📈 permission authorized by user ✅")
+                return completion(.Authorized)
+            }
+            print("📈 permission denied by user ⛔️")
+            return completion(.Denied)
         }
     }
 }

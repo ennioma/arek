@@ -11,15 +11,15 @@ import Foundation
 import UIKit
 import UserNotifications
 
-public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
-    public var identifier: String = "ArekNotifications"
+open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
+    open var identifier: String = "ArekNotifications"
     
     public init() {
         super.init(initialPopupData: ArekPopupData(title: "Push notifications service", message: "enable"),
                    reEnablePopupData: ArekPopupData(title: "Push notifications service", message: "re enable 🙏"))
     }
     
-    public func status(completion: @escaping ArekPermissionResponse) {
+    open func status(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().getNotificationSettings { (settings) in
                 switch settings.authorizationStatus {
@@ -42,19 +42,17 @@ public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
         }
     }
         
-    public func askForPermission(completion: @escaping ArekPermissionResponse) {
+    open func askForPermission(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { (granted, error) in
+                if let _ = error {
+                    print("Push notifications permission not determined 🤔, error: \(error)")
+                    return completion(.NotDetermined)
+                }
                 if granted {
                     print("Push notifications permission authorized by user ✅")
                     return completion(.Authorized)
                 }
-                
-                if let _ = error {
-                    print("Push notifications permission not determined 🤔")
-                    return completion(.NotDetermined)
-                }
-                
                 print("Push notifications permission denied by user ⛔️")
                 return completion(.Denied)
             }

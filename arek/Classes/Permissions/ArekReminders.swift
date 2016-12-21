@@ -30,24 +30,17 @@ open class ArekReminders: ArekBasePermission, ArekPermissionProtocol {
     }
     
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
-        EKEventStore().requestAccess(to: .reminder) { allowed, error in
+        EKEventStore().requestAccess(to: .reminder) { granted, error in
             if let _ = error {
                 print("🎗 permission error: \(error)")
                 return completion(.NotDetermined)
             }
-            
-            let status = EKEventStore.authorizationStatus(for: .reminder)
-            switch status {
-            case .authorized:
+            if granted {
                 print("🎗 permission authorized by user ✅")
                 return completion(.Authorized)
-            case .restricted, .denied:
-                print("🎗 permission denied by user ⛔️")
-                return completion(.Denied)
-            case .notDetermined:
-                print("🎗 permission not determined 🤔")
-                return completion(.NotDetermined)
             }
+            print("🎗 permission denied by user ⛔️")
+            return completion(.Denied)
         }
     }
 }

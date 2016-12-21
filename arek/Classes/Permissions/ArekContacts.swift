@@ -9,15 +9,15 @@
 import Foundation
 import Contacts
 
-class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
-    var identifier: String = "ArekContacts"
+open class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
+    open var identifier: String = "ArekContacts"
 
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "Contacts Service", message: "enable"),
-                   reEnablePopupData: ArekPopupData(title: "Contacts Service", message: "re enable 🙏"))
+        super.init(initialPopupData: ArekPopupData(title: "I'm 🎫", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "I'm 🎫", message: "re enable 🙏"))
     }
     
-    func status(completion: @escaping ArekPermissionResponse) {
+    open func status(completion: @escaping ArekPermissionResponse) {
         switch Contacts.CNContactStore.authorizationStatus(for: CNEntityType.contacts) {
         case .authorized:
             return completion(.Authorized)
@@ -28,18 +28,18 @@ class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
         }
     }
     
-    func askForPermission(completion: @escaping ArekPermissionResponse) {
+    open func askForPermission(completion: @escaping ArekPermissionResponse) {
         Contacts.CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler:  { (granted, error) in
-            if granted {
-                print("Contacts permission authorized by user ✅")
-                return completion(.Authorized)
-            }
-            
             if let _ = error {
+                print("🎫 not determined 🤔 error: \(error)")
                 return completion(.NotDetermined)
             }
-            
-            print("Contacts authorized by user ⛔️")
+
+            if granted {
+                print("🎫 permission authorized by user ✅")
+                return completion(.Authorized)
+            }
+            print("🎫 denied by user ⛔️")
             return completion(.Denied)
         })
     }

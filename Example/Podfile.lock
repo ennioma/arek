@@ -1,37 +1,16 @@
 PODS:
-  - arek/Camera (0.0.9):
-    - arek/Core
-  - arek/CloudKit (0.0.9):
-    - arek/Core
-  - arek/Contacts (0.0.9):
-    - arek/Core
   - arek/Core (0.0.9)
-  - arek/Location (0.0.9):
-    - arek/Core
-  - arek/Microphone (0.0.9):
-    - arek/Core
-  - arek/Notification (0.0.9):
-    - arek/Core
-  - arek/Photos (0.0.9):
-    - arek/Core
 
 DEPENDENCIES:
-  - arek/Camera (from `../`)
-  - arek/CloudKit (from `../`)
-  - arek/Contacts (from `../`)
   - arek/Core (from `../`)
-  - arek/Location (from `../`)
-  - arek/Microphone (from `../`)
-  - arek/Notification (from `../`)
-  - arek/Photos (from `../`)
 
 EXTERNAL SOURCES:
   arek:
     :path: "../"
 
 SPEC CHECKSUMS:
-  arek: 852616a0c07e451eb5ea3058f42aa46d2bce016d
+  arek: 385a38d75816b08b901155834825ac6cf3bdb6cd
 
-PODFILE CHECKSUM: 92839c7cc0ef62b9462321d33b3f51a5171920b6
+PODFILE CHECKSUM: e9c8666f2882d1d8ff287cb3b2487c5683378119
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.0.beta.1

@@ -9,15 +9,15 @@
 import Foundation
 import AVFoundation
 
-public class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
-    public var identifier: String = "ArekCamera"
+open class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
+    open var identifier: String = "ArekCamera"
 
     public init() {
         super.init(initialPopupData: ArekPopupData(title: "I'm 📷", message: "enable"),
                    reEnablePopupData: ArekPopupData(title: "I'm 📷", message: "re enable 🙏"))
     }
     
-    public func status(completion: @escaping ArekPermissionResponse) {
+    open func status(completion: @escaping ArekPermissionResponse) {
         switch AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) {
         case .notDetermined:
             return completion(.NotDetermined)
@@ -28,15 +28,14 @@ public class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
         }
     }
     
-    public func askForPermission(completion: @escaping ArekPermissionResponse) {
+    open func askForPermission(completion: @escaping ArekPermissionResponse) {
         AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { (authorized) in
             if authorized {
                 print("📷 permission authorized by user ✅")
                 return completion(.Authorized)
-            } else {
-                print("📷 permission denied by user ⛔️")
-                return completion(.Denied)
             }
+            print("📷 permission denied by user ⛔️")
+            return completion(.Denied)
         }
     }
 }

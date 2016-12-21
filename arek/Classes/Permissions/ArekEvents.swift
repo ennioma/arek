@@ -13,8 +13,8 @@ open class ArekEvents: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekEvents"
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "I'm Events", message: "enable"),
-                   reEnablePopupData: ArekPopupData(title: "I'm Events", message: "re enable 🙏"))
+        super.init(initialPopupData: ArekPopupData(title: "I'm 📆", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "I'm 📆", message: "re enable 🙏"))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {
@@ -30,24 +30,18 @@ open class ArekEvents: ArekBasePermission, ArekPermissionProtocol {
     }
     
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
-            EKEventStore().requestAccess(to: .event) { _, error in
+            EKEventStore().requestAccess(to: .event) { granted, error in
                 if let _ = error {
-                    print("Events permission not determined 🤔, error \(error)")
+                    print("📆 permission not determined 🤔, error \(error)")
                     return completion(.NotDetermined)
                 }
                 
-                let status = EKEventStore.authorizationStatus(for: .event)                
-                switch status {
-                case .authorized:
-                    print("Events permission authorized by user ✅")
+                if granted {
+                    print("📆 permission authorized by user ✅")
                     return completion(.Authorized)
-                case .restricted, .denied:
-                    print("Events permission denied by user ⛔️")
-                    return completion(.Denied)
-                case .notDetermined:
-                    print("Events permission not determined 🤔")
-                    return completion(.NotDetermined)
                 }
+                print("📆 permission denied by user ⛔️")
+                return completion(.Denied)
             }
     }
 }
