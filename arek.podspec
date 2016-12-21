@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Events' do |ss|
     ss.dependency 'arek/Core'
-    ss.source_files = 'arek/Classes/Permissions/Event/**.swift'
+    ss.source_files = 'arek/Classes/Permissions/ArekEvents.swift'
     ss.frameworks = 'EventKit'
   end
 
@@ -48,6 +48,12 @@ Pod::Spec.new do |s|
     ss.dependency 'arek/Core'
     ss.source_files = 'arek/Classes/Permissions/Location/*.swift'
     ss.frameworks = 'CoreLocation'
+  end
+
+  s.subspec 'MediaLibrary' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekMediaLibrary.swift'
+    ss.frameworks = 'MediaPlayer'
   end
 
   s.subspec 'Microphone' do |ss|
@@ -69,7 +75,14 @@ Pod::Spec.new do |s|
 
   s.subspec 'Reminders' do |ss|
     ss.dependency 'arek/Core'
-    ss.source_files = 'arek/Classes/Permissions/Event/**.swift'
+    ss.source_files = 'arek/Classes/Permissions/ArekReminders.swift'
     ss.frameworks = 'EventKit'
   end
+
+  s.subspec 'SpeachRecognizer' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekSpeachRecognizer.swift'
+    ss.frameworks = 'Speech'
+  end
+
 end

@@ -12,19 +12,11 @@ import CloudKit
 class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
     public var identifier = "ArekCloudKit"
 
-    override public init() {
-        super.init()
-        super.permission = self
+    public init() {
+        super.init(initialPopupData: ArekPopupData(title: "Contacs service", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "Contacts service", message: "re enable 🙏"))
+    }
         
-        self.initialPopupData = ArekPopupData(title: "Contacs service", message: "enable")
-        self.reEnablePopupData = ArekPopupData(title: "Contacts service", message: "re enable 🙏")
-    }
-    
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-        super.permission = self
-    }
-    
     func status(completion: @escaping ArekPermissionResponse) {
         CKContainer.default().status(forApplicationPermission: CKApplicationPermissions.userDiscoverability, completionHandler: { applicationPermissionStatus, error in
             

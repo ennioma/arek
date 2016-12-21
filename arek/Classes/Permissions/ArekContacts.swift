@@ -12,17 +12,9 @@ import Contacts
 class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
     var identifier: String = "ArekContacts"
 
-    override public init() {
-        super.init()
-        super.permission = self
-        
-        self.initialPopupData = ArekPopupData(title: "Contacts Service", message: "enable")
-        self.reEnablePopupData = ArekPopupData(title: "Contacts Service", message: "re enable 🙏")
-    }
-    
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-        super.permission = self
+    public init() {
+        super.init(initialPopupData: ArekPopupData(title: "Contacts Service", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "Contacts Service", message: "re enable 🙏"))
     }
     
     func status(completion: @escaping ArekPermissionResponse) {

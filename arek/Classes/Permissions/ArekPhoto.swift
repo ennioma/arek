@@ -12,19 +12,11 @@ import Photos
 public class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
     public var identifier: String = "ArekPhoto"
     
-    override public init() {
-        super.init()
-        super.permission = self
+    public init() {
+        super.init(initialPopupData: ArekPopupData(title: "I'm 🌅", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "I'm 🌅", message: "re enable 🙏"))
+    }
         
-        self.initialPopupData = ArekPopupData(title: "Photo service", message: "enable")
-        self.reEnablePopupData = ArekPopupData(title: "Photo service", message: "re enable 🙏")
-    }
-    
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-        super.permission = self
-    }
-    
     public func status(completion: @escaping ArekPermissionResponse) {
         switch PHPhotoLibrary.authorizationStatus() {
         case .notDetermined:
@@ -35,17 +27,21 @@ public class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
             return completion(.Authorized)
         }
     }
-    
+        
     public func askForPermission(completion: @escaping ArekPermissionResponse) {
         PHPhotoLibrary.requestAuthorization { (status) in
             switch status {
             case .notDetermined:
+                print("🌅 permission not determined 🤔")
                 return completion(.NotDetermined)
             case .restricted, .denied:
+                print("🌅 permission denied by user ⛔️")
                 return completion(.Denied)
             case.authorized:
+                print("🌅 permission authorized by user ✅")
                 return completion(.Authorized)
             }
         }
     }
 }
+

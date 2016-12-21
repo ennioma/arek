@@ -12,18 +12,11 @@ import AVFoundation
 public class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
     public var identifier: String = "ArekCamera"
 
-    override public init() {
-        super.init()
-        self.permission = self
-        self.initialPopupData = ArekPopupData(title: "I'm 📷", message: "enable")
-        self.reEnablePopupData = ArekPopupData(title: "I'm 📷", message: "re enable 🙏")
+    public init() {
+        super.init(initialPopupData: ArekPopupData(title: "I'm 📷", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "I'm 📷", message: "re enable 🙏"))
     }
     
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-        super.permission = self
-    }
-
     public func status(completion: @escaping ArekPermissionResponse) {
         switch AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) {
         case .notDetermined:

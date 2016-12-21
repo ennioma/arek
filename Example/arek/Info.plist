@@ -22,6 +22,16 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Test message to ask 🙏 access to Camera</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Test message to ask 🙏 access to Location</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>Test message to ask 🙏 access to Microphoe</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Test message to ask 🙏 access to Photo Library</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Test message to ask 🙏 access to Reminders</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -32,15 +42,5 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
-	<key>NSMicrophoneUsageDescription</key>
-	<string>Test message to ask 🙏 access to Microphoe</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Test message to ask 🙏 access to Photo Library</string>
-	<key>NSRemindersUsageDescription</key>
-	<string>Test message to ask 🙏 access to Reminders</string>
-	<key>NSCameraUsageDescription</key>
-	<string>Test message to ask 🙏 access to Camera</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Test message to ask 🙏 access to Location</string>
 </dict>
 </plist>

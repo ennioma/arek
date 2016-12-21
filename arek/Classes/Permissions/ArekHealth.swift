@@ -17,17 +17,9 @@ public class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
     var hkSampleTypesToShare: Set<HKSampleType>?
     var hkSampleTypesToRead: Set<HKSampleType>?
     
-    override public init() {
-        super.init()
-        super.permission = self
-        
-        self.initialPopupData = ArekPopupData(title: "I'm 📈", message: "enable")
-        self.reEnablePopupData = ArekPopupData(title: "I'm 📈", message: "re enable 🙏")
-    }
-    
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-        super.permission = self
+    public init() {
+        super.init(initialPopupData: ArekPopupData(title: "I'm 📈", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "I'm 📈", message: "re enable 🙏"))
     }
     
     public func status(completion: @escaping ArekPermissionResponse) {
@@ -44,7 +36,7 @@ public class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
             return completion(.Authorized)
         }
     }
-
+        
     public func askForPermission(completion: @escaping ArekPermissionResponse) {
         HKHealthStore().requestAuthorization(toShare: self.hkSampleTypesToShare, read: self.hkSampleTypesToRead) { (success, error) in
             if success {

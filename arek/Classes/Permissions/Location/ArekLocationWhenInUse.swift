@@ -15,11 +15,7 @@ public class ArekLocationWhenInUse: ArekBaseLocation {
         
         self.identifier = "ArekLocationWhenInUse"
     }
-    
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-    }
-    
+        
     override public func askForPermission(completion: @escaping ArekPermissionResponse) {
         self.completion = completion
         self.requestWhenInUseAuthorization()
