@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'arek'
-  s.version          = '0.0.9'
+  s.version          = '0.9.0'
   s.summary          = 'AREK is a clean and easy to use wrapper over any kind of iOS permission.'
   s.homepage         = 'https://github.com/ennioma/arek'
   s.license          = { :type => 'MIT', :file => 'LICENSE'}
@@ -83,6 +83,7 @@ Pod::Spec.new do |s|
     ss.dependency 'arek/Core'
     ss.source_files = 'arek/Classes/Permissions/ArekSpeechRecognizer.swift'
     ss.frameworks = 'Speech'
+    ss.ios.deployment_target = '9.0'
   end
 
 end
