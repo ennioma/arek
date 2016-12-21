@@ -62,7 +62,7 @@ Pod::Spec.new do |s|
     ss.frameworks = 'AVFoundation'
   end
 
-  s.subspec 'Notification' do |ss|
+  s.subspec 'Notifications' do |ss|
     ss.dependency 'arek/Core'
     ss.source_files = 'arek/Classes/Permissions/ArekNotifications.swift'
   end
@@ -79,9 +79,9 @@ Pod::Spec.new do |s|
     ss.frameworks = 'EventKit'
   end
 
-  s.subspec 'SpeachRecognizer' do |ss|
+  s.subspec 'SpeechRecognizer' do |ss|
     ss.dependency 'arek/Core'
-    ss.source_files = 'arek/Classes/Permissions/ArekSpeachRecognizer.swift'
+    ss.source_files = 'arek/Classes/Permissions/ArekSpeechRecognizer.swift'
     ss.frameworks = 'Speech'
   end
 
