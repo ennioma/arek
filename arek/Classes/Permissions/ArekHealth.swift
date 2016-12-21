@@ -22,6 +22,10 @@ open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
                    reEnablePopupData: ArekPopupData(title: "I'm 📈", message: "re enable 🙏"))
     }
     
+    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+    }
+    
     open func status(completion: @escaping ArekPermissionResponse) {
         guard let objectType = self.hkObjectType else {
             return completion(.NotDetermined)
@@ -39,20 +43,20 @@ open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
         
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
         if self.hkSampleTypesToRead == nil && self.hkSampleTypesToShare == nil {
-            print("📈 no permissions specified 🤔")
+            print("[🚨 Arek 🚨] 📈 no permissions specified 🤔")
             return completion(.NotDetermined)
         }
         HKHealthStore().requestAuthorization(toShare: self.hkSampleTypesToShare, read: self.hkSampleTypesToRead) { (granted, error) in
             if let _ = error {
-                print("📈 permission not determined 🤔 error: \(error)")
+                print("[🚨 Arek 🚨] 📈 permission not determined 🤔 error: \(error)")
                 return completion(.NotDetermined)
             }
             
             if granted {
-                print("📈 permission authorized by user ✅")
+                print("[🚨 Arek 🚨] 📈 permission authorized by user ✅")
                 return completion(.Authorized)
             }
-            print("📈 permission denied by user ⛔️")
+            print("[🚨 Arek 🚨] 📈 permission denied by user ⛔️")
             return completion(.Denied)
         }
     }

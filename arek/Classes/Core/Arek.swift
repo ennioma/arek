@@ -93,7 +93,7 @@ open class ArekBasePermission {
         if self is ArekPermissionProtocol && self.configuration.canPresentReEnablePopup(permission: (self as! ArekPermissionProtocol)) {
             self.presentReEnablePopup(title: self.reEnablePopupData.title, message: self.reEnablePopupData.message)
         } else {
-            print("🚨 Arek here: for \(self) present re-enable disallowed")
+            print("[🚨 Arek 🚨] for \(self) present re-enable not allowed")
         }
     }
 
@@ -136,14 +136,11 @@ open class ArekBasePermission {
         switch status {
         case .NotDetermined:
             self.manageInitialPopup(completion: completion)
-            print("⁉️Current Permission NotDetermined")
             break
         case .Denied:
             self.presentReEnablePopup()
-            print("⛔️Current Permission Denied")
             return completion(.Denied)
         case .Authorized:
-            print("✅Current Permission Authorized")
             return completion(.Authorized)
         }
     }

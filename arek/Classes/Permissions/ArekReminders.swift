@@ -17,6 +17,10 @@ open class ArekReminders: ArekBasePermission, ArekPermissionProtocol {
                    reEnablePopupData: ArekPopupData(title: "I'm 🎗", message: "re enable 🙏"))
     }
     
+    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+    }
+    
     open func status(completion: @escaping ArekPermissionResponse) {
         let status = EKEventStore.authorizationStatus(for: .reminder)
         switch status {
@@ -32,14 +36,14 @@ open class ArekReminders: ArekBasePermission, ArekPermissionProtocol {
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
         EKEventStore().requestAccess(to: .reminder) { granted, error in
             if let _ = error {
-                print("🎗 permission error: \(error)")
+                print("[🚨 Arek 🚨] 🎗 permission error: \(error)")
                 return completion(.NotDetermined)
             }
             if granted {
-                print("🎗 permission authorized by user ✅")
+                print("[🚨 Arek 🚨] 🎗 permission authorized by user ✅")
                 return completion(.Authorized)
             }
-            print("🎗 permission denied by user ⛔️")
+            print("[🚨 Arek 🚨] 🎗 permission denied by user ⛔️")
             return completion(.Denied)
         }
     }

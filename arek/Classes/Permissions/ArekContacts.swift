@@ -17,6 +17,10 @@ open class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
                    reEnablePopupData: ArekPopupData(title: "I'm 🎫", message: "re enable 🙏"))
     }
     
+    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+    }
+    
     open func status(completion: @escaping ArekPermissionResponse) {
         switch Contacts.CNContactStore.authorizationStatus(for: CNEntityType.contacts) {
         case .authorized:
@@ -31,15 +35,15 @@ open class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
         Contacts.CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler:  { (granted, error) in
             if let _ = error {
-                print("🎫 not determined 🤔 error: \(error)")
+                print("[🚨 Arek 🚨] 🎫 not determined 🤔 error: \(error)")
                 return completion(.NotDetermined)
             }
 
             if granted {
-                print("🎫 permission authorized by user ✅")
+                print("[🚨 Arek 🚨] 🎫 permission authorized by user ✅")
                 return completion(.Authorized)
             }
-            print("🎫 denied by user ⛔️")
+            print("[🚨 Arek 🚨] 🎫 denied by user ⛔️")
             return completion(.Denied)
         })
     }

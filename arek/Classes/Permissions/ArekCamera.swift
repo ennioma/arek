@@ -17,6 +17,10 @@ open class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
                    reEnablePopupData: ArekPopupData(title: "I'm 📷", message: "re enable 🙏"))
     }
     
+    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+    }
+    
     open func status(completion: @escaping ArekPermissionResponse) {
         switch AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) {
         case .notDetermined:
@@ -31,10 +35,10 @@ open class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
         AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { (authorized) in
             if authorized {
-                print("📷 permission authorized by user ✅")
+                print("[🚨 Arek 🚨] 📷 permission authorized by user ✅")
                 return completion(.Authorized)
             }
-            print("📷 permission denied by user ⛔️")
+            print("[🚨 Arek 🚨] 📷 permission denied by user ⛔️")
             return completion(.Denied)
         }
     }

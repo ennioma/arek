@@ -13,10 +13,14 @@ open class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekPhoto"
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "I'm 🌅", message: "enable"),
-                   reEnablePopupData: ArekPopupData(title: "I'm 🌅", message: "re enable 🙏"))
+        super.init(initialPopupData: ArekPopupData(title: "[🚨 Arek 🚨] I'm 🌅", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "[🚨 Arek 🚨] I'm 🌅", message: "re enable 🙏"))
     }
-        
+    
+    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+    }
+    
     open func status(completion: @escaping ArekPermissionResponse) {
         switch PHPhotoLibrary.authorizationStatus() {
         case .notDetermined:
@@ -32,13 +36,13 @@ open class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
         PHPhotoLibrary.requestAuthorization { (status) in
             switch status {
             case .notDetermined:
-                print("🌅 permission not determined 🤔")
+                print("[🚨 Arek 🚨] 🌅 permission not determined 🤔")
                 return completion(.NotDetermined)
             case .restricted, .denied:
-                print("🌅 permission denied by user ⛔️")
+                print("[🚨 Arek 🚨] 🌅 permission denied by user ⛔️")
                 return completion(.Denied)
             case.authorized:
-                print("🌅 permission authorized by user ✅")
+                print("[🚨 Arek 🚨] 🌅 permission authorized by user ✅")
                 return completion(.Authorized)
             }
         }

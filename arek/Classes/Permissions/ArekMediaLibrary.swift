@@ -17,6 +17,10 @@ open class ArekMediaLibrary: ArekBasePermission, ArekPermissionProtocol {
                    reEnablePopupData: ArekPopupData(title: "I'm 💽", message: "re enable 🙏"))
     }
     
+    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+    }
+    
     open func status(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 9.3, *) {
             let status = MPMediaLibrary.authorizationStatus()
@@ -38,18 +42,18 @@ open class ArekMediaLibrary: ArekBasePermission, ArekPermissionProtocol {
             MPMediaLibrary.requestAuthorization { status in
                 switch status {
                 case .authorized:
-                    print("💽 permission authorized by user ✅")
+                    print("[🚨 Arek 🚨] 💽 permission authorized by user ✅")
                     return completion(.Authorized)
                 case .restricted, .denied:
-                    print("💽 permission denied by user ⛔️")
+                    print("[🚨 Arek 🚨] 💽 permission denied by user ⛔️")
                     return completion(.Denied)
                 case .notDetermined:
-                    print("💽 permission not determined 🤔")
+                    print("[🚨 Arek 🚨] 💽 permission not determined 🤔")
                     return completion(.NotDetermined)
                 }
             }
         } else {
-            print("💽 permission denied by iOS ⛔️")
+            print("[🚨 Arek 🚨] 💽 permission denied by iOS ⛔️")
             return completion(.Denied)
         }
     }

@@ -19,6 +19,10 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
                    reEnablePopupData: ArekPopupData(title: "Push notifications service", message: "re enable 🙏"))
     }
     
+    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+    }
+    
     open func status(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().getNotificationSettings { (settings) in
@@ -46,14 +50,14 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { (granted, error) in
                 if let _ = error {
-                    print("Push notifications permission not determined 🤔, error: \(error)")
+                    print("[🚨 Arek 🚨] Push notifications permission not determined 🤔, error: \(error)")
                     return completion(.NotDetermined)
                 }
                 if granted {
-                    print("Push notifications permission authorized by user ✅")
+                    print("[🚨 Arek 🚨] Push notifications permission authorized by user ✅")
                     return completion(.Authorized)
                 }
-                print("Push notifications permission denied by user ⛔️")
+                print("[🚨 Arek 🚨] Push notifications permission denied by user ⛔️")
                 return completion(.Denied)
             }
         } else if #available(iOS 9.0, *) {

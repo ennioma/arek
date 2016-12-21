@@ -16,7 +16,11 @@ open class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
         super.init(initialPopupData: ArekPopupData(title: "I'm ☁️ discoverability", message: "enable"),
                    reEnablePopupData: ArekPopupData(title: "I'm ☁️ discoverability", message: "re enable 🙏"))
     }
-        
+    
+    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+    }
+    
     open func status(completion: @escaping ArekPermissionResponse) {
         CKContainer.default().status(forApplicationPermission: CKApplicationPermissions.userDiscoverability, completionHandler: { applicationPermissionStatus, error in
             
@@ -41,7 +45,7 @@ open class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
         CKContainer.default().accountStatus { (accountStatus, error) in
             if let _ = error {
-                print("☁️ accountStatus not determined 🤔 error: \(error)")
+                print("[🚨 Arek 🚨] ☁️ accountStatus not determined 🤔 error: \(error)")
                 return completion(.NotDetermined)
             }
             
@@ -49,25 +53,25 @@ open class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
             case .available, .restricted:
                 CKContainer.default().requestApplicationPermission(CKApplicationPermissions.userDiscoverability,  completionHandler: { applicationPermissionStatus, error in
                     if let _ = error {
-                        print("☁️ discoverability not determined 🤔 error: \(error)")
+                        print("[🚨 Arek 🚨] ☁️ discoverability not determined 🤔 error: \(error)")
                         return completion(.NotDetermined)
                     }
                     switch applicationPermissionStatus {
                     case .denied:
-                        print("☁️ discoverability denied by user ⛔️")
+                        print("[🚨 Arek 🚨] ☁️ discoverability denied by user ⛔️")
                         return completion(.Denied)
                     case .granted:
-                        print("☁️ discoverability permission authorized by user ✅")
+                        print("[🚨 Arek 🚨] ☁️ discoverability permission authorized by user ✅")
                         return completion(.Authorized)
                     case .couldNotComplete, .initialState:
                         return completion(.NotDetermined)
                     }
                 })
             case .noAccount:
-                print("☁️ account not configured ⛔️")
+                print("[🚨 Arek 🚨] ☁️ account not configured ⛔️")
                 return completion(.Denied)
             case .couldNotDetermine:
-                print("☁️ account not determined 🤔")
+                print("[🚨 Arek 🚨] ☁️ account not determined 🤔")
                 return completion(.NotDetermined)
             }
         }
