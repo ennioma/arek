@@ -13,8 +13,8 @@ open class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekPhoto"
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "[🚨 Arek 🚨] I'm 🌅", message: "enable"),
-                   reEnablePopupData: ArekPopupData(title: "[🚨 Arek 🚨] I'm 🌅", message: "re enable 🙏"))
+        super.init(initialPopupData: ArekPopupData(title: "I'm 🌅", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "I'm 🌅", message: "re enable 🙏"))
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {
