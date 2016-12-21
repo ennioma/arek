@@ -16,11 +16,7 @@ open class ArekReminders: ArekBasePermission, ArekPermissionProtocol {
         super.init(initialPopupData: ArekPopupData(title: "I'm 🎗", message: "enable"),
                    reEnablePopupData: ArekPopupData(title: "I'm 🎗", message: "re enable 🙏"))
     }
-    
-    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-    }
-    
+
     open func status(completion: @escaping ArekPermissionResponse) {
         let status = EKEventStore.authorizationStatus(for: .reminder)
         switch status {

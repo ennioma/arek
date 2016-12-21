@@ -16,11 +16,7 @@ open class ArekSpeechRecognizer: ArekBasePermission, ArekPermissionProtocol {
         super.init(initialPopupData: ArekPopupData(title: "I'm 🗣", message: "enable"),
                    reEnablePopupData: ArekPopupData(title: "I'm 🗣", message: "re enable 🙏"))
     }
-    
-    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-    }
-    
+
     open func status(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 10.0, *) {
             let status = SFSpeechRecognizer.authorizationStatus()

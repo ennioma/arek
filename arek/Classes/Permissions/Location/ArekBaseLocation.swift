@@ -22,11 +22,7 @@ public class ArekBaseLocation: ArekBasePermission, ArekPermissionProtocol {
         super.init(initialPopupData: ArekPopupData(title: "Location service", message: "enable"),
                    reEnablePopupData: ArekPopupData(title: "Location service", message: "re enable 🙏"))
     }
-    
-    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-    }
-    
+
     public func status(completion: @escaping ArekPermissionResponse) {
         guard CLLocationManager.locationServicesEnabled() else { return completion(.NotDetermined) }
         

@@ -16,11 +16,7 @@ open class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
         super.init(initialPopupData: ArekPopupData(title: "[🚨 Arek 🚨] I'm 🌅", message: "enable"),
                    reEnablePopupData: ArekPopupData(title: "[🚨 Arek 🚨] I'm 🌅", message: "re enable 🙏"))
     }
-    
-    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-    }
-    
+
     open func status(completion: @escaping ArekPermissionResponse) {
         switch PHPhotoLibrary.authorizationStatus() {
         case .notDetermined:

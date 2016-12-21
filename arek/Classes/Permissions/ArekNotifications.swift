@@ -18,11 +18,7 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
         super.init(initialPopupData: ArekPopupData(title: "Push notifications service", message: "enable"),
                    reEnablePopupData: ArekPopupData(title: "Push notifications service", message: "re enable 🙏"))
     }
-    
-    public override init(configuration: ArekConfiguration?, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-    }
-    
+
     open func status(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().getNotificationSettings { (settings) in

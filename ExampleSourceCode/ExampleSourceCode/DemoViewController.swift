@@ -20,6 +20,9 @@ class DemoViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let c = ArekConfiguration(frequency: .Always, presentInitialPopup: false, presentReEnablePopup: true)
+        let media = ArekMediaLibrary(configuration: c)
+        
         let permissionsTV = UITableView()
         permissionsTV.backgroundColor = #colorLiteral(red: 0.8039215803, green: 0.8039215803, blue: 0.8039215803, alpha: 1)
         permissionsTV.dataSource = self
