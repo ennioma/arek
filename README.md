@@ -94,7 +94,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 0.9.0'
+    pod 'arek', '~> 0.9.1'
 end
 ```
 
@@ -105,7 +105,19 @@ $ pod install
 ## Carthage
 
 ```ruby
-github "ennioma/arek" ~> 0.9.0
+github "ennioma/arek" ~> 0.9.1
+```
+
+## Swift Package Manager
+```ruby
+import PackageDescription
+
+let package = Package(
+  name: "YourApp",
+  dependencies: [
+    .Package(url: "https://github.com/ennioma/arek.git", version: Version(0.9.1))
+  ]
+)
 ```
 
 ## Add AREK source code to your project
