@@ -115,7 +115,7 @@ import PackageDescription
 let package = Package(
   name: "YourApp",
   dependencies: [
-    .Package(url: "https://github.com/ennioma/arek.git", version: Version(0.9.1))
+    .Package(url: "https://github.com/ennioma/arek.git", versionMajor: 0, minor: 9)
   ]
 )
 ```
