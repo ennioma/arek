@@ -7,8 +7,7 @@
 //
 
 import UIKit
-
-import HealthKit
+import arek
 
 class DemoViewController: UIViewController {
     weak var permissionsTV: UITableView!

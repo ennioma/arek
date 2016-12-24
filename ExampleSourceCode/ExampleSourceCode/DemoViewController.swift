@@ -8,8 +8,6 @@
 
 import UIKit
 
-import HealthKit
-
 class DemoViewController: UIViewController {
     weak var permissionsTV: UITableView!
     

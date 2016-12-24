@@ -23,6 +23,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 - [x] Health
 - [x] Location (Always)
 - [x] Location (When in use)
+- [x] Media Library
 - [x] Microphone
 - [x] Notifications
 - [x] Photo
@@ -121,7 +122,9 @@ For any information or request feel free to contact me on twitter (@ennioma).
 AREK is available under the MIT license. See the LICENSE file for more info.
 
 # TODO:
-- [] add tests to every permission type  
+- [] restore tests to every permission type  
 - [] add Core Motion  
 - [] add Bluetooth  
 - [] Localize internal messages
+- [] Add support to Swift Package Manager 
+
