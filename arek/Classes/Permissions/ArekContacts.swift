@@ -9,22 +9,15 @@
 import Foundation
 import Contacts
 
-class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
-    var identifier: String = "ArekContacts"
+open class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
+    open var identifier: String = "ArekContacts"
 
-    override public init() {
-        super.init()
-        super.permission = self
-        
-        self.initialPopupData = ArekPopupData(title: "Contacs service", message: "enable")
-        self.reEnablePopupData = ArekPopupData(title: "Contacts service", message: "re enable 🙏")
+    public init() {
+        super.init(initialPopupData: ArekPopupData(title: "I'm 🎫", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "I'm 🎫", message: "re enable 🙏"))
     }
     
-    required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
-    }
-    
-    func status(completion: @escaping ArekPermissionResponse) {
+    open func status(completion: @escaping ArekPermissionResponse) {
         switch Contacts.CNContactStore.authorizationStatus(for: CNEntityType.contacts) {
         case .authorized:
             return completion(.Authorized)
@@ -35,24 +28,18 @@ class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
         }
     }
     
-    func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
-    func askForPermission(completion: @escaping ArekPermissionResponse) {
+    open func askForPermission(completion: @escaping ArekPermissionResponse) {
         Contacts.CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler:  { (granted, error) in
-            if granted {
-                NSLog("Contacts authorized by user ✅")
-                return completion(.Authorized)
-            }
-            
             if let _ = error {
+                print("[🚨 Arek 🚨] 🎫 not determined 🤔 error: \(error)")
                 return completion(.NotDetermined)
             }
-            
-            NSLog("Contacts authorized by user ⛔️")
+
+            if granted {
+                print("[🚨 Arek 🚨] 🎫 permission authorized by user ✅")
+                return completion(.Authorized)
+            }
+            print("[🚨 Arek 🚨] 🎫 denied by user ⛔️")
             return completion(.Denied)
         })
     }

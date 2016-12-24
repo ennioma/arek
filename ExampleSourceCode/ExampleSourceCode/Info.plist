@@ -32,13 +32,21 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-    <key>NSPhotoLibraryUsageDescription</key>
-    <string>Test message to ask 🙏 to access Photo Library</string>
-    <key>NSRemindersUsageDescription</key>
-    <string>Test message to ask 🙏 to access Reminders</string>
-    <key>NSCameraUsageDescription</key>
-    <string>Test message to ask 🙏 to access Camera</string>
-    <key>NSLocationAlwaysUsageDescription</key>
-    <string>Test message to ask 🙏 to access Location</string>
+	<key>NSCalendarsUsageDescription</key>
+	<string>Test message to ask 🙏 to access Calendar</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Test message to ask 🙏 to access Camera</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Test message to ask 🙏 to access Contacts</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Test message to ask 🙏 to access Music</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Test message to ask 🙏 to access Photo Library</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Test message to ask 🙏 to access Reminders</string>
+	<key>NSSpeechRecognitionUsageDescription</key>
+	<string>Test message to ask 🙏 to access Speech Recognition</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Test message to ask 🙏 to access Location</string>
 </dict>
 </plist>

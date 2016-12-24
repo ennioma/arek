@@ -18,24 +18,11 @@ public class ArekBaseLocation: ArekBasePermission, ArekPermissionProtocol {
     }
     var locationDelegate: ArekBaseLocationDelegate?
     
-    override public init() {
-        super.init()
-        super.permission = self
-        
-        self.initialPopupData = ArekPopupData(title: "Location service", message: "enable")
-        self.reEnablePopupData = ArekPopupData(title: "Location service", message: "re enable 🙏")
+    public init() {
+        super.init(initialPopupData: ArekPopupData(title: "Location service", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "Location service", message: "re enable 🙏"))
     }
-    
-    public required init(configuration: ArekConfiguration, initialPopupData: ArekPopupData?, reEnablePopupData: ArekPopupData?) {
-        fatalError("init(configuration:initialPopupData:reEnablePopupData:) has not been implemented")
-    }
-    
-    public func manage(completion: @escaping ArekPermissionResponse) {
-        self.status { (status) in
-            self.managePermission(status: status, completion: completion)
-        }
-    }
-    
+
     public func status(completion: @escaping ArekPermissionResponse) {
         guard CLLocationManager.locationServicesEnabled() else { return completion(.NotDetermined) }
         

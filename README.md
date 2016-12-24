@@ -23,10 +23,12 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 - [x] Health
 - [x] Location (Always)
 - [x] Location (When in use)
+- [x] Media Library
 - [x] Microphone
 - [x] Notifications
 - [x] Photo
 - [x] Reminders
+- [x] Speech Recognizer 
 
 # How to use AREK
 ## Check permission status
@@ -92,7 +94,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 0.0.9'
+    pod 'arek', '~> 0.9.0'
 end
 ```
 
@@ -103,7 +105,7 @@ $ pod install
 ## Carthage
 
 ```ruby
-github "ennioma/arek" ~> 0.0.9
+github "ennioma/arek" ~> 0.9.0
 ```
 
 ## Add AREK source code to your project
@@ -114,8 +116,15 @@ Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.
 ## Contribute
 Contributions are welcome 🙌  If you'd like to improve this projects I've shared with the community, just open an issue or raise a PR.
 
+For any information or request feel free to contact me on twitter (@ennioma).
+
 ## License
 AREK is available under the MIT license. See the LICENSE file for more info.
 
 # TODO:
-[] add tests to every permission type  
+- [] restore tests to every permission type  
+- [] add Core Motion  
+- [] add Bluetooth  
+- [] Localize internal messages
+- [] Add support to Swift Package Manager 
+
