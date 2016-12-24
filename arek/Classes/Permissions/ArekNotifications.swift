@@ -11,23 +11,15 @@ import Foundation
 import UIKit
 import UserNotifications
 
-public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
-    public var identifier: String = "ArekNotifications"
+open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
+    open var identifier: String = "ArekNotifications"
     
-    override public init() {
-        super.init()
-        super.permission = self
-        
-        self.initialPopupData = ArekPopupData(title: "Push notifications service", message: "enable")
-        self.reEnablePopupData = ArekPopupData(title: "Push notifications service", message: "re enable 🙏")
+    public init() {
+        super.init(initialPopupData: ArekPopupData(title: "Push notifications service", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "Push notifications service", message: "re enable 🙏"))
     }
-    
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-        super.permission = self
-    }
-    
-    public func status(completion: @escaping ArekPermissionResponse) {
+
+    open func status(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().getNotificationSettings { (settings) in
                 switch settings.authorizationStatus {
@@ -49,20 +41,19 @@ public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
             return completion(.Authorized)
         }
     }
-    
-    public func askForPermission(completion: @escaping ArekPermissionResponse) {
+        
+    open func askForPermission(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { (granted, error) in
-                if granted {
-                    print("Notifications permission authorized by user ✅")
-                    return completion(.Authorized)
-                }
-                
                 if let _ = error {
+                    print("[🚨 Arek 🚨] Push notifications permission not determined 🤔, error: \(error)")
                     return completion(.NotDetermined)
                 }
-                
-                print("Notifications permission authorized by user ⛔️")
+                if granted {
+                    print("[🚨 Arek 🚨] Push notifications permission authorized by user ✅")
+                    return completion(.Authorized)
+                }
+                print("[🚨 Arek 🚨] Push notifications permission denied by user ⛔️")
                 return completion(.Denied)
             }
         } else if #available(iOS 9.0, *) {
@@ -71,3 +62,4 @@ public class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
         }
     }
 }
+

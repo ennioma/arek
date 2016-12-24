@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'arek'
-  s.version          = '0.0.9'
+  s.version          = '0.9.0'
   s.summary          = 'AREK is a clean and easy to use wrapper over any kind of iOS permission.'
   s.homepage         = 'https://github.com/ennioma/arek'
   s.license          = { :type => 'MIT', :file => 'LICENSE'}
@@ -34,7 +34,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'Events' do |ss|
     ss.dependency 'arek/Core'
-    ss.source_files = 'arek/Classes/Permissions/Event/**.swift'
+    ss.source_files = 'arek/Classes/Permissions/ArekEvents.swift'
     ss.frameworks = 'EventKit'
   end
 
@@ -50,13 +50,19 @@ Pod::Spec.new do |s|
     ss.frameworks = 'CoreLocation'
   end
 
+  s.subspec 'MediaLibrary' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekMediaLibrary.swift'
+    ss.frameworks = 'MediaPlayer'
+  end
+
   s.subspec 'Microphone' do |ss|
     ss.dependency 'arek/Core'
     ss.source_files = 'arek/Classes/Permissions/ArekMicrophone.swift'
     ss.frameworks = 'AVFoundation'
   end
 
-  s.subspec 'Notification' do |ss|
+  s.subspec 'Notifications' do |ss|
     ss.dependency 'arek/Core'
     ss.source_files = 'arek/Classes/Permissions/ArekNotifications.swift'
   end
@@ -69,7 +75,15 @@ Pod::Spec.new do |s|
 
   s.subspec 'Reminders' do |ss|
     ss.dependency 'arek/Core'
-    ss.source_files = 'arek/Classes/Permissions/Event/**.swift'
+    ss.source_files = 'arek/Classes/Permissions/ArekReminders.swift'
     ss.frameworks = 'EventKit'
   end
+
+  s.subspec 'SpeechRecognizer' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekSpeechRecognizer.swift'
+    ss.frameworks = 'Speech'
+    ss.ios.deployment_target = '9.0'
+  end
+
 end

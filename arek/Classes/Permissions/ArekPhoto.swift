@@ -9,23 +9,15 @@
 import Foundation
 import Photos
 
-public class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
-    public var identifier: String = "ArekPhoto"
+open class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
+    open var identifier: String = "ArekPhoto"
     
-    override public init() {
-        super.init()
-        super.permission = self
-        
-        self.initialPopupData = ArekPopupData(title: "Photo service", message: "enable")
-        self.reEnablePopupData = ArekPopupData(title: "Photo service", message: "re enable 🙏")
+    public init() {
+        super.init(initialPopupData: ArekPopupData(title: "I'm 🌅", message: "enable"),
+                   reEnablePopupData: ArekPopupData(title: "I'm 🌅", message: "re enable 🙏"))
     }
-    
-    required public init(configuration: ArekConfiguration, initialPopupData: ArekPopupData, reEnablePopupData: ArekPopupData) {
-        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
-        super.permission = self
-    }
-    
-    public func status(completion: @escaping ArekPermissionResponse) {
+
+    open func status(completion: @escaping ArekPermissionResponse) {
         switch PHPhotoLibrary.authorizationStatus() {
         case .notDetermined:
             return completion(.NotDetermined)
@@ -35,17 +27,21 @@ public class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
             return completion(.Authorized)
         }
     }
-    
-    public func askForPermission(completion: @escaping ArekPermissionResponse) {
+        
+    open func askForPermission(completion: @escaping ArekPermissionResponse) {
         PHPhotoLibrary.requestAuthorization { (status) in
             switch status {
             case .notDetermined:
+                print("[🚨 Arek 🚨] 🌅 permission not determined 🤔")
                 return completion(.NotDetermined)
             case .restricted, .denied:
+                print("[🚨 Arek 🚨] 🌅 permission denied by user ⛔️")
                 return completion(.Denied)
             case.authorized:
+                print("[🚨 Arek 🚨] 🌅 permission authorized by user ✅")
                 return completion(.Authorized)
             }
         }
     }
 }
+
