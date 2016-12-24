@@ -138,5 +138,4 @@ AREK is available under the MIT license. See the LICENSE file for more info.
 - [] add Core Motion  
 - [] add Bluetooth  
 - [] Localize internal messages
-- [] Add support to Swift Package Manager 
 
