@@ -24,18 +24,31 @@ open class ArekBluetoothDelegate: NSObject, CBPeripheralManagerDelegate {
     }
     
     public func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
+
         switch peripheral.state {
-        case .unsupported, .poweredOff, .unauthorized:
+        case .unauthorized:
             print("[🚨 Arek 🚨] bluetooth permission denied by user ⛔️")
-            self.completion?(.Denied)
+            if let completion = self.completion {
+                return completion(.Denied)
+            }
             break
         case .poweredOn:
             print("[🚨 Arek 🚨] bluetooth permission authorized by user ✅")
-            self.completion?(.Authorized)
+            if let completion = self.completion {
+                return completion(.Authorized)
+            }
             break
-        case .resetting, .unknown:
-            print("[🚨 Arek 🚨] bluetooth permission not determined 🤔")
-            self.completion?(.NotDetermined)
+        case .unsupported, .poweredOff, .resetting:
+            print("[🚨 Arek 🚨] bluetooth not available 🚫")
+            if let completion = self.completion {
+                return completion(.NotAvailable)
+            }
+            break
+        case .unknown:
+            print("[🚨 Arek 🚨] bluetooth could not be determined 🤔")
+            if let completion = self.completion {
+                return completion(.NotDetermined)
+            }
             break
         }
     }

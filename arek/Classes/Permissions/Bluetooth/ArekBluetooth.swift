@@ -18,37 +18,39 @@ open class ArekBluetooth: ArekBasePermission, ArekPermissionProtocol {
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {
+        bluetooth.completion = completion
+        
         switch CBPeripheralManager.authorizationStatus() {
         case .restricted, .denied:
-            completion(.Denied)
-            break
+            return completion(.Denied)
         case .notDetermined, .authorized:
             switch bluetooth.bluetoothManager.state {
-            case .unsupported, .poweredOff, .unauthorized:
-                completion(.Denied)
-                break
+            case .unauthorized:
+                return completion(.Denied)
             case .poweredOn:
-                completion(.Authorized)
-                break
-            case .resetting, .unknown:
-                completion(.NotDetermined)
-                break
+                return completion(.Authorized)
+            case .unsupported, .poweredOff, .resetting:
+                return completion(.NotAvailable)
+            case .unknown:
+                return completion(.NotDetermined)
             }
         }
     }
     
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
+        bluetooth.completion = completion
+        
         switch bluetooth.bluetoothManager.state {
-        case .poweredOff:
-            print("[🚨 Arek 🚨] bluetooth is powered off ⛔️")
-            completion(.Denied)
-            break
-        case .unsupported, .unauthorized, .resetting, .unknown:
-            print("[🚨 Arek 🚨] bluetooth could not be determined ⛔️")
-            completion(.Denied)
-            break
+        case .unsupported, .poweredOff, .resetting:
+            print("[🚨 Arek 🚨] bluetooth not available 🚫")
+            return completion(.NotAvailable)
+        case .unauthorized:
+            print("[🚨 Arek 🚨] bluetooth not authorized by the user ⛔️")
+            return completion(.Denied)
+        case .unknown:
+            print("[🚨 Arek 🚨] bluetooth could not be determined 🤔")
+            return completion(.NotDetermined)
         case .poweredOn:
-            bluetooth.completion = completion
             bluetooth.bluetoothManager?.startAdvertising(nil)
             bluetooth.bluetoothManager?.stopAdvertising()
             break
