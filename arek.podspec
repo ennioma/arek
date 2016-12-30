@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'arek'
-  s.version          = '0.9.1'
+  s.version          = '1.0.0'
   s.summary          = 'AREK is a clean and easy to use wrapper over any kind of iOS permission.'
   s.homepage         = 'https://github.com/ennioma/arek'
   s.license          = { :type => 'MIT', :file => 'LICENSE'}
@@ -12,6 +12,12 @@ Pod::Spec.new do |s|
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'arek/Classes/Core/**/*.swift'
+  end
+
+  s.subspec 'Bluetooth' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/Bluetooth/*.swift'
+    ss.frameworks = 'CoreBlueetooth'
   end
 
   s.subspec 'Camera' do |ss|
@@ -60,6 +66,12 @@ Pod::Spec.new do |s|
     ss.dependency 'arek/Core'
     ss.source_files = 'arek/Classes/Permissions/ArekMicrophone.swift'
     ss.frameworks = 'AVFoundation'
+  end
+
+  s.subspec 'Motion' do |ss|
+    ss.dependency 'arek/Core'
+    ss.source_files = 'arek/Classes/Permissions/ArekMotion.swift'
+    ss.frameworks = 'CoreMotion'
   end
 
   s.subspec 'Notifications' do |ss|
