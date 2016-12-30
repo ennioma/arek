@@ -10,6 +10,10 @@
 		75405D9B1DFA13A600A2BFDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75405D9A1DFA13A600A2BFDB /* Assets.xcassets */; };
 		75405DA91DFA13A600A2BFDB /* ExampleSourceCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405DA81DFA13A600A2BFDB /* ExampleSourceCodeTests.swift */; };
 		75405DB41DFA13A600A2BFDB /* ExampleSourceCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405DB31DFA13A600A2BFDB /* ExampleSourceCodeUITests.swift */; };
+		757598E41E16AB6D007E8DDF /* ArekMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757598E01E16AB6D007E8DDF /* ArekMotion.swift */; };
+		757598E51E16AB6D007E8DDF /* ArekBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757598E21E16AB6D007E8DDF /* ArekBluetooth.swift */; };
+		757598E61E16AB6D007E8DDF /* ArekBluetoothDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757598E31E16AB6D007E8DDF /* ArekBluetoothDelegate.swift */; };
+		757598EA1E16B5B9007E8DDF /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 757598E91E16B5B9007E8DDF /* CoreMotion.framework */; };
 		75B2C1B91DFA13E800856E76 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2C1B61DFA13E800856E76 /* AppDelegate.swift */; };
 		75B2C1BA1DFA13E800856E76 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2C1B71DFA13E800856E76 /* DemoViewController.swift */; };
 		75B2C1BB1DFA13E800856E76 /* DemoViewController+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2C1B81DFA13E800856E76 /* DemoViewController+Table.swift */; };
@@ -32,7 +36,6 @@
 		75B2C1EC1DFA13F600856E76 /* ArekLocationAlways.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2C1D71DFA13F600856E76 /* ArekLocationAlways.swift */; };
 		75B2C1ED1DFA13F600856E76 /* ArekLocationWhenInUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2C1D81DFA13F600856E76 /* ArekLocationWhenInUse.swift */; };
 		75BE32121DFA170E000A4060 /* ArekCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE32111DFA170E000A4060 /* ArekCloudKit.swift */; };
-		75BE32151DFA1750000A4060 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75BE32141DFA1750000A4060 /* CloudKit.framework */; };
 		F5E985921E0A85E4004ABDCE /* ArekEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9858E1E0A85E4004ABDCE /* ArekEvents.swift */; };
 		F5E985931E0A85E4004ABDCE /* ArekMediaLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9858F1E0A85E4004ABDCE /* ArekMediaLibrary.swift */; };
 		F5E985941E0A85E4004ABDCE /* ArekReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E985901E0A85E4004ABDCE /* ArekReminders.swift */; };
@@ -66,6 +69,10 @@
 		75405DAF1DFA13A600A2BFDB /* ExampleSourceCodeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExampleSourceCodeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		75405DB31DFA13A600A2BFDB /* ExampleSourceCodeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExampleSourceCodeUITests.swift; sourceTree = "<group>"; };
 		75405DB51DFA13A600A2BFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		757598E01E16AB6D007E8DDF /* ArekMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekMotion.swift; sourceTree = "<group>"; };
+		757598E21E16AB6D007E8DDF /* ArekBluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekBluetooth.swift; sourceTree = "<group>"; };
+		757598E31E16AB6D007E8DDF /* ArekBluetoothDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekBluetoothDelegate.swift; sourceTree = "<group>"; };
+		757598E91E16B5B9007E8DDF /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		75B2C1B61DFA13E800856E76 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		75B2C1B71DFA13E800856E76 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		75B2C1B81DFA13E800856E76 /* DemoViewController+Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DemoViewController+Table.swift"; sourceTree = "<group>"; };
@@ -100,7 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				75BE32151DFA1750000A4060 /* CloudKit.framework in Frameworks */,
+				757598EA1E16B5B9007E8DDF /* CoreMotion.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,7 +157,7 @@
 				75405D9A1DFA13A600A2BFDB /* Assets.xcassets */,
 				75B2C1B71DFA13E800856E76 /* DemoViewController.swift */,
 				75B2C1B81DFA13E800856E76 /* DemoViewController+Table.swift */,
-				75405D9F1DFA13A600A2BFDB /* Info.plist */,
+				757598E81E16AEC4007E8DDF /* Supporting Files */,
 			);
 			path = ExampleSourceCode;
 			sourceTree = "<group>";
@@ -171,6 +178,23 @@
 				75405DB51DFA13A600A2BFDB /* Info.plist */,
 			);
 			path = ExampleSourceCodeUITests;
+			sourceTree = "<group>";
+		};
+		757598E11E16AB6D007E8DDF /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				757598E21E16AB6D007E8DDF /* ArekBluetooth.swift */,
+				757598E31E16AB6D007E8DDF /* ArekBluetoothDelegate.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		757598E81E16AEC4007E8DDF /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				75405D9F1DFA13A600A2BFDB /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		75B2C1BC1DFA13F600856E76 /* arek */ = {
@@ -232,10 +256,12 @@
 				75B2C1CC1DFA13F600856E76 /* ArekHealth.swift */,
 				F5E9858F1E0A85E4004ABDCE /* ArekMediaLibrary.swift */,
 				75B2C1CD1DFA13F600856E76 /* ArekMicrophone.swift */,
+				757598E01E16AB6D007E8DDF /* ArekMotion.swift */,
 				75B2C1CE1DFA13F600856E76 /* ArekNotifications.swift */,
 				75B2C1CF1DFA13F600856E76 /* ArekPhoto.swift */,
 				F5E985901E0A85E4004ABDCE /* ArekReminders.swift */,
 				F5E985911E0A85E4004ABDCE /* ArekSpeechRecognizer.swift */,
+				757598E11E16AB6D007E8DDF /* Bluetooth */,
 				75B2C1D41DFA13F600856E76 /* Location */,
 			);
 			path = Permissions;
@@ -255,6 +281,7 @@
 		75BE32131DFA174F000A4060 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				757598E91E16B5B9007E8DDF /* CoreMotion.framework */,
 				75BE32141DFA1750000A4060 /* CloudKit.framework */,
 			);
 			name = Frameworks;
@@ -408,14 +435,17 @@
 				75B2C1E61DFA13F600856E76 /* ArekPhoto.swift in Sources */,
 				75B2C1EA1DFA13F600856E76 /* ArekBaseLocation.swift in Sources */,
 				F5E985941E0A85E4004ABDCE /* ArekReminders.swift in Sources */,
+				757598E41E16AB6D007E8DDF /* ArekMotion.swift in Sources */,
 				75B2C1E41DFA13F600856E76 /* ArekMicrophone.swift in Sources */,
 				F5E985921E0A85E4004ABDCE /* ArekEvents.swift in Sources */,
 				75B2C1E21DFA13F600856E76 /* ArekContacts.swift in Sources */,
+				757598E61E16AB6D007E8DDF /* ArekBluetoothDelegate.swift in Sources */,
 				75B2C1DF1DFA13F600856E76 /* ArekPermissionStatus.swift in Sources */,
 				75B2C1EB1DFA13F600856E76 /* ArekBaseLocationDelegate.swift in Sources */,
 				75B2C1BB1DFA13E800856E76 /* DemoViewController+Table.swift in Sources */,
 				75B2C1EC1DFA13F600856E76 /* ArekLocationAlways.swift in Sources */,
 				75B2C1BA1DFA13E800856E76 /* DemoViewController.swift in Sources */,
+				757598E51E16AB6D007E8DDF /* ArekBluetooth.swift in Sources */,
 				F5E985931E0A85E4004ABDCE /* ArekMediaLibrary.swift in Sources */,
 				75B2C1E01DFA13F600856E76 /* ArekPopupData.swift in Sources */,
 				75BE32121DFA170E000A4060 /* ArekCloudKit.swift in Sources */,
@@ -550,6 +580,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
 				INFOPLIST_FILE = ExampleSourceCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -565,6 +596,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "";
 				INFOPLIST_FILE = ExampleSourceCode/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

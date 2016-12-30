@@ -142,6 +142,8 @@ open class ArekBasePermission {
             return completion(.Denied)
         case .Authorized:
             return completion(.Authorized)
+        case .NotAvailable:
+            break
         }
     }
 }

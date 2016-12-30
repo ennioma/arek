@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 
+import arek
+
 extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
     private var cellId: String {
         get {
@@ -36,22 +38,14 @@ extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
     
     @objc(tableView:cellForRowAtIndexPath:) func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let permission = self.permissions[indexPath.row]
-
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId)
             ?? UITableViewCell(style: .default, reuseIdentifier: cellId)
-
+        
         cell.textLabel?.textAlignment = .center
         
-        var symbol = ""
         permission.status { (status) in
-            switch status {
-            case .Authorized:
-                symbol = "✅"
-            case .Denied:
-                symbol = "⛔️"
-            case .NotDetermined:
-                symbol = "🤔"
-            }
+            let symbol = self.symbol(status: status)
             
             DispatchQueue.main.async {
                 cell.textLabel?.text = "\(symbol) \(permission.identifier) \(symbol)"
@@ -64,17 +58,8 @@ extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let permission = self.permissions[indexPath.row]
         
-        var symbol = ""
-
         permission.manage { (status) in
-            switch status {
-            case .Authorized:
-                symbol = "✅"
-            case .Denied:
-                symbol = "⛔️"
-            case .NotDetermined:
-                symbol = "🤔"
-            }
+            let symbol = self.symbol(status: status)
             
             print("\(symbol) \(permission.identifier) \(symbol)")
             
@@ -97,5 +82,18 @@ extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
         headerView.backgroundColor = #colorLiteral(red: 0.4745098054, green: 0.8392156959, blue: 0.9764705896, alpha: 1)
         
         return headerView
+    }
+    
+    func symbol(status: ArekPermissionStatus) -> String {
+        switch status {
+        case .Authorized:
+            return "✅"
+        case .Denied:
+            return "⛔️"
+        case .NotDetermined:
+            return "🤔"
+        case .NotAvailable:
+            return "🚫"
+        }
     }
 }

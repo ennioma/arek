@@ -12,4 +12,5 @@ public enum ArekPermissionStatus {
     case Authorized
     case Denied
     case NotDetermined
+    case NotAvailable
 }

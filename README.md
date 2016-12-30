@@ -17,6 +17,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 # Implemented permissions
 
 - [x] Camera
+- [x] Bluetooth 
 - [x] CloudKit
 - [x] Contacts
 - [x] Events (Calendar)
@@ -25,6 +26,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 - [x] Location (When in use)
 - [x] Media Library
 - [x] Microphone
+- [x] Motion
 - [x] Notifications
 - [x] Photo
 - [x] Reminders
@@ -38,7 +40,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
     permission.status { (status) in
         switch status {
         case .Authorized:
-            print("Yoah! ✅")
+            print("! ✅ !")
         case .Denied:
             print("! ⛔️ !" )
         case .NotDetermined:
@@ -94,7 +96,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 0.9.1'
+    pod 'arek', '~> 1.0.0'
 end
 ```
 
@@ -105,7 +107,7 @@ $ pod install
 ## Carthage
 
 ```ruby
-github "ennioma/arek" ~> 0.9.1
+github "ennioma/arek" ~> 1.0.0
 ```
 
 ## Swift Package Manager
@@ -115,7 +117,7 @@ import PackageDescription
 let package = Package(
   name: "YourApp",
   dependencies: [
-    .Package(url: "https://github.com/ennioma/arek.git", versionMajor: 0, minor: 9)
+    .Package(url: "https://github.com/ennioma/arek.git", versionMajor: 1, minor: 0)
   ]
 )
 ```
@@ -135,7 +137,5 @@ AREK is available under the MIT license. See the LICENSE file for more info.
 
 # TODO:
 - [] restore tests to every permission type  
-- [] add Core Motion  
-- [] add Bluetooth  
 - [] Localize internal messages
 
