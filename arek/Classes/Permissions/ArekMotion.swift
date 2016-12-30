@@ -31,12 +31,23 @@ open class ArekMotion: ArekBasePermission, ArekPermissionProtocol {
         }
         
         self.motionManager.queryActivityStarting(from: Date(), to: Date(), to: motionHandlerQueue) { activities, error in
-            if  error?._code ?? 0 > 0 {
-                return completion(.Denied)
+            self.motionManager.stopActivityUpdates()
+            
+            if let error = error as? NSError {
+                if error.code == Int(CMErrorMotionActivityNotAuthorized.rawValue) ||
+                    error.code == Int(CMErrorNotAuthorized.rawValue) {
+
+                    DispatchQueue.main.async {
+                        return completion(.Denied)
+                    }
+                } else {
+                    DispatchQueue.main.async {
+                        return completion(.NotDetermined)
+                    }
+                }
             } else {
                 return completion(.Authorized)
             }
-            self.motionManager.stopActivityUpdates()
         }
     }
     

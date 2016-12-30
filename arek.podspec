@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.subspec 'Bluetooth' do |ss|
     ss.dependency 'arek/Core'
     ss.source_files = 'arek/Classes/Permissions/Bluetooth/*.swift'
-    ss.frameworks = 'CoreBlueetooth'
+    ss.frameworks = 'CoreBluetooth'
   end
 
   s.subspec 'Camera' do |ss|
