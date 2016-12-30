@@ -43,7 +43,7 @@
 		75BCA2801DF34D5F008DE0E9 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		75BCA2811DF34D5F008DE0E9 /* DemoViewController+Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DemoViewController+Table.swift"; sourceTree = "<group>"; };
 		79B545C944A596DEFDE61F89 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		7F098B8C1E0A746700931032 /* arek_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = arek_Example.entitlements; sourceTree = "<group>"; };
+		7F098B8C1E0A746700931032 /* arek_Example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = arek_Example.entitlements; sourceTree = SOURCE_ROOT; };
 		7F098B8D1E0A746900931032 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		8FC7D6EEDE91A2965CEDDF3C /* Pods-arek_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-arek_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-arek_Tests/Pods-arek_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		E7608EDDBACEC07502992048 /* Pods-arek_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-arek_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-arek_Example/Pods-arek_Example.release.xcconfig"; sourceTree = "<group>"; };
@@ -85,7 +85,6 @@
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
-				7F098B8C1E0A746700931032 /* arek_Example.entitlements */,
 				607FACD21AFB9204008FA782 /* Example for arek */,
 				C7DD4ECCB1FF8CFDDAB5DB55 /* Frameworks */,
 				07872756BF36D7162CDBDC4C /* Pods */,
@@ -120,6 +119,7 @@
 		607FACD31AFB9204008FA782 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				7F098B8C1E0A746700931032 /* arek_Example.entitlements */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
 			);
 			name = "Supporting Files";
