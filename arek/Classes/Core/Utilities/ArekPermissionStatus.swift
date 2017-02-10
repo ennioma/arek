@@ -9,8 +9,8 @@
 import Foundation
 
 public enum ArekPermissionStatus {
-    case Authorized
-    case Denied
-    case NotDetermined
-    case NotAvailable
+    case authorized
+    case denied
+    case notDetermined
+    case notAvailable
 }

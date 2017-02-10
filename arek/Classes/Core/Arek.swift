@@ -134,15 +134,15 @@ open class ArekBasePermission {
     
     internal func managePermission(status: ArekPermissionStatus, completion: @escaping ArekPermissionResponse) {
         switch status {
-        case .NotDetermined:
+        case .notDetermined:
             self.manageInitialPopup(completion: completion)
             break
-        case .Denied:
+        case .denied:
             self.presentReEnablePopup()
-            return completion(.Denied)
-        case .Authorized:
-            return completion(.Authorized)
-        case .NotAvailable:
+            return completion(.denied)
+        case .authorized:
+            return completion(.authorized)
+        case .notAvailable:
             break
         }
     }

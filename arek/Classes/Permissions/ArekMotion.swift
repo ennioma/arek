@@ -27,7 +27,7 @@ open class ArekMotion: ArekBasePermission, ArekPermissionProtocol {
     
     open func status(completion: @escaping ArekPermissionResponse) {
         if CMMotionActivityManager.isActivityAvailable() == false {
-            return completion(.NotAvailable)
+            return completion(.notAvailable)
         }
         
         self.motionManager.queryActivityStarting(from: Date(), to: Date(), to: motionHandlerQueue) { activities, error in
@@ -38,22 +38,22 @@ open class ArekMotion: ArekBasePermission, ArekPermissionProtocol {
                     error.code == Int(CMErrorNotAuthorized.rawValue) {
 
                     DispatchQueue.main.async {
-                        return completion(.Denied)
+                        return completion(.denied)
                     }
                 } else {
                     DispatchQueue.main.async {
-                        return completion(.NotDetermined)
+                        return completion(.notDetermined)
                     }
                 }
             } else {
-                return completion(.Authorized)
+                return completion(.authorized)
             }
         }
     }
     
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
         if CMMotionActivityManager.isActivityAvailable() == false {
-            return completion(.NotAvailable)
+            return completion(.notAvailable)
         }
         
         motionManager.queryActivityStarting(from: Date(), to: Date(), to: motionHandlerQueue) { activities, error in
@@ -62,18 +62,18 @@ open class ArekMotion: ArekBasePermission, ArekPermissionProtocol {
                    error.code == Int(CMErrorNotAuthorized.rawValue) {
                     print("[🚨 Arek 🚨] 🏃🏻 permission denied by user ⛔️")
                     DispatchQueue.main.async {
-                        return completion(.Denied)
+                        return completion(.denied)
                     }
                 } else {
                     print("[🚨 Arek 🚨] 🏃🏻 permission not determined 🤔")
                     DispatchQueue.main.async {
-                        return completion(.NotDetermined)
+                        return completion(.notDetermined)
                     }
                 }
             } else {
                 print("[🚨 Arek 🚨] 🏃🏻 permission authorized by user ✅")
                 DispatchQueue.main.async {
-                    return completion(.Authorized)
+                    return completion(.authorized)
                 }
             }
             self.motionManager.stopActivityUpdates()

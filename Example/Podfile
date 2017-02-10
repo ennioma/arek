@@ -2,12 +2,14 @@ use_frameworks!
 
 target 'arek_Example' do
   pod 'arek/Core', :path => '../'
+  pod 'arek/Bluetooth', :path => '../'
   pod 'arek/Camera', :path => '../'
   pod 'arek/CloudKit', :path => '../'
   pod 'arek/Contacts', :path => '../'
   pod 'arek/Events', :path => '../'
   pod 'arek/Health', :path => '../'
   pod 'arek/Location', :path => '../'
+  pod 'arek/Motion', :path => '../'
   pod 'arek/MediaLibrary', :path => '../'
   pod 'arek/Microphone', :path => '../'
   pod 'arek/Notifications', :path => '../'

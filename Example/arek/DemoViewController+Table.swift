@@ -86,13 +86,13 @@ extension DemoViewController: UITableViewDataSource, UITableViewDelegate {
     
     func symbol(status: ArekPermissionStatus) -> String {
         switch status {
-        case .Authorized:
+        case .authorized:
             return "✅"
-        case .Denied:
+        case .denied:
             return "⛔️"
-        case .NotDetermined:
+        case .notDetermined:
             return "🤔"
-        case .NotAvailable:
+        case .notAvailable:
             return "🚫"
         }
     }

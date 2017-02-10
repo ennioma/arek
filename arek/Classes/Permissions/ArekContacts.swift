@@ -20,11 +20,11 @@ open class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
     open func status(completion: @escaping ArekPermissionResponse) {
         switch Contacts.CNContactStore.authorizationStatus(for: CNEntityType.contacts) {
         case .authorized:
-            return completion(.Authorized)
+            return completion(.authorized)
         case .denied, .restricted:
-            return completion(.Denied)
+            return completion(.denied)
         case .notDetermined:
-            return completion(.NotDetermined)
+            return completion(.notDetermined)
         }
     }
     
@@ -32,15 +32,16 @@ open class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
         Contacts.CNContactStore().requestAccess(for: CNEntityType.contacts, completionHandler:  { (granted, error) in
             if let _ = error {
                 print("[🚨 Arek 🚨] 🎫 not determined 🤔 error: \(error)")
-                return completion(.NotDetermined)
+                return completion(.notDetermined)
             }
 
             if granted {
                 print("[🚨 Arek 🚨] 🎫 permission authorized by user ✅")
-                return completion(.Authorized)
+                return completion(.authorized)
             }
+
             print("[🚨 Arek 🚨] 🎫 denied by user ⛔️")
-            return completion(.Denied)
+            return completion(.denied)
         })
     }
 }

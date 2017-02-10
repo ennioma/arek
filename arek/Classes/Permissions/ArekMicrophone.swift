@@ -20,13 +20,13 @@ open class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
     open func status(completion: @escaping ArekPermissionResponse) {
         switch AVAudioSession.sharedInstance().recordPermission() {
         case AVAudioSessionRecordPermission.denied:
-            return completion(.Denied)
+            return completion(.denied)
         case AVAudioSessionRecordPermission.undetermined:
-            return completion(.NotDetermined)
+            return completion(.notDetermined)
         case AVAudioSessionRecordPermission.granted:
-            return completion(.Authorized)
+            return completion(.authorized)
         default:
-            return completion(.NotDetermined)
+            return completion(.notDetermined)
         }
     }
         
@@ -34,10 +34,10 @@ open class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
         AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
             if granted {
                 print("[🚨 Arek 🚨] 🎤 permission authorized by user ✅")
-                return completion(.Authorized)
+                return completion(.authorized)
             }
             print("[🚨 Arek 🚨] 🎤 permission denied by user ⛔️")
-            return completion(.Denied)
+            return completion(.denied)
         }
     }
 }

@@ -21,11 +21,11 @@ open class ArekEvents: ArekBasePermission, ArekPermissionProtocol {
             let status = EKEventStore.authorizationStatus(for: .event)
             switch status {
             case .authorized:
-                return completion(.Authorized)
+                return completion(.authorized)
             case .restricted, .denied:
-                return completion(.Denied)
+                return completion(.denied)
             case .notDetermined:
-                return completion(.NotDetermined)
+                return completion(.notDetermined)
             }
     }
     
@@ -33,15 +33,15 @@ open class ArekEvents: ArekBasePermission, ArekPermissionProtocol {
             EKEventStore().requestAccess(to: .event) { granted, error in
                 if let _ = error {
                     print("[🚨 Arek 🚨] 📆 permission not determined 🤔, error \(error)")
-                    return completion(.NotDetermined)
+                    return completion(.notDetermined)
                 }
                 
                 if granted {
                     print("[🚨 Arek 🚨] 📆 permission authorized by user ✅")
-                    return completion(.Authorized)
+                    return completion(.authorized)
                 }
                 print("[🚨 Arek 🚨] 📆 permission denied by user ⛔️")
-                return completion(.Denied)
+                return completion(.denied)
             }
     }
 }

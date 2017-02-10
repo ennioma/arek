@@ -22,17 +22,17 @@ open class ArekBluetooth: ArekBasePermission, ArekPermissionProtocol {
         
         switch CBPeripheralManager.authorizationStatus() {
         case .restricted, .denied:
-            return completion(.Denied)
+            return completion(.denied)
         case .notDetermined, .authorized:
             switch bluetooth.bluetoothManager.state {
             case .unauthorized:
-                return completion(.Denied)
+                return completion(.denied)
             case .poweredOn:
-                return completion(.Authorized)
+                return completion(.authorized)
             case .unsupported, .poweredOff, .resetting:
-                return completion(.NotAvailable)
+                return completion(.notAvailable)
             case .unknown:
-                return completion(.NotDetermined)
+                return completion(.notDetermined)
             }
         }
     }
@@ -43,13 +43,13 @@ open class ArekBluetooth: ArekBasePermission, ArekPermissionProtocol {
         switch bluetooth.bluetoothManager.state {
         case .unsupported, .poweredOff, .resetting:
             print("[🚨 Arek 🚨] bluetooth not available 🚫")
-            return completion(.NotAvailable)
+            return completion(.notAvailable)
         case .unauthorized:
             print("[🚨 Arek 🚨] bluetooth not authorized by the user ⛔️")
-            return completion(.Denied)
+            return completion(.denied)
         case .unknown:
             print("[🚨 Arek 🚨] bluetooth could not be determined 🤔")
-            return completion(.NotDetermined)
+            return completion(.notDetermined)
         case .poweredOn:
             bluetooth.bluetoothManager?.startAdvertising(nil)
             bluetooth.bluetoothManager?.stopAdvertising()

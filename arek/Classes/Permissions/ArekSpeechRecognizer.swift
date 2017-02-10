@@ -22,14 +22,14 @@ open class ArekSpeechRecognizer: ArekBasePermission, ArekPermissionProtocol {
             let status = SFSpeechRecognizer.authorizationStatus()
             switch status {
             case .authorized:
-                return completion(.Authorized)
+                return completion(.authorized)
             case .restricted, .denied:
-                return completion(.Denied)
+                return completion(.denied)
             case .notDetermined:
-                return completion(.NotDetermined)
+                return completion(.notDetermined)
             }
         } else {
-            return completion(.Denied)
+            return completion(.notAvailable)
         }
     }
     
@@ -39,18 +39,18 @@ open class ArekSpeechRecognizer: ArekBasePermission, ArekPermissionProtocol {
                 switch status {
                 case .authorized:
                     print("[🚨 Arek 🚨] 🗣 permission authorized by user ✅")
-                    return completion(.Authorized)
+                    return completion(.authorized)
                 case .restricted, .denied:
                     print("[🚨 Arek 🚨] 🗣 permission denied by user ⛔️")
-                    return completion(.Denied)
+                    return completion(.denied)
                 case .notDetermined:
                     print("[🚨 Arek 🚨] 🗣 permission not determined 🤔")
-                    return completion(.NotDetermined)
+                    return completion(.notDetermined)
                 }
             }
         } else {
-            print("[🚨 Arek 🚨] 🗣 permission denied by iOS ⛔️")
-            return completion(.Denied)
+            print("[🚨 Arek 🚨] 🗣 permission only available from iOS 10 ⛔️")
+            return completion(.notAvailable)
         }
     }
 }

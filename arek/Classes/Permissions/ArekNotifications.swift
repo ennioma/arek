@@ -24,21 +24,21 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
             UNUserNotificationCenter.current().getNotificationSettings { (settings) in
                 switch settings.authorizationStatus {
                 case .notDetermined:
-                    return completion(.NotDetermined)
+                    return completion(.notDetermined)
                 case .denied:
-                    return completion(.Denied)
+                    return completion(.denied)
                 case .authorized:
-                    return completion(.Authorized)
+                    return completion(.authorized)
                 }
             }
         } else if #available(iOS 9.0, *) {
             if let types = UIApplication.shared.currentUserNotificationSettings?.types {
                 if types.isEmpty {
-                    return completion(.NotDetermined)
+                    return completion(.notDetermined)
                 }
             }
             
-            return completion(.Authorized)
+            return completion(.authorized)
         }
     }
         
@@ -47,14 +47,14 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
             UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { (granted, error) in
                 if let _ = error {
                     print("[🚨 Arek 🚨] Push notifications permission not determined 🤔, error: \(error)")
-                    return completion(.NotDetermined)
+                    return completion(.notDetermined)
                 }
                 if granted {
                     print("[🚨 Arek 🚨] Push notifications permission authorized by user ✅")
-                    return completion(.Authorized)
+                    return completion(.authorized)
                 }
                 print("[🚨 Arek 🚨] Push notifications permission denied by user ⛔️")
-                return completion(.Denied)
+                return completion(.denied)
             }
         } else if #available(iOS 9.0, *) {
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))

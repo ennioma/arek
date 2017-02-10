@@ -1,31 +1,36 @@
 PODS:
-  - arek/Camera (0.9.0):
+  - arek/Bluetooth (1.0.0):
     - arek/Core
-  - arek/CloudKit (0.9.0):
+  - arek/Camera (1.0.0):
     - arek/Core
-  - arek/Contacts (0.9.0):
+  - arek/CloudKit (1.0.0):
     - arek/Core
-  - arek/Core (0.9.0)
-  - arek/Events (0.9.0):
+  - arek/Contacts (1.0.0):
     - arek/Core
-  - arek/Health (0.9.0):
+  - arek/Core (1.0.0)
+  - arek/Events (1.0.0):
     - arek/Core
-  - arek/Location (0.9.0):
+  - arek/Health (1.0.0):
     - arek/Core
-  - arek/MediaLibrary (0.9.0):
+  - arek/Location (1.0.0):
     - arek/Core
-  - arek/Microphone (0.9.0):
+  - arek/MediaLibrary (1.0.0):
     - arek/Core
-  - arek/Notifications (0.9.0):
+  - arek/Microphone (1.0.0):
     - arek/Core
-  - arek/Photos (0.9.0):
+  - arek/Motion (1.0.0):
     - arek/Core
-  - arek/Reminders (0.9.0):
+  - arek/Notifications (1.0.0):
     - arek/Core
-  - arek/SpeechRecognizer (0.9.0):
+  - arek/Photos (1.0.0):
+    - arek/Core
+  - arek/Reminders (1.0.0):
+    - arek/Core
+  - arek/SpeechRecognizer (1.0.0):
     - arek/Core
 
 DEPENDENCIES:
+  - arek/Bluetooth (from `../`)
   - arek/Camera (from `../`)
   - arek/CloudKit (from `../`)
   - arek/Contacts (from `../`)
@@ -35,6 +40,7 @@ DEPENDENCIES:
   - arek/Location (from `../`)
   - arek/MediaLibrary (from `../`)
   - arek/Microphone (from `../`)
+  - arek/Motion (from `../`)
   - arek/Notifications (from `../`)
   - arek/Photos (from `../`)
   - arek/Reminders (from `../`)
@@ -45,8 +51,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  arek: b99ac15423edf62972657c445b53f80676a5d0aa
+  arek: 2731dfc86685f3801e9ca507555221cb3c4331e1
 
-PODFILE CHECKSUM: 3736cec9e89c7c97921dc51b92460c482ccd8b13
+PODFILE CHECKSUM: 5523e34844ebe8e9ccba59d5ce821c585193cec1
 
 COCOAPODS: 1.1.1

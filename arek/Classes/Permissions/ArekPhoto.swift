@@ -20,11 +20,11 @@ open class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
     open func status(completion: @escaping ArekPermissionResponse) {
         switch PHPhotoLibrary.authorizationStatus() {
         case .notDetermined:
-            return completion(.NotDetermined)
+            return completion(.notDetermined)
         case .restricted, .denied:
-            return completion(.Denied)
+            return completion(.denied)
         case.authorized:
-            return completion(.Authorized)
+            return completion(.authorized)
         }
     }
         
@@ -33,13 +33,13 @@ open class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
             switch status {
             case .notDetermined:
                 print("[🚨 Arek 🚨] 🌅 permission not determined 🤔")
-                return completion(.NotDetermined)
+                return completion(.notDetermined)
             case .restricted, .denied:
                 print("[🚨 Arek 🚨] 🌅 permission denied by user ⛔️")
-                return completion(.Denied)
+                return completion(.denied)
             case.authorized:
                 print("[🚨 Arek 🚨] 🌅 permission authorized by user ✅")
-                return completion(.Authorized)
+                return completion(.authorized)
             }
         }
     }
