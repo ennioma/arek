@@ -45,6 +45,8 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
             print("! ⛔️ !" )
         case .NotDetermined:
             print("! 🤔 !" )
+        case .NotAvailable:
+            print("! 🚫 !" )
         }
     }
 ```
@@ -60,6 +62,8 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
             symbol = "⛔️"
         case .NotDetermined:
             symbol = "🤔"
+        case .NotAvailable:
+            return "🚫"
         }
     }        
 ```
