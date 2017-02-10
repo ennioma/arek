@@ -39,13 +39,13 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 
     permission.status { (status) in
         switch status {
-        case .Authorized:
+        case .authorized:
             print("! ✅ !")
-        case .Denied:
+        case .denied:
             print("! ⛔️ !" )
-        case .NotDetermined:
+        case .notDetermined:
             print("! 🤔 !" )
-        case .NotAvailable:
+        case .notAvailable:
             print("! 🚫 !" )
         }
     }
@@ -56,13 +56,13 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 
     permission.manage { (status) in
         switch status {
-        case .Authorized:
+        case .authorized:
             symbol = "✅"
-        case .Denied:
+        case .denied:
             symbol = "⛔️"
-        case .NotDetermined:
+        case .notDetermined:
             symbol = "🤔"
-        case .NotAvailable:
+        case .notAvailable:
             return "🚫"
         }
     }        
@@ -100,7 +100,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 1.0.0'
+    pod 'arek', '~> 1.1.0'
 end
 ```
 
@@ -111,7 +111,7 @@ $ pod install
 ## Carthage
 
 ```ruby
-github "ennioma/arek" ~> 1.0.0
+github "ennioma/arek" ~> 1.1.0
 ```
 
 ## Swift Package Manager
