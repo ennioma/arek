@@ -59,33 +59,30 @@ open class ArekBasePermission {
     
     private func manageInitialPopup(completion: @escaping ArekPermissionResponse) {
         if self.configuration.presentInitialPopup {
-            self.presentInitialPopup(title: self.initialPopupData.title, message: self.initialPopupData.message, completion: completion)
+            self.presentInitialPopup(title: self.initialPopupData.title, message: self.initialPopupData.message, image: self.initialPopupData.image, completion: completion)
         } else {
             (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
         }
     }
     
-    private func presentInitialPopup(title: String, message: String, completion: @escaping ArekPermissionResponse) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    private func presentInitialPopup(title: String, message: String, image: String, completion: @escaping ArekPermissionResponse) {
+        let alertVC = PMAlertController(title: title, description: message, image: UIImage(named: image), style: .walkthrough)
         
-        let allow = UIAlertAction(title: "Enable", style: .default) { (action) in
+        alertVC.addAction(PMAlertAction(title: "Cancel", style: .cancel, action: { () -> Void in
+            alertVC.dismiss(animated: true, completion: nil)
+        }))
+        
+        alertVC.addAction(PMAlertAction(title: "OK", style: .default, action: { () in
             (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
-            alert.dismiss(animated: true, completion: nil)
-        }
-        
-        let deny = UIAlertAction(title: "Not now", style: .cancel) { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }
-        
-        alert.addAction(deny)
-        alert.addAction(allow)
+            alertVC.dismiss(animated: true, completion: nil)
+        }))
         
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
             }
             
-            topController.present(alert, animated: true, completion: nil)
+            topController.present(alertVC, animated: true, completion: nil)
         }
     }
     
