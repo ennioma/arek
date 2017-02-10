@@ -20,8 +20,6 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Test message to ask 🙏 to access Music</string>
 	<key>NSBluetoothPeripheralUsageDescription</key>
 	<string>Test message to ask 🙏 to access Bluetooth</string>
 	<key>NSCalendarsUsageDescription</key>
@@ -32,6 +30,8 @@
 	<string>Test message to ask 🙏 to access Contacts</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Test message to ask 🙏 to access Location</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Test message to ask 🙏 to access Music</string>
 	<key>NSMicrophoneUsageDescription</key>
 	<string>Test message to ask 🙏 to access Microphone</string>
 	<key>NSMotionUsageDescription</key>

@@ -36,6 +36,9 @@
 		75B2C1EC1DFA13F600856E76 /* ArekLocationAlways.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2C1D71DFA13F600856E76 /* ArekLocationAlways.swift */; };
 		75B2C1ED1DFA13F600856E76 /* ArekLocationWhenInUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75B2C1D81DFA13F600856E76 /* ArekLocationWhenInUse.swift */; };
 		75BE32121DFA170E000A4060 /* ArekCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BE32111DFA170E000A4060 /* ArekCloudKit.swift */; };
+		75E269051E4E554D0092F961 /* PMAlertAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E269021E4E554D0092F961 /* PMAlertAction.swift */; };
+		75E269061E4E554D0092F961 /* PMAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75E269031E4E554D0092F961 /* PMAlertController.swift */; };
+		75E269071E4E554D0092F961 /* PMAlertController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 75E269041E4E554D0092F961 /* PMAlertController.xib */; };
 		F5E985921E0A85E4004ABDCE /* ArekEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9858E1E0A85E4004ABDCE /* ArekEvents.swift */; };
 		F5E985931E0A85E4004ABDCE /* ArekMediaLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E9858F1E0A85E4004ABDCE /* ArekMediaLibrary.swift */; };
 		F5E985941E0A85E4004ABDCE /* ArekReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E985901E0A85E4004ABDCE /* ArekReminders.swift */; };
@@ -96,6 +99,9 @@
 		75B2C1D81DFA13F600856E76 /* ArekLocationWhenInUse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekLocationWhenInUse.swift; sourceTree = "<group>"; };
 		75BE32111DFA170E000A4060 /* ArekCloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekCloudKit.swift; sourceTree = "<group>"; };
 		75BE32141DFA1750000A4060 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		75E269021E4E554D0092F961 /* PMAlertAction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMAlertAction.swift; sourceTree = "<group>"; };
+		75E269031E4E554D0092F961 /* PMAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PMAlertController.swift; sourceTree = "<group>"; };
+		75E269041E4E554D0092F961 /* PMAlertController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PMAlertController.xib; sourceTree = "<group>"; };
 		F5E9858E1E0A85E4004ABDCE /* ArekEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekEvents.swift; sourceTree = "<group>"; };
 		F5E9858F1E0A85E4004ABDCE /* ArekMediaLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekMediaLibrary.swift; sourceTree = "<group>"; };
 		F5E985901E0A85E4004ABDCE /* ArekReminders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekReminders.swift; sourceTree = "<group>"; };
@@ -157,6 +163,7 @@
 				75405D9A1DFA13A600A2BFDB /* Assets.xcassets */,
 				75B2C1B71DFA13E800856E76 /* DemoViewController.swift */,
 				75B2C1B81DFA13E800856E76 /* DemoViewController+Table.swift */,
+				75E269011E4E554D0092F961 /* PMAlertController */,
 				757598E81E16AEC4007E8DDF /* Supporting Files */,
 			);
 			path = ExampleSourceCode;
@@ -287,6 +294,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		75E269011E4E554D0092F961 /* PMAlertController */ = {
+			isa = PBXGroup;
+			children = (
+				75E269021E4E554D0092F961 /* PMAlertAction.swift */,
+				75E269031E4E554D0092F961 /* PMAlertController.swift */,
+				75E269041E4E554D0092F961 /* PMAlertController.xib */,
+			);
+			path = PMAlertController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -398,6 +415,7 @@
 				75405D9B1DFA13A600A2BFDB /* Assets.xcassets in Resources */,
 				75B2C1D91DFA13F600856E76 /* .gitkeep in Resources */,
 				75B2C1DA1DFA13F600856E76 /* arek.png in Resources */,
+				75E269071E4E554D0092F961 /* PMAlertController.xib in Resources */,
 				75B2C1DB1DFA13F600856E76 /* .gitkeep in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,7 +442,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				75B2C1ED1DFA13F600856E76 /* ArekLocationWhenInUse.swift in Sources */,
+				75E269051E4E554D0092F961 /* PMAlertAction.swift in Sources */,
 				75B2C1E31DFA13F600856E76 /* ArekHealth.swift in Sources */,
+				75E269061E4E554D0092F961 /* PMAlertController.swift in Sources */,
 				F5E985951E0A85E4004ABDCE /* ArekSpeechRecognizer.swift in Sources */,
 				75B2C1DC1DFA13F600856E76 /* Arek.swift in Sources */,
 				75B2C1E51DFA13F600856E76 /* ArekNotifications.swift in Sources */,
