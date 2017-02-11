@@ -17,7 +17,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 # Implemented permissions
 
 - [x] Camera
-- [x] Bluetooth 
+- [x] Bluetooth
 - [x] CloudKit
 - [x] Contacts
 - [x] Events (Calendar)
@@ -30,7 +30,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 - [x] Notifications
 - [x] Photo
 - [x] Reminders
-- [x] Speech Recognizer 
+- [x] Speech Recognizer
 
 # How to use AREK
 ## Check permission status
@@ -95,7 +95,7 @@ This is the popup used to **kindly** to the user to re-enable that permission. T
 
 # How to install AREK
 ## CocoaPods
-Add AREK to your Podfile 
+Add AREK to your Podfile
 
 ```ruby
 use_frameworks!
@@ -139,7 +139,5 @@ For any information or request feel free to contact me on twitter (@ennioma).
 ## License
 AREK is available under the MIT license. See the LICENSE file for more info.
 
-# TODO:
-- [] restore tests to every permission type  
-- [] Localize internal messages
-
+# CREDITS:
+Icones provided by `Freepik` and `Vectors Market` from `Flaticon`

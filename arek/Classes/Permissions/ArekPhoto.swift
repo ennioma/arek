@@ -13,8 +13,8 @@ open class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekPhoto"
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "I'm 🌅", message: "enable"),
-                   reEnablePopupData: ArekPopupData(title: "I'm 🌅", message: "re enable 🙏"))
+        super.init(initialPopupData: ArekPopupData(title: "Access Photo Library", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access your Photo Library, do you want to proceed?", image: "arek_camera_image"),
+                   reEnablePopupData: ArekPopupData(title: "Access Photo Library", message: "Please re-enable the access to the Photo Library"))
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {

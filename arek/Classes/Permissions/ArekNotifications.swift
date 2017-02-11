@@ -15,8 +15,8 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekNotifications"
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "Push notifications service", message: "enable"),
-                   reEnablePopupData: ArekPopupData(title: "Push notifications service", message: "re enable 🙏"))
+        super.init(initialPopupData: ArekPopupData(title: "Enable Push Notifications", message: "Do you want to enable Push Notifications?", image: "arek_notifications_image"),
+                   reEnablePopupData: ArekPopupData(title: "Enable Push Notifications", message: "Please re-enable Push Notifications"))
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {

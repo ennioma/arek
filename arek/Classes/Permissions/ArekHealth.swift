@@ -18,8 +18,8 @@ open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
     var hkSampleTypesToRead: Set<HKSampleType>?
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "I'm 📈", message: "enable"),
-                   reEnablePopupData: ArekPopupData(title: "I'm 📈", message: "re enable 🙏"))
+        super.init(initialPopupData: ArekPopupData(title: "Access HealthKit", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access HealthKit, do you want to proceed?", image: "arek_health_image"),
+                   reEnablePopupData: ArekPopupData(title: "Access HealthKit", message: "Please re-enable the access to the HealthKit"))
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {

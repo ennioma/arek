@@ -11,10 +11,10 @@ import AVFoundation
 
 open class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekCamera"
-
+    
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "I'm 📷", message: "enable"),
-                   reEnablePopupData: ArekPopupData(title: "I'm 📷", message: "re enable 🙏"))
+        super.init(initialPopupData: ArekPopupData(title: "Access Camera", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access your Camera, do you want to proceed?", image: "arek_camera_image"),
+                   reEnablePopupData: ArekPopupData(title: "Access Camera", message: "Please re-enable the access to the Camera"))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {

@@ -19,8 +19,8 @@ public class ArekBaseLocation: ArekBasePermission, ArekPermissionProtocol {
     var locationDelegate: ArekBaseLocationDelegate?
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "Location service", message: "enable"),
-                   reEnablePopupData: ArekPopupData(title: "Location service", message: "re enable 🙏"))
+        super.init(initialPopupData: ArekPopupData(title: "Access Location", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access Location, do you want to proceed?", image: "arek_location_image"),
+                   reEnablePopupData: ArekPopupData(title: "Access Location", message: "Please re-enable the access to the Location"))
     }
 
     public func status(completion: @escaping ArekPermissionResponse) {

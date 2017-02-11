@@ -24,7 +24,6 @@ open class ArekBluetoothDelegate: NSObject, CBPeripheralManagerDelegate {
     }
     
     public func peripheralManagerDidUpdateState(_ peripheral: CBPeripheralManager) {
-
         switch peripheral.state {
         case .unauthorized:
             print("[🚨 Arek 🚨] bluetooth permission denied by user ⛔️")

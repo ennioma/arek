@@ -13,8 +13,8 @@ open class ArekEvents: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekEvents"
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "I'm 📆", message: "enable"),
-                   reEnablePopupData: ArekPopupData(title: "I'm 📆", message: "re enable 🙏"))
+        super.init(initialPopupData: ArekPopupData(title: "Access Calendar", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access Calendar, do you want to proceed?", image: "arek_events_image"),
+                   reEnablePopupData: ArekPopupData(title: "Access Calendar", message: "Please re-enable the access to the Calendar"))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {
