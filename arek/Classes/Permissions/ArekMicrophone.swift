@@ -13,8 +13,11 @@ open class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
     public var identifier: String = "ArekMicrophone"
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "Access Microphone", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access the Microphone, do you want to proceed?", image: "arek_microphone_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Microphone", message: "Please re-enable the access to the Microphone", image: "arek_microphone_image"))
+
+        let data = ArekLocalizationManager(permission: self.identifier)
+        
+        super.init(initialPopupData: ArekPopupData(title: data.initialTitle, message: data.initialMessage, image: data.image),
+                   reEnablePopupData: ArekPopupData(title: data.reEnableTitle, message:  data.reEnableMessage, image: data.image))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {

@@ -13,8 +13,10 @@ open class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
     open var identifier = "ArekCloudKit"
 
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "Access CloudKit", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access CloudKit, do you want to proceed?", image: "arek_cloud_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access CloudKit", message: "Please re-enable the access to the CloudKit"))
+        let data = ArekLocalizationManager(permission: self.identifier)
+        
+        super.init(initialPopupData: ArekPopupData(title: data.initialTitle, message: data.initialMessage, image: data.image),
+                   reEnablePopupData: ArekPopupData(title: data.reEnableTitle, message:  data.reEnableMessage, image: data.image))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {

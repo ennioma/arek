@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		752C68C71E4F5E7C00B20B8B /* ArekLocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 752C68C61E4F5E7C00B20B8B /* ArekLocalizationManager.swift */; };
+		752C68C81E4F63EE00B20B8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 752C68CA1E4F63EE00B20B8B /* Localizable.strings */; };
 		75405D9B1DFA13A600A2BFDB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 75405D9A1DFA13A600A2BFDB /* Assets.xcassets */; };
 		75405DA91DFA13A600A2BFDB /* ExampleSourceCodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405DA81DFA13A600A2BFDB /* ExampleSourceCodeTests.swift */; };
 		75405DB41DFA13A600A2BFDB /* ExampleSourceCodeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75405DB31DFA13A600A2BFDB /* ExampleSourceCodeUITests.swift */; };
@@ -63,6 +65,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		752C68C61E4F5E7C00B20B8B /* ArekLocalizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekLocalizationManager.swift; sourceTree = "<group>"; };
+		752C68C91E4F63EE00B20B8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		752C68CB1E4F641400B20B8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		75405D901DFA13A600A2BFDB /* ExampleSourceCode.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExampleSourceCode.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		75405D9A1DFA13A600A2BFDB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		75405D9F1DFA13A600A2BFDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -200,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				75405D9F1DFA13A600A2BFDB /* Info.plist */,
+				752C68CA1E4F63EE00B20B8B /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -249,6 +255,7 @@
 				75B2C1C61DFA13F600856E76 /* ArekPermissionFrequency.swift */,
 				75B2C1C71DFA13F600856E76 /* ArekPermissionStatus.swift */,
 				75B2C1C81DFA13F600856E76 /* ArekPopupData.swift */,
+				752C68C61E4F5E7C00B20B8B /* ArekLocalizationManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -413,6 +420,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				75405D9B1DFA13A600A2BFDB /* Assets.xcassets in Resources */,
+				752C68C81E4F63EE00B20B8B /* Localizable.strings in Resources */,
 				75B2C1D91DFA13F600856E76 /* .gitkeep in Resources */,
 				75B2C1DA1DFA13F600856E76 /* arek.png in Resources */,
 				75E269071E4E554D0092F961 /* PMAlertController.xib in Resources */,
@@ -446,6 +454,7 @@
 				75B2C1E31DFA13F600856E76 /* ArekHealth.swift in Sources */,
 				75E269061E4E554D0092F961 /* PMAlertController.swift in Sources */,
 				F5E985951E0A85E4004ABDCE /* ArekSpeechRecognizer.swift in Sources */,
+				752C68C71E4F5E7C00B20B8B /* ArekLocalizationManager.swift in Sources */,
 				75B2C1DC1DFA13F600856E76 /* Arek.swift in Sources */,
 				75B2C1E51DFA13F600856E76 /* ArekNotifications.swift in Sources */,
 				75B2C1DD1DFA13F600856E76 /* ArekConfiguration.swift in Sources */,
@@ -502,6 +511,18 @@
 			targetProxy = 75405DB01DFA13A600A2BFDB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		752C68CA1E4F63EE00B20B8B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				752C68C91E4F63EE00B20B8B /* Base */,
+				752C68CB1E4F641400B20B8B /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		75405DB61DFA13A600A2BFDB /* Debug */ = {

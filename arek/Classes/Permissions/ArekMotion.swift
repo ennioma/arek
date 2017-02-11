@@ -21,8 +21,10 @@ open class ArekMotion: ArekBasePermission, ArekPermissionProtocol {
     }()
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "Access Motion", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access the Motion, do you want to proceed?", image: "arek_motion_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Motion", message: "Please re-enable the access to the Motion", image: "arek_motion_image"))
+        let data = ArekLocalizationManager(permission: self.identifier)
+        
+        super.init(initialPopupData: ArekPopupData(title: data.initialTitle, message: data.initialMessage, image: data.image),
+                   reEnablePopupData: ArekPopupData(title: data.reEnableTitle, message:  data.reEnableMessage, image: data.image))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {

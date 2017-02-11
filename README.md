@@ -15,7 +15,6 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 🚨 AREK is a **Swift 3** and **XCode 8** compatible project🚨
 
 # Implemented permissions
-
 - [x] Camera
 - [x] Bluetooth
 - [x] CloudKit
@@ -50,7 +49,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
         }
     }
 ```
-## Request permission
+## Request a permission
 ```swift
     let permission = ArekEvent()
 
@@ -69,16 +68,14 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 ```
 
 # Permission Configuration
-Each permission type included in AREK is configurable through the *ArekConfiguration* struct. Each permission has a default configuration, so if you
-are happy with the basic configuration you don't have to take care about how it works behind the scenes.
+Each permission type included in `AREK` is configurable through the `ArekConfiguration` struct. Each permission has a default configuration, so if you are happy with the basic configuration you don't have to care about how it works behind the scenes.
 
-An *ArekConfiguration* is made up by:
+An `ArekConfiguration` is made up by:
 
 > **frequency**: ArekPermissionFrequency (.Always, .EveryHour, .OnceADay, .OnceAWeek, .JustOnce)
 This frequency value is related to how often you want to the user to re-enable a permission if that one has been disallowed.
 
 > Set by default to **.OnceADay**
-
 
 ----------
 
@@ -92,6 +89,34 @@ This is an initial popup used to ask **kindly** to the user to allow a permissio
 This is the popup used to **kindly** to the user to re-enable that permission. The *frequency* value is related to this popup.
 
 >Set by defaul to **true**
+
+# Configure the initial and the re-enable popup: `ArekPopupData`
+`ArekPopupData` is the struct used to configure both the pre-permission popup and the re-enable popup. These popups are instances of the amazing [PMAlertController](https://github.com/Codeido/PMAlertController) by [Codeido](http://www.codeido.com/).
+
+The configuration is the following:
+```ruby
+public struct ArekPopupData {
+    var title: String!
+    var message: String!
+    var image: String!
+
+    public init(title: String = "", message: String = "", image: String = "") {
+        self.title = title
+        self.message = message
+        self.image = image
+    }
+}
+```
+
+The default configuration for `ArekContacts` is
+```ruby
+public init() {
+        super.init(initialPopupData: ArekPopupData(title: "Access Contacts", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access Contacs, do you want to proceed?", image: "arek_contacts_image"),
+                   reEnablePopupData: ArekPopupData(title: "Access Contacts", message: "Please re-enable the access to the Contacts", image: "arek_contacts_image"))
+    }
+```
+and the generated popup is the following
+[![N|Solid](https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png?raw=true)](https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png?raw=true)
 
 # How to install AREK
 ## CocoaPods
@@ -109,7 +134,6 @@ $ pod install
 ```
 
 ## Carthage
-
 ```ruby
 github "ennioma/arek" ~> 1.1.0
 ```
@@ -135,6 +159,11 @@ Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.
 Contributions are welcome 🙌  If you'd like to improve this projects I've shared with the community, just open an issue or raise a PR.
 
 For any information or request feel free to contact me on twitter (@ennioma).
+
+## TODO
+- [] Provide a way to inject a custom PMAlertController in a permission
+- [] Provide the possibility to choose between PMAlertController and a common UIAlertController
+- [] Update the Swift Package Manager installation
 
 ## License
 AREK is available under the MIT license. See the LICENSE file for more info.

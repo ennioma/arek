@@ -13,8 +13,10 @@ open class ArekMediaLibrary: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekMediaLibrary"
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "Access Media Library", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access your Media Library, do you want to proceed?", image: "arek_media_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Media Library", message: "Please re-enable the access to the Media Library", image: "arek_media_image"))
+        let data = ArekLocalizationManager(permission: self.identifier)
+        
+        super.init(initialPopupData: ArekPopupData(title: data.initialTitle, message: data.initialMessage, image: data.image),
+                   reEnablePopupData: ArekPopupData(title: data.reEnableTitle, message:  data.reEnableMessage, image: data.image))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {

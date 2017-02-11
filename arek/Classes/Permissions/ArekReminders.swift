@@ -13,8 +13,10 @@ open class ArekReminders: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekReminders"
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "Access Reminders", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access your Reminders, do you want to proceed?", image: "arek_reminders_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Reminders", message: "Please re-enable the access to the Reminders", image: "arek_reminders_image"))
+        let data = ArekLocalizationManager(permission: self.identifier)
+        
+        super.init(initialPopupData: ArekPopupData(title: data.initialTitle, message: data.initialMessage, image: data.image),
+                   reEnablePopupData: ArekPopupData(title: data.reEnableTitle, message:  data.reEnableMessage, image: data.image))
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {

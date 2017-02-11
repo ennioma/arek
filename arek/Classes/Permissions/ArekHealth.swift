@@ -18,8 +18,10 @@ open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
     var hkSampleTypesToRead: Set<HKSampleType>?
     
     public init() {
-        super.init(initialPopupData: ArekPopupData(title: "Access HealthKit", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access HealthKit, do you want to proceed?", image: "arek_health_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access HealthKit", message: "Please re-enable the access to the HealthKit", image: "arek_health_image"))
+        let data = ArekLocalizationManager(permission: self.identifier)
+        
+        super.init(initialPopupData: ArekPopupData(title: data.initialTitle, message: data.initialMessage, image: data.image),
+                   reEnablePopupData: ArekPopupData(title: data.reEnableTitle, message:  data.reEnableMessage, image: data.image))
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {

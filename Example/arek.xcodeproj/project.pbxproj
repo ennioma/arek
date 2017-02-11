@@ -12,6 +12,7 @@
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		752C68CE1E4F659600B20B8B /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 752C68D01E4F659600B20B8B /* Localizable.strings */; };
 		75BCA2821DF34D5F008DE0E9 /* DemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCA2801DF34D5F008DE0E9 /* DemoViewController.swift */; };
 		75BCA2831DF34D5F008DE0E9 /* DemoViewController+Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75BCA2811DF34D5F008DE0E9 /* DemoViewController+Table.swift */; };
 		7F098B8E1E0A746900931032 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7F098B8D1E0A746900931032 /* CloudKit.framework */; };
@@ -40,6 +41,8 @@
 		607FACE51AFB9204008FA782 /* arek_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = arek_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		752C68CF1E4F659600B20B8B /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
+		752C68D11E4F659700B20B8B /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		75BCA2801DF34D5F008DE0E9 /* DemoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DemoViewController.swift; sourceTree = "<group>"; };
 		75BCA2811DF34D5F008DE0E9 /* DemoViewController+Table.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DemoViewController+Table.swift"; sourceTree = "<group>"; };
 		79B545C944A596DEFDE61F89 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
@@ -121,6 +124,7 @@
 			children = (
 				7F098B8C1E0A746700931032 /* arek_Example.entitlements */,
 				607FACD41AFB9204008FA782 /* Info.plist */,
+				752C68D01E4F659600B20B8B /* Localizable.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -262,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */,
+				752C68CE1E4F659600B20B8B /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,6 +400,18 @@
 			targetProxy = 607FACE61AFB9204008FA782 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		752C68D01E4F659600B20B8B /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				752C68CF1E4F659600B20B8B /* Base */,
+				752C68D11E4F659700B20B8B /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		607FACED1AFB9204008FA782 /* Debug */ = {
