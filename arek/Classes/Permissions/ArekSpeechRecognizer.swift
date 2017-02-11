@@ -14,7 +14,7 @@ open class ArekSpeechRecognizer: ArekBasePermission, ArekPermissionProtocol {
     
     public init() {
         super.init(initialPopupData: ArekPopupData(title: "Access Speech Recognizer", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access Speech Recognizer, do you want to proceed?", image: "arek_speech_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Speech Recognizer", message: "Please re-enable the access to the Speech Recognizer"))
+                   reEnablePopupData: ArekPopupData(title: "Access Speech Recognizer", message: "Please re-enable the access to the Speech Recognizer", image: "arek_speech_image"))
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {

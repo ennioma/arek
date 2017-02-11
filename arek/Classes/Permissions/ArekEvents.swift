@@ -14,7 +14,7 @@ open class ArekEvents: ArekBasePermission, ArekPermissionProtocol {
     
     public init() {
         super.init(initialPopupData: ArekPopupData(title: "Access Calendar", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access Calendar, do you want to proceed?", image: "arek_events_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Calendar", message: "Please re-enable the access to the Calendar"))
+                   reEnablePopupData: ArekPopupData(title: "Access Calendar", message: "Please re-enable the access to the Calendar", image: "arek_events_image"))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {

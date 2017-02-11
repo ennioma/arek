@@ -14,7 +14,7 @@ open class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
 
     public init() {
         super.init(initialPopupData: ArekPopupData(title: "Access Contacts", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access Contacs, do you want to proceed?", image: "arek_contacts_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Contacts", message: "Please re-enable the access to the Contacts"))
+                   reEnablePopupData: ArekPopupData(title: "Access Contacts", message: "Please re-enable the access to the Contacts", image: "arek_contacts_image"))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {

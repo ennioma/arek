@@ -14,7 +14,7 @@ open class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
     
     public init() {
         super.init(initialPopupData: ArekPopupData(title: "Access Camera", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access your Camera, do you want to proceed?", image: "arek_camera_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Camera", message: "Please re-enable the access to the Camera"))
+                   reEnablePopupData: ArekPopupData(title: "Access Camera", message: "Please re-enable the access to the Camera", image: "arek_camera_image"))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {

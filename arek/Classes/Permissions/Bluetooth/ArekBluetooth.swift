@@ -14,7 +14,7 @@ open class ArekBluetooth: ArekBasePermission, ArekPermissionProtocol {
 
     public init() {
         super.init(initialPopupData: ArekPopupData(title: "Access Bluetooth", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access Bluetooth, do you want to proceed?", image: "arek_bluetooth_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Bluetooth", message: "Please re-enable the access to the Bluetooth"))
+                   reEnablePopupData: ArekPopupData(title: "Access Bluetooth", message: "Please re-enable the access to the Bluetooth", image: "arek_bluetooth_image"))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {

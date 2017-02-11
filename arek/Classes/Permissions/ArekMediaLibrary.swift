@@ -14,7 +14,7 @@ open class ArekMediaLibrary: ArekBasePermission, ArekPermissionProtocol {
     
     public init() {
         super.init(initialPopupData: ArekPopupData(title: "Access Media Library", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access your Media Library, do you want to proceed?", image: "arek_media_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Media Library", message: "Please re-enable the access to the Media Library"))
+                   reEnablePopupData: ArekPopupData(title: "Access Media Library", message: "Please re-enable the access to the Media Library", image: "arek_media_image"))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {

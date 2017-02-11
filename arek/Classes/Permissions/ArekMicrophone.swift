@@ -14,7 +14,7 @@ open class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
     
     public init() {
         super.init(initialPopupData: ArekPopupData(title: "Access Microphone", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access the Microphone, do you want to proceed?", image: "arek_microphone_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Microphone", message: "Please re-enable the access to the Microphone"))
+                   reEnablePopupData: ArekPopupData(title: "Access Microphone", message: "Please re-enable the access to the Microphone", image: "arek_microphone_image"))
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {

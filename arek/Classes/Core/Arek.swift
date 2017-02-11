@@ -88,38 +88,35 @@ open class ArekBasePermission {
     
     private func presentReEnablePopup() {        
         if self is ArekPermissionProtocol && self.configuration.canPresentReEnablePopup(permission: (self as! ArekPermissionProtocol)) {
-            self.presentReEnablePopup(title: self.reEnablePopupData.title, message: self.reEnablePopupData.message)
+            self.presentReEnablePopup(title: self.reEnablePopupData.title, message: self.reEnablePopupData.message, image: self.reEnablePopupData.image)
         } else {
             print("[🚨 Arek 🚨] for \(self) present re-enable not allowed")
         }
     }
 
-    private func presentReEnablePopup(title: String, message: String) {
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    private func presentReEnablePopup(title: String, message: String, image: String) {
+        let alertVC = PMAlertController(title: title, description: message, image: UIImage(named: image), style: .walkthrough)
         
-        let allow = UIAlertAction(title: "Allow", style: .default) { (action) in
-            alert.dismiss(animated: true, completion: nil)
+        alertVC.addAction(PMAlertAction(title: "Deny", style: .cancel, action: { () in
+            alertVC.dismiss(animated: true, completion: nil)
+        }))
+        
+        alertVC.addAction(PMAlertAction(title: "Allow", style: .default, action: { () -> Void in
+            alertVC.dismiss(animated: true, completion: nil)
             let url = NSURL(string: UIApplicationOpenSettingsURLString) as! URL
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
             } else if #available(iOS 9.0, *) {
                 UIApplication.shared.openURL(url)
             }
-        }
-        
-        let deny = UIAlertAction(title: "Not now", style: .cancel) { (action) in
-            alert.dismiss(animated: true, completion: nil)
-        }
-        
-        alert.addAction(deny)
-        alert.addAction(allow)
+        }))
         
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
             }
             
-            topController.present(alert, animated: true, completion: nil)
+            topController.present(alertVC, animated: true, completion: nil)
         }
     }
     
