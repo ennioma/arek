@@ -67,7 +67,18 @@ open class ArekBasePermission {
         }
     }
     
-    private func presentInitialPopup(title: String, message: String, image: String, completion: @escaping ArekPermissionResponse) {
+    private func presentInitialPopup(title: String, message: String, image: String? = nil, completion: @escaping ArekPermissionResponse) {
+        switch self.initialPopupData.type as ArekPopupType {
+        case .codeido:
+            self.presentInitialCodeidoPopup(title: title, message: message, image: image!, completion: completion)
+            break
+        case .native:
+            self.presentInitialNativePopup(title: title, message: message, completion: completion)
+            break
+        }
+    }
+    
+    private func presentInitialCodeidoPopup(title: String, message: String, image: String, completion: @escaping ArekPermissionResponse) {
         let alertVC = PMAlertController(title: title, description: message, image: UIImage(named: image), style: .walkthrough)
         
         alertVC.addAction(PMAlertAction(title: "Cancel", style: .cancel, action: { () -> Void in
@@ -88,6 +99,30 @@ open class ArekBasePermission {
         }
     }
     
+    private func presentInitialNativePopup(title: String, message: String, completion: @escaping ArekPermissionResponse) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let allow = UIAlertAction(title: "Enable", style: .default) { (action) in
+            (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
+            alert.dismiss(animated: true, completion: nil)
+        }
+        
+        let deny = UIAlertAction(title: "Not now", style: .cancel) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(deny)
+        alert.addAction(allow)
+        
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            
+            topController.present(alert, animated: true, completion: nil)
+        }
+    }
+    
     private func presentReEnablePopup() {        
         if self is ArekPermissionProtocol && self.configuration.canPresentReEnablePopup(permission: (self as! ArekPermissionProtocol)) {
             self.presentReEnablePopup(title: self.reEnablePopupData.title, message: self.reEnablePopupData.message, image: self.reEnablePopupData.image)
@@ -96,7 +131,48 @@ open class ArekBasePermission {
         }
     }
 
-    private func presentReEnablePopup(title: String, message: String, image: String) {
+    private func presentReEnablePopup(title: String, message: String, image: String?) {
+        switch self.initialPopupData.type as ArekPopupType {
+        case .codeido:
+            self.presentReEnableCodeidoPopup(title: title, message: message, image: image!)
+            break
+        case .native:
+            self.presentReEnableNativePopup(title: title, message: message)
+            break
+        }
+    }
+    
+    private func presentReEnableNativePopup(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let allow = UIAlertAction(title: "Allow", style: .default) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+            let url = NSURL(string: UIApplicationOpenSettingsURLString) as! URL
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else if #available(iOS 9.0, *) {
+                UIApplication.shared.openURL(url)
+            }
+        }
+        
+        let deny = UIAlertAction(title: "Not now", style: .cancel) { (action) in
+            alert.dismiss(animated: true, completion: nil)
+        }
+        
+        alert.addAction(deny)
+        alert.addAction(allow)
+        
+        if var topController = UIApplication.shared.keyWindow?.rootViewController {
+            while let presentedViewController = topController.presentedViewController {
+                topController = presentedViewController
+            }
+            
+            topController.present(alert, animated: true, completion: nil)
+        }
+
+    }
+    
+    private func presentReEnableCodeidoPopup(title: String, message: String, image: String) {
         let alertVC = PMAlertController(title: title, description: message, image: UIImage(named: image), style: .walkthrough)
         
         alertVC.addAction(PMAlertAction(title: "Deny", style: .cancel, action: { () in
