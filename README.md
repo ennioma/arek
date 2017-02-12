@@ -118,6 +118,25 @@ public init() {
 and the generated popup is the following
 [![N|Solid](https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png?raw=true)](https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png?raw=true)
 
+The initial and re-enable popup are based on the following conventions:
+
+| Permission      | Initial Title   | Initial Message | Re-Enable Title | Re-Enable Message | Image |
+| :-------------: | :-------------: | :-------------: | :-------------: | :---------------: | :-------------: |
+| Camera      | ArekCamera_initial_title | ArekCamera_initial_message | ArekCamera_reenable_title | ArekCamera_reenable_message | ArekCamera_image |
+| CloudKit      | ArekCloudKit_initial_title | ArekCloudKit_initial_message | ArekCloudKit_reenable_title | ArekCloudKit_reenable_message | ArekCloudKit_image |
+| Contacts      | ArekContacts_initial_title | ArekContacts_initial_message | ArekContacts_reenable_title | ArekContacts_reenable_message | ArekContacts_image |
+| Events      | ArekEvents_initial_title | ArekEvents_initial_message | ArekEvents_reenable_title | ArekEvents_reenable_message | ArekEvents_image |
+| HealthKit      | ArekHealth_initial_title | ArekHealth_initial_message | ArekHealth_reenable_title | ArekHealth_reenable_message | ArekHealth_image |
+| Media Library  | ArekMediaLibrary_initial_title | ArekMediaLibrary_initial_message | ArekMediaLibrary_reenable_title | ArekMediaLibrary_reenable_message | ArekMediaLibrary_image |
+| Microphone  | ArekMicrophone_initial_title | ArekMicrophone_initial_message | ArekMicrophone_reenable_title | ArekMicrophone_reenable_message | ArekMicrophone_image |
+| Motion  | ArekMotion_initial_title | ArekMotion_initial_message | ArekMotion_reenable_title | ArekMotion_reenable_message | ArekMotion_image |
+| Notifications  | ArekNotifications_initial_title | ArekNotifications_initial_message | ArekNotifications_reenable_title | ArekNotifications_reenable_message | ArekNotifications_image |
+| Photo Library  | ArekPhoto_initial_title | ArekPhoto_initial_message | ArekPhoto_reenable_title | ArekPhoto_reenable_message | ArekPhoto_image |
+| Reminders  | ArekReminders_initial_title | ArekReminders_initial_message | ArekReminders_reenable_title | ArekReminders_reenable_message | ArekReminders_image |
+| Speech Recognizer  | ArekSpeechRecognizer_initial_title | ArekSpeechRecognizer_initial_message | ArekSpeechRecognizer_reenable_title | ArekSpeechRecognizer_reenable_message | ArekSpeechRecognizer_image |
+| Bluetooth  | ArekBluetooth_initial_title | ArekBluetooth_initial_message | ArekBluetooth_reenable_title | ArekBluetooth_reenable_message | ArekBluetooth_image |
+| Location  | ArekBaseLocation_initial_title | ArekBaseLocation_initial_message | ArekBaseLocation_reenable_title | ArekBaseLocation_reenable_message | ArekBaseLocation_image |
+
 # How to install AREK
 ## CocoaPods
 Add AREK to your Podfile
@@ -125,7 +144,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 1.1.0'
+    pod 'arek', '~> 1.2.0'
 end
 ```
 
@@ -134,11 +153,15 @@ $ pod install
 ```
 
 ## Carthage
+🚫 Arek `1.2.0` is not supported through Carthage! 🚫
+
 ```ruby
 github "ennioma/arek" ~> 1.1.0
 ```
 
 ## Swift Package Manager
+🚫 Arek `1.2.0` is not supported through Swift Package Manager! 🚫
+
 ```ruby
 import PackageDescription
 
