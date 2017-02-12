@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "F42DDB37BAF7E420761E76836E4CB3DE"
+               BlueprintIdentifier = "CBC193C8CB3D4C26879F2EEB8CF033EB"
                BuildableName = "arek.framework"
                BlueprintName = "arek"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "F42DDB37BAF7E420761E76836E4CB3DE"
+            BlueprintIdentifier = "CBC193C8CB3D4C26879F2EEB8CF033EB"
             BuildableName = "arek.framework"
             BlueprintName = "arek"
             ReferencedContainer = "container:Pods.xcodeproj">

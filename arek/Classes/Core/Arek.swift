@@ -53,7 +53,7 @@ open class ArekBasePermission {
          - initialPopupData: title and message related to pre-iOS popup
          - reEnablePopupData: title and message related to re-enable permission popup
      */
-    public init(configuration: ArekConfiguration? = nil, initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {
+    public init(configuration: ArekConfiguration? = nil,  initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {
         self.configuration = configuration ?? self.configuration
         self.initialPopupData = initialPopupData ?? self.initialPopupData
         self.reEnablePopupData = reEnablePopupData ?? self.reEnablePopupData
