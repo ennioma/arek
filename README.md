@@ -99,24 +99,21 @@ public struct ArekPopupData {
     var title: String!
     var message: String!
     var image: String!
+    var type: ArekPopupType!
 
-    public init(title: String = "", message: String = "", image: String = "") {
+    public init(title: String = "", message: String = "", image: String = "", type: ArekPopupType = .codeido) {
         self.title = title
         self.message = message
         self.image = image
+        self.type = type
     }
 }
 ```
 
-The default configuration for `ArekContacts` is
-```ruby
-public init() {
-        super.init(initialPopupData: ArekPopupData(title: "Access Contacts", message: "\(Bundle.main.infoDictionary![kCFBundleNameKey as String] as! String) needs to access Contacs, do you want to proceed?", image: "arek_contacts_image"),
-                   reEnablePopupData: ArekPopupData(title: "Access Contacts", message: "Please re-enable the access to the Contacts", image: "arek_contacts_image"))
-    }
-```
-and the generated popup is the following
+A default `ArekContacts` is
 [![N|Solid](https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png?raw=true)](https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png?raw=true)
+
+If you want to present a native `UIAlertController` set the type to `.native`.
 
 The initial and re-enable popup are based on the following conventions:
 
