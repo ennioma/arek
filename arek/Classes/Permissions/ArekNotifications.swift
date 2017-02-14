@@ -14,10 +14,11 @@ import UserNotifications
 open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekNotifications"
     
-    public init() {
+    public init(configuration: ArekConfiguration? = nil) {
         let data = ArekLocalizationManager(permission: self.identifier)
         
-        super.init(initialPopupData: ArekPopupData(title: data.initialTitle, message: data.initialMessage, image: data.image),
+        super.init(configuration: configuration,
+                   initialPopupData: ArekPopupData(title: data.initialTitle, message: data.initialMessage, image: data.image),
                    reEnablePopupData: ArekPopupData(title: data.reEnableTitle, message:  data.reEnableMessage, image: data.image))
     }
 
