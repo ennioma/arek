@@ -132,7 +132,7 @@ open class ArekBasePermission {
     }
 
     private func presentReEnablePopup(title: String, message: String, image: String?, allowButtonTitle: String, denyButtonTitle: String) {
-        switch self.initialPopupData.type as ArekPopupType {
+        switch self.reEnablePopupData.type as ArekPopupType {
         case .codeido:
             self.presentReEnableCodeidoPopup(title: title, message: message, image: image!, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle)
             break
