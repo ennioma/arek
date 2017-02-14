@@ -14,6 +14,8 @@ struct ArekLocalizationManager {
     var image: String = ""
     var reEnableTitle: String = ""
     var reEnableMessage: String = ""
+    var allowButtonTitle: String = ""
+    var denyButtonTitle: String = ""
     
     init(permission: String) {
         self.initialTitle = NSLocalizedString("\(permission)_initial_title", comment: "")
@@ -23,5 +25,8 @@ struct ArekLocalizationManager {
         
         self.reEnableTitle = NSLocalizedString("\(permission)_reenable_title", comment: "")
         self.reEnableMessage = NSLocalizedString("\(permission)_reenable_message", comment: "")
+
+        self.allowButtonTitle = NSLocalizedString("\(permission)_allow_button_title", comment: "")
+        self.denyButtonTitle = NSLocalizedString("\(permission)_deny_button_title", comment: "")
     }
 }

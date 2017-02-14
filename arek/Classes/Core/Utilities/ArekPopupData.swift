@@ -17,12 +17,16 @@ public struct ArekPopupData {
     var title: String!
     var message: String!
     var image: String!
+    var allowButtonTitle: String!
+    var denyButtonTitle: String!
     var type: ArekPopupType!
 
-    public init(title: String = "", message: String = "", image: String = "", type: ArekPopupType = .codeido) {
+    public init(title: String = "", message: String = "", image: String = "", allowButtonTitle: String = "", denyButtonTitle: String = "", type: ArekPopupType = .codeido) {
         self.title = title
         self.message = message
         self.image = image
+        self.allowButtonTitle = allowButtonTitle
+        self.denyButtonTitle = denyButtonTitle
         self.type = type
     }
 }
