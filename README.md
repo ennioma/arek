@@ -141,7 +141,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 1.2.0'
+    pod 'arek', '~> 1.2.1'
 end
 ```
 
@@ -150,14 +150,14 @@ $ pod install
 ```
 
 ## Carthage
-🚫 Arek `1.2.0` is not supported through Carthage! 🚫
+🚫 Arek `1.2.1` is not supported through Carthage! 🚫
 
 ```ruby
 github "ennioma/arek" ~> 1.1.0
 ```
 
 ## Swift Package Manager
-🚫 Arek `1.2.0` is not supported through Swift Package Manager! 🚫
+🚫 Arek `1.2.1` is not supported through Swift Package Manager! 🚫
 
 ```ruby
 import PackageDescription
