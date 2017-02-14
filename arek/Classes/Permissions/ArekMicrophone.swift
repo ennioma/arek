@@ -12,11 +12,12 @@ import AVFoundation
 open class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
     public var identifier: String = "ArekMicrophone"
     
-    public init() {
+    public init(configuration: ArekConfiguration? = nil) {
 
         let data = ArekLocalizationManager(permission: self.identifier)
         
-        super.init(initialPopupData: ArekPopupData(title: data.initialTitle, message: data.initialMessage, image: data.image),
+        super.init(configuration: configuration,
+                   initialPopupData: ArekPopupData(title: data.initialTitle, message: data.initialMessage, image: data.image),
                    reEnablePopupData: ArekPopupData(title: data.reEnableTitle, message:  data.reEnableMessage, image: data.image))
     }
     
