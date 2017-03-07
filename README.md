@@ -190,3 +190,6 @@ AREK is available under the MIT license. See the LICENSE file for more info.
 
 # CREDITS:
 Icones provided by `Freepik` and `Vectors Market` from `Flaticon`
+
+# APPS USING AREK:
+- [Ingresso Rápido](https://itunes.apple.com/br/app/ingresso-rápido/id1000809331?mt=8) 
