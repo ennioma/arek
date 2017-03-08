@@ -24,7 +24,8 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission writte i
 7. [License and Credits](#licenseCredits)
 7. [Apps using AREK](#apps)
 
-<a name="implementedPermissions"></a># Implemented permissions
+<a name="implementedPermissions"></a>
+# Implemented permissions
 - [x] Camera
 - [x] Bluetooth
 - [x] CloudKit
@@ -41,7 +42,8 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission writte i
 - [x] Reminders
 - [x] Speech Recognizer
 
-<a name="howTo"></a># How to use AREK
+<a name="howTo"></a>
+# How to use AREK
 ## Check permission status
 ```swift
     let permission = ArekPhoto()
@@ -77,7 +79,8 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission writte i
     }        
 ```
 
-<a name="permissionsConfiguration"></a># Permissions Configuration
+<a name="permissionsConfiguration"></a>
+# Permissions Configuration
 ## General configuration
 Each permission type included in `AREK` is configurable through the `ArekConfiguration` struct. Each permission has a default configuration, so if you are happy with the basic configuration you don't have to care about how it works behind the scenes.
 
@@ -147,7 +150,8 @@ The initial and re-enable popup are based on the following conventions:
 | Bluetooth  | ArekBluetooth_initial_title | ArekBluetooth_initial_message | ArekBluetooth_reenable_title | ArekBluetooth_reenable_message | ArekBluetooth_image | ArekBluetooth_allow_button_title | ArekBluetooth_deny_button_title |
 | Location  | ArekBaseLocation_initial_title | ArekBaseLocation_initial_message | ArekBaseLocation_reenable_title | ArekBaseLocation_reenable_message | ArekBaseLocation_image | ArekBaseLocation_allow_button_title | ArekBaseLocation_deny_button_title |
 
-<a name="howToInstall"></a># How to install AREK
+<a name="howToInstall"></a>
+# How to install AREK
 ## CocoaPods
 Add AREK to your Podfile
 
@@ -184,12 +188,14 @@ Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.
 
 🙏 Take care about adding the ArekHealth class to your project. It includes HealthKit in your project, so if you do this without using HealthKit, your app will be rejected during the AppStore review.
 
-<a name="contribute"></a># How to contribute
+<a name="contribute"></a>
+# How to contribute
 Contributions are welcome 🙌  If you'd like to improve this projects I've shared with the community, just open an issue or raise a PR.
 
 For any information or request feel free to contact me on twitter (@ennioma).
 
-<a name="todo"></a># TODO
+<a name="todo"></a>
+# TODO
 - [] Provide a way to inject a custom PMAlertController in a permission
 - [] Provide the possibility to choose between PMAlertController and a common UIAlertController
 - [] Update the Swift Package Manager installation
@@ -202,5 +208,6 @@ AREK is available under the MIT license. See the LICENSE file for more info.
 ## Credits:
 Icones provided by `Freepik` and `Vectors Market` from `Flaticon`
 
-<a name="apps"></a># Apps using AREK:
+<a name="apps"></a>
+# Apps using AREK:
 - [Ingresso Rápido](https://itunes.apple.com/br/app/ingresso-rápido/id1000809331?mt=8) 
