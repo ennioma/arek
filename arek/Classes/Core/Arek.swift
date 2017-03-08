@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-import PMAlertController
-
 public typealias ArekPermissionResponse = (ArekPermissionStatus) -> Void
 
 public protocol ArekPermissionProtocol {
