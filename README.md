@@ -6,15 +6,25 @@
 ![License](https://cocoapod-badges.herokuapp.com/l/arek/badge.png)
 [![Swift Version](https://img.shields.io/badge/Swift-3.0.x-orange.svg)]()
 
-AREK is a clean and easy to use wrapper over any kind of iOS permission.
+AREK is a clean and easy to use wrapper over any kind of iOS permission writte in Swift.
 
-* show a native popup used to avoid to burn the possibility to ask to iOS the *real* permission
+* show a native popup used to avoid burning the possibility to ask to iOS the *real* permission
 * show a popup to invite the user to re-enable the permission if it has been denied
 * manage through an easy configuration how many times to ask the user to re-enable the permission (Only once, every hour, once a day, weekly, always😷)
 
-🚨 AREK is a **Swift 3** and **XCode 8** compatible project🚨
+🚨 AREK is a **Swift 3** and **XCode 8** compatible project 🚨
 
-# Implemented permissions
+# Table of Contents
+1. [Implemented permissions](#implementedPermissions)
+2. [How to use AREK](#howTo)
+3. [Permissions Configuration](#permissionsConfiguration)
+4. [How to install AREK](#howToInstall)
+5. [How to contribute](#contribute)
+6. [TODO](#todo)
+7. [License and Credits](#licenseCredits)
+7. [Apps using AREK](#apps)
+
+<a name="implementedPermissions"></a># Implemented permissions
 - [x] Camera
 - [x] Bluetooth
 - [x] CloudKit
@@ -31,7 +41,7 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
 - [x] Reminders
 - [x] Speech Recognizer
 
-# How to use AREK
+<a name="howTo"></a># How to use AREK
 ## Check permission status
 ```swift
     let permission = ArekPhoto()
@@ -67,7 +77,8 @@ AREK is a clean and easy to use wrapper over any kind of iOS permission.
     }        
 ```
 
-# Permission Configuration
+<a name="permissionsConfiguration"></a># Permissions Configuration
+## General configuration
 Each permission type included in `AREK` is configurable through the `ArekConfiguration` struct. Each permission has a default configuration, so if you are happy with the basic configuration you don't have to care about how it works behind the scenes.
 
 An `ArekConfiguration` is made up by:
@@ -79,18 +90,19 @@ This frequency value is related to how often you want to the user to re-enable a
 
 ----------
 
->**presentInitialPopup**: Bool
+> **presentInitialPopup**: Bool
 This is an initial popup used to ask **kindly** to the user to allow a permission. This is useful to avoid burning the possibility to show the system popup.
 
 >Set by default to **true**
 
 ----------
->**presentReEnablePopup**: Bool
+
+> **presentReEnablePopup**: Bool
 This is the popup used to **kindly** to the user to re-enable that permission. The *frequency* value is related to this popup.
 
->Set by defaul to **true**
+> Set by defaul to **true**
 
-# Configure the initial and the re-enable popup: `ArekPopupData`
+## Configure the initial and the re-enable popup: `ArekPopupData`
 `ArekPopupData` is the struct used to configure both the pre-permission popup and the re-enable popup. These popups are instances of the amazing [PMAlertController](https://github.com/Codeido/PMAlertController) by [Codeido](http://www.codeido.com/).
 
 The configuration is the following:
@@ -115,6 +127,7 @@ A default `ArekContacts` is
 
 If you want to present a native `UIAlertController` set the type to `.native`.
 
+## Localized Strings
 The initial and re-enable popup are based on the following conventions:
 
 | Permission      | Initial Title   | Initial Message | Re-Enable Title | Re-Enable Message | Image | Allow Button Title | Deny Button Title | 
@@ -134,7 +147,7 @@ The initial and re-enable popup are based on the following conventions:
 | Bluetooth  | ArekBluetooth_initial_title | ArekBluetooth_initial_message | ArekBluetooth_reenable_title | ArekBluetooth_reenable_message | ArekBluetooth_image | ArekBluetooth_allow_button_title | ArekBluetooth_deny_button_title |
 | Location  | ArekBaseLocation_initial_title | ArekBaseLocation_initial_message | ArekBaseLocation_reenable_title | ArekBaseLocation_reenable_message | ArekBaseLocation_image | ArekBaseLocation_allow_button_title | ArekBaseLocation_deny_button_title |
 
-# How to install AREK
+<a name="howToInstall"></a># How to install AREK
 ## CocoaPods
 Add AREK to your Podfile
 
@@ -150,15 +163,11 @@ $ pod install
 ```
 
 ## Carthage
-🚫 Arek `1.2.1` is not supported through Carthage! 🚫
-
 ```ruby
-github "ennioma/arek" ~> 1.1.0
+github "ennioma/arek" ~> 1.2.1
 ```
 
 ## Swift Package Manager
-🚫 Arek `1.2.1` is not supported through Swift Package Manager! 🚫
-
 ```ruby
 import PackageDescription
 
@@ -175,21 +184,23 @@ Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.
 
 🙏 Take care about adding the ArekHealth class to your project. It includes HealthKit in your project, so if you do this without using HealthKit, your app will be rejected during the AppStore review.
 
-## Contribute
+<a name="contribute"></a># How to contribute
 Contributions are welcome 🙌  If you'd like to improve this projects I've shared with the community, just open an issue or raise a PR.
 
 For any information or request feel free to contact me on twitter (@ennioma).
 
-## TODO
+<a name="todo"></a># TODO
 - [] Provide a way to inject a custom PMAlertController in a permission
 - [] Provide the possibility to choose between PMAlertController and a common UIAlertController
 - [] Update the Swift Package Manager installation
 
+<a name="licenseCredits"/>
+# License and Credits
 ## License
 AREK is available under the MIT license. See the LICENSE file for more info.
 
-# CREDITS:
+## Credits:
 Icones provided by `Freepik` and `Vectors Market` from `Flaticon`
 
-# APPS USING AREK:
+<a name="apps"></a># Apps using AREK:
 - [Ingresso Rápido](https://itunes.apple.com/br/app/ingresso-rápido/id1000809331?mt=8) 
