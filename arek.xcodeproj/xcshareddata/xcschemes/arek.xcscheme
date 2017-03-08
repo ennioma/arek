@@ -14,10 +14,10 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "75405D8F1DFA13A600A2BFDB"
-               BuildableName = "ExampleSourceCode.app"
-               BlueprintName = "ExampleSourceCode"
-               ReferencedContainer = "container:ExampleSourceCode.xcodeproj">
+               BlueprintIdentifier = "6B9A110B1E703C7700C8DBCD"
+               BuildableName = "arek.app"
+               BlueprintName = "arek"
+               ReferencedContainer = "container:arek.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -28,34 +28,14 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "75405DA31DFA13A600A2BFDB"
-               BuildableName = "ExampleSourceCodeTests.xctest"
-               BlueprintName = "ExampleSourceCodeTests"
-               ReferencedContainer = "container:ExampleSourceCode.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "75405DAE1DFA13A600A2BFDB"
-               BuildableName = "ExampleSourceCodeUITests.xctest"
-               BlueprintName = "ExampleSourceCodeUITests"
-               ReferencedContainer = "container:ExampleSourceCode.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
       </Testables>
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75405D8F1DFA13A600A2BFDB"
-            BuildableName = "ExampleSourceCode.app"
-            BlueprintName = "ExampleSourceCode"
-            ReferencedContainer = "container:ExampleSourceCode.xcodeproj">
+            BlueprintIdentifier = "6B9A110B1E703C7700C8DBCD"
+            BuildableName = "arek.app"
+            BlueprintName = "arek"
+            ReferencedContainer = "container:arek.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -71,16 +51,15 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75405D8F1DFA13A600A2BFDB"
-            BuildableName = "ExampleSourceCode.app"
-            BlueprintName = "ExampleSourceCode"
-            ReferencedContainer = "container:ExampleSourceCode.xcodeproj">
+            BlueprintIdentifier = "6B9A110B1E703C7700C8DBCD"
+            BuildableName = "arek.app"
+            BlueprintName = "arek"
+            ReferencedContainer = "container:arek.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -90,16 +69,15 @@
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "75405D8F1DFA13A600A2BFDB"
-            BuildableName = "ExampleSourceCode.app"
-            BlueprintName = "ExampleSourceCode"
-            ReferencedContainer = "container:ExampleSourceCode.xcodeproj">
+            BlueprintIdentifier = "6B9A110B1E703C7700C8DBCD"
+            BuildableName = "arek.app"
+            BlueprintName = "arek"
+            ReferencedContainer = "container:arek.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

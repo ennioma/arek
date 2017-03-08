@@ -1,0 +1,435 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B9A11561E703CDB00C8DBCD /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 6B9A11341E703CDB00C8DBCD /* .gitkeep */; };
+		6B9A11571E703CDB00C8DBCD /* arek.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9A11351E703CDB00C8DBCD /* arek.png */; };
+		6B9A11581E703CDB00C8DBCD /* arek_contacts.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B9A11361E703CDB00C8DBCD /* arek_contacts.png */; };
+		6B9A11591E703CDB00C8DBCD /* .gitkeep in Resources */ = {isa = PBXBuildFile; fileRef = 6B9A11381E703CDB00C8DBCD /* .gitkeep */; };
+		6B9A115A1E703CDB00C8DBCD /* Arek.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A113A1E703CDB00C8DBCD /* Arek.swift */; };
+		6B9A115B1E703CDB00C8DBCD /* ArekConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A113C1E703CDB00C8DBCD /* ArekConfiguration.swift */; };
+		6B9A115C1E703CDB00C8DBCD /* ArekLocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A113D1E703CDB00C8DBCD /* ArekLocalizationManager.swift */; };
+		6B9A115D1E703CDB00C8DBCD /* ArekPermissionFrequency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A113E1E703CDB00C8DBCD /* ArekPermissionFrequency.swift */; };
+		6B9A115E1E703CDB00C8DBCD /* ArekPermissionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A113F1E703CDB00C8DBCD /* ArekPermissionStatus.swift */; };
+		6B9A115F1E703CDB00C8DBCD /* ArekPopupData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11401E703CDB00C8DBCD /* ArekPopupData.swift */; };
+		6B9A11601E703CDB00C8DBCD /* ArekCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11421E703CDB00C8DBCD /* ArekCamera.swift */; };
+		6B9A11611E703CDB00C8DBCD /* ArekCloudKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11431E703CDB00C8DBCD /* ArekCloudKit.swift */; };
+		6B9A11621E703CDB00C8DBCD /* ArekContacts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11441E703CDB00C8DBCD /* ArekContacts.swift */; };
+		6B9A11631E703CDB00C8DBCD /* ArekEvents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11451E703CDB00C8DBCD /* ArekEvents.swift */; };
+		6B9A11641E703CDB00C8DBCD /* ArekHealth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11461E703CDB00C8DBCD /* ArekHealth.swift */; };
+		6B9A11651E703CDB00C8DBCD /* ArekMediaLibrary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11471E703CDB00C8DBCD /* ArekMediaLibrary.swift */; };
+		6B9A11661E703CDB00C8DBCD /* ArekMicrophone.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11481E703CDB00C8DBCD /* ArekMicrophone.swift */; };
+		6B9A11671E703CDB00C8DBCD /* ArekMotion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11491E703CDB00C8DBCD /* ArekMotion.swift */; };
+		6B9A11681E703CDB00C8DBCD /* ArekNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A114A1E703CDB00C8DBCD /* ArekNotifications.swift */; };
+		6B9A11691E703CDB00C8DBCD /* ArekPhoto.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A114B1E703CDB00C8DBCD /* ArekPhoto.swift */; };
+		6B9A116A1E703CDB00C8DBCD /* ArekReminders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A114C1E703CDB00C8DBCD /* ArekReminders.swift */; };
+		6B9A116B1E703CDB00C8DBCD /* ArekSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A114D1E703CDB00C8DBCD /* ArekSpeechRecognizer.swift */; };
+		6B9A116C1E703CDB00C8DBCD /* ArekBluetooth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A114F1E703CDB00C8DBCD /* ArekBluetooth.swift */; };
+		6B9A116D1E703CDB00C8DBCD /* ArekBluetoothDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11501E703CDB00C8DBCD /* ArekBluetoothDelegate.swift */; };
+		6B9A116E1E703CDB00C8DBCD /* ArekBaseLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11521E703CDB00C8DBCD /* ArekBaseLocation.swift */; };
+		6B9A116F1E703CDB00C8DBCD /* ArekBaseLocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11531E703CDB00C8DBCD /* ArekBaseLocationDelegate.swift */; };
+		6B9A11701E703CDB00C8DBCD /* ArekLocationAlways.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11541E703CDB00C8DBCD /* ArekLocationAlways.swift */; };
+		6B9A11711E703CDB00C8DBCD /* ArekLocationWhenInUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B9A11551E703CDB00C8DBCD /* ArekLocationWhenInUse.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6B9A110C1E703C7700C8DBCD /* arek.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arek.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B9A11341E703CDB00C8DBCD /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		6B9A11351E703CDB00C8DBCD /* arek.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arek.png; sourceTree = "<group>"; };
+		6B9A11361E703CDB00C8DBCD /* arek_contacts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arek_contacts.png; sourceTree = "<group>"; };
+		6B9A11381E703CDB00C8DBCD /* .gitkeep */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
+		6B9A113A1E703CDB00C8DBCD /* Arek.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arek.swift; sourceTree = "<group>"; };
+		6B9A113C1E703CDB00C8DBCD /* ArekConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekConfiguration.swift; sourceTree = "<group>"; };
+		6B9A113D1E703CDB00C8DBCD /* ArekLocalizationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekLocalizationManager.swift; sourceTree = "<group>"; };
+		6B9A113E1E703CDB00C8DBCD /* ArekPermissionFrequency.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekPermissionFrequency.swift; sourceTree = "<group>"; };
+		6B9A113F1E703CDB00C8DBCD /* ArekPermissionStatus.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekPermissionStatus.swift; sourceTree = "<group>"; };
+		6B9A11401E703CDB00C8DBCD /* ArekPopupData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekPopupData.swift; sourceTree = "<group>"; };
+		6B9A11421E703CDB00C8DBCD /* ArekCamera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekCamera.swift; sourceTree = "<group>"; };
+		6B9A11431E703CDB00C8DBCD /* ArekCloudKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekCloudKit.swift; sourceTree = "<group>"; };
+		6B9A11441E703CDB00C8DBCD /* ArekContacts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekContacts.swift; sourceTree = "<group>"; };
+		6B9A11451E703CDB00C8DBCD /* ArekEvents.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekEvents.swift; sourceTree = "<group>"; };
+		6B9A11461E703CDB00C8DBCD /* ArekHealth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekHealth.swift; sourceTree = "<group>"; };
+		6B9A11471E703CDB00C8DBCD /* ArekMediaLibrary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekMediaLibrary.swift; sourceTree = "<group>"; };
+		6B9A11481E703CDB00C8DBCD /* ArekMicrophone.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekMicrophone.swift; sourceTree = "<group>"; };
+		6B9A11491E703CDB00C8DBCD /* ArekMotion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekMotion.swift; sourceTree = "<group>"; };
+		6B9A114A1E703CDB00C8DBCD /* ArekNotifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekNotifications.swift; sourceTree = "<group>"; };
+		6B9A114B1E703CDB00C8DBCD /* ArekPhoto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekPhoto.swift; sourceTree = "<group>"; };
+		6B9A114C1E703CDB00C8DBCD /* ArekReminders.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekReminders.swift; sourceTree = "<group>"; };
+		6B9A114D1E703CDB00C8DBCD /* ArekSpeechRecognizer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekSpeechRecognizer.swift; sourceTree = "<group>"; };
+		6B9A114F1E703CDB00C8DBCD /* ArekBluetooth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekBluetooth.swift; sourceTree = "<group>"; };
+		6B9A11501E703CDB00C8DBCD /* ArekBluetoothDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekBluetoothDelegate.swift; sourceTree = "<group>"; };
+		6B9A11521E703CDB00C8DBCD /* ArekBaseLocation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekBaseLocation.swift; sourceTree = "<group>"; };
+		6B9A11531E703CDB00C8DBCD /* ArekBaseLocationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekBaseLocationDelegate.swift; sourceTree = "<group>"; };
+		6B9A11541E703CDB00C8DBCD /* ArekLocationAlways.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekLocationAlways.swift; sourceTree = "<group>"; };
+		6B9A11551E703CDB00C8DBCD /* ArekLocationWhenInUse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekLocationWhenInUse.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B9A11091E703C7700C8DBCD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B9A11031E703C7700C8DBCD = {
+			isa = PBXGroup;
+			children = (
+				6B9A11321E703CDB00C8DBCD /* Arek */,
+				6B9A110D1E703C7700C8DBCD /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6B9A110D1E703C7700C8DBCD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A110C1E703C7700C8DBCD /* arek.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B9A11321E703CDB00C8DBCD /* Arek */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A11331E703CDB00C8DBCD /* Assets */,
+				6B9A11371E703CDB00C8DBCD /* Classes */,
+			);
+			name = Arek;
+			path = code;
+			sourceTree = "<group>";
+		};
+		6B9A11331E703CDB00C8DBCD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A11341E703CDB00C8DBCD /* .gitkeep */,
+				6B9A11351E703CDB00C8DBCD /* arek.png */,
+				6B9A11361E703CDB00C8DBCD /* arek_contacts.png */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		6B9A11371E703CDB00C8DBCD /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A11381E703CDB00C8DBCD /* .gitkeep */,
+				6B9A11391E703CDB00C8DBCD /* Core */,
+				6B9A11411E703CDB00C8DBCD /* Permissions */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		6B9A11391E703CDB00C8DBCD /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A113A1E703CDB00C8DBCD /* Arek.swift */,
+				6B9A113B1E703CDB00C8DBCD /* Utilities */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		6B9A113B1E703CDB00C8DBCD /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A113C1E703CDB00C8DBCD /* ArekConfiguration.swift */,
+				6B9A113D1E703CDB00C8DBCD /* ArekLocalizationManager.swift */,
+				6B9A113E1E703CDB00C8DBCD /* ArekPermissionFrequency.swift */,
+				6B9A113F1E703CDB00C8DBCD /* ArekPermissionStatus.swift */,
+				6B9A11401E703CDB00C8DBCD /* ArekPopupData.swift */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		6B9A11411E703CDB00C8DBCD /* Permissions */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A11421E703CDB00C8DBCD /* ArekCamera.swift */,
+				6B9A11431E703CDB00C8DBCD /* ArekCloudKit.swift */,
+				6B9A11441E703CDB00C8DBCD /* ArekContacts.swift */,
+				6B9A11451E703CDB00C8DBCD /* ArekEvents.swift */,
+				6B9A11461E703CDB00C8DBCD /* ArekHealth.swift */,
+				6B9A11471E703CDB00C8DBCD /* ArekMediaLibrary.swift */,
+				6B9A11481E703CDB00C8DBCD /* ArekMicrophone.swift */,
+				6B9A11491E703CDB00C8DBCD /* ArekMotion.swift */,
+				6B9A114A1E703CDB00C8DBCD /* ArekNotifications.swift */,
+				6B9A114B1E703CDB00C8DBCD /* ArekPhoto.swift */,
+				6B9A114C1E703CDB00C8DBCD /* ArekReminders.swift */,
+				6B9A114D1E703CDB00C8DBCD /* ArekSpeechRecognizer.swift */,
+				6B9A114E1E703CDB00C8DBCD /* Bluetooth */,
+				6B9A11511E703CDB00C8DBCD /* Location */,
+			);
+			path = Permissions;
+			sourceTree = "<group>";
+		};
+		6B9A114E1E703CDB00C8DBCD /* Bluetooth */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A114F1E703CDB00C8DBCD /* ArekBluetooth.swift */,
+				6B9A11501E703CDB00C8DBCD /* ArekBluetoothDelegate.swift */,
+			);
+			path = Bluetooth;
+			sourceTree = "<group>";
+		};
+		6B9A11511E703CDB00C8DBCD /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				6B9A11521E703CDB00C8DBCD /* ArekBaseLocation.swift */,
+				6B9A11531E703CDB00C8DBCD /* ArekBaseLocationDelegate.swift */,
+				6B9A11541E703CDB00C8DBCD /* ArekLocationAlways.swift */,
+				6B9A11551E703CDB00C8DBCD /* ArekLocationWhenInUse.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B9A110B1E703C7700C8DBCD /* arek */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B9A111E1E703C7700C8DBCD /* Build configuration list for PBXNativeTarget "arek" */;
+			buildPhases = (
+				6B9A11081E703C7700C8DBCD /* Sources */,
+				6B9A11091E703C7700C8DBCD /* Frameworks */,
+				6B9A110A1E703C7700C8DBCD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = arek;
+			productName = arek;
+			productReference = 6B9A110C1E703C7700C8DBCD /* arek.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B9A11041E703C7700C8DBCD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = "Ennio Masi";
+				TargetAttributes = {
+					6B9A110B1E703C7700C8DBCD = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 6B9A11071E703C7700C8DBCD /* Build configuration list for PBXProject "arek" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6B9A11031E703C7700C8DBCD;
+			productRefGroup = 6B9A110D1E703C7700C8DBCD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B9A110B1E703C7700C8DBCD /* arek */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B9A110A1E703C7700C8DBCD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B9A11571E703CDB00C8DBCD /* arek.png in Resources */,
+				6B9A11561E703CDB00C8DBCD /* .gitkeep in Resources */,
+				6B9A11581E703CDB00C8DBCD /* arek_contacts.png in Resources */,
+				6B9A11591E703CDB00C8DBCD /* .gitkeep in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B9A11081E703C7700C8DBCD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B9A115B1E703CDB00C8DBCD /* ArekConfiguration.swift in Sources */,
+				6B9A11711E703CDB00C8DBCD /* ArekLocationWhenInUse.swift in Sources */,
+				6B9A115D1E703CDB00C8DBCD /* ArekPermissionFrequency.swift in Sources */,
+				6B9A116F1E703CDB00C8DBCD /* ArekBaseLocationDelegate.swift in Sources */,
+				6B9A115A1E703CDB00C8DBCD /* Arek.swift in Sources */,
+				6B9A11671E703CDB00C8DBCD /* ArekMotion.swift in Sources */,
+				6B9A11701E703CDB00C8DBCD /* ArekLocationAlways.swift in Sources */,
+				6B9A11641E703CDB00C8DBCD /* ArekHealth.swift in Sources */,
+				6B9A11621E703CDB00C8DBCD /* ArekContacts.swift in Sources */,
+				6B9A11601E703CDB00C8DBCD /* ArekCamera.swift in Sources */,
+				6B9A116B1E703CDB00C8DBCD /* ArekSpeechRecognizer.swift in Sources */,
+				6B9A11681E703CDB00C8DBCD /* ArekNotifications.swift in Sources */,
+				6B9A116A1E703CDB00C8DBCD /* ArekReminders.swift in Sources */,
+				6B9A115E1E703CDB00C8DBCD /* ArekPermissionStatus.swift in Sources */,
+				6B9A11611E703CDB00C8DBCD /* ArekCloudKit.swift in Sources */,
+				6B9A116D1E703CDB00C8DBCD /* ArekBluetoothDelegate.swift in Sources */,
+				6B9A115C1E703CDB00C8DBCD /* ArekLocalizationManager.swift in Sources */,
+				6B9A11651E703CDB00C8DBCD /* ArekMediaLibrary.swift in Sources */,
+				6B9A11661E703CDB00C8DBCD /* ArekMicrophone.swift in Sources */,
+				6B9A115F1E703CDB00C8DBCD /* ArekPopupData.swift in Sources */,
+				6B9A11631E703CDB00C8DBCD /* ArekEvents.swift in Sources */,
+				6B9A116E1E703CDB00C8DBCD /* ArekBaseLocation.swift in Sources */,
+				6B9A116C1E703CDB00C8DBCD /* ArekBluetooth.swift in Sources */,
+				6B9A11691E703CDB00C8DBCD /* ArekPhoto.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		6B9A111C1E703C7700C8DBCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6B9A111D1E703C7700C8DBCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6B9A111F1E703C7700C8DBCD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = arek/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ennioma.arek;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		6B9A11201E703C7700C8DBCD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = arek/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = ennioma.arek;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B9A11071E703C7700C8DBCD /* Build configuration list for PBXProject "arek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B9A111C1E703C7700C8DBCD /* Debug */,
+				6B9A111D1E703C7700C8DBCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B9A111E1E703C7700C8DBCD /* Build configuration list for PBXNativeTarget "arek" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B9A111F1E703C7700C8DBCD /* Debug */,
+				6B9A11201E703C7700C8DBCD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6B9A11041E703C7700C8DBCD /* Project object */;
+}
