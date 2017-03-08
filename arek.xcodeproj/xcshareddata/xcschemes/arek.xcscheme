@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "6B9A110B1E703C7700C8DBCD"
-               BuildableName = "arek.framework"
+               BuildableName = "arek.app"
                BlueprintName = "arek"
                ReferencedContainer = "container:arek.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B9A110B1E703C7700C8DBCD"
-            BuildableName = "arek.framework"
+            BuildableName = "arek.app"
             BlueprintName = "arek"
             ReferencedContainer = "container:arek.xcodeproj">
          </BuildableReference>
@@ -55,7 +55,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B9A110B1E703C7700C8DBCD"
-            BuildableName = "arek.framework"
+            BuildableName = "arek.app"
             BlueprintName = "arek"
             ReferencedContainer = "container:arek.xcodeproj">
          </BuildableReference>
@@ -74,7 +74,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "6B9A110B1E703C7700C8DBCD"
-            BuildableName = "arek.framework"
+            BuildableName = "arek.app"
             BlueprintName = "arek"
             ReferencedContainer = "container:arek.xcodeproj">
          </BuildableReference>
