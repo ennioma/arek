@@ -1,5 +1,5 @@
 <p align="center">
-<img src="https://github.com/ennioma/arek/blob/master/arek/Assets/arek.png" alt="AREK" width="295" height="54">
+<img src="https://github.com/ennioma/arek/blob/master/code/Assets/arek.png" alt="AREK" width="295" height="54">
 </p>
 <br />
 <p align="center">
@@ -144,7 +144,7 @@ public struct ArekPopupData {
 
 A default `ArekContacts` is
 <p align="center">
-<img src="https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png" alt="Contacts" width="150" height="267">
+<img src="https://github.com/ennioma/arek/blob/master/code/Assets/arek_contacts.png" alt="Contacts" width="150" height="267">
 </p>
 <br />
 
