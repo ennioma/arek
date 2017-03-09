@@ -1,10 +1,14 @@
-[![N|Solid](https://github.com/ennioma/arek/blob/master/arek/Assets/arek.png?raw=true)](https://github.com/ennioma/arek/blob/master/arek/Assets/arek.png?raw=true)
-
+<p align="center">
+<img src="https://github.com/ennioma/arek/blob/master/arek/Assets/arek.png" alt="AREK" width="295" height="54">
+</p>
+<br />
+<p align="center">
 ![Platform Version](https://cocoapod-badges.herokuapp.com/p/arek/badge.png)
 ![Pod Version](https://cocoapod-badges.herokuapp.com/v/arek/0.0.6/badge.png)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![License](https://cocoapod-badges.herokuapp.com/l/arek/badge.png)
 [![Swift Version](https://img.shields.io/badge/Swift-3.0.x-orange.svg)]()
+</p>
 
 AREK is a clean and easy to use wrapper over any kind of iOS permission writte in Swift.
 
@@ -190,7 +194,7 @@ Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.
 
 <a name="contribute"></a>
 # How to contribute
-Contributions are welcome 🙌  If you'd like to improve this projects I've shared with the community, just open an issue or raise a PR.
+Contributions are welcome 🙌  If you'd like to improve this projects I've shared with the community, just open an issue or raise a PR from the current develop branch.
 
 For any information or request feel free to contact me on twitter (@ennioma).
 
