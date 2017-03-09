@@ -130,7 +130,10 @@ public struct ArekPopupData {
 ```
 
 A default `ArekContacts` is
-[![N|Solid](https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png?raw=true)](https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png?raw=true)
+<p align="center">
+<img src="https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png" alt="Contacts" width="150" height="267">
+</p>
+<br />
 
 If you want to present a native `UIAlertController` set the type to `.native`.
 
