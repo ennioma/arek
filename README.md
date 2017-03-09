@@ -2,13 +2,12 @@
 <img src="https://github.com/ennioma/arek/blob/master/code/Assets/arek.png" alt="AREK" width="295" height="54">
 </p>
 <br />
-<p align="center">
+
 ![Platform Version](https://cocoapod-badges.herokuapp.com/p/arek/badge.png)
 ![Pod Version](https://cocoapod-badges.herokuapp.com/v/arek/0.0.6/badge.png)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![License](https://cocoapod-badges.herokuapp.com/l/arek/badge.png)
 [![Swift Version](https://img.shields.io/badge/Swift-3.0.x-orange.svg)]()
-</p>
 
 AREK is a clean and easy to use wrapper over any kind of iOS permission writte in Swift.
 
