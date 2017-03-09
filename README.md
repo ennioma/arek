@@ -199,7 +199,20 @@ $ pod install
 
 ## Carthage
 ```ruby
-github "ennioma/arek" ~> 1.2.1
+github "ennioma/arek" ~> "1.2.1"
+```
+
+Then on your application target *Build Phases* settings tab, add a "New Run Script Phase". Create a Run Script with the following content:
+
+```ruby
+/usr/local/bin/carthage copy-frameworks
+```
+
+and add the following paths under "Input Files":
+
+```ruby
+$(SRCROOT)/Carthage/Build/iOS/arek.framework
+$(SRCROOT)/Carthage/Build/iOS/PMAlertController.framework
 ```
 
 ## Swift Package Manager
