@@ -12,6 +12,19 @@
 
 AREK is a clean and easy to use wrapper over any kind of iOS permission writte in Swift.
 
+Why AREK could help you building a better app is well described by Apple <a href="https://developer.apple.com/ios/human-interface-guidelines/interaction/requesting-permission/">here</a>:
+
+```
+Request personal data only when your app clearly needs it.
+...
+Explain why your app needs the information if it’s not obvious. 
+...
+Request permission at launch only when necessary for your app to function.
+...
+```
+
+Every goal could be easily reached using **AREK**.
+
 * show a native popup used to avoid burning the possibility to ask to iOS the *real* permission
 * show a popup to invite the user to re-enable the permission if it has been denied
 * manage through an easy configuration how many times to ask the user to re-enable the permission (Only once, every hour, once a day, weekly, always😷)
@@ -138,9 +151,20 @@ A default `ArekContacts` is
 If you want to present a native `UIAlertController` set the type to `.native`.
 
 ## Localized Strings
-The initial and re-enable popup are based on the following conventions:
+**AREK** by convention expects to find localized strings in your Localizable files in order to configure the UI.
 
-| Permission      | Initial Title   | Initial Message | Re-Enable Title | Re-Enable Message | Image | Allow Button Title | Deny Button Title | 
+In the following table there are the configurations for:
+- Pre-permission popup title
+- Pre-permission popup message
+- Re-enable popup title
+- Re-enable popup message
+- Popup image for that permission
+- Allow button title
+- Deny button title
+
+Messages related to the iOS native permission popup should be configured following the conventions described <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW1">here</a>.
+
+| Permission      | Pre-permission Title   | Pre-permission Message | Re-Enable Title | Re-Enable Message | Image | Allow Button Title | Deny Button Title | 
 | :-------------: | :-------------: | :-------------: | :-------------: | :---------------: | :---: | :----------------: | :---------------: |
 | Camera      | ArekCamera_initial_title | ArekCamera_initial_message | ArekCamera_reenable_title | ArekCamera_reenable_message | ArekCamera_image | ArekCamera_allow_button_title | ArekCamera_deny_button_title |
 | CloudKit      | ArekCloudKit_initial_title | ArekCloudKit_initial_message | ArekCloudKit_reenable_title | ArekCloudKit_reenable_message | ArekCloudKit_image | ArekCloudKit_allow_button_title | ArekCloudKit_deny_button_title
@@ -206,6 +230,7 @@ For any information or request feel free to contact me on twitter (@ennioma).
 - [] Provide a way to inject a custom PMAlertController in a permission
 - [] Provide the possibility to choose between PMAlertController and a common UIAlertController
 - [] Update the Swift Package Manager installation
+- [] Add Siri Permission (<a href=""https://developer.apple.com/library/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CreatingtheIntentsExtension.html#//apple_ref/doc/uid/TP40016875-CH4-SW11> Doc </a>)
 
 <a name="licenseCredits"/>
 # License and Credits
