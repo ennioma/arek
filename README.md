@@ -122,7 +122,7 @@ This is the popup used to **kindly** to the user to re-enable that permission. T
 > Set by defaul to **true**
 
 ## Configure the initial and the re-enable popup: `ArekPopupData`
-`ArekPopupData` is the struct used to configure both the pre-permission popup and the re-enable popup. These popups are instances of the amazing [PMAlertController](https://github.com/Codeido/PMAlertController) by [Codeido](http://www.codeido.com/).
+`ArekPopupData` is the struct used to configure both the pre-permission popup and the re-enable popup. These popups could be instances of the amazing [PMAlertController](https://github.com/Codeido/PMAlertController) by [Codeido](http://www.codeido.com/) or native iOS alerts.
 
 The configuration is the following:
 ```ruby
@@ -141,13 +141,10 @@ public struct ArekPopupData {
 }
 ```
 
-A default `ArekContacts` is
-<p align="center">
-<img src="https://github.com/ennioma/arek/blob/master/code/Assets/arek_contacts.png" alt="Contacts" width="150" height="267">
-</p>
-<br />
+This is an example of the `ArekContacts` pre-enable popup using `PMAlertController`:
+<img src="https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png" width="100">
 
-If you want to present a native `UIAlertController` set the type to `.native`.
+If you want to present a native `UIAlertController` set the type to `.native` otherwise if you want to setup a `PMAlertController` set the type to `.codeido`
 
 ## Localized Strings
 **AREK** by convention expects to find localized strings in your Localizable files in order to configure the UI.
@@ -221,7 +218,7 @@ import PackageDescription
 let package = Package(
   name: "YourApp",
   dependencies: [
-    .Package(url: "https://github.com/ennioma/arek.git", versionMajor: 1, minor: 0)
+    .Package(url: "https://github.com/ennioma/arek.git", versionMajor: 3, minor: 0)
   ]
 )
 ```
