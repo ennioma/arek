@@ -144,7 +144,7 @@ public struct ArekPopupData {
 This is an example of the `ArekContacts` pre-enable popup using `PMAlertController`:
 <img src="https://github.com/ennioma/arek/blob/master/arek/Assets/arek_contacts.png" width="100">
 
-If you want to present a native `UIAlertController` set the type to `.native` otherwise if you want to setup a `PMAlertController` set the type to `.codeido`
+If you want to present a native `UIAlertController` set the type to `.native` otherwise if you want to setup a `PMAlertController` set the type to `.codeido`.
 
 ## Localized Strings
 **AREK** by convention expects to find localized strings in your Localizable files in order to configure the UI.
@@ -237,7 +237,6 @@ For any information or request feel free to contact me on twitter (@ennioma).
 <a name="todo"></a>
 # TODO
 - [] Provide a way to inject a custom PMAlertController in a permission
-- [] Provide the possibility to choose between PMAlertController and a common UIAlertController
 - [] Update the Swift Package Manager installation
 - [] Add Siri Permission (<a href=""https://developer.apple.com/library/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CreatingtheIntentsExtension.html#//apple_ref/doc/uid/TP40016875-CH4-SW11> Doc </a>)
 
