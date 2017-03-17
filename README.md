@@ -247,9 +247,9 @@ For any information or request feel free to contact me on twitter (@ennioma).
 
 If you'd like to support AREK: let me know if you are using the library in production or feel free to PR and update this README.
 
-<a name="licenseCredits"/>
+<a name="licenseCredits"></a>
 # License and Credits
-## License
+## License:
 AREK is available under the MIT license. See the LICENSE file for more info.
 
 ## Credits:
