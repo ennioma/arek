@@ -37,8 +37,8 @@ Every goal could be easily reached using **AREK**.
 4. [How to install AREK](#howToInstall)
 5. [How to contribute](#contribute)
 6. [TODO](#todo)
-7. [License and Credits](#licenseCredits)
-7. [Apps using AREK](#apps)
+7. [Known Apps using AREK in production](#apps)
+8. [License and Credits](#licenseCredits)
 
 <a name="implementedPermissions"></a>
 # Implemented permissions
@@ -241,6 +241,12 @@ For any information or request feel free to contact me on twitter (@ennioma).
 - [] Update the Swift Package Manager installation
 - [] Add Siri Permission (<a href=""https://developer.apple.com/library/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CreatingtheIntentsExtension.html#//apple_ref/doc/uid/TP40016875-CH4-SW11> Doc </a>)
 
+<a name="apps"></a>
+# Known Apps using AREK in production:
+- [Ingresso Rápido](https://itunes.apple.com/br/app/ingresso-rápido/id1000809331?mt=8) 
+
+If you'd like to support AREK: let me know if you are using the library in production or feel free to PR and update this README.
+
 <a name="licenseCredits"/>
 # License and Credits
 ## License
@@ -248,7 +254,3 @@ AREK is available under the MIT license. See the LICENSE file for more info.
 
 ## Credits:
 Icones provided by `Freepik` and `Vectors Market` from `Flaticon`
-
-<a name="apps"></a>
-# Apps using AREK:
-- [Ingresso Rápido](https://itunes.apple.com/br/app/ingresso-rápido/id1000809331?mt=8) 
