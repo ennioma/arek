@@ -9,7 +9,7 @@
 ![License](https://cocoapod-badges.herokuapp.com/l/arek/badge.png)
 [![Swift Version](https://img.shields.io/badge/Swift-3.0.x-orange.svg)]()
 
-AREK is a clean and easy to use wrapper over any kind of iOS permission writte in Swift.
+AREK is a clean and easy to use wrapper over any kind of iOS permission written in Swift.
 
 Why AREK could help you building a better app is well described by Apple <a href="https://developer.apple.com/ios/human-interface-guidelines/interaction/requesting-permission/">here</a>:
 
@@ -38,7 +38,6 @@ Every goal could be easily reached using **AREK**.
 5. [How to contribute](#contribute)
 6. [TODO](#todo)
 7. [License and Credits](#licenseCredits)
-7. [Apps using AREK](#apps)
 
 <a name="implementedPermissions"></a>
 # Implemented permissions
@@ -240,14 +239,10 @@ For any information or request feel free to contact me on twitter (@ennioma).
 - [] Update the Swift Package Manager installation
 - [] Add Siri Permission (<a href=""https://developer.apple.com/library/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CreatingtheIntentsExtension.html#//apple_ref/doc/uid/TP40016875-CH4-SW11> Doc </a>)
 
-<a name="licenseCredits"/>
+<a name="licenseCredits"></a>
 # License and Credits
-## License
+## License:
 AREK is available under the MIT license. See the LICENSE file for more info.
 
 ## Credits:
 Icones provided by `Freepik` and `Vectors Market` from `Flaticon`
-
-<a name="apps"></a>
-# Apps using AREK:
-- [Ingresso Rápido](https://itunes.apple.com/br/app/ingresso-rápido/id1000809331?mt=8) 
