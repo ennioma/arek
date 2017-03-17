@@ -9,7 +9,7 @@
 ![License](https://cocoapod-badges.herokuapp.com/l/arek/badge.png)
 [![Swift Version](https://img.shields.io/badge/Swift-3.0.x-orange.svg)]()
 
-AREK is a clean and easy to use wrapper over any kind of iOS permission writte in Swift.
+AREK is a clean and easy to use wrapper over any kind of iOS permission written in Swift.
 
 Why AREK could help you building a better app is well described by Apple <a href="https://developer.apple.com/ios/human-interface-guidelines/interaction/requesting-permission/">here</a>:
 
