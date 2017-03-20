@@ -141,7 +141,8 @@ public struct ArekPopupData {
 ```
 
 This is an example of the `ArekContacts` pre-enable popup using `PMAlertController`:
-<img src="https://github.com/ennioma/arek/blob/master/code/Assets/arek_contacts.png" width="100">
+<br />
+<img src="https://github.com/ennioma/arek/blob/master/code/Assets/arek_contacts.png" width="150">
 
 If you want to present a native `UIAlertController` set the type to `.native` otherwise if you want to setup a `PMAlertController` set the type to `.codeido`
 
