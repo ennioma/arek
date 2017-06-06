@@ -65,6 +65,8 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
                     return completion(.notDetermined)
                 }
                 if granted {
+                    self.registerForRemoteNotifications()
+                    
                     print("[🚨 Arek 🚨] Push notifications permission authorized by user ✅")
                     return completion(.authorized)
                 }
@@ -73,6 +75,12 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
             }
         } else if #available(iOS 9.0, *) {
             UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+            self.registerForRemoteNotifications()
+        }
+    }
+    
+    fileprivate func registerForRemoteNotifications() {
+        DispatchQueue.main.async {
             UIApplication.shared.registerForRemoteNotifications()
         }
     }

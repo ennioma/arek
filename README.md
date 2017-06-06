@@ -141,7 +141,8 @@ public struct ArekPopupData {
 ```
 
 This is an example of the `ArekContacts` pre-enable popup using `PMAlertController`:
-<img src="https://github.com/ennioma/arek/blob/master/code/Assets/arek_contacts.png" width="100">
+<br />
+<img src="https://github.com/ennioma/arek/blob/master/code/Assets/arek_contacts.png" width="150">
 
 If you want to present a native `UIAlertController` set the type to `.native` otherwise if you want to setup a `PMAlertController` set the type to `.codeido`.
 
@@ -184,7 +185,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 1.3.0'
+    pod 'arek', '~> 1.3.1'
 end
 ```
 
@@ -194,7 +195,7 @@ $ pod install
 
 ## Carthage
 ```ruby
-github "ennioma/arek" ~> "1.3.0"
+github "ennioma/arek" ~> "1.3.1"
 ```
 
 Then on your application target *Build Phases* settings tab, add a "New Run Script Phase". Create a Run Script with the following content:
@@ -237,7 +238,6 @@ For any information or request feel free to contact me on twitter (@ennioma).
 # TODO
 - [] Provide a way to inject a custom PMAlertController in a permission
 - [] Update the Swift Package Manager installation
-- [] Add Siri Permission (<a href=""https://developer.apple.com/library/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CreatingtheIntentsExtension.html#//apple_ref/doc/uid/TP40016875-CH4-SW11> Doc </a>)
 
 <a name="licenseCredits"></a>
 # License and Credits
