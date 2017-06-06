@@ -185,7 +185,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 1.3.0'
+    pod 'arek', '~> 1.3.1'
 end
 ```
 
@@ -195,7 +195,7 @@ $ pod install
 
 ## Carthage
 ```ruby
-github "ennioma/arek" ~> "1.3.0"
+github "ennioma/arek" ~> "1.3.1"
 ```
 
 Then on your application target *Build Phases* settings tab, add a "New Run Script Phase". Create a Run Script with the following content:
@@ -239,7 +239,6 @@ For any information or request feel free to contact me on twitter (@ennioma).
 - [] Provide a way to inject a custom PMAlertController in a permission
 - [] Provide the possibility to choose between PMAlertController and a common UIAlertController
 - [] Update the Swift Package Manager installation
-- [] Add Siri Permission (<a href=""https://developer.apple.com/library/content/documentation/Intents/Conceptual/SiriIntegrationGuide/CreatingtheIntentsExtension.html#//apple_ref/doc/uid/TP40016875-CH4-SW11> Doc </a>)
 
 <a name="licenseCredits"></a>
 # License and Credits
