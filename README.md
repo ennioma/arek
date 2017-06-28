@@ -244,5 +244,9 @@ For any information or request feel free to contact me on twitter (@ennioma).
 ## License:
 AREK is available under the MIT license. See the LICENSE file for more info.
 
+## Arek on the Web:
+1. [This week in Swift - Natasha The Robot](https://swiftnews.curated.co/issues/113#libraries)
+2. [iOS Dev Weekly - Dave Verwer](https://iosdevweekly.com/issues/281#code)
+
 ## Credits:
 Icones provided by `Freepik` and `Vectors Market` from `Flaticon`
