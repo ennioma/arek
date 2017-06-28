@@ -82,6 +82,7 @@ open class ArekBasePermission {
         let alertVC = PMAlertController(title: title, description: message, image: UIImage(named: image), style: .walkthrough)
         
         alertVC.addAction(PMAlertAction(title: denyButtonTitle, style: .cancel, action: { () -> Void in
+            completion(.denied)
             alertVC.dismiss(animated: true, completion: nil)
         }))
         
@@ -108,6 +109,7 @@ open class ArekBasePermission {
         }
         
         let deny = UIAlertAction(title: denyButtonTitle, style: .cancel) { (action) in
+            completion(.denied)
             alert.dismiss(animated: true, completion: nil)
         }
         
