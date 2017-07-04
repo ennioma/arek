@@ -9,7 +9,7 @@ Pod::Spec.new do |s|
   s.social_media_url = 'https://twitter.com/ennioma'
   s.ios.deployment_target = '9.0'
   s.source_files = 'code/Classes/**/*', 'code/Classes/Core/**/*', 'code/Classes/Permissions/**/*'
-
+  s.exclude_files = 'Example/*'
   s.dependency 'PMAlertController', '2.1.2'
 
   s.subspec 'Core' do |ss|

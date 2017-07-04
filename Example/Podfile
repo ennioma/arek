@@ -1,0 +1,4 @@
+use_frameworks!
+target 'arek_example' do
+    pod 'arek', :path => '../'
+end
