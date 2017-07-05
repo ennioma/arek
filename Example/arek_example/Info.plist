@@ -39,6 +39,12 @@
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
 	<key>NSAppleMusicUsageDescription</key>
-	<string>The user would like to access Media Library</string>
+	<string>Oh oh get me your Media!</string>
+	<key>NSCameraUsageDescription</key>
+	<string>I want to access your Camera!</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Get me the Location Dude!</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Let me read your contacts!</string>
 </dict>
 </plist>

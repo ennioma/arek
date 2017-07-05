@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B6654181F0CF3D80093A15E /* ArekCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6654171F0CF3D80093A15E /* ArekCellVM.swift */; };
+		6BAB53331F0D1ACE00E02E1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB53351F0D1ACE00E02E1D /* Localizable.strings */; };
 		7569AF911E7447F300E81C95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569AF901E7447F300E81C95 /* AppDelegate.swift */; };
 		7569AF931E7447F300E81C95 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569AF921E7447F300E81C95 /* ViewController.swift */; };
 		7569AF961E7447F300E81C95 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7569AF941E7447F300E81C95 /* Main.storyboard */; };
@@ -36,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B6654171F0CF3D80093A15E /* ArekCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekCellVM.swift; sourceTree = "<group>"; };
+		6BAB53341F0D1ACE00E02E1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		752A54701E77416E006F9B3E /* arek_example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = arek_example.entitlements; sourceTree = "<group>"; };
 		7569AF8D1E7447F300E81C95 /* arek_example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = arek_example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7569AF901E7447F300E81C95 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +95,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		6B6654161F0CF3CA0093A15E /* ArekCell */ = {
+			isa = PBXGroup;
+			children = (
+				756DA0AE1F0C285900F0460B /* ArekCell.swift */,
+				6B6654171F0CF3D80093A15E /* ArekCellVM.swift */,
+			);
+			name = ArekCell;
+			sourceTree = "<group>";
+		};
 		7569AF841E7447F300E81C95 = {
 			isa = PBXGroup;
 			children = (
@@ -116,14 +129,15 @@
 		7569AF8F1E7447F300E81C95 /* arek_example */ = {
 			isa = PBXGroup;
 			children = (
+				6B6654161F0CF3CA0093A15E /* ArekCell */,
 				7569AF901E7447F300E81C95 /* AppDelegate.swift */,
 				752A54701E77416E006F9B3E /* arek_example.entitlements */,
-				756DA0AE1F0C285900F0460B /* ArekCell.swift */,
 				7569AF971E7447F300E81C95 /* Assets.xcassets */,
 				7569AF9C1E7447F300E81C95 /* Info.plist */,
 				7569AF991E7447F300E81C95 /* LaunchScreen.storyboard */,
 				7569AF941E7447F300E81C95 /* Main.storyboard */,
 				7569AF921E7447F300E81C95 /* ViewController.swift */,
+				6BAB53351F0D1ACE00E02E1D /* Localizable.strings */,
 			);
 			path = arek_example;
 			sourceTree = "<group>";
@@ -271,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7569AF9B1E7447F300E81C95 /* LaunchScreen.storyboard in Resources */,
+				6BAB53331F0D1ACE00E02E1D /* Localizable.strings in Resources */,
 				7569AF981E7447F300E81C95 /* Assets.xcassets in Resources */,
 				7569AF961E7447F300E81C95 /* Main.storyboard in Resources */,
 			);
@@ -346,6 +361,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				756DA0AF1F0C285900F0460B /* ArekCell.swift in Sources */,
+				6B6654181F0CF3D80093A15E /* ArekCellVM.swift in Sources */,
 				7569AF931E7447F300E81C95 /* ViewController.swift in Sources */,
 				7569AF911E7447F300E81C95 /* AppDelegate.swift in Sources */,
 			);
@@ -383,6 +399,14 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6BAB53351F0D1ACE00E02E1D /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6BAB53341F0D1ACE00E02E1D /* Base */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		7569AF941E7447F300E81C95 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

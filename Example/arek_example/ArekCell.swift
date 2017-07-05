@@ -16,9 +16,13 @@ class ArekCell: UITableViewCell {
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
     
-    var permission: ArekPermissionProtocol? {
+    
+    
+    var viewModel: ArekCellVM? {
         didSet {
-            permission?.status(completion: { (status) in
+            self.titleLbl.text = viewModel?.title
+            
+            self.viewModel?.permission.status(completion: { (status) in
                 
                 self.updateUI(status)
                 
@@ -26,22 +30,22 @@ class ArekCell: UITableViewCell {
         }
     }
     
-    var title: String = "" {
+    var clicked: Bool = false {
         didSet {
-            self.titleLbl.text = title
+            if clicked, (viewModel?.permission != nil) {
+
+                self.managePermission()
+                
+            }
         }
     }
     
-    var clicked: Bool = false {
-        didSet {
-            if clicked, (self.permission != nil) {
-
-                self.permission?.manage(completion: { (status) in
-                    
-                    self.updateUI(status)
-                })
-            }
-        }
+    private func managePermission() {
+        viewModel?.permission.manage(completion: { (status) in
+            
+            self.updateUI(status)
+            
+        })
     }
     
     private func updateUI(_ status: ArekPermissionStatus) {
@@ -52,7 +56,7 @@ class ArekCell: UITableViewCell {
             case .denied:
                 self.statusLbl.text = "⛔️"
             case .notAvailable:
-                self.statusLbl.text = "--"
+                self.statusLbl.text = "📵"
             case .notDetermined:
                 self.statusLbl.text = "⁉️"
             }

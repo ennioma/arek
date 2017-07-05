@@ -21,19 +21,13 @@ class ViewController: UIViewController {
 
 extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        return ArekCellVMService.numberOfVMs() + 1 // the latest is Contacts to show how to get config from `Info.plist`
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArekCell", for: indexPath) as! ArekCell
 
-        let configuration = ArekConfiguration(frequency: .OnceADay, presentInitialPopup: true, presentReEnablePopup: true)
-        let initialPopupData = ArekPopupData(title: "Media Library Access - native", message: "Please!", image: "", allowButtonTitle: "Allow👍🏻", denyButtonTitle: "No!", type: .native)
-        let reenablePopupData = ArekPopupData(title: "Media Library Access - native", message: "Re-enable please!", image: "", allowButtonTitle: "Allow👍🏻", denyButtonTitle: "No!", type: .native)
-        let mediaPermission = ArekMediaLibrary(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reenablePopupData)
-        
-        cell.title = "Media Library Access - native"
-        cell.permission = mediaPermission
+        cell.viewModel = ArekCellVMService.buildVM(index: indexPath.row)
         
         return cell
     }
