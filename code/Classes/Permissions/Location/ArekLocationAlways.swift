@@ -17,6 +17,12 @@ public class ArekLocationAlways: ArekBaseLocation {
         self.identifier = "ArekLocationAlways"
     }
     
+    public override init(configuration: ArekConfiguration? = nil,  initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+        
+        self.identifier = "ArekLocationAlways"
+    }
+    
     override public func askForPermission(completion: @escaping ArekPermissionResponse) {
         self.completion = completion
         self.requestAlwaysAuthorization()
