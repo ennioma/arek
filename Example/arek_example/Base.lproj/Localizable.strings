@@ -1,0 +1,28 @@
+/* 
+  Localizable.strings
+  arek_example
+
+  Created by Ennio Masi on 05/07/2017.
+  Copyright © 2017 ennioma. All rights reserved.
+*/
+
+"ArekContacts_initial_title"="Access request";
+"ArekContacts_initial_message"="I would like to access your Contacts!";
+"ArekContacts_reenable_title"="🙏🏼🙏🏼🙏🏼";
+"ArekContacts_reenable_message"="Please re-enable 🙏🏼";
+"ArekContacts_allow_button_title"="Allow 👍🏼";
+"ArekContacts_deny_button_title"="Deny 👎🏼";
+/*==*/
+"ArekPhoto_initial_title"="Access request";
+"ArekPhoto_initial_message"="I would like to access your Photos!";
+"ArekPhoto_reenable_title"="🙏🏼🙏🏼🙏🏼";
+"ArekPhoto_reenable_message"="Please re-enable 🙏🏼";
+"ArekPhoto_allow_button_title"="Allow 👍🏼";
+"ArekPhoto_deny_button_title"="Deny 👎🏼";
+/*==*/
+"ArekReminders_initial_title"="Access request";
+"ArekReminders_initial_message"="I would like to access your Reminders!";
+"ArekReminders_reenable_title"="🙏🏼🙏🏼🙏🏼";
+"ArekReminders_reenable_message"="Please re-enable 🙏🏼";
+"ArekReminders_allow_button_title"="Allow 👍🏼";
+"ArekReminders_deny_button_title"="Deny 👎🏼";

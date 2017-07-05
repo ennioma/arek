@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="arek_example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qRP-dc-sQe">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <view key="tableHeaderView" contentMode="scaleToFill" id="sKo-PE-O2V">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arek" translatesAutoresizingMaskIntoConstraints="NO" id="bmA-aN-Z00">
+                                            <rect key="frame" x="20" y="20" width="335" height="40"/>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" red="0.078431372550000003" green="0.62352941179999999" blue="0.92156862750000001" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="trailing" secondItem="bmA-aN-Z00" secondAttribute="trailing" constant="20" id="FhN-2B-dK2"/>
+                                        <constraint firstItem="bmA-aN-Z00" firstAttribute="leading" secondItem="sKo-PE-O2V" secondAttribute="leading" constant="20" id="WkR-CM-65O"/>
+                                        <constraint firstItem="bmA-aN-Z00" firstAttribute="top" secondItem="sKo-PE-O2V" secondAttribute="top" constant="20" id="c2j-de-0SK"/>
+                                        <constraint firstAttribute="bottom" secondItem="bmA-aN-Z00" secondAttribute="bottom" constant="20" id="cN0-LB-dxK"/>
+                                    </constraints>
+                                </view>
+                                <view key="tableFooterView" contentMode="scaleToFill" id="T3L-nT-bGi">
+                                    <rect key="frame" x="0.0" y="188" width="375" height="0.0"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </view>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ArekCell" rowHeight="80" id="BWZ-TH-0hr" customClass="ArekCell" customModule="arek_example" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="108" width="375" height="80"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="BWZ-TH-0hr" id="Gbw-TY-lVz">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="B" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wfb-q9-Nu5">
+                                                    <rect key="frame" x="356" y="0.0" width="11" height="79.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyi-rj-uNp">
+                                                    <rect key="frame" x="8" y="0.0" width="348" height="79.5"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="wfb-q9-Nu5" firstAttribute="height" secondItem="Gbw-TY-lVz" secondAttribute="height" id="G2I-k1-pTY"/>
+                                                <constraint firstItem="cyi-rj-uNp" firstAttribute="height" secondItem="Gbw-TY-lVz" secondAttribute="height" id="Z8B-bX-Wzy"/>
+                                                <constraint firstItem="wfb-q9-Nu5" firstAttribute="leading" secondItem="cyi-rj-uNp" secondAttribute="trailing" id="ra9-lN-4Lw"/>
+                                                <constraint firstItem="wfb-q9-Nu5" firstAttribute="centerY" secondItem="Gbw-TY-lVz" secondAttribute="centerY" id="tYv-GN-6Hy"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="wfb-q9-Nu5" secondAttribute="trailing" id="v3j-bs-TXT"/>
+                                                <constraint firstAttribute="leadingMargin" secondItem="cyi-rj-uNp" secondAttribute="leading" id="ykf-7y-X2O"/>
+                                                <constraint firstItem="cyi-rj-uNp" firstAttribute="centerY" secondItem="Gbw-TY-lVz" secondAttribute="centerY" id="zYl-8g-Lsa"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        <connections>
+                                            <outlet property="statusLbl" destination="wfb-q9-Nu5" id="35K-8O-csv"/>
+                                            <outlet property="titleLbl" destination="cyi-rj-uNp" id="nTB-Km-wLr"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="jzC-U1-Rll"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Kda-vT-FYB"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="qRP-dc-sQe" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="QHe-IZ-KoX"/>
+                            <constraint firstItem="qRP-dc-sQe" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="UYH-jo-rKz"/>
+                            <constraint firstItem="qRP-dc-sQe" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="aPB-xz-HGG"/>
+                            <constraint firstItem="qRP-dc-sQe" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="naH-Hw-8mn"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140" y="122.78860569715144"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="arek" width="591" height="108"/>
+    </resources>
+</document>

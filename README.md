@@ -237,6 +237,7 @@ For any information or request feel free to contact me on twitter (@ennioma).
 <a name="todo"></a>
 # TODO
 - [] Provide a way to inject a custom PMAlertController in a permission
+- [] Provide a way to inject the popup type when the `init()` is called on a permission
 - [] Update the Swift Package Manager installation
 
 <a name="licenseCredits"></a>

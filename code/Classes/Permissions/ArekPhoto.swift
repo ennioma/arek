@@ -13,10 +13,7 @@ open class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekPhoto"
     
     public init() {
-        let data = ArekLocalizationManager(permission: self.identifier)
-        
-        super.init(initialPopupData: ArekPopupData(title: data.initialTitle, message: data.initialMessage, image: data.image),
-                   reEnablePopupData: ArekPopupData(title: data.reEnableTitle, message:  data.reEnableMessage, image: data.image))
+        super.init(identifier: self.identifier)
     }
     
     public override init(configuration: ArekConfiguration? = nil,  initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {
