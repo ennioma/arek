@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B3633601F0D8CC700F3B300 /* ArekCellVMServiceProgrammatically.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B36335F1F0D8CC700F3B300 /* ArekCellVMServiceProgrammatically.swift */; };
+		6B3633621F0D8CEE00F3B300 /* ArekCellVMServiceLocalizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B3633611F0D8CEE00F3B300 /* ArekCellVMServiceLocalizable.swift */; };
 		6B6654181F0CF3D80093A15E /* ArekCellVM.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B6654171F0CF3D80093A15E /* ArekCellVM.swift */; };
 		6BAB53331F0D1ACE00E02E1D /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6BAB53351F0D1ACE00E02E1D /* Localizable.strings */; };
 		7569AF911E7447F300E81C95 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7569AF901E7447F300E81C95 /* AppDelegate.swift */; };
@@ -38,6 +40,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6B36335F1F0D8CC700F3B300 /* ArekCellVMServiceProgrammatically.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekCellVMServiceProgrammatically.swift; sourceTree = "<group>"; };
+		6B3633611F0D8CEE00F3B300 /* ArekCellVMServiceLocalizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekCellVMServiceLocalizable.swift; sourceTree = "<group>"; };
 		6B6654171F0CF3D80093A15E /* ArekCellVM.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekCellVM.swift; sourceTree = "<group>"; };
 		6BAB53341F0D1ACE00E02E1D /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		752A54701E77416E006F9B3E /* arek_example.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = arek_example.entitlements; sourceTree = "<group>"; };
@@ -100,6 +104,8 @@
 			children = (
 				756DA0AE1F0C285900F0460B /* ArekCell.swift */,
 				6B6654171F0CF3D80093A15E /* ArekCellVM.swift */,
+				6B36335F1F0D8CC700F3B300 /* ArekCellVMServiceProgrammatically.swift */,
+				6B3633611F0D8CEE00F3B300 /* ArekCellVMServiceLocalizable.swift */,
 			);
 			name = ArekCell;
 			sourceTree = "<group>";
@@ -239,7 +245,6 @@
 				TargetAttributes = {
 					7569AF8C1E7447F300E81C95 = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = JA44U9U75C;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Siri = {
@@ -362,6 +367,8 @@
 			files = (
 				756DA0AF1F0C285900F0460B /* ArekCell.swift in Sources */,
 				6B6654181F0CF3D80093A15E /* ArekCellVM.swift in Sources */,
+				6B3633621F0D8CEE00F3B300 /* ArekCellVMServiceLocalizable.swift in Sources */,
+				6B3633601F0D8CC700F3B300 /* ArekCellVMServiceProgrammatically.swift in Sources */,
 				7569AF931E7447F300E81C95 /* ViewController.swift in Sources */,
 				7569AF911E7447F300E81C95 /* AppDelegate.swift in Sources */,
 			);
@@ -524,7 +531,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = arek_example/arek_example.entitlements;
-				DEVELOPMENT_TEAM = JA44U9U75C;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = arek_example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ennioma.arek;
@@ -540,7 +547,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = arek_example/arek_example.entitlements;
-				DEVELOPMENT_TEAM = JA44U9U75C;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = arek_example/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = ennioma.arek;

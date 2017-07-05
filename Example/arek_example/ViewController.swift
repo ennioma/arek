@@ -20,20 +20,44 @@ class ViewController: UIViewController {
 }
 
 extension ViewController: UITableViewDataSource {
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ArekCellVMService.numberOfVMs() + 1 // the latest is Contacts to show how to get config from `Info.plist`
+        if section == 0 {
+            return ArekCellVMServiceProgrammatically.numberOfVMs()
+        } else if section == 1 {
+            return ArekCellVMServiceLocalizable.numberOfVMs()
+        }
+        
+        return 0
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ArekCell", for: indexPath) as! ArekCell
 
-        cell.viewModel = ArekCellVMService.buildVM(index: indexPath.row)
+        if indexPath.section == 0 {
+            cell.viewModel = ArekCellVMServiceProgrammatically.buildVM(index: indexPath.row)
+        } else if indexPath.section == 1 {
+            cell.viewModel = ArekCellVMServiceLocalizable.buildVM(index: indexPath.row)
+        }
         
         return cell
     }
 }
 
 extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        if section == 0 {
+            return "Permissions configured programmatically"
+        } else if section == 1 {
+            return "Permissions configured with Localizable"
+        }
+        
+        return ""
+    }
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = tableView.cellForRow(at: indexPath) as! ArekCell
         
