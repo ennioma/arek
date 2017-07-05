@@ -11,9 +11,10 @@ import CoreLocation
 
 public class ArekLocationWhenInUse: ArekBaseLocation {
     override public init() {
-        super.init()
+        let identifier = "ArekLocationWhenInUse"
+        super.init(identifier: identifier)
         
-        self.identifier = "ArekLocationWhenInUse"
+        self.identifier = identifier
     }
     
     public override init(configuration: ArekConfiguration? = nil,  initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {

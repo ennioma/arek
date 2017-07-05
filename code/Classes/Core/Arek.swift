@@ -45,6 +45,22 @@ open class ArekBasePermission {
     var initialPopupData: ArekPopupData = ArekPopupData()
     var reEnablePopupData: ArekPopupData = ArekPopupData()
     
+    public init(identifier: String) {
+        let data = ArekLocalizationManager(permission: identifier)
+        
+        self.initialPopupData = ArekPopupData(title: data.initialTitle,
+                                             message: data.initialMessage,
+                                             image: data.image,
+                                             allowButtonTitle: data.allowButtonTitle,
+                                             denyButtonTitle: data.denyButtonTitle)
+        self.reEnablePopupData = ArekPopupData(title: data.reEnableTitle,
+                                              message:  data.reEnableMessage,
+                                              image: data.image,
+                                              allowButtonTitle: data.allowButtonTitle,
+                                              denyButtonTitle: data.denyButtonTitle)
+        
+
+    }
     /**
      Base init shared among each permission provided by Arek
      
@@ -53,7 +69,7 @@ open class ArekBasePermission {
          - initialPopupData: title and message related to pre-iOS popup
          - reEnablePopupData: title and message related to re-enable permission popup
      */
-    public init(configuration: ArekConfiguration? = nil,  initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {
+    public init(configuration: ArekConfiguration? = nil, initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {
         self.configuration = configuration ?? self.configuration
         self.initialPopupData = initialPopupData ?? self.initialPopupData
         self.reEnablePopupData = reEnablePopupData ?? self.reEnablePopupData

@@ -15,19 +15,7 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekNotifications"
     
     public init() {
-        let data = ArekLocalizationManager(permission: self.identifier)
-        let initialPopupData = ArekPopupData(title: data.initialTitle,
-                                             message: data.initialMessage,
-                                             image: data.image,
-                                             allowButtonTitle: data.allowButtonTitle,
-                                             denyButtonTitle: data.denyButtonTitle)
-        let reEnablePopupData = ArekPopupData(title: data.reEnableTitle,
-                                              message:  data.reEnableMessage,
-                                              image: data.image,
-                                              allowButtonTitle: data.allowButtonTitle,
-                                              denyButtonTitle: data.denyButtonTitle)
-
-        super.init(initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+        super.init(identifier: self.identifier)
     }
     
     public override init(configuration: ArekConfiguration? = nil,  initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {
