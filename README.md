@@ -185,7 +185,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 1.4.0'
+    pod 'arek', '~> 1.4.2'
 end
 ```
 
@@ -195,7 +195,7 @@ $ pod install
 
 ## Carthage
 ```ruby
-github "ennioma/arek" ~> "1.4.0"
+github "ennioma/arek" ~> "1.4.2"
 ```
 
 Then on your application target *Build Phases* settings tab, add a "New Run Script Phase". Create a Run Script with the following content:
