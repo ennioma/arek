@@ -1,0 +1,23 @@
+disabled_rules: # rule identifiers to exclude from running
+  - line_length
+  - trailing_whitespace
+  - sorted_imports
+  - variable_name
+
+opt_in_rules: # some rules are only opt-in
+  - sorted_imports
+  - switch_case_on_newline
+
+excluded:
+  - Carthage
+  - Example
+  - Pods
+
+variable_name:
+  min_length: 2  
+
+type_body_length:
+  - 400
+
+function_parameter_count:
+  - 6

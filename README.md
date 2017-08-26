@@ -30,6 +30,13 @@ Every goal could be easily reached using **AREK**.
 
 🚨 AREK is a **Swift 3** and **XCode 8** compatible project 🚨
 
+## Build Status
+
+| Branch | Status |
+| ------------- | ------------- |
+| Master | [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=59a16154a7ae7b000183f1cf&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/59a16154a7ae7b000183f1cf/build/latest?branch=master) |
+| Develop | [![BuddyBuild](https://dashboard.buddybuild.com/api/statusImage?appID=59a16154a7ae7b000183f1cf&branch=master&build=latest)](https://dashboard.buddybuild.com/apps/59a16154a7ae7b000183f1cf/build/latest?branch=develop) |
+
 # Table of Contents
 1. [Implemented permissions](#implementedPermissions)
 2. [How to use AREK](#howTo)
@@ -185,7 +192,15 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 1.4.2'
+    pod 'arek', '~> 1.5.0'
+end
+```
+
+If you want to install just a specific permission, let's say `Bluetooth`, you have to specify:
+```ruby
+use_frameworks!
+target 'MyTarget' do
+    pod 'arek/Bluetooth', '~> 1.5.0'
 end
 ```
 
@@ -195,7 +210,7 @@ $ pod install
 
 ## Carthage
 ```ruby
-github "ennioma/arek" ~> "1.4.2"
+github "ennioma/arek" ~> "1.5.0"
 ```
 
 Then on your application target *Build Phases* settings tab, add a "New Run Script Phase". Create a Run Script with the following content:
