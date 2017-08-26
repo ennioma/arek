@@ -32,9 +32,7 @@ class ArekCell: UITableViewCell {
     
     @IBOutlet weak var titleLbl: UILabel!
     @IBOutlet weak var statusLbl: UILabel!
-    
-    
-    
+
     var viewModel: ArekCellVM? {
         didSet {
             self.titleLbl.text = viewModel?.title

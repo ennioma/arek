@@ -30,7 +30,7 @@ import PMAlertController
 
 public typealias ArekPermissionResponse = (ArekPermissionStatus) -> Void
 
-public protocol ArekPermissionProtocol {
+public protocol ArekPermissionProtocol: class {
     var identifier: String { get }
     /**
      This is the key method to know if a permission has been authorized or denied.

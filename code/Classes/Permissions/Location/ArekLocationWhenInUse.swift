@@ -26,7 +26,7 @@
 import Foundation
 import CoreLocation
 
-public class ArekLocationWhenInUse: ArekBaseLocation {
+final public class ArekLocationWhenInUse: ArekBaseLocation {
     override public init() {
         let identifier = "ArekLocationWhenInUse"
         super.init(identifier: identifier)

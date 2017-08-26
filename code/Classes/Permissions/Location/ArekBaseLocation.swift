@@ -33,7 +33,7 @@ public class ArekBaseLocation: ArekBasePermission, ArekPermissionProtocol {
             locationDelegate = ArekBaseLocationDelegate(permission: self, completion: newValue!)
         }
     }
-    weak var locationDelegate: ArekBaseLocationDelegate?
+    private var locationDelegate: ArekBaseLocationDelegate?
     
     public init() {
         super.init(identifier: self.identifier)

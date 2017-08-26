@@ -28,8 +28,9 @@ import CoreLocation
 
 public class ArekBaseLocationDelegate: NSObject, CLLocationManagerDelegate {
     var locationManager: CLLocationManager = CLLocationManager()
+    
+    weak var permission: ArekPermissionProtocol?
     var completion: ArekPermissionResponse?
-    var permission: ArekPermissionProtocol?
     
     public init(permission: ArekPermissionProtocol, completion: @escaping ArekPermissionResponse) {
         super.init()
@@ -41,9 +42,7 @@ public class ArekBaseLocationDelegate: NSObject, CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
         if let permission = self.permission {
             permission.status(completion: { (status) in
-                if let completion = self.completion {
-                    completion(status)
-                }
+                if let completion = self.completion { completion(status) }
             })
         }
     }
