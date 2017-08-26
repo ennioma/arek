@@ -63,11 +63,7 @@ public struct ArekConfiguration {
             
             return Calendar.current.compare(lastDate, to: Date(), toGranularity: .hour) == ComparisonResult.orderedDescending
         case .JustOnce:
-            if self.lastDateForPermission(identifier: permission.identifier) == nil {
-                return true
-            }
-            
-            return false
+            return self.lastDateForPermission(identifier: permission.identifier) == nil
         case .OnceAWeek:
             guard let lastDate = self.lastDateForPermission(identifier: permission.identifier) else {
                 return false
