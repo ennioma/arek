@@ -29,13 +29,25 @@ import CoreMotion
 open class ArekMotion: ArekBasePermission, ArekPermissionProtocol {
     open var identifier: String = "ArekMotion"
     
+    private let userKey = "ennioma.arek.motion.requested"
     private let motionManager = CMMotionActivityManager()
-    private lazy var motionHandlerQueue: OperationQueue = {
-        var queue = OperationQueue()
-        queue.name = "arek.MotionHandlerQueue"
-        queue.maxConcurrentOperationCount = 1
-        return queue
-    }()
+    
+    private var motionRequested: ArekPermissionStatus {
+        get {
+            if let data = UserDefaults.standard.value(forKey: userKey) as? Data,
+               let value = NSKeyedUnarchiver.unarchiveObject(with: data) as? String,
+               let permission = ArekPermissionStatus(rawValue: value) {
+                
+                return permission
+            }
+            
+            return .notDetermined
+        }
+        set {
+            UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: newValue.rawValue), forKey: userKey)
+            UserDefaults.standard.synchronize()
+        }
+    }
     
     public init() {
         super.init(identifier: self.identifier)
@@ -46,57 +58,60 @@ open class ArekMotion: ArekBasePermission, ArekPermissionProtocol {
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {
-        if CMMotionActivityManager.isActivityAvailable() == false {
-            return completion(.notAvailable)
-        }
+        if CMMotionActivityManager.isActivityAvailable() == false { return completion(.notAvailable) }
         
-        self.motionManager.queryActivityStarting(from: Date(), to: Date(), to: motionHandlerQueue) { _, error in
-            self.motionManager.stopActivityUpdates()
-            
-            if let error = error as NSError? {
-                if error.code == Int(CMErrorMotionActivityNotAuthorized.rawValue) ||
-                   error.code == Int(CMErrorNotAuthorized.rawValue) {
-
-                    DispatchQueue.main.async {
-                        return completion(.denied)
-                    }
-                } else {
-                    DispatchQueue.main.async {
-                        return completion(.notDetermined)
-                    }
-                }
-            } else {
-                return completion(.authorized)
-            }
+        switch self.motionRequested {
+        case .notDetermined:
+            return completion(.notDetermined)
+        //case .denied:
+            //return completion(.denied)
+        default:
+            self.requestMotion(completion: completion)
         }
     }
     
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
-        if CMMotionActivityManager.isActivityAvailable() == false {
-            return completion(.notAvailable)
-        }
+        if CMMotionActivityManager.isActivityAvailable() == false { return completion(.notAvailable) }
         
-        motionManager.queryActivityStarting(from: Date(), to: Date(), to: motionHandlerQueue) { _, error in
+        motionManager.queryActivityStarting(from: Date(), to: Date(), to: .main) { _, error in
             if let error = error as NSError? {
                 if error.code == Int(CMErrorMotionActivityNotAuthorized.rawValue) ||
                    error.code == Int(CMErrorNotAuthorized.rawValue) {
                     print("[🚨 Arek 🚨] 🏃🏻 permission denied by user ⛔️")
-                    DispatchQueue.main.async {
-                        return completion(.denied)
-                    }
+                    
+                    self.motionRequested = .denied
+                    DispatchQueue.main.async { return completion(.denied) }
                 } else {
                     print("[🚨 Arek 🚨] 🏃🏻 permission not determined 🤔")
-                    DispatchQueue.main.async {
-                        return completion(.notDetermined)
-                    }
+                    
+                    self.motionRequested = .notDetermined
+                    DispatchQueue.main.async { return completion(.notDetermined) }
                 }
             } else {
                 print("[🚨 Arek 🚨] 🏃🏻 permission authorized by user ✅")
-                DispatchQueue.main.async {
-                    return completion(.authorized)
-                }
+             
+                self.motionRequested = .authorized
+                DispatchQueue.main.async { return completion(.authorized) }
             }
             self.motionManager.stopActivityUpdates()
+        }
+    }
+    
+    private func requestMotion(completion: @escaping ArekPermissionResponse) {
+        self.motionManager.queryActivityStarting(from: Date(), to: Date(), to: .main) { _, error in
+            self.motionManager.stopActivityUpdates()
+            
+            if let error = error as NSError? {
+                if error.code == Int(CMErrorMotionActivityNotAuthorized.rawValue) ||
+                    error.code == Int(CMErrorNotAuthorized.rawValue) {
+                    
+                    DispatchQueue.main.async { return completion(.denied) }
+                } else {
+                    DispatchQueue.main.async { return completion(.notDetermined) }
+                }
+            } else {
+                return completion(.authorized)
+            }
         }
     }
 }
