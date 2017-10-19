@@ -20,10 +20,24 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
-	<key>NSCalendarsUsageDescription</key>
-	<string>asd lol</string>
-	<key>NSSiriUsageDescription</key>
-	<string>usa siri</string>
+	<key>NSAppleMusicUsageDescription</key>
+	<string>Oh oh get me your Media!</string>
+	<key>NSCameraUsageDescription</key>
+	<string>I want to access your Camera!</string>
+	<key>NSContactsUsageDescription</key>
+	<string>Let me read your contacts!</string>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>Get me the Location Dude!</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Want to access your photos!</string>
+	<key>NSRemindersUsageDescription</key>
+	<string>Let&apos;s go to your reminders!</string>
+	<key>NSMotionUsageDescription</key>
+	<string>Want your motion dataaaa</string>
+	<key>NSLocationAlwaysAndWhenInUseUsageDescription</key>
+	<string>Get me the Location Dude!</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Get me the Location Dude!</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
@@ -35,20 +49,7 @@
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
-		<string>UIInterfaceOrientationLandscapeLeft</string>
-		<string>UIInterfaceOrientationLandscapeRight</string>
+		<string>UIInterfaceOrientationPortraitUpsideDown</string>
 	</array>
-	<key>NSAppleMusicUsageDescription</key>
-	<string>Oh oh get me your Media!</string>
-	<key>NSCameraUsageDescription</key>
-	<string>I want to access your Camera!</string>
-	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Get me the Location Dude!</string>
-	<key>NSContactsUsageDescription</key>
-	<string>Let me read your contacts!</string>
-	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Want to access your photos!</string>
-	<key>NSRemindersUsageDescription</key>
-	<string>Let&apos;s go to your reminders!</string>
 </dict>
 </plist>

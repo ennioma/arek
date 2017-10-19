@@ -50,7 +50,6 @@ class ArekCell: UITableViewCell {
             if clicked, (viewModel?.permission != nil) {
 
                 self.managePermission()
-                
             }
         }
     }
@@ -59,7 +58,6 @@ class ArekCell: UITableViewCell {
         viewModel?.permission.manage(completion: { (status) in
             
             self.updateUI(status)
-            
         })
     }
     
