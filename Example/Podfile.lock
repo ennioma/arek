@@ -1,63 +1,63 @@
 PODS:
-  - arek (1.5.0):
-    - arek/Bluetooth (= 1.5.0)
-    - arek/Camera (= 1.5.0)
-    - arek/CloudKit (= 1.5.0)
-    - arek/Contacts (= 1.5.0)
-    - arek/Core (= 1.5.0)
-    - arek/Events (= 1.5.0)
-    - arek/Health (= 1.5.0)
-    - arek/Location (= 1.5.0)
-    - arek/MediaLibrary (= 1.5.0)
-    - arek/Microphone (= 1.5.0)
-    - arek/Motion (= 1.5.0)
-    - arek/Notifications (= 1.5.0)
-    - arek/Photos (= 1.5.0)
-    - arek/Reminders (= 1.5.0)
-    - arek/SpeechRecognizer (= 1.5.0)
+  - arek (1.6.0):
+    - arek/Bluetooth (= 1.6.0)
+    - arek/Camera (= 1.6.0)
+    - arek/CloudKit (= 1.6.0)
+    - arek/Contacts (= 1.6.0)
+    - arek/Core (= 1.6.0)
+    - arek/Events (= 1.6.0)
+    - arek/Health (= 1.6.0)
+    - arek/Location (= 1.6.0)
+    - arek/MediaLibrary (= 1.6.0)
+    - arek/Microphone (= 1.6.0)
+    - arek/Motion (= 1.6.0)
+    - arek/Notifications (= 1.6.0)
+    - arek/Photos (= 1.6.0)
+    - arek/Reminders (= 1.6.0)
+    - arek/SpeechRecognizer (= 1.6.0)
     - PMAlertController (= 2.1.2)
-  - arek/Bluetooth (1.5.0):
+  - arek/Bluetooth (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/Camera (1.5.0):
+  - arek/Camera (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/CloudKit (1.5.0):
+  - arek/CloudKit (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/Contacts (1.5.0):
+  - arek/Contacts (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/Core (1.5.0):
+  - arek/Core (1.6.0):
     - PMAlertController (= 2.1.2)
-  - arek/Events (1.5.0):
+  - arek/Events (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/Health (1.5.0):
+  - arek/Health (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/Location (1.5.0):
+  - arek/Location (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/MediaLibrary (1.5.0):
+  - arek/MediaLibrary (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/Microphone (1.5.0):
+  - arek/Microphone (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/Motion (1.5.0):
+  - arek/Motion (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/Notifications (1.5.0):
+  - arek/Notifications (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/Photos (1.5.0):
+  - arek/Photos (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/Reminders (1.5.0):
+  - arek/Reminders (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
-  - arek/SpeechRecognizer (1.5.0):
+  - arek/SpeechRecognizer (1.6.0):
     - arek/Core
     - PMAlertController (= 2.1.2)
   - PMAlertController (2.1.2)
@@ -70,7 +70,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  arek: 3e09088ebd619eb2c2a7df927ea20e7c623cec8a
+  arek: 24c5e1ece5f7c9c93a08f10243e717c78b26548c
   PMAlertController: 0fbcc3d1cee86ee0bd85f693ca85f6388e504ec8
 
 PODFILE CHECKSUM: 51391b981566b427912c687e0f5ba15813bf3aa4
