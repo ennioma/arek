@@ -192,7 +192,7 @@ Add AREK to your Podfile
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek', '~> 1.5.0'
+    pod 'arek', '~> 1.6.0'
 end
 ```
 
@@ -200,7 +200,7 @@ If you want to install just a specific permission, let's say `Bluetooth`, you ha
 ```ruby
 use_frameworks!
 target 'MyTarget' do
-    pod 'arek/Bluetooth', '~> 1.5.0'
+    pod 'arek/Bluetooth', '~> 1.6.0'
 end
 ```
 
@@ -210,7 +210,7 @@ $ pod install
 
 ## Carthage
 ```ruby
-github "ennioma/arek" ~> "1.5.0"
+github "ennioma/arek" ~> "1.6.0"
 ```
 
 Then on your application target *Build Phases* settings tab, add a "New Run Script Phase". Create a Run Script with the following content:
