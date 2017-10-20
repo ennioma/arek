@@ -25,7 +25,7 @@
 
 import Foundation
 
-public enum ArekPermissionStatus {
+public enum ArekPermissionStatus: String {
     case authorized
     case denied
     case notDetermined
