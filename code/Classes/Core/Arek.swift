@@ -127,8 +127,10 @@ open class ArekBasePermission {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
             }
-            
-            topController.present(alertVC, animated: true, completion: nil)
+
+            DispatchQueue.main.async {
+                topController.present(alertVC, animated: true, completion: nil)
+            }
         }
     }
     
@@ -152,8 +154,10 @@ open class ArekBasePermission {
             while let presentedViewController = topController.presentedViewController {
                 topController = presentedViewController
             }
-            
-            topController.present(alert, animated: true, completion: nil)
+
+            DispatchQueue.main.async {
+                topController.present(alert, animated: true, completion: nil)
+            }
         }
     }
     
