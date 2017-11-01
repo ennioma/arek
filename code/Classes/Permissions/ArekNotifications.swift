@@ -64,7 +64,7 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
         
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge]) { (granted, error) in
+            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
                 if let error = error {
                     print("[🚨 Arek 🚨] Push notifications permission not determined 🤔, error: \(error)")
                     return completion(.notDetermined)
