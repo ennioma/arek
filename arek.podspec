@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name             = 'arek'
-  s.version          = '1.6.0'
+  s.version          = '1.7.0'
   s.summary          = 'AREK is a clean and easy to use wrapper over any kind of iOS permission.'
   s.homepage         = 'https://github.com/ennioma/arek'
   s.license          = { :type => 'MIT', :file => 'LICENSE'}
@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
   s.ios.deployment_target = '9.0'
   s.source_files = 'code/Classes/**/*', 'code/Classes/Core/**/*', 'code/Classes/Permissions/**/*'
   s.exclude_files = 'Example/*'
-  s.dependency 'PMAlertController', '2.1.2'
+  s.dependency 'PMAlertController', '3.1.0'
 
   s.subspec 'Core' do |ss|
     ss.source_files = 'code/Classes/Core/**/*.swift'
