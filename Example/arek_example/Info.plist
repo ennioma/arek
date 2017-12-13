@@ -28,6 +28,8 @@
 	<string>Let me read your contacts!</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Get me the Location Dude!</string>
+	<key>NSPhotoLibraryAddUsageDescription</key>
+	<string>Want to write to your photos!</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Want to access your photos!</string>
 	<key>NSRemindersUsageDescription</key>
