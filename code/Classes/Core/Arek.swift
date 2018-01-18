@@ -113,12 +113,12 @@ open class ArekBasePermission {
     private func presentInitialCodeidoPopup(title: String, message: String, image: String, allowButtonTitle: String, denyButtonTitle: String, completion: @escaping ArekPermissionResponse) {
         let alertVC = PMAlertController(title: title, description: message, image: UIImage(named: image), style: .walkthrough)
         
-        alertVC.addAction(PMAlertAction(title: denyButtonTitle, style: .cancel, action: { _ in
+        alertVC.addAction(PMAlertAction(title: denyButtonTitle, style: .cancel, action: {
             completion(.denied)
             alertVC.dismiss(animated: true, completion: nil)
         }))
         
-        alertVC.addAction(PMAlertAction(title: allowButtonTitle, style: .default, action: { _ in
+        alertVC.addAction(PMAlertAction(title: allowButtonTitle, style: .default, action: {
             (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
             alertVC.dismiss(animated: true, completion: nil)
         }))
@@ -217,11 +217,11 @@ open class ArekBasePermission {
     private func presentReEnableCodeidoPopup(title: String, message: String, image: String, allowButtonTitle: String, denyButtonTitle: String) {
         let alertVC = PMAlertController(title: title, description: message, image: UIImage(named: image), style: .walkthrough)
         
-        alertVC.addAction(PMAlertAction(title: denyButtonTitle, style: .cancel, action: { _ in
+        alertVC.addAction(PMAlertAction(title: denyButtonTitle, style: .cancel, action: {
             alertVC.dismiss(animated: true, completion: nil)
         }))
         
-        alertVC.addAction(PMAlertAction(title: allowButtonTitle, style: .default, action: { _ in
+        alertVC.addAction(PMAlertAction(title: allowButtonTitle, style: .default, action: {
             alertVC.dismiss(animated: true, completion: nil)
             guard let url = URL(string: UIApplicationOpenSettingsURLString) else { return }
 
