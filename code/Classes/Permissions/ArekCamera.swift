@@ -38,7 +38,7 @@ open class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
     }
     
     open func status(completion: @escaping ArekPermissionResponse) {
-        switch AVCaptureDevice.authorizationStatus(for: AVMediaType.video) {
+        switch AVCaptureDevice.authorizationStatus(forMediaType: AVMediaTypeVideo) {
         case .notDetermined:
             return completion(.notDetermined)
         case .restricted, .denied:
@@ -49,7 +49,7 @@ open class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
     }
     
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
-        AVCaptureDevice.requestAccess(for: AVMediaType.video) { (authorized) in
+        AVCaptureDevice.requestAccess(forMediaType: AVMediaTypeVideo) { (authorized) in
             if authorized {
                 print("[🚨 Arek 🚨] 📷 permission authorized by user ✅")
                 return completion(.authorized)
