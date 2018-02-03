@@ -45,8 +45,6 @@ open class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
             return completion(.notDetermined)
         case AVAudioSessionRecordPermission.granted:
             return completion(.authorized)
-        default:
-            return completion(.notDetermined)
         }
     }
         
