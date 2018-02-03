@@ -238,6 +238,8 @@ let package = Package(
 )
 ```
 
+Note that if you want to install a *Swift 3* version of Arek, the latest compatible version is the *1.7.0*.
+
 ## Add AREK source code to your project
 Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.com/ennioma/arek/tree/master/arek/Classes) folder to your project.
 
