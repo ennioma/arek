@@ -37,13 +37,22 @@ public struct ArekPopupData {
     var allowButtonTitle: String!
     var denyButtonTitle: String!
     var type: ArekPopupType!
+    var styling: ArekPopupStyle?
 
-    public init(title: String = "", message: String = "", image: String = "", allowButtonTitle: String = "", denyButtonTitle: String = "", type: ArekPopupType = .codeido) {
+    public init(title: String = "",
+                message: String = "",
+                image: String = "",
+                allowButtonTitle: String = "",
+                denyButtonTitle: String = "",
+                type: ArekPopupType = .codeido,
+                styling: ArekPopupStyle? = nil) {
+        
         self.title = title
         self.message = message
         self.image = image
         self.allowButtonTitle = allowButtonTitle
         self.denyButtonTitle = denyButtonTitle
         self.type = type
+        self.styling = styling
     }
 }
