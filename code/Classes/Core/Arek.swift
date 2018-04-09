@@ -180,6 +180,13 @@ open class ArekBasePermission {
             if let alertDescriptionFont = styling.alertDescriptionFont {
                 alertVC.alertDescription.font = alertDescriptionFont
             }
+            if let alertDescriptionLineHeight = styling.alertDescriptionLineHeight {
+                let paragraphStyle = NSMutableParagraphStyle()
+                paragraphStyle.lineSpacing = alertDescriptionLineHeight
+                let attrString = NSMutableAttributedString(string: message)
+                attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+                alertVC.alertDescription.attributedText = attrString
+            }
             if let headerViewHeightConstraint = styling.headerViewHeightConstraint {
                 alertVC.headerViewHeightConstraint.constant = headerViewHeightConstraint
             }

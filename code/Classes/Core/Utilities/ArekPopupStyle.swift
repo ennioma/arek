@@ -32,6 +32,7 @@ public struct ArekPopupStyle {
     var alertTitleTextColor: UIColor?
     var alertTitleFont: UIFont?
     var alertDescriptionFont: UIFont?
+    var alertDescriptionLineHeight: CGFloat?
     var headerViewHeightConstraint: CGFloat?
     
     var allowButtonTitleColor: UIColor?
@@ -46,6 +47,7 @@ public struct ArekPopupStyle {
                 alertTitleTextColor: UIColor? = nil,
                 alertTitleFont: UIFont? = nil,
                 alertDescriptionFont: UIFont? = nil,
+                alertDescriptionLineHeight: CGFloat? = nil,
                 headerViewHeightConstraint: CGFloat? = nil,
                 allowButtonTitleColor: UIColor? = nil,
                 allowButtonTitleFont: UIFont? = nil,
@@ -58,6 +60,7 @@ public struct ArekPopupStyle {
         self.alertTitleTextColor = alertTitleTextColor
         self.alertTitleFont = alertTitleFont
         self.alertDescriptionFont = alertDescriptionFont
+        self.alertDescriptionLineHeight = alertDescriptionLineHeight
         self.headerViewHeightConstraint = headerViewHeightConstraint
         
         self.allowButtonTitleColor = allowButtonTitleColor
