@@ -2,7 +2,7 @@
 //  ArekPopupStyle.swift
 //  Arek
 //
-//  Copyright (c) 2018 Aleksandr Pasevin
+//  Copyright (c) 2016 Ennio Masi
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,12 +27,12 @@ import Foundation
 
 public struct ArekPopupStyle {
     var cornerRadius: CGFloat?
-    var alertMaskBackgroundColor: UIColor?
-    var alertMaskBackgroundAlpha: CGFloat?
-    var alertTitleTextColor: UIColor?
-    var alertTitleFont: UIFont?
-    var alertDescriptionFont: UIFont?
-    var alertDescriptionLineHeight: CGFloat?
+    var maskBackgroundColor: UIColor?
+    var maskBackgroundAlpha: CGFloat?
+    var titleTextColor: UIColor?
+    var titleFont: UIFont?
+    var descriptionFont: UIFont?
+    var descriptionLineHeight: CGFloat?
     var headerViewHeightConstraint: CGFloat?
     
     var allowButtonTitleColor: UIColor?
@@ -42,12 +42,12 @@ public struct ArekPopupStyle {
     var denyButtonTitleFont: UIFont?
 
     public init(cornerRadius: CGFloat? = nil,
-                alertMaskBackgroundColor: UIColor? = nil,
-                alertMaskBackgroundAlpha: CGFloat? = nil,
-                alertTitleTextColor: UIColor? = nil,
-                alertTitleFont: UIFont? = nil,
-                alertDescriptionFont: UIFont? = nil,
-                alertDescriptionLineHeight: CGFloat? = nil,
+                maskBackgroundColor: UIColor? = nil,
+                maskBackgroundAlpha: CGFloat? = nil,
+                titleTextColor: UIColor? = nil,
+                titleFont: UIFont? = nil,
+                descriptionFont: UIFont? = nil,
+                descriptionLineHeight: CGFloat? = nil,
                 headerViewHeightConstraint: CGFloat? = nil,
                 allowButtonTitleColor: UIColor? = nil,
                 allowButtonTitleFont: UIFont? = nil,
@@ -55,12 +55,12 @@ public struct ArekPopupStyle {
                 denyButtonTitleFont: UIFont? = nil) {
         
         self.cornerRadius = cornerRadius
-        self.alertMaskBackgroundColor = alertMaskBackgroundColor
-        self.alertMaskBackgroundAlpha = alertMaskBackgroundAlpha
-        self.alertTitleTextColor = alertTitleTextColor
-        self.alertTitleFont = alertTitleFont
-        self.alertDescriptionFont = alertDescriptionFont
-        self.alertDescriptionLineHeight = alertDescriptionLineHeight
+        self.maskBackgroundColor = maskBackgroundColor
+        self.maskBackgroundAlpha = maskBackgroundAlpha
+        self.titleTextColor = titleTextColor
+        self.titleFont = titleFont
+        self.descriptionFont = descriptionFont
+        self.descriptionLineHeight = descriptionLineHeight
         self.headerViewHeightConstraint = headerViewHeightConstraint
         
         self.allowButtonTitleColor = allowButtonTitleColor

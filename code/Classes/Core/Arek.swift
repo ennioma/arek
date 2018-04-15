@@ -161,48 +161,8 @@ open class ArekBasePermission {
             alertVC.dismiss(animated: true, completion: nil)
         })
         
-        if let styling = styling {
-            if let cornerRadius = styling.cornerRadius {
-                alertVC.view.layer.cornerRadius = cornerRadius
-            }
-            if let alertMaskBackgroundColor = styling.alertMaskBackgroundColor {
-                alertVC.alertMaskBackground.backgroundColor = alertMaskBackgroundColor
-            }
-            if let alertMaskBackgroundAlpha = styling.alertMaskBackgroundAlpha {
-                alertVC.alertMaskBackground.alpha = alertMaskBackgroundAlpha
-            }
-            if let alertTitleTextColor = styling.alertTitleTextColor {
-                alertVC.alertTitle.textColor = alertTitleTextColor
-            }
-            if let alertTitleFont = styling.alertTitleFont {
-                alertVC.alertTitle.font = alertTitleFont
-            }
-            if let alertDescriptionFont = styling.alertDescriptionFont {
-                alertVC.alertDescription.font = alertDescriptionFont
-            }
-            if let alertDescriptionLineHeight = styling.alertDescriptionLineHeight {
-                let paragraphStyle = NSMutableParagraphStyle()
-                paragraphStyle.lineSpacing = alertDescriptionLineHeight
-                let attrString = NSMutableAttributedString(string: message)
-                attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
-                alertVC.alertDescription.attributedText = attrString
-            }
-            if let headerViewHeightConstraint = styling.headerViewHeightConstraint {
-                alertVC.headerViewHeightConstraint.constant = headerViewHeightConstraint
-            }
-            if let denyButtonTitleColor = styling.denyButtonTitleColor {
-                denyAction.setTitleColor(denyButtonTitleColor, for: .normal)
-            }
-            if let denyButtonTitleFont = styling.denyButtonTitleFont {
-                denyAction.titleLabel?.font = denyButtonTitleFont
-            }
-            if let allowButtonTitleColor = styling.allowButtonTitleColor {
-                allowAction.setTitleColor(allowButtonTitleColor, for: .normal)
-            }
-            if let allowButtonTitleFont = styling.allowButtonTitleFont {
-                allowAction.titleLabel?.font = allowButtonTitleFont
-            }
-        }
+        self.apply(styling, to: alertVC, with: message)
+        self.apply(styling, to: denyAction, and: allowAction)
         
         alertVC.addAction(denyAction)
         alertVC.addAction(allowAction)
@@ -215,6 +175,63 @@ open class ArekBasePermission {
             DispatchQueue.main.async {
                 topController.present(alertVC, animated: true, completion: nil)
             }
+        }
+    }
+    
+    private func apply(_ styling: ArekPopupStyle?, to denyAction: PMAlertAction, and allowAction: PMAlertAction) {
+        guard let styling = styling else {
+            return
+        }
+        
+        if let denyButtonTitleColor = styling.denyButtonTitleColor {
+            denyAction.setTitleColor(denyButtonTitleColor, for: .normal)
+        }
+        if let denyButtonTitleFont = styling.denyButtonTitleFont {
+            denyAction.titleLabel?.font = denyButtonTitleFont
+        }
+        if let allowButtonTitleColor = styling.allowButtonTitleColor {
+            allowAction.setTitleColor(allowButtonTitleColor, for: .normal)
+        }
+        if let allowButtonTitleFont = styling.allowButtonTitleFont {
+            allowAction.titleLabel?.font = allowButtonTitleFont
+        }
+
+    }
+        
+    private func apply(_ styling: ArekPopupStyle?, to alertVC: PMAlertController, with message: String) {
+        guard let styling = styling else {
+            return
+        }
+
+        if let cornerRadius = styling.cornerRadius {
+            alertVC.view.layer.cornerRadius = cornerRadius
+        }
+        if let alertMaskBackgroundColor = styling.maskBackgroundColor {
+            alertVC.alertMaskBackground.backgroundColor = alertMaskBackgroundColor
+        }
+        if let alertMaskBackgroundAlpha = styling.maskBackgroundAlpha {
+            alertVC.alertMaskBackground.alpha = alertMaskBackgroundAlpha
+        }
+        if let alertTitleTextColor = styling.titleTextColor {
+            alertVC.alertTitle.textColor = alertTitleTextColor
+        }
+        if let alertTitleFont = styling.titleFont {
+            alertVC.alertTitle.font = alertTitleFont
+        }
+        if let alertDescriptionFont = styling.descriptionFont {
+            alertVC.alertDescription.font = alertDescriptionFont
+        }
+
+        if let headerViewHeightConstraint = styling.headerViewHeightConstraint {
+            alertVC.headerViewHeightConstraint.constant = headerViewHeightConstraint
+        }
+        
+        if let alertDescriptionLineHeight = styling.descriptionLineHeight {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = alertDescriptionLineHeight
+            let attrString = NSMutableAttributedString(string: message)
+            attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+            alertVC.alertDescription.attributedText = attrString
         }
     }
     
