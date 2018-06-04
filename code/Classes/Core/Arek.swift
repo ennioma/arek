@@ -202,6 +202,30 @@ open class ArekBasePermission {
             if let allowButtonTitleFont = styling.allowButtonTitleFont {
                 allowAction.titleLabel?.font = allowButtonTitleFont
             }
+            if let headerViewTopSpace = styling.headerViewTopSpace {
+                alertVC.headerViewTopSpaceConstraint.constant = headerViewTopSpace
+            }
+            if let alertDescriptionLeftSpace = styling.alertDescriptionLeftSpace {
+                alertVC.alertContentStackViewLeadingConstraint.constant = alertDescriptionLeftSpace
+            }
+            if let alertDescriptionRightSpace = styling.alertDescriptionRightSpace {
+                alertVC.alertContentStackViewTrailingConstraint.constant = alertDescriptionRightSpace
+            }
+            if let alertDescriptionTopSpace = styling.alertDescriptionTopSpace {
+                alertVC.alertContentStackViewTopConstraint.constant = alertDescriptionTopSpace
+            }
+            if let alertButtonsLeftSpace = styling.alertButtonsLeftSpace {
+                alertVC.alertActionStackViewLeadingConstraint.constant = alertButtonsLeftSpace
+            }
+            if let alertButtonsRightSpace = styling.alertButtonsRightSpace {
+                alertVC.alertActionStackViewTrailingConstraint.constant = alertButtonsRightSpace
+            }
+            if let alertButtonsTopSpace = styling.alertButtonsTopSpace {
+                alertVC.alertActionStackViewTopConstraint.constant = alertButtonsTopSpace
+            }
+            if let alertButtonsBottomSpace = styling.alertButtonsBottomSpace {
+                alertVC.alertActionStackViewBottomConstraint.constant = alertButtonsBottomSpace
+            }
         }
         
         alertVC.addAction(denyAction)

@@ -40,6 +40,16 @@ public struct ArekPopupStyle {
     
     var denyButtonTitleColor: UIColor?
     var denyButtonTitleFont: UIFont?
+    
+    // Paddings
+    var headerViewTopSpace: CGFloat?
+    var alertDescriptionLeftSpace: CGFloat?
+    var alertDescriptionRightSpace: CGFloat?
+    var alertDescriptionTopSpace: CGFloat?
+    var alertButtonsLeftSpace: CGFloat?
+    var alertButtonsRightSpace: CGFloat?
+    var alertButtonsTopSpace: CGFloat?
+    var alertButtonsBottomSpace: CGFloat?
 
     public init(cornerRadius: CGFloat? = nil,
                 alertMaskBackgroundColor: UIColor? = nil,
@@ -52,7 +62,15 @@ public struct ArekPopupStyle {
                 allowButtonTitleColor: UIColor? = nil,
                 allowButtonTitleFont: UIFont? = nil,
                 denyButtonTitleColor: UIColor? = nil,
-                denyButtonTitleFont: UIFont? = nil) {
+                denyButtonTitleFont: UIFont? = nil,
+                headerViewTopSpace: CGFloat? = nil,
+                alertDescriptionLeftSpace: CGFloat? = nil,
+                alertDescriptionRightSpace: CGFloat? = nil,
+                alertDescriptionTopSpace: CGFloat? = nil,
+                alertButtonsLeftSpace: CGFloat? = nil,
+                alertButtonsRightSpace: CGFloat? = nil,
+                alertButtonsTopSpace: CGFloat? = nil,
+                alertButtonsBottomSpace: CGFloat? = nil) {
         
         self.cornerRadius = cornerRadius
         self.alertMaskBackgroundColor = alertMaskBackgroundColor
@@ -68,6 +86,15 @@ public struct ArekPopupStyle {
         
         self.denyButtonTitleColor = denyButtonTitleColor
         self.denyButtonTitleFont = denyButtonTitleFont
+        
+        self.headerViewTopSpace = headerViewTopSpace
+        self.alertDescriptionLeftSpace = alertDescriptionLeftSpace
+        self.alertDescriptionRightSpace = alertDescriptionRightSpace
+        self.alertDescriptionTopSpace = alertDescriptionTopSpace
+        self.alertButtonsLeftSpace = alertButtonsLeftSpace
+        self.alertButtonsRightSpace = alertButtonsRightSpace
+        self.alertButtonsTopSpace = alertButtonsTopSpace
+        self.alertButtonsBottomSpace = alertButtonsBottomSpace
 
     }
 }
