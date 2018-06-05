@@ -42,7 +42,33 @@ class ArekCellVMServiceProgrammatically {
         let data = permissions[index]
         
         let configuration = ArekConfiguration(frequency: .Always, presentInitialPopup: true, presentReEnablePopup: true)
-        let initialPopupData = ArekPopupData(title: data["popupDataTitle"]!, message: data["enableTitle"]!, image: "", allowButtonTitle: data["allowButtonTitle"]!, denyButtonTitle: data["denyButtonTitle"]!, type: getPopupType(index: index), styling: ArekPopupStyle(cornerRadius: 0.9, maskBackgroundColor: UIColor.orange, maskBackgroundAlpha: 1.0, titleTextColor: UIColor.green, titleFont: nil, descriptionFont: nil, descriptionLineHeight: nil, headerViewHeightConstraint: nil, allowButtonTitleColor: nil, allowButtonTitleFont: nil, denyButtonTitleColor: UIColor.brown, denyButtonTitleFont: nil))
+        let initialPopupData = ArekPopupData(title: data["popupDataTitle"]!,
+                                             message: data["enableTitle"]!,
+                                             image: "",
+                                             allowButtonTitle: data["allowButtonTitle"]!,
+                                             denyButtonTitle: data["denyButtonTitle"]!,
+                                             type: getPopupType(index: index),
+                                             styling: ArekPopupStyle(cornerRadius: 0.9,
+                                                                     maskBackgroundColor: UIColor.orange,
+                                                                     maskBackgroundAlpha: 1.0,
+                                                                     titleTextColor: UIColor.green,
+                                                                     titleFont: nil,
+                                                                     descriptionFont: nil,
+                                                                     descriptionLineHeight: nil,
+                                                                     headerViewHeightConstraint: nil,
+                                                                     allowButtonTitleColor: nil,
+                                                                     allowButtonTitleFont: nil,
+                                                                     denyButtonTitleColor: UIColor.brown,
+                                                                     denyButtonTitleFont: nil,
+                                                                     headerViewTopSpace: 20,
+                                                                     descriptionLeftSpace: 20,
+                                                                     descriptionRightSpace: 20,
+                                                                     descriptionTopSpace: 20,
+                                                                     buttonsLeftSpace: 0,
+                                                                     buttonsRightSpace: 0,
+                                                                     buttonsTopSpace: 20,
+                                                                     buttonsBottomSpace: 0))
+        
         let reenablePopupData = ArekPopupData(title: data["popupDataTitle"]!, message: data["reEnableTitle"]!, image: "", allowButtonTitle: data["allowButtonTitle"]!, denyButtonTitle: data["denyButtonTitle"]!, type: getPopupType(index: index), styling: nil)
         
         let permission = getPermissionType(index: index, configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reenablePopupData)
