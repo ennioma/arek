@@ -2,7 +2,7 @@
 //  ArekPopupStyle.swift
 //  Arek
 //
-//  Copyright (c) 2018 Aleksandr Pasevin
+//  Copyright (c) 2016 Ennio Masi
 //
 //  Permission is hereby granted, free of charge, to any person obtaining a copy
 //  of this software and associated documentation files (the "Software"), to deal
@@ -27,12 +27,12 @@ import Foundation
 
 public struct ArekPopupStyle {
     var cornerRadius: CGFloat?
-    var alertMaskBackgroundColor: UIColor?
-    var alertMaskBackgroundAlpha: CGFloat?
-    var alertTitleTextColor: UIColor?
-    var alertTitleFont: UIFont?
-    var alertDescriptionFont: UIFont?
-    var alertDescriptionLineHeight: CGFloat?
+    var maskBackgroundColor: UIColor?
+    var maskBackgroundAlpha: CGFloat?
+    var titleTextColor: UIColor?
+    var titleFont: UIFont?
+    var descriptionFont: UIFont?
+    var descriptionLineHeight: CGFloat?
     var headerViewHeightConstraint: CGFloat?
     
     var allowButtonTitleColor: UIColor?
@@ -43,42 +43,42 @@ public struct ArekPopupStyle {
     
     // Paddings
     var headerViewTopSpace: CGFloat?
-    var alertDescriptionLeftSpace: CGFloat?
-    var alertDescriptionRightSpace: CGFloat?
-    var alertDescriptionTopSpace: CGFloat?
-    var alertButtonsLeftSpace: CGFloat?
-    var alertButtonsRightSpace: CGFloat?
-    var alertButtonsTopSpace: CGFloat?
-    var alertButtonsBottomSpace: CGFloat?
+    var descriptionLeftSpace: CGFloat?
+    var descriptionRightSpace: CGFloat?
+    var descriptionTopSpace: CGFloat?
+    var buttonsLeftSpace: CGFloat?
+    var buttonsRightSpace: CGFloat?
+    var buttonsTopSpace: CGFloat?
+    var buttonsBottomSpace: CGFloat?
 
     public init(cornerRadius: CGFloat? = nil,
-                alertMaskBackgroundColor: UIColor? = nil,
-                alertMaskBackgroundAlpha: CGFloat? = nil,
-                alertTitleTextColor: UIColor? = nil,
-                alertTitleFont: UIFont? = nil,
-                alertDescriptionFont: UIFont? = nil,
-                alertDescriptionLineHeight: CGFloat? = nil,
+                maskBackgroundColor: UIColor? = nil,
+                maskBackgroundAlpha: CGFloat? = nil,
+                titleTextColor: UIColor? = nil,
+                titleFont: UIFont? = nil,
+                descriptionFont: UIFont? = nil,
+                descriptionLineHeight: CGFloat? = nil,
                 headerViewHeightConstraint: CGFloat? = nil,
                 allowButtonTitleColor: UIColor? = nil,
                 allowButtonTitleFont: UIFont? = nil,
                 denyButtonTitleColor: UIColor? = nil,
                 denyButtonTitleFont: UIFont? = nil,
                 headerViewTopSpace: CGFloat? = nil,
-                alertDescriptionLeftSpace: CGFloat? = nil,
-                alertDescriptionRightSpace: CGFloat? = nil,
-                alertDescriptionTopSpace: CGFloat? = nil,
-                alertButtonsLeftSpace: CGFloat? = nil,
-                alertButtonsRightSpace: CGFloat? = nil,
-                alertButtonsTopSpace: CGFloat? = nil,
-                alertButtonsBottomSpace: CGFloat? = nil) {
+                descriptionLeftSpace: CGFloat? = nil,
+                descriptionRightSpace: CGFloat? = nil,
+                descriptionTopSpace: CGFloat? = nil,
+                buttonsLeftSpace: CGFloat? = nil,
+                buttonsRightSpace: CGFloat? = nil,
+                buttonsTopSpace: CGFloat? = nil,
+                buttonsBottomSpace: CGFloat? = nil) {
         
         self.cornerRadius = cornerRadius
-        self.alertMaskBackgroundColor = alertMaskBackgroundColor
-        self.alertMaskBackgroundAlpha = alertMaskBackgroundAlpha
-        self.alertTitleTextColor = alertTitleTextColor
-        self.alertTitleFont = alertTitleFont
-        self.alertDescriptionFont = alertDescriptionFont
-        self.alertDescriptionLineHeight = alertDescriptionLineHeight
+        self.maskBackgroundColor = maskBackgroundColor
+        self.maskBackgroundAlpha = maskBackgroundAlpha
+        self.titleTextColor = titleTextColor
+        self.titleFont = titleFont
+        self.descriptionFont = descriptionFont
+        self.descriptionLineHeight = descriptionLineHeight
         self.headerViewHeightConstraint = headerViewHeightConstraint
         
         self.allowButtonTitleColor = allowButtonTitleColor
@@ -88,13 +88,13 @@ public struct ArekPopupStyle {
         self.denyButtonTitleFont = denyButtonTitleFont
         
         self.headerViewTopSpace = headerViewTopSpace
-        self.alertDescriptionLeftSpace = alertDescriptionLeftSpace
-        self.alertDescriptionRightSpace = alertDescriptionRightSpace
-        self.alertDescriptionTopSpace = alertDescriptionTopSpace
-        self.alertButtonsLeftSpace = alertButtonsLeftSpace
-        self.alertButtonsRightSpace = alertButtonsRightSpace
-        self.alertButtonsTopSpace = alertButtonsTopSpace
-        self.alertButtonsBottomSpace = alertButtonsBottomSpace
+        self.descriptionLeftSpace = descriptionLeftSpace
+        self.descriptionRightSpace = descriptionRightSpace
+        self.descriptionTopSpace = descriptionTopSpace
+        self.buttonsLeftSpace = buttonsLeftSpace
+        self.buttonsRightSpace = buttonsRightSpace
+        self.buttonsTopSpace = buttonsTopSpace
+        self.buttonsBottomSpace = buttonsBottomSpace
 
     }
 }
