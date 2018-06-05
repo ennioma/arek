@@ -40,6 +40,16 @@ public struct ArekPopupStyle {
     
     var denyButtonTitleColor: UIColor?
     var denyButtonTitleFont: UIFont?
+    
+    // Paddings
+    var headerViewTopSpace: CGFloat?
+    var descriptionLeftSpace: CGFloat?
+    var descriptionRightSpace: CGFloat?
+    var descriptionTopSpace: CGFloat?
+    var buttonsLeftSpace: CGFloat?
+    var buttonsRightSpace: CGFloat?
+    var buttonsTopSpace: CGFloat?
+    var buttonsBottomSpace: CGFloat?
 
     public init(cornerRadius: CGFloat? = nil,
                 maskBackgroundColor: UIColor? = nil,
@@ -52,7 +62,15 @@ public struct ArekPopupStyle {
                 allowButtonTitleColor: UIColor? = nil,
                 allowButtonTitleFont: UIFont? = nil,
                 denyButtonTitleColor: UIColor? = nil,
-                denyButtonTitleFont: UIFont? = nil) {
+                denyButtonTitleFont: UIFont? = nil,
+                headerViewTopSpace: CGFloat? = nil,
+                descriptionLeftSpace: CGFloat? = nil,
+                descriptionRightSpace: CGFloat? = nil,
+                descriptionTopSpace: CGFloat? = nil,
+                buttonsLeftSpace: CGFloat? = nil,
+                buttonsRightSpace: CGFloat? = nil,
+                buttonsTopSpace: CGFloat? = nil,
+                buttonsBottomSpace: CGFloat? = nil) {
         
         self.cornerRadius = cornerRadius
         self.maskBackgroundColor = maskBackgroundColor
@@ -68,6 +86,15 @@ public struct ArekPopupStyle {
         
         self.denyButtonTitleColor = denyButtonTitleColor
         self.denyButtonTitleFont = denyButtonTitleFont
+        
+        self.headerViewTopSpace = headerViewTopSpace
+        self.descriptionLeftSpace = descriptionLeftSpace
+        self.descriptionRightSpace = descriptionRightSpace
+        self.descriptionTopSpace = descriptionTopSpace
+        self.buttonsLeftSpace = buttonsLeftSpace
+        self.buttonsRightSpace = buttonsRightSpace
+        self.buttonsTopSpace = buttonsTopSpace
+        self.buttonsBottomSpace = buttonsBottomSpace
 
     }
 }

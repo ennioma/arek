@@ -202,7 +202,7 @@ open class ArekBasePermission {
         guard let styling = styling else {
             return
         }
-
+        
         if let cornerRadius = styling.cornerRadius {
             alertVC.view.layer.cornerRadius = cornerRadius
         }
@@ -221,9 +221,32 @@ open class ArekBasePermission {
         if let alertDescriptionFont = styling.descriptionFont {
             alertVC.alertDescription.font = alertDescriptionFont
         }
-
         if let headerViewHeightConstraint = styling.headerViewHeightConstraint {
             alertVC.headerViewHeightConstraint.constant = headerViewHeightConstraint
+        }
+        if let headerViewTopSpace = styling.headerViewTopSpace {
+            alertVC.headerViewTopSpaceConstraint.constant = headerViewTopSpace
+        }
+        if let alertDescriptionLeftSpace = styling.descriptionLeftSpace {
+            alertVC.alertContentStackViewLeadingConstraint.constant = alertDescriptionLeftSpace
+        }
+        if let alertDescriptionRightSpace = styling.descriptionRightSpace {
+            alertVC.alertContentStackViewTrailingConstraint.constant = alertDescriptionRightSpace
+        }
+        if let alertDescriptionTopSpace = styling.descriptionTopSpace {
+            alertVC.alertContentStackViewTopConstraint.constant = alertDescriptionTopSpace
+        }
+        if let alertButtonsLeftSpace = styling.buttonsLeftSpace {
+            alertVC.alertActionStackViewLeadingConstraint.constant = alertButtonsLeftSpace
+        }
+        if let alertButtonsRightSpace = styling.buttonsRightSpace {
+            alertVC.alertActionStackViewTrailingConstraint.constant = alertButtonsRightSpace
+        }
+        if let alertButtonsTopSpace = styling.buttonsTopSpace {
+            alertVC.alertActionStackViewTopConstraint.constant = alertButtonsTopSpace
+        }
+        if let alertButtonsBottomSpace = styling.buttonsBottomSpace {
+            alertVC.alertActionStackViewBottomConstraint.constant = alertButtonsBottomSpace
         }
         
         if let alertDescriptionLineHeight = styling.descriptionLineHeight {
