@@ -57,8 +57,7 @@ public protocol ArekPermissionProtocol: class {
  Don't instantiate ArekBasePermission directly.
  */
 open class ArekBasePermission {
-    var configuration: ArekConfiguration = ArekConfiguration(frequency: .Always, presentInitialPopup:
-        true, presentReEnablePopup: true)
+    var configuration: ArekConfiguration = ArekConfiguration(frequency: .Always, presentInitialPopup: true, presentReEnablePopup: true)
     var initialPopupData: ArekPopupData = ArekPopupData()
     var reEnablePopupData: ArekPopupData = ArekPopupData()
     
@@ -69,12 +68,15 @@ open class ArekBasePermission {
                                              message: data.initialMessage,
                                              image: data.image,
                                              allowButtonTitle: data.allowButtonTitle,
-                                             denyButtonTitle: data.denyButtonTitle)
+                                             denyButtonTitle: data.denyButtonTitle,
+                                             styling: nil)
+        
         self.reEnablePopupData = ArekPopupData(title: data.reEnableTitle,
                                               message:  data.reEnableMessage,
                                               image: data.image,
                                               allowButtonTitle: data.allowButtonTitle,
-                                              denyButtonTitle: data.denyButtonTitle)
+                                              denyButtonTitle: data.denyButtonTitle,
+                                              styling: nil)
     }
 
     /**
@@ -85,7 +87,10 @@ open class ArekBasePermission {
          - initialPopupData: title and message related to pre-iOS popup
          - reEnablePopupData: title and message related to re-enable permission popup
      */
-    public init(configuration: ArekConfiguration? = nil, initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {
+    public init(configuration: ArekConfiguration? = nil,
+                initialPopupData: ArekPopupData? = nil,
+                reEnablePopupData: ArekPopupData? = nil) {
+        
         self.configuration = configuration ?? self.configuration
         self.initialPopupData = initialPopupData ?? self.initialPopupData
         self.reEnablePopupData = reEnablePopupData ?? self.reEnablePopupData
@@ -93,35 +98,74 @@ open class ArekBasePermission {
     
     private func manageInitialPopup(completion: @escaping ArekPermissionResponse) {
         if self.configuration.presentInitialPopup {
-            self.presentInitialPopup(title: self.initialPopupData.title, message: self.initialPopupData.message, image: self.initialPopupData.image, allowButtonTitle: self.initialPopupData.allowButtonTitle, denyButtonTitle: self.initialPopupData.denyButtonTitle, completion: completion)
+            self.presentInitialPopup(title: self.initialPopupData.title,
+                                     message: self.initialPopupData.message,
+                                     image: self.initialPopupData.image,
+                                     allowButtonTitle: self.initialPopupData.allowButtonTitle,
+                                     denyButtonTitle: self.initialPopupData.denyButtonTitle,
+                                     styling: self.initialPopupData.styling,
+                                     completion: completion)
         } else {
             (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
         }
     }
     
-    private func presentInitialPopup(title: String, message: String, image: String? = nil, allowButtonTitle: String, denyButtonTitle: String, completion: @escaping ArekPermissionResponse) {
+    private func presentInitialPopup(title: String,
+                                     message: String,
+                                     image: String? = nil,
+                                     allowButtonTitle: String,
+                                     denyButtonTitle: String,
+                                     styling: ArekPopupStyle? = nil,
+                                     completion: @escaping ArekPermissionResponse) {
+        
         switch self.initialPopupData.type as ArekPopupType {
         case .codeido:
-            self.presentInitialCodeidoPopup(title: title, message: message, image: image!, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, completion: completion)
+            self.presentInitialCodeidoPopup(title: title,
+                                            message: message,
+                                            image: image!,
+                                            allowButtonTitle: allowButtonTitle,
+                                            denyButtonTitle: denyButtonTitle,
+                                            styling: styling,
+                                            completion: completion)
             break
         case .native:
-            self.presentInitialNativePopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, completion: completion)
+            self.presentInitialNativePopup(title: title,
+                                           message: message,
+                                           allowButtonTitle: allowButtonTitle,
+                                           denyButtonTitle: denyButtonTitle,
+                                           completion: completion)
             break
         }
     }
     
-    private func presentInitialCodeidoPopup(title: String, message: String, image: String, allowButtonTitle: String, denyButtonTitle: String, completion: @escaping ArekPermissionResponse) {
-        let alertVC = PMAlertController(title: title, description: message, image: UIImage(named: image), style: .walkthrough)
+    private func presentInitialCodeidoPopup(title: String,
+                                            message: String,
+                                            image: String,
+                                            allowButtonTitle: String,
+                                            denyButtonTitle: String,
+                                            styling: ArekPopupStyle?,
+                                            completion: @escaping ArekPermissionResponse) {
         
-        alertVC.addAction(PMAlertAction(title: denyButtonTitle, style: .cancel, action: {
+        let alertVC = PMAlertController(title: title,
+                                        description: message,
+                                        image: UIImage(named: image),
+                                        style: .walkthrough)
+        
+        let denyAction = PMAlertAction(title: denyButtonTitle, style: .cancel, action: {
             completion(.denied)
             alertVC.dismiss(animated: true, completion: nil)
-        }))
+        })
         
-        alertVC.addAction(PMAlertAction(title: allowButtonTitle, style: .default, action: {
+        let allowAction = PMAlertAction(title: allowButtonTitle, style: .default, action: {
             (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
             alertVC.dismiss(animated: true, completion: nil)
-        }))
+        })
+        
+        self.apply(styling, to: alertVC, with: message)
+        self.apply(styling, to: denyAction, and: allowAction)
+        
+        alertVC.addAction(denyAction)
+        alertVC.addAction(allowAction)
         
         if var topController = UIApplication.shared.keyWindow?.rootViewController {
             while let presentedViewController = topController.presentedViewController {
@@ -134,7 +178,92 @@ open class ArekBasePermission {
         }
     }
     
-    private func presentInitialNativePopup(title: String, message: String, allowButtonTitle: String, denyButtonTitle: String, completion: @escaping ArekPermissionResponse) {
+    private func apply(_ styling: ArekPopupStyle?, to denyAction: PMAlertAction, and allowAction: PMAlertAction) {
+        guard let styling = styling else {
+            return
+        }
+        
+        if let denyButtonTitleColor = styling.denyButtonTitleColor {
+            denyAction.setTitleColor(denyButtonTitleColor, for: .normal)
+        }
+        if let denyButtonTitleFont = styling.denyButtonTitleFont {
+            denyAction.titleLabel?.font = denyButtonTitleFont
+        }
+        if let allowButtonTitleColor = styling.allowButtonTitleColor {
+            allowAction.setTitleColor(allowButtonTitleColor, for: .normal)
+        }
+        if let allowButtonTitleFont = styling.allowButtonTitleFont {
+            allowAction.titleLabel?.font = allowButtonTitleFont
+        }
+
+    }
+        
+    private func apply(_ styling: ArekPopupStyle?, to alertVC: PMAlertController, with message: String) {
+        guard let styling = styling else {
+            return
+        }
+        
+        if let cornerRadius = styling.cornerRadius {
+            alertVC.view.layer.cornerRadius = cornerRadius
+        }
+        if let alertMaskBackgroundColor = styling.maskBackgroundColor {
+            alertVC.alertMaskBackground.backgroundColor = alertMaskBackgroundColor
+        }
+        if let alertMaskBackgroundAlpha = styling.maskBackgroundAlpha {
+            alertVC.alertMaskBackground.alpha = alertMaskBackgroundAlpha
+        }
+        if let alertTitleTextColor = styling.titleTextColor {
+            alertVC.alertTitle.textColor = alertTitleTextColor
+        }
+        if let alertTitleFont = styling.titleFont {
+            alertVC.alertTitle.font = alertTitleFont
+        }
+        if let alertDescriptionFont = styling.descriptionFont {
+            alertVC.alertDescription.font = alertDescriptionFont
+        }
+        if let headerViewHeightConstraint = styling.headerViewHeightConstraint {
+            alertVC.headerViewHeightConstraint.constant = headerViewHeightConstraint
+        }
+        if let headerViewTopSpace = styling.headerViewTopSpace {
+            alertVC.headerViewTopSpaceConstraint.constant = headerViewTopSpace
+        }
+        if let alertDescriptionLeftSpace = styling.descriptionLeftSpace {
+            alertVC.alertContentStackViewLeadingConstraint.constant = alertDescriptionLeftSpace
+        }
+        if let alertDescriptionRightSpace = styling.descriptionRightSpace {
+            alertVC.alertContentStackViewTrailingConstraint.constant = alertDescriptionRightSpace
+        }
+        if let alertDescriptionTopSpace = styling.descriptionTopSpace {
+            alertVC.alertContentStackViewTopConstraint.constant = alertDescriptionTopSpace
+        }
+        if let alertButtonsLeftSpace = styling.buttonsLeftSpace {
+            alertVC.alertActionStackViewLeadingConstraint.constant = alertButtonsLeftSpace
+        }
+        if let alertButtonsRightSpace = styling.buttonsRightSpace {
+            alertVC.alertActionStackViewTrailingConstraint.constant = alertButtonsRightSpace
+        }
+        if let alertButtonsTopSpace = styling.buttonsTopSpace {
+            alertVC.alertActionStackViewTopConstraint.constant = alertButtonsTopSpace
+        }
+        if let alertButtonsBottomSpace = styling.buttonsBottomSpace {
+            alertVC.alertActionStackViewBottomConstraint.constant = alertButtonsBottomSpace
+        }
+        
+        if let alertDescriptionLineHeight = styling.descriptionLineHeight {
+            let paragraphStyle = NSMutableParagraphStyle()
+            paragraphStyle.lineSpacing = alertDescriptionLineHeight
+            let attrString = NSMutableAttributedString(string: message)
+            attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+            alertVC.alertDescription.attributedText = attrString
+        }
+    }
+    
+    private func presentInitialNativePopup(title: String,
+                                           message: String,
+                                           allowButtonTitle: String,
+                                           denyButtonTitle: String,
+                                           completion: @escaping ArekPermissionResponse) {
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let allow = UIAlertAction(title: allowButtonTitle, style: .default) { _ in
@@ -165,24 +294,44 @@ open class ArekBasePermission {
         guard let permission = self as? ArekPermissionProtocol else { return }
         
         if self.configuration.canPresentReEnablePopup(permission: permission) {
-            self.presentReEnablePopup(title: self.reEnablePopupData.title, message: self.reEnablePopupData.message, image: self.reEnablePopupData.image, allowButtonTitle: self.reEnablePopupData.allowButtonTitle, denyButtonTitle: self.reEnablePopupData.denyButtonTitle)
+            self.presentReEnablePopup(title: self.reEnablePopupData.title,
+                                      message: self.reEnablePopupData.message,
+                                      image: self.reEnablePopupData.image,
+                                      allowButtonTitle: self.reEnablePopupData.allowButtonTitle,
+                                      denyButtonTitle: self.reEnablePopupData.denyButtonTitle)
         } else {
             print("[🚨 Arek 🚨] for \(self) present re-enable not allowed")
         }
     }
 
-    private func presentReEnablePopup(title: String, message: String, image: String?, allowButtonTitle: String, denyButtonTitle: String) {
+    private func presentReEnablePopup(title: String,
+                                      message: String,
+                                      image: String?,
+                                      allowButtonTitle: String,
+                                      denyButtonTitle: String) {
+        
         switch self.reEnablePopupData.type as ArekPopupType {
         case .codeido:
-            self.presentReEnableCodeidoPopup(title: title, message: message, image: image!, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle)
+            self.presentReEnableCodeidoPopup(title: title,
+                                             message: message,
+                                             image: image!,
+                                             allowButtonTitle: allowButtonTitle,
+                                             denyButtonTitle: denyButtonTitle)
             break
         case .native:
-            self.presentReEnableNativePopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle)
+            self.presentReEnableNativePopup(title: title,
+                                            message: message,
+                                            allowButtonTitle: allowButtonTitle,
+                                            denyButtonTitle: denyButtonTitle)
             break
         }
     }
     
-    private func presentReEnableNativePopup(title: String, message: String, allowButtonTitle: String, denyButtonTitle: String) {
+    private func presentReEnableNativePopup(title: String,
+                                            message: String,
+                                            allowButtonTitle: String,
+                                            denyButtonTitle: String) {
+        
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let allow = UIAlertAction(title: allowButtonTitle, style: .default) { _ in
@@ -214,7 +363,12 @@ open class ArekBasePermission {
 
     }
     
-    private func presentReEnableCodeidoPopup(title: String, message: String, image: String, allowButtonTitle: String, denyButtonTitle: String) {
+    private func presentReEnableCodeidoPopup(title: String,
+                                             message: String,
+                                             image: String,
+                                             allowButtonTitle: String,
+                                             denyButtonTitle: String) {
+        
         let alertVC = PMAlertController(title: title, description: message, image: UIImage(named: image), style: .walkthrough)
         
         alertVC.addAction(PMAlertAction(title: denyButtonTitle, style: .cancel, action: {
