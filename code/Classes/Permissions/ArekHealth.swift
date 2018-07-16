@@ -30,9 +30,9 @@ open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
     
     public var identifier: String = "ArekHealth"
     
-    var hkObjectType: HKObjectType?
-    var hkSampleTypesToShare: Set<HKSampleType>?
-    var hkSampleTypesToRead: Set<HKSampleType>?
+    public var hkObjectType: HKObjectType?
+    public var hkSampleTypesToShare: Set<HKSampleType>?
+    public var hkObjectTypesToRead: Set<HKObjectType>?
     
     public init() {
         super.init(identifier: self.identifier)
@@ -58,11 +58,11 @@ open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
     }
         
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
-        if self.hkSampleTypesToRead == nil && self.hkSampleTypesToShare == nil {
+        if self.hkObjectTypesToRead == nil && self.hkSampleTypesToShare == nil {
             print("[🚨 Arek 🚨] 📈 no permissions specified 🤔")
             return completion(.notDetermined)
         }
-        HKHealthStore().requestAuthorization(toShare: self.hkSampleTypesToShare, read: self.hkSampleTypesToRead) { (granted, error) in
+        HKHealthStore().requestAuthorization(toShare: self.hkSampleTypesToShare, read: self.hkObjectTypesToRead) { (granted, error) in
             if let error = error {
                 print("[🚨 Arek 🚨] 📈 permission not determined 🤔 error: \(error)")
                 return completion(.notDetermined)
