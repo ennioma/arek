@@ -40,6 +40,10 @@
 	<string>Get me the Location Dude!</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
 	<string>Get me the Location Dude!</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Get me your data about Health</string>
+	<key>NSHealthUpdateUsageDescription</key>
+	<string>Your health data</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
