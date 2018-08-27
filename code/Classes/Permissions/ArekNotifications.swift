@@ -47,7 +47,8 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
                     return completion(.notDetermined)
                 case .denied:
                     return completion(.denied)
-                case .authorized:
+                case .authorized,
+                     .provisional:
                     return completion(.authorized)
                 }
             }
