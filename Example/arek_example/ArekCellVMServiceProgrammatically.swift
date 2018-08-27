@@ -25,13 +25,16 @@
 
 import Foundation
 import arek
+import HealthKit
 
 class ArekCellVMServiceProgrammatically {
     static private var permissions = [
         ["popupDataTitle": "Media Library Access - native", "allowButtonTitle": "Allow 👍🏼", "denyButtonTitle": "No! 👎🏼", "enableTitle": "Please!", "reEnableTitle": "Re-enable please!"],
         ["popupDataTitle": "Camera Access - PMAlertController", "allowButtonTitle": "Allow 👍🏼", "denyButtonTitle": "No! 👎🏼", "enableTitle": "Please!", "reEnableTitle": "Re-enable please!"],
         ["popupDataTitle": "Location Always Access - native", "allowButtonTitle": "Allow 👍🏼", "denyButtonTitle": "No! 👎🏼", "enableTitle": "Please!", "reEnableTitle": "Re-enable please!"],
-        ["popupDataTitle": "Motion - PMAlertController", "allowButtonTitle": "Allow 👍🏼", "denyButtonTitle": "No! 👎🏼", "enableTitle": "Please!", "reEnableTitle": "Re-enable please!"]
+        ["popupDataTitle": "Motion - PMAlertController", "allowButtonTitle": "Allow 👍🏼", "denyButtonTitle": "No! 👎🏼", "enableTitle": "Please!", "reEnableTitle": "Re-enable please!"],
+        ["popupDataTitle": "Notification - native", "allowButtonTitle": "Allow 👍🏼", "denyButtonTitle": "No! 👎🏼", "enableTitle": "Please!", "reEnableTitle": "Re-enable please!"],
+        ["popupDataTitle": "Health - PMAlertController", "allowButtonTitle": "Allow 👍🏼", "denyButtonTitle": "No! 👎🏼", "enableTitle": "Please!", "reEnableTitle": "Re-enable please!"]
     ]
     
     static func numberOfVMs() -> Int {
@@ -49,7 +52,7 @@ class ArekCellVMServiceProgrammatically {
                                              denyButtonTitle: data["denyButtonTitle"]!,
                                              type: getPopupType(index: index),
                                              styling: ArekPopupStyle(cornerRadius: 0.9,
-                                                                     maskBackgroundColor: UIColor.orange,
+                                                                     maskBackgroundColor: UIColor.lightGray,
                                                                      maskBackgroundAlpha: 1.0,
                                                                      titleTextColor: UIColor.green,
                                                                      titleFont: nil,
@@ -77,13 +80,9 @@ class ArekCellVMServiceProgrammatically {
     
     static private func getPopupType(index: Int) -> ArekPopupType {
         switch index {
-        case 0:
+        case 0, 2, 4:
             return .native
-        case 1:
-            return .codeido
-        case 2:
-            return .native
-        case 3:
+        case 1, 3, 5:
             return .codeido
         default:
             return .native
@@ -101,6 +100,19 @@ class ArekCellVMServiceProgrammatically {
             return ArekLocationAlways(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
         case 3:
             return ArekMotion(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+        case 4:
+            return ArekNotifications(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+        case 5:
+            let myType = HKObjectType.activitySummaryType()
+            var dataToRead = Set<HKObjectType>()
+            dataToRead.insert(HKObjectType.characteristicType(forIdentifier: HKCharacteristicTypeIdentifier.dateOfBirth)!)
+
+            let heightType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.height)!
+            let weightType = HKQuantityType.quantityType(forIdentifier: HKQuantityTypeIdentifier.bodyMass)!
+
+            let dataToShare: Set<HKSampleType> = [heightType, weightType]
+
+            return ArekHealth(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData, arekHealthConfiguration: ArekHealth.ArekHealthConfiguration(hkObjectType: myType, hkSampleTypesToShare: dataToShare, hkSampleTypesToRead: dataToRead))
         default:
             return nil
         }

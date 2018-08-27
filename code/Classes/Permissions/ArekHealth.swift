@@ -27,23 +27,39 @@ import Foundation
 import HealthKit
 
 open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
-    
+    public struct ArekHealthConfiguration {
+        public var hkObjectType: HKObjectType?
+        public var hkSampleTypesToShare: Set<HKSampleType>?
+        public var hkSampleTypesToRead: Set<HKObjectType>?
+
+        public init(hkObjectType: HKObjectType? = nil, hkSampleTypesToShare: Set<HKSampleType>? = nil, hkSampleTypesToRead: Set<HKObjectType>? = nil) {
+            self.hkObjectType = hkObjectType
+            self.hkSampleTypesToShare = hkSampleTypesToShare
+            self.hkSampleTypesToRead = hkSampleTypesToRead
+        }
+
+        func healthAvailable() -> Bool {
+            return HKHealthStore.isHealthDataAvailable()
+        }
+    }
+
     public var identifier: String = "ArekHealth"
-    
-    var hkObjectType: HKObjectType?
-    var hkSampleTypesToShare: Set<HKSampleType>?
-    var hkSampleTypesToRead: Set<HKSampleType>?
+
+    var healthConfiguration: ArekHealthConfiguration?
     
     public init() {
         super.init(identifier: self.identifier)
     }
-    
-    public override init(configuration: ArekConfiguration? = nil, initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {
+
+    public init(configuration: ArekConfiguration? = nil, initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil, arekHealthConfiguration: ArekHealthConfiguration) {
+
+        self.healthConfiguration = arekHealthConfiguration
+
         super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {
-        guard let objectType = self.hkObjectType else {
+        guard let objectType = self.healthConfiguration?.hkObjectType else {
             return completion(.notDetermined)
         }
         
@@ -58,11 +74,14 @@ open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
     }
         
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
-        if self.hkSampleTypesToRead == nil && self.hkSampleTypesToShare == nil {
+        guard
+            let healthConfiguration = self.healthConfiguration,
+            self.healthConfiguration?.healthAvailable() == true else {
             print("[🚨 Arek 🚨] 📈 no permissions specified 🤔")
             return completion(.notDetermined)
         }
-        HKHealthStore().requestAuthorization(toShare: self.hkSampleTypesToShare, read: self.hkSampleTypesToRead) { (granted, error) in
+
+        HKHealthStore().requestAuthorization(toShare: healthConfiguration.hkSampleTypesToShare, read: healthConfiguration.hkSampleTypesToRead) { (granted, error) in
             if let error = error {
                 print("[🚨 Arek 🚨] 📈 permission not determined 🤔 error: \(error)")
                 return completion(.notDetermined)
