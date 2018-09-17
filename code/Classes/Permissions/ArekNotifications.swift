@@ -43,7 +43,7 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
         if #available(iOS 10.0, *) {
             UNUserNotificationCenter.current().getNotificationSettings { (settings) in
                 switch settings.authorizationStatus {
-                case .notDetermined:
+                case .notDetermined, .provisional:
                     return completion(.notDetermined)
                 case .denied:
                     return completion(.denied)
