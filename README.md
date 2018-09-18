@@ -30,6 +30,8 @@ Every goal could be easily reached using **AREK**.
 
 🚨 AREK is a **Swift 4** and **XCode 9** compatible project 🚨
 
+💣 For **iOS 12** compatibility please checkout [this branch](https://github.com/ennioma/arek/tree/iOS12)💣
+
 ## Build Status
 
 | Branch | Status |
