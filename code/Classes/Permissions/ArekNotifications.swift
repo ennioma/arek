@@ -29,14 +29,22 @@ import UIKit
 import UserNotifications
 
 open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
+    open var wantedNotificationTypes: Any?
+
     open var identifier: String = "ArekNotifications"
-    
+
     public init() {
         super.init(identifier: self.identifier)
     }
-    
+
     public override init(configuration: ArekConfiguration? = nil, initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {
         super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+    }
+
+    public init(configuration: ArekConfiguration? = nil, initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil, notificationOptions: Any) {
+        super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
+
+        self.wantedNotificationTypes = notificationOptions
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {
@@ -58,21 +66,28 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
                     return completion(.notDetermined)
                 }
             }
-            
+
             return completion(.authorized)
         }
     }
-        
+
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
         if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { (granted, error) in
+
+            var options: UNAuthorizationOptions = [.alert, .badge, .sound]
+
+            if let wantedOptions = self.wantedNotificationTypes as? UNAuthorizationOptions {
+                options = wantedOptions
+            }
+
+            UNUserNotificationCenter.current().requestAuthorization(options: options) { (granted, error) in
                 if let error = error {
                     print("[🚨 Arek 🚨] Push notifications permission not determined 🤔, error: \(error)")
                     return completion(.notDetermined)
                 }
                 if granted {
                     self.registerForRemoteNotifications()
-                    
+
                     print("[🚨 Arek 🚨] Push notifications permission authorized by user ✅")
                     return completion(.authorized)
                 }
@@ -80,11 +95,17 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
                 return completion(.denied)
             }
         } else if #available(iOS 9.0, *) {
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: [.badge, .sound, .alert], categories: nil))
+            var options: UIUserNotificationType = [.alert, .badge, .sound]
+
+            if let wantedOptions = self.wantedNotificationTypes as? UIUserNotificationType {
+                options = wantedOptions
+            }
+
+            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: options, categories: nil))
             self.registerForRemoteNotifications()
         }
     }
-    
+
     fileprivate func registerForRemoteNotifications() {
         DispatchQueue.main.async {
             UIApplication.shared.registerForRemoteNotifications()
