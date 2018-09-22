@@ -253,7 +253,7 @@ open class ArekBasePermission {
             let paragraphStyle = NSMutableParagraphStyle()
             paragraphStyle.lineSpacing = alertDescriptionLineHeight
             let attrString = NSMutableAttributedString(string: message)
-            attrString.addAttribute(NSAttributedStringKey.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
+            attrString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attrString.length))
             alertVC.alertDescription.attributedText = attrString
         }
     }
@@ -337,7 +337,7 @@ open class ArekBasePermission {
         let allow = UIAlertAction(title: allowButtonTitle, style: .default) { _ in
             alert.dismiss(animated: true, completion: nil)
             
-            guard let url = URL(string: UIApplicationOpenSettingsURLString) else { return }
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
             
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
@@ -377,7 +377,7 @@ open class ArekBasePermission {
         
         alertVC.addAction(PMAlertAction(title: allowButtonTitle, style: .default, action: {
             alertVC.dismiss(animated: true, completion: nil)
-            guard let url = URL(string: UIApplicationOpenSettingsURLString) else { return }
+            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
 
             if #available(iOS 10.0, *) {
                 UIApplication.shared.open(url, options: [:], completionHandler: nil)
