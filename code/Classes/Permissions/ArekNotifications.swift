@@ -49,7 +49,7 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
                     return completion(.denied)
                 case .authorized:
                     return completion(.authorized)
-                case .provisional:
+                default:
                   break
                 }
             }
