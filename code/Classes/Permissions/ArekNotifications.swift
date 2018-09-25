@@ -49,6 +49,8 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
                     return completion(.denied)
                 case .authorized:
                     return completion(.authorized)
+                case .provisional:
+                  break
                 }
             }
         } else if #available(iOS 9.0, *) {
