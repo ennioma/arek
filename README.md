@@ -28,7 +28,10 @@ Every goal could be easily reached using **AREK**.
 * show a popup to invite the user to re-enable the permission if it has been denied
 * manage through an easy configuration how many times to ask the user to re-enable the permission (Only once, every hour, once a day, weekly, always😷)
 
-🚨 AREK is a **Swift 4** and **XCode 9** compatible project 🚨
+🚨 AREK is a **Swift 4** and **Xcode 9** compatible project 🚨
+
+Important!
+If you want to use it with **Xcode 10**, point to the version [3.0.0](https://github.com/ennioma/arek/releases/tag/3.0.0)
 
 💣 For **iOS 12** compatibility please checkout [this branch](https://github.com/ennioma/arek/tree/iOS12)💣
 
@@ -242,7 +245,8 @@ let package = Package(
 )
 ```
 
-Note that if you want to install a *Swift 3* version of Arek, the latest compatible version is the *1.7.0*.
+- Note that if you want to install a *Swift 3* version of Arek, the latest compatible version is the *1.7.0*.
+- If you need to build it on Xcode 10, you have to point to the version `3.0.0`.
 
 ## Add AREK source code to your project
 Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.com/ennioma/arek/tree/master/arek/Classes) folder to your project.
