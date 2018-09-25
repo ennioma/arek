@@ -15,52 +15,52 @@ PODS:
     - arek/Photos (= 3.0.0)
     - arek/Reminders (= 3.0.0)
     - arek/SpeechRecognizer (= 3.0.0)
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Bluetooth (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Camera (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/CloudKit (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Contacts (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Core (3.0.0):
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Events (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Health (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Location (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/MediaLibrary (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Microphone (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Motion (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Notifications (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Photos (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/Reminders (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
+    - PMAlertController (= 3.5.0)
   - arek/SpeechRecognizer (3.0.0):
     - arek/Core
-    - PMAlertController (= 3.4.0)
-  - PMAlertController (3.4.0)
+    - PMAlertController (= 3.5.0)
+  - PMAlertController (3.5.0)
 
 DEPENDENCIES:
   - arek (from `../`)
@@ -74,8 +74,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  arek: 526ee94db2207f8a73cec7e07a3d1ef7ea3787db
-  PMAlertController: efb781925d741d50e0200018a00c53cecb8b4910
+  arek: 6fc84f5908b61f94858de3005384d4dbb39940b8
+  PMAlertController: 06dab8160066fc4ce991c880e3722cd403e2926a
 
 PODFILE CHECKSUM: 51391b981566b427912c687e0f5ba15813bf3aa4
 
