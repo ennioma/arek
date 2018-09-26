@@ -36,6 +36,7 @@
 		6BB101FC1E70450B000CA36F /* ArekBaseLocationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB101E01E70450B000CA36F /* ArekBaseLocationDelegate.swift */; };
 		6BB101FD1E70450B000CA36F /* ArekLocationAlways.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB101E11E70450B000CA36F /* ArekLocationAlways.swift */; };
 		6BB101FE1E70450B000CA36F /* ArekLocationWhenInUse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6BB101E21E70450B000CA36F /* ArekLocationWhenInUse.swift */; };
+		B6999B072154994A00E5D92A /* ArekSiri.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6999B062154994A00E5D92A /* ArekSiri.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -70,6 +71,7 @@
 		6BB101E01E70450B000CA36F /* ArekBaseLocationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekBaseLocationDelegate.swift; sourceTree = "<group>"; };
 		6BB101E11E70450B000CA36F /* ArekLocationAlways.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekLocationAlways.swift; sourceTree = "<group>"; };
 		6BB101E21E70450B000CA36F /* ArekLocationWhenInUse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArekLocationWhenInUse.swift; sourceTree = "<group>"; };
+		B6999B062154994A00E5D92A /* ArekSiri.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArekSiri.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -168,6 +170,7 @@
 				6BB101D81E70450B000CA36F /* ArekPhoto.swift */,
 				6BB101D91E70450B000CA36F /* ArekReminders.swift */,
 				6BB101DA1E70450B000CA36F /* ArekSpeechRecognizer.swift */,
+				B6999B062154994A00E5D92A /* ArekSiri.swift */,
 				6BB101DB1E70450B000CA36F /* Bluetooth */,
 				6BB101DE1E70450B000CA36F /* Location */,
 			);
@@ -299,6 +302,7 @@
 				6BB101FC1E70450B000CA36F /* ArekBaseLocationDelegate.swift in Sources */,
 				6BB101F21E70450B000CA36F /* ArekMediaLibrary.swift in Sources */,
 				6BB101EF1E70450B000CA36F /* ArekContacts.swift in Sources */,
+				B6999B072154994A00E5D92A /* ArekSiri.swift in Sources */,
 				6BB101FB1E70450B000CA36F /* ArekBaseLocation.swift in Sources */,
 				6BB101EE1E70450B000CA36F /* ArekCloudKit.swift in Sources */,
 			);

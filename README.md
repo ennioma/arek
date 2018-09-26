@@ -16,7 +16,7 @@ Why AREK could help you building a better app is well described by Apple <a href
 ```
 Request personal data only when your app clearly needs it.
 ...
-Explain why your app needs the information if it’s not obvious. 
+Explain why your app needs the information if it’s not obvious.
 ...
 Request permission at launch only when necessary for your app to function.
 ...
@@ -28,7 +28,12 @@ Every goal could be easily reached using **AREK**.
 * show a popup to invite the user to re-enable the permission if it has been denied
 * manage through an easy configuration how many times to ask the user to re-enable the permission (Only once, every hour, once a day, weekly, always😷)
 
-🚨 AREK is a **Swift 4** and **XCode 9** compatible project 🚨
+🚨 AREK is a **Swift 4.2** and **Xcode 10** compatible project 🚨
+
+Important!
+- If you want to use it with **Xcode 10**, swift 4.2, point to the version [4.0.1](https://github.com/ennioma/arek/releases/tag/4.0.1)
+- If you want to use it with **Xcode 9**, point to any prior version
+
 
 ## Build Status
 
@@ -62,6 +67,7 @@ Every goal could be easily reached using **AREK**.
 - [x] Notifications
 - [x] Photo
 - [x] Reminders
+- [x] Siri
 - [x] Speech Recognizer
 
 <a name="howTo"></a>
@@ -98,7 +104,7 @@ Every goal could be easily reached using **AREK**.
         case .notAvailable:
             return "🚫"
         }
-    }        
+    }
 ```
 
 <a name="permissionsConfiguration"></a>
@@ -167,7 +173,7 @@ In the following table there are the configurations for:
 
 Messages related to the iOS native permission popup should be configured following the conventions described <a href="https://developer.apple.com/library/content/documentation/General/Reference/InfoPlistKeyReference/Articles/CocoaKeys.html#//apple_ref/doc/uid/TP40009251-SW1">here</a>.
 
-| Permission      | Pre-permission Title   | Pre-permission Message | Re-Enable Title | Re-Enable Message | Image | Allow Button Title | Deny Button Title | 
+| Permission      | Pre-permission Title   | Pre-permission Message | Re-Enable Title | Re-Enable Message | Image | Allow Button Title | Deny Button Title |
 | :-------------: | :-------------: | :-------------: | :-------------: | :---------------: | :---: | :----------------: | :---------------: |
 | Camera      | ArekCamera_initial_title | ArekCamera_initial_message | ArekCamera_reenable_title | ArekCamera_reenable_message | ArekCamera_image | ArekCamera_allow_button_title | ArekCamera_deny_button_title |
 | CloudKit      | ArekCloudKit_initial_title | ArekCloudKit_initial_message | ArekCloudKit_reenable_title | ArekCloudKit_reenable_message | ArekCloudKit_image | ArekCloudKit_allow_button_title | ArekCloudKit_deny_button_title
@@ -175,11 +181,12 @@ Messages related to the iOS native permission popup should be configured followi
 | Events      | ArekEvents_initial_title | ArekEvents_initial_message | ArekEvents_reenable_title | ArekEvents_reenable_message | ArekEvents_image | ArekEvents_allow_button_title | ArekEvents_deny_button_title |
 | HealthKit      | ArekHealth_initial_title | ArekHealth_initial_message | ArekHealth_reenable_title | ArekHealth_reenable_message | ArekHealth_image | ArekHealth_allow_button_title | ArekHealth_deny_button_title |
 | Media Library  | ArekMediaLibrary_initial_title | ArekMediaLibrary_initial_message | ArekMediaLibrary_reenable_title | ArekMediaLibrary_reenable_message | ArekMediaLibrary_image | ArekMediaLibrary_allow_button_title | ArekMediaLibrary_deny_button_title |
-| Microphone  | ArekMicrophone_initial_title | ArekMicrophone_initial_message | ArekMicrophone_reenable_title | ArekMicrophone_reenable_message | ArekMicrophone_image | ArekMicrophone_allow_button_title | ArekMicrophone_deny_button_title | 
-| Motion  | ArekMotion_initial_title | ArekMotion_initial_message | ArekMotion_reenable_title | ArekMotion_reenable_message | ArekMotion_image | ArekMotion_allow_button_title | ArekMotion_deny_button_title | 
+| Microphone  | ArekMicrophone_initial_title | ArekMicrophone_initial_message | ArekMicrophone_reenable_title | ArekMicrophone_reenable_message | ArekMicrophone_image | ArekMicrophone_allow_button_title | ArekMicrophone_deny_button_title |
+| Motion  | ArekMotion_initial_title | ArekMotion_initial_message | ArekMotion_reenable_title | ArekMotion_reenable_message | ArekMotion_image | ArekMotion_allow_button_title | ArekMotion_deny_button_title |
 | Notifications  | ArekNotifications_initial_title | ArekNotifications_initial_message | ArekNotifications_reenable_title | ArekNotifications_reenable_message | ArekNotifications_image | ArekNotifications_allow_button_title | ArekNotifications_deny_button_title |
 | Photo Library  | ArekPhoto_initial_title | ArekPhoto_initial_message | ArekPhoto_reenable_title | ArekPhoto_reenable_message | ArekPhoto_image | ArekPhoto_allow_button_title | ArekPhoto_deny_button_title |
 | Reminders  | ArekReminders_initial_title | ArekReminders_initial_message | ArekReminders_reenable_title | ArekReminders_reenable_message | ArekReminders_image | ArekReminders_allow_button_title | ArekReminders_ deny_button_title|
+| Siri  | ArekSiri_initial_title | ArekSiri_initial_message | ArekSiri_reenable_title | ArekSiri_reenable_message | ArekSiri_image | ArekSiri_allow_button_title | ArekSiri_deny_button_title |
 | Speech Recognizer  | ArekSpeechRecognizer_initial_title | ArekSpeechRecognizer_initial_message | ArekSpeechRecognizer_reenable_title | ArekSpeechRecognizer_reenable_message | ArekSpeechRecognizer_image | ArekSpeechRecognizer_allow_button_title | ArekSpeechRecognizer_deny_button_title |
 | Bluetooth  | ArekBluetooth_initial_title | ArekBluetooth_initial_message | ArekBluetooth_reenable_title | ArekBluetooth_reenable_message | ArekBluetooth_image | ArekBluetooth_allow_button_title | ArekBluetooth_deny_button_title |
 | Location  | ArekBaseLocation_initial_title | ArekBaseLocation_initial_message | ArekBaseLocation_reenable_title | ArekBaseLocation_reenable_message | ArekBaseLocation_image | ArekBaseLocation_allow_button_title | ArekBaseLocation_deny_button_title |
@@ -238,7 +245,8 @@ let package = Package(
 )
 ```
 
-Note that if you want to install a *Swift 3* version of Arek, the latest compatible version is the *1.7.0*.
+- Note that if you want to install a *Swift 3* version of Arek, the latest compatible version is the *1.7.0*.
+- If you need to build it on Xcode 10, you have to point to the version `3.0.0`.
 
 ## Add AREK source code to your project
 Add [https://github.com/ennioma/arek/tree/master/arek/arek/Arek](https://github.com/ennioma/arek/tree/master/arek/Classes) folder to your project.

@@ -1,6 +1,6 @@
 //
-//  ArekMicrophone.swift
-//  Arek
+//  ArekSiri.swift
+//  arek
 //
 //  Copyright (c) 2016 Ennio Masi
 //
@@ -22,41 +22,45 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 //  THE SOFTWARE.
 //
-
 import Foundation
-import AVFoundation
+import Intents
 
-open class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
-    public var identifier: String = "ArekMicrophone"
-    
+@available(iOS 10.0, *)
+open class ArekSiri: ArekBasePermission, ArekPermissionProtocol {
+    open var identifier: String = "ArekSiri"
+
     public init() {
         super.init(identifier: self.identifier)
     }
-    
+
     public override init(configuration: ArekConfiguration? = nil, initialPopupData: ArekPopupData? = nil, reEnablePopupData: ArekPopupData? = nil) {
         super.init(configuration: configuration, initialPopupData: initialPopupData, reEnablePopupData: reEnablePopupData)
     }
-    
+
     open func status(completion: @escaping ArekPermissionResponse) {
-        
-        switch AVAudioSession.sharedInstance().recordPermission {
-        case AVAudioSession.RecordPermission.denied:
-            return completion(.denied)
-        case AVAudioSession.RecordPermission.undetermined:
-            return completion(.notDetermined)
-        case AVAudioSession.RecordPermission.granted:
+        switch INPreferences.siriAuthorizationStatus() {
+        case .authorized:
             return completion(.authorized)
+        case .restricted, .denied:
+            return completion(.denied)
+        case .notDetermined:
+            return completion(.notDetermined)
         }
     }
-        
+
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
-        AVAudioSession.sharedInstance().requestRecordPermission { (granted) in
-            if granted {
+        INPreferences.requestSiriAuthorization { (status) in
+            switch status {
+            case .notDetermined:
+                print("[🚨 Arek 🚨] 🎤 permission not determined 🤔")
+                return completion(.notDetermined)
+            case .restricted, .denied:
+                print("[🚨 Arek 🚨] 🎤 permission denied by user ⛔️")
+                return completion(.denied)
+            case.authorized:
                 print("[🚨 Arek 🚨] 🎤 permission authorized by user ✅")
                 return completion(.authorized)
             }
-            print("[🚨 Arek 🚨] 🎤 permission denied by user ⛔️")
-            return completion(.denied)
         }
     }
 }
