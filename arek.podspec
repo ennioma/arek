@@ -98,7 +98,6 @@ Pod::Spec.new do |s|
     ss.dependency 'arek/Core'
     ss.source_files = 'code/Classes/Permissions/ArekSpeechRecognizer.swift'
     ss.frameworks = 'Speech'
-    ss.ios.deployment_target = '9.0'
   end
 
 end

@@ -39,7 +39,7 @@ open class ArekMicrophone: ArekBasePermission, ArekPermissionProtocol {
     
     open func status(completion: @escaping ArekPermissionResponse) {
         
-        switch AVAudioSession.sharedInstance().recordPermission() {
+        switch AVAudioSession.sharedInstance().recordPermission {
         case AVAudioSession.RecordPermission.denied:
             return completion(.denied)
         case AVAudioSession.RecordPermission.undetermined:
