@@ -337,8 +337,12 @@ open class ArekBasePermission {
         let allow = UIAlertAction(title: allowButtonTitle, style: .default) { _ in
             alert.dismiss(animated: true, completion: nil)
             
-            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            guard let url = URL(string: UIApplicationOpenSettingsURLString) else { return }
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
         }
         
         let deny = UIAlertAction(title: denyButtonTitle, style: .cancel) { _ in
@@ -372,9 +376,13 @@ open class ArekBasePermission {
         
         alertVC.addAction(PMAlertAction(title: allowButtonTitle, style: .default, action: {
             alertVC.dismiss(animated: true, completion: nil)
-            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+            guard let url = URL(string: UIApplicationOpenSettingsURLString) else { return }
 
-            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:], completionHandler: nil)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
         }))
         
         if var topController = UIApplication.shared.keyWindow?.rootViewController {

@@ -31,7 +31,7 @@ Every goal could be easily reached using **AREK**.
 🚨 AREK is a **Swift 4.2** and **Xcode 10** compatible project 🚨
 
 Important!
-- If you want to use it with **Xcode 10**, swift 4.2, point to the version [4.0.0](https://github.com/ennioma/arek/releases/tag/4.0.0)
+- If you want to use it with **Xcode 10**, swift 4.2, point to the version [4.0.1](https://github.com/ennioma/arek/releases/tag/4.0.1)
 - If you want to use it with **Xcode 9**, point to any prior version
 
 
