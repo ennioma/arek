@@ -190,7 +190,6 @@
 				7569AF8A1E7447F300E81C95 /* Frameworks */,
 				7569AF8B1E7447F300E81C95 /* Resources */,
 				C9C6CBF2904F6DB01B9F8DA2 /* [CP] Embed Pods Frameworks */,
-				02E1FE4A0A2D25E9D073C746 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -323,21 +322,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		02E1FE4A0A2D25E9D073C746 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-arek_example/Pods-arek_example-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		749983BE198146DE8643834E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -565,6 +549,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = arek_example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ennioma.arek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -585,6 +570,7 @@
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = arek_example/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.ennioma.arek;
 				PRODUCT_NAME = "$(TARGET_NAME)";
