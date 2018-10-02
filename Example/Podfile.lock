@@ -1,63 +1,63 @@
 PODS:
-  - arek (4.0.1):
-    - arek/Bluetooth (= 4.0.1)
-    - arek/Camera (= 4.0.1)
-    - arek/CloudKit (= 4.0.1)
-    - arek/Contacts (= 4.0.1)
-    - arek/Core (= 4.0.1)
-    - arek/Events (= 4.0.1)
-    - arek/Health (= 4.0.1)
-    - arek/Location (= 4.0.1)
-    - arek/MediaLibrary (= 4.0.1)
-    - arek/Microphone (= 4.0.1)
-    - arek/Motion (= 4.0.1)
-    - arek/Notifications (= 4.0.1)
-    - arek/Photos (= 4.0.1)
-    - arek/Reminders (= 4.0.1)
-    - arek/SpeechRecognizer (= 4.0.1)
+  - arek (4.0.2):
+    - arek/Bluetooth (= 4.0.2)
+    - arek/Camera (= 4.0.2)
+    - arek/CloudKit (= 4.0.2)
+    - arek/Contacts (= 4.0.2)
+    - arek/Core (= 4.0.2)
+    - arek/Events (= 4.0.2)
+    - arek/Health (= 4.0.2)
+    - arek/Location (= 4.0.2)
+    - arek/MediaLibrary (= 4.0.2)
+    - arek/Microphone (= 4.0.2)
+    - arek/Motion (= 4.0.2)
+    - arek/Notifications (= 4.0.2)
+    - arek/Photos (= 4.0.2)
+    - arek/Reminders (= 4.0.2)
+    - arek/SpeechRecognizer (= 4.0.2)
     - PMAlertController (= 3.5.0)
-  - arek/Bluetooth (4.0.1):
+  - arek/Bluetooth (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/Camera (4.0.1):
+  - arek/Camera (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/CloudKit (4.0.1):
+  - arek/CloudKit (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/Contacts (4.0.1):
+  - arek/Contacts (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/Core (4.0.1):
+  - arek/Core (4.0.2):
     - PMAlertController (= 3.5.0)
-  - arek/Events (4.0.1):
+  - arek/Events (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/Health (4.0.1):
+  - arek/Health (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/Location (4.0.1):
+  - arek/Location (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/MediaLibrary (4.0.1):
+  - arek/MediaLibrary (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/Microphone (4.0.1):
+  - arek/Microphone (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/Motion (4.0.1):
+  - arek/Motion (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/Notifications (4.0.1):
+  - arek/Notifications (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/Photos (4.0.1):
+  - arek/Photos (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/Reminders (4.0.1):
+  - arek/Reminders (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
-  - arek/SpeechRecognizer (4.0.1):
+  - arek/SpeechRecognizer (4.0.2):
     - arek/Core
     - PMAlertController (= 3.5.0)
   - PMAlertController (3.5.0)
@@ -65,14 +65,18 @@ PODS:
 DEPENDENCIES:
   - arek (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PMAlertController
+
 EXTERNAL SOURCES:
   arek:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  arek: c24ee64110b3218894403653437ba1a45a1f1316
+  arek: bbc1b11e0267b7ba5e9f1cf64d43d4e9806fbd14
   PMAlertController: 06dab8160066fc4ce991c880e3722cd403e2926a
 
 PODFILE CHECKSUM: 51391b981566b427912c687e0f5ba15813bf3aa4
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
