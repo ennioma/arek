@@ -65,14 +65,18 @@ PODS:
 DEPENDENCIES:
   - arek (from `../`)
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - PMAlertController
+
 EXTERNAL SOURCES:
   arek:
-    :path: ../
+    :path: "../"
 
 SPEC CHECKSUMS:
-  arek: c24ee64110b3218894403653437ba1a45a1f1316
+  arek: c0e7b1a53b5496e026a3e2a819f293936b44ab24
   PMAlertController: 06dab8160066fc4ce991c880e3722cd403e2926a
 
 PODFILE CHECKSUM: 51391b981566b427912c687e0f5ba15813bf3aa4
 
-COCOAPODS: 1.4.0
+COCOAPODS: 1.5.3
