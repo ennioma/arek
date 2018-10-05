@@ -217,7 +217,7 @@ $ pod install
 
 ## Carthage
 ```ruby
-github "ennioma/arek" ~> "2.0.2"
+github "ennioma/arek" ~> 4.0.2
 ```
 
 Then on your application target *Build Phases* settings tab, add a "New Run Script Phase". Create a Run Script with the following content:
