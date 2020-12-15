@@ -132,29 +132,30 @@ open class ArekBasePermission {
                                            allowButtonTitle: String,
                                            denyButtonTitle: String,
                                            completion: @escaping ArekPermissionResponse) {
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let allow = UIAlertAction(title: allowButtonTitle, style: .default) { _ in
-            (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
-            alert.dismiss(animated: true, completion: nil)
-        }
-        
-        let deny = UIAlertAction(title: denyButtonTitle, style: .cancel) { _ in
-            completion(.denied)
-            alert.dismiss(animated: true, completion: nil)
-        }
-        
-        alert.addAction(deny)
-        alert.addAction(allow)
-        
-        if var topController = UIApplication.shared.keyWindow?.rootViewController {
-            while let presentedViewController = topController.presentedViewController {
-                topController = presentedViewController
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            
+            let allow = UIAlertAction(title: allowButtonTitle, style: .default) { _ in
+                (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
+                alert.dismiss(animated: true, completion: nil)
             }
+            
+            let deny = UIAlertAction(title: denyButtonTitle, style: .cancel) { _ in
+                completion(.denied)
+                alert.dismiss(animated: true, completion: nil)
+            }
+            
+            alert.addAction(deny)
+            alert.addAction(allow)
+            
+            if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                while let presentedViewController = topController.presentedViewController {
+                    topController = presentedViewController
+                }
 
-            DispatchQueue.main.async {
-                topController.present(alert, animated: true, completion: nil)
+                DispatchQueue.main.async {
+                    topController.present(alert, animated: true, completion: nil)
+                }
             }
         }
     }
@@ -193,35 +194,35 @@ open class ArekBasePermission {
                                             message: String,
                                             allowButtonTitle: String,
                                             denyButtonTitle: String) {
-        
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        
-        let allow = UIAlertAction(title: allowButtonTitle, style: .default) { _ in
-            alert.dismiss(animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
             
-            guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-            if #available(iOS 10.0, *) {
-                UIApplication.shared.open(url, options: [:], completionHandler: nil)
-            } else {
-                UIApplication.shared.openURL(url)
-            }
-        }
-        
-        let deny = UIAlertAction(title: denyButtonTitle, style: .cancel) { _ in
-            alert.dismiss(animated: true, completion: nil)
-        }
-        
-        alert.addAction(deny)
-        alert.addAction(allow)
-        
-        if var topController = UIApplication.shared.keyWindow?.rootViewController {
-            while let presentedViewController = topController.presentedViewController {
-                topController = presentedViewController
+            let allow = UIAlertAction(title: allowButtonTitle, style: .default) { _ in
+                alert.dismiss(animated: true, completion: nil)
+                
+                guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+                if #available(iOS 10.0, *) {
+                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
+                } else {
+                    UIApplication.shared.openURL(url)
+                }
             }
             
-            topController.present(alert, animated: true, completion: nil)
+            let deny = UIAlertAction(title: denyButtonTitle, style: .cancel) { _ in
+                alert.dismiss(animated: true, completion: nil)
+            }
+            
+            alert.addAction(deny)
+            alert.addAction(allow)
+            
+            if var topController = UIApplication.shared.keyWindow?.rootViewController {
+                while let presentedViewController = topController.presentedViewController {
+                    topController = presentedViewController
+                }
+                
+                topController.present(alert, animated: true, completion: nil)
+            }
         }
-
     }
     
     open func manage(completion: @escaping ArekPermissionResponse) {
