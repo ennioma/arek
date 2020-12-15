@@ -45,6 +45,8 @@ open class ArekCamera: ArekBasePermission, ArekPermissionProtocol {
             return completion(.denied)
         case .authorized:
             return completion(.authorized)
+        @unknown default:
+            return completion(.unknown)
         }
     }
     

@@ -53,6 +53,8 @@ open class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
                 return completion(.notDetermined)
             case .initialState:
                 return completion(.notDetermined)
+            @unknown default:
+                return completion(.unknown)
             }
         })
 
@@ -82,6 +84,8 @@ open class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
                         return completion(.authorized)
                     case .couldNotComplete, .initialState:
                         return completion(.notDetermined)
+                    @unknown default:
+                        return completion(.unknown)
                     }
                 })
             case .noAccount:
@@ -90,6 +94,8 @@ open class ArekCloudKit: ArekBasePermission, ArekPermissionProtocol {
             case .couldNotDetermine:
                 print("[🚨 Arek 🚨] ☁️ account not determined 🤔")
                 return completion(.notDetermined)
+            @unknown default:
+                return completion(.unknown)
             }
         }
     }

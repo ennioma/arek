@@ -47,6 +47,8 @@ open class ArekSpeechRecognizer: ArekBasePermission, ArekPermissionProtocol {
                 return completion(.denied)
             case .notDetermined:
                 return completion(.notDetermined)
+            @unknown default:
+                return completion(.unknown)
             }
         } else {
             return completion(.notAvailable)
@@ -66,6 +68,8 @@ open class ArekSpeechRecognizer: ArekBasePermission, ArekPermissionProtocol {
                 case .notDetermined:
                     print("[🚨 Arek 🚨] 🗣 permission not determined 🤔")
                     return completion(.notDetermined)
+                @unknown default:
+                    return completion(.unknown)
                 }
             }
         } else {

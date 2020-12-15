@@ -45,6 +45,8 @@ open class ArekContacts: ArekBasePermission, ArekPermissionProtocol {
             return completion(.denied)
         case .notDetermined:
             return completion(.notDetermined)
+        @unknown default:
+            return completion(.unknown)
         }
     }
     

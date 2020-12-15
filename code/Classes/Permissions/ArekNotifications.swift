@@ -48,61 +48,43 @@ open class ArekNotifications: ArekBasePermission, ArekPermissionProtocol {
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {
-        if #available(iOS 10.0, *) {
-            UNUserNotificationCenter.current().getNotificationSettings { (settings) in
-                switch settings.authorizationStatus {
-                case .notDetermined:
-                    return completion(.notDetermined)
-                case .denied:
-                    return completion(.denied)
-                case .authorized,
-                     .provisional:
-                    return completion(.authorized)
-                }
+        UNUserNotificationCenter.current().getNotificationSettings { (settings) in
+            switch settings.authorizationStatus {
+            case .notDetermined:
+                return completion(.notDetermined)
+            case .denied:
+                return completion(.denied)
+            case .authorized,
+                 .provisional:
+                return completion(.authorized)
+            case .ephemeral:
+                return completion(.limited)
+            @unknown default:
+                return completion(.unknown)
             }
-        } else if #available(iOS 9.0, *) {
-            if let types = UIApplication.shared.currentUserNotificationSettings?.types {
-                if types.isEmpty {
-                    return completion(.notDetermined)
-                }
-            }
-
-            return completion(.authorized)
         }
     }
 
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
-        if #available(iOS 10.0, *) {
+        var options: UNAuthorizationOptions = [.alert, .badge, .sound]
 
-            var options: UNAuthorizationOptions = [.alert, .badge, .sound]
+        if let wantedOptions = self.wantedNotificationTypes as? UNAuthorizationOptions {
+            options = wantedOptions
+        }
 
-            if let wantedOptions = self.wantedNotificationTypes as? UNAuthorizationOptions {
-                options = wantedOptions
+        UNUserNotificationCenter.current().requestAuthorization(options: options) { (granted, error) in
+            if let error = error {
+                print("[🚨 Arek 🚨] Push notifications permission not determined 🤔, error: \(error)")
+                return completion(.notDetermined)
             }
+            if granted {
+                self.registerForRemoteNotifications()
 
-            UNUserNotificationCenter.current().requestAuthorization(options: options) { (granted, error) in
-                if let error = error {
-                    print("[🚨 Arek 🚨] Push notifications permission not determined 🤔, error: \(error)")
-                    return completion(.notDetermined)
-                }
-                if granted {
-                    self.registerForRemoteNotifications()
-
-                    print("[🚨 Arek 🚨] Push notifications permission authorized by user ✅")
-                    return completion(.authorized)
-                }
-                print("[🚨 Arek 🚨] Push notifications permission denied by user ⛔️")
-                return completion(.denied)
+                print("[🚨 Arek 🚨] Push notifications permission authorized by user ✅")
+                return completion(.authorized)
             }
-        } else if #available(iOS 9.0, *) {
-            var options: UIUserNotificationType = [.alert, .badge, .sound]
-
-            if let wantedOptions = self.wantedNotificationTypes as? UIUserNotificationType {
-                options = wantedOptions
-            }
-
-            UIApplication.shared.registerUserNotificationSettings(UIUserNotificationSettings(types: options, categories: nil))
-            self.registerForRemoteNotifications()
+            print("[🚨 Arek 🚨] Push notifications permission denied by user ⛔️")
+            return completion(.denied)
         }
     }
 

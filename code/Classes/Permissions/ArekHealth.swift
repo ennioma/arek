@@ -70,6 +70,8 @@ open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
             return completion(.denied)
         case .sharingAuthorized:
             return completion(.authorized)
+        @unknown default:
+            return completion(.unknown)
         }
     }
         

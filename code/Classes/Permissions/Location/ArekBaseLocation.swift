@@ -57,6 +57,8 @@ public class ArekBaseLocation: ArekBasePermission, ArekPermissionProtocol {
             return completion(.denied)
         case .authorizedAlways, .authorizedWhenInUse:
             return completion(.authorized)
+        @unknown default:
+            return completion(.unknown)
         }
     }
     

@@ -53,7 +53,11 @@ open class ArekBluetooth: ArekBasePermission, ArekPermissionProtocol {
                 return completion(.notAvailable)
             case .unknown:
                 return completion(.notDetermined)
+            @unknown default:
+                return completion(.unknown)
             }
+        @unknown default:
+            return completion(.unknown)
         }
     }
     
@@ -74,6 +78,8 @@ open class ArekBluetooth: ArekBasePermission, ArekPermissionProtocol {
             bluetooth.bluetoothManager?.startAdvertising(nil)
             bluetooth.bluetoothManager?.stopAdvertising()
             break
+        @unknown default:
+            return completion(.unknown)
         }
     }
 }
