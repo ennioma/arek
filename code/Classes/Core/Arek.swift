@@ -147,6 +147,7 @@ open class ArekBasePermission {
             
             alert.addAction(deny)
             alert.addAction(allow)
+            alert.preferredAction = allow
             
             if var topController = UIApplication.shared.keyWindow?.rootViewController {
                 while let presentedViewController = topController.presentedViewController {
@@ -214,6 +215,7 @@ open class ArekBasePermission {
             
             alert.addAction(deny)
             alert.addAction(allow)
+            alert.preferredAction = allow
             
             if var topController = UIApplication.shared.keyWindow?.rootViewController {
                 while let presentedViewController = topController.presentedViewController {
