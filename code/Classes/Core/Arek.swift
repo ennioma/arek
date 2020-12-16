@@ -64,7 +64,7 @@ open class ArekBasePermission {
     var configuration: ArekConfiguration = ArekConfiguration(frequency: .Always, presentInitialPopup: true, presentReEnablePopup: true)
     var initialPopupData: ArekPopupData = ArekPopupData()
     var reEnablePopupData: ArekPopupData = ArekPopupData()
-    var delegate: ArekCustomPopupProtocol?
+    open var delegate: ArekCustomPopupProtocol?
     
     public init(identifier: String) {
         let data = ArekLocalizationManager(permission: identifier)
