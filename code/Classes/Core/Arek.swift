@@ -211,13 +211,7 @@ open class ArekBasePermission {
             
             let allow = UIAlertAction(title: allowButtonTitle, style: .default) { _ in
                 alert.dismiss(animated: true, completion: nil)
-                
-                guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                if #available(iOS 10.0, *) {
-                    UIApplication.shared.open(url, options: [:], completionHandler: nil)
-                } else {
-                    UIApplication.shared.openURL(url)
-                }
+                self.openSettingsURL()
             }
             
             let deny = UIAlertAction(title: denyButtonTitle, style: .cancel) { _ in

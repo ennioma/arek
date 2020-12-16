@@ -38,43 +38,34 @@ open class ArekSpeechRecognizer: ArekBasePermission, ArekPermissionProtocol {
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {
-        if #available(iOS 10.0, *) {
-            let status = SFSpeechRecognizer.authorizationStatus()
-            switch status {
-            case .authorized:
-                return completion(.authorized)
-            case .restricted, .denied:
-                return completion(.denied)
-            case .notDetermined:
-                return completion(.notDetermined)
-            @unknown default:
-                return completion(.unknown)
-            }
-        } else {
-            return completion(.notAvailable)
+        let status = SFSpeechRecognizer.authorizationStatus()
+        switch status {
+        case .authorized:
+            return completion(.authorized)
+        case .restricted, .denied:
+            return completion(.denied)
+        case .notDetermined:
+            return completion(.notDetermined)
+        @unknown default:
+            return completion(.unknown)
         }
     }
     
     open func askForPermission(completion: @escaping ArekPermissionResponse) {
-        if #available(iOS 10.0, *) {            
-            SFSpeechRecognizer.requestAuthorization { status in
-                switch status {
-                case .authorized:
-                    print("[🚨 Arek 🚨] 🗣 permission authorized by user ✅")
-                    return completion(.authorized)
-                case .restricted, .denied:
-                    print("[🚨 Arek 🚨] 🗣 permission denied by user ⛔️")
-                    return completion(.denied)
-                case .notDetermined:
-                    print("[🚨 Arek 🚨] 🗣 permission not determined 🤔")
-                    return completion(.notDetermined)
-                @unknown default:
-                    return completion(.unknown)
-                }
+        SFSpeechRecognizer.requestAuthorization { status in
+            switch status {
+            case .authorized:
+                print("[🚨 Arek 🚨] 🗣 permission authorized by user ✅")
+                return completion(.authorized)
+            case .restricted, .denied:
+                print("[🚨 Arek 🚨] 🗣 permission denied by user ⛔️")
+                return completion(.denied)
+            case .notDetermined:
+                print("[🚨 Arek 🚨] 🗣 permission not determined 🤔")
+                return completion(.notDetermined)
+            @unknown default:
+                return completion(.unknown)
             }
-        } else {
-            print("[🚨 Arek 🚨] 🗣 permission only available from iOS 10 ⛔️")
-            return completion(.notAvailable)
         }
     }
 }
