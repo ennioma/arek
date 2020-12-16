@@ -130,9 +130,11 @@ open class ArekBasePermission {
                                            denyButtonTitle: denyButtonTitle,
                                            completion: completion)
         case .custom:
-            self.delegate?.presentInitialCustomPopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, askForPermission: {
-                (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
-            }, completion: completion)
+            DispatchQueue.main.async {
+                self.delegate?.presentInitialCustomPopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, askForPermission: {
+                    (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
+                }, completion: completion)
+            }
         }
     }
     
@@ -197,7 +199,9 @@ open class ArekBasePermission {
                                             allowButtonTitle: allowButtonTitle,
                                             denyButtonTitle: denyButtonTitle)
         case .custom:
-            self.delegate?.presentReEnableCustomPopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, openSettngs: self.openSettingsURL)
+            DispatchQueue.main.async {
+                self.delegate?.presentReEnableCustomPopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, openSettngs: self.openSettingsURL)
+            }
         }
     }
     
