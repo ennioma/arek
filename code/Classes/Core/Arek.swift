@@ -27,7 +27,6 @@ import Foundation
 import UIKit
 
 public typealias ArekPermissionResponse = (ArekPermissionStatus) -> Void
-public typealias ArekAskForPermission = () -> Void
 
 public protocol ArekPermissionProtocol: class {
     var identifier: String { get }
@@ -51,8 +50,8 @@ public protocol ArekPermissionProtocol: class {
 }
 
 public protocol ArekCustomPopupProtocol: class {
-    func presentInitialCustomPopup(title: String, message: String, allowButtonTitle: String, denyButtonTitle: String, askForPermission: @escaping ArekAskForPermission, completion: @escaping ArekPermissionResponse)
-    func presentReEnableCustomPopup(title: String, message: String, allowButtonTitle: String, denyButtonTitle: String)
+    func presentInitialCustomPopup(title: String, message: String, allowButtonTitle: String, denyButtonTitle: String, askForPermission: @escaping () -> Void, completion: @escaping ArekPermissionResponse)
+    func presentReEnableCustomPopup(title: String, message: String, allowButtonTitle: String, denyButtonTitle: String, openSettngs: @escaping () -> Void)
 }
 
 /**
@@ -198,7 +197,7 @@ open class ArekBasePermission {
                                             allowButtonTitle: allowButtonTitle,
                                             denyButtonTitle: denyButtonTitle)
         case .custom:
-            self.delegate?.presentReEnableCustomPopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle)
+            self.delegate?.presentReEnableCustomPopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, openSettngs: self.openSettingsURL)
         }
     }
     
@@ -230,6 +229,11 @@ open class ArekBasePermission {
                 topController.present(alert, animated: true, completion: nil)
             }
         }
+    }
+    
+    private func openSettingsURL() {
+        guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
     }
     
     open func manage(completion: @escaping ArekPermissionResponse) {
