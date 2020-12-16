@@ -27,6 +27,7 @@ import Foundation
 import UIKit
 
 public typealias ArekPermissionResponse = (ArekPermissionStatus) -> Void
+public typealias ArekAskForPermission = () -> Void
 
 public protocol ArekPermissionProtocol: class {
     var identifier: String { get }
@@ -49,6 +50,11 @@ public protocol ArekPermissionProtocol: class {
     func askForPermission(completion: @escaping ArekPermissionResponse)
 }
 
+public protocol ArekCustomPopupProtocol: class {
+    func presentInitialCustomPopup(title: String, message: String, allowButtonTitle: String, denyButtonTitle: String, askForPermission: @escaping ArekAskForPermission, completion: @escaping ArekPermissionResponse)
+    func presentReEnableCustomPopup(title: String, message: String, allowButtonTitle: String, denyButtonTitle: String)
+}
+
 /**
  ArekBasePermission is a root class and each permission inherit from it.
  
@@ -58,6 +64,7 @@ open class ArekBasePermission {
     var configuration: ArekConfiguration = ArekConfiguration(frequency: .Always, presentInitialPopup: true, presentReEnablePopup: true)
     var initialPopupData: ArekPopupData = ArekPopupData()
     var reEnablePopupData: ArekPopupData = ArekPopupData()
+    var delegate: ArekCustomPopupProtocol?
     
     public init(identifier: String) {
         let data = ArekLocalizationManager(permission: identifier)
@@ -123,7 +130,10 @@ open class ArekBasePermission {
                                            allowButtonTitle: allowButtonTitle,
                                            denyButtonTitle: denyButtonTitle,
                                            completion: completion)
-            break
+        case .custom:
+            self.delegate?.presentInitialCustomPopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, askForPermission: {
+                (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
+            }, completion: completion)
         }
     }
     
@@ -187,7 +197,8 @@ open class ArekBasePermission {
                                             message: message,
                                             allowButtonTitle: allowButtonTitle,
                                             denyButtonTitle: denyButtonTitle)
-            break
+        case .custom:
+            self.delegate?.presentReEnableCustomPopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle)
         }
     }
     

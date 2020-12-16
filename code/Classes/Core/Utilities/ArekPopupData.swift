@@ -27,6 +27,7 @@ import Foundation
 
 public enum ArekPopupType {
     case native
+    case custom
 }
 
 public struct ArekPopupData {
