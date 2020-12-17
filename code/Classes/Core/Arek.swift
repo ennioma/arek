@@ -50,8 +50,8 @@ public protocol ArekPermissionProtocol: class {
 }
 
 public protocol ArekCustomPopupProtocol: class {
-    func presentInitialCustomPopup(title: String, message: String, allowButtonTitle: String, denyButtonTitle: String, askForPermission: @escaping () -> Void, completion: @escaping ArekPermissionResponse)
-    func presentReEnableCustomPopup(title: String, message: String, allowButtonTitle: String, denyButtonTitle: String, openSettngs: @escaping () -> Void)
+    func presentInitialCustomPopup(permission: ArekPermissionProtocol, title: String, message: String, allowButtonTitle: String, denyButtonTitle: String, completion: @escaping ArekPermissionResponse)
+    func presentReEnableCustomPopup(permission: ArekPermissionProtocol, title: String, message: String, allowButtonTitle: String, denyButtonTitle: String, openSettngs: @escaping () -> Void)
 }
 
 /**
@@ -131,9 +131,7 @@ open class ArekBasePermission {
                                            completion: completion)
         case .custom:
             DispatchQueue.main.async {
-                self.delegate?.presentInitialCustomPopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, askForPermission: {
-                    (self as? ArekPermissionProtocol)?.askForPermission(completion: completion)
-                }, completion: completion)
+                self.delegate?.presentInitialCustomPopup(permission: self as! ArekPermissionProtocol, title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, completion: completion)
             }
         }
     }
@@ -200,7 +198,7 @@ open class ArekBasePermission {
                                             denyButtonTitle: denyButtonTitle)
         case .custom:
             DispatchQueue.main.async {
-                self.delegate?.presentReEnableCustomPopup(title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, openSettngs: self.openSettingsURL)
+                self.delegate?.presentReEnableCustomPopup(permission: self as! ArekPermissionProtocol, title: title, message: message, allowButtonTitle: allowButtonTitle, denyButtonTitle: denyButtonTitle, openSettngs: self.openSettingsURL)
             }
         }
     }
