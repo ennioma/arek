@@ -28,7 +28,7 @@ import UIKit
 
 public typealias ArekPermissionResponse = (ArekPermissionStatus) -> Void
 
-public protocol ArekPermissionProtocol: class {
+public protocol ArekPermissionProtocol: AnyObject {
     var identifier: String { get }
     /**
      This is the key method to know if a permission has been authorized or denied.
@@ -49,7 +49,7 @@ public protocol ArekPermissionProtocol: class {
     func askForPermission(completion: @escaping ArekPermissionResponse)
 }
 
-public protocol ArekCustomPopupProtocol: class {
+public protocol ArekCustomPopupProtocol: AnyObject {
     func presentInitialCustomPopup(permission: ArekPermissionProtocol, title: String, message: String, allowButtonTitle: String, denyButtonTitle: String, completion: @escaping ArekPermissionResponse)
     func presentReEnableCustomPopup(permission: ArekPermissionProtocol, title: String, message: String, allowButtonTitle: String, denyButtonTitle: String, openSettngs: @escaping () -> Void)
 }

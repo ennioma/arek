@@ -44,7 +44,7 @@ open class ArekMotion: ArekBasePermission, ArekPermissionProtocol {
             return .notDetermined
         }
         set {
-            UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: newValue.rawValue), forKey: userKey)
+            try? UserDefaults.standard.set(NSKeyedArchiver.archivedData(withRootObject: newValue.rawValue, requiringSecureCoding: true), forKey: userKey)
             UserDefaults.standard.synchronize()
         }
     }
