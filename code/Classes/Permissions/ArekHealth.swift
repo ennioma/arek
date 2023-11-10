@@ -58,18 +58,20 @@ open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
 
     open func status(completion: @escaping ArekPermissionResponse) {
         HKHealthStore().getRequestStatusForAuthorization(toShare: self.healthConfiguration?.hkSampleTypesToShare ?? Set(), read: self.healthConfiguration?.hkSampleTypesToRead ?? Set()) { status, error in
-            guard error == nil else {
-                completion(.unknown)
-                return
-            }
-            switch status {
-            case .unnecessary:
-                // The application has already requested authorization for all the specified data types. But authorization status could be authorized, limited or denied.
-                completion(.authorized)
-            case .shouldRequest:
-                completion(.notDetermined)
-            default:
-                return completion(.unknown)
+            DispatchQueue.main.async {
+                guard error == nil else {
+                    completion(.unknown)
+                    return
+                }
+                switch status {
+                case .unnecessary:
+                    // The application has already requested authorization for all the specified data types. But authorization status could be authorized, limited or denied.
+                    completion(.authorized)
+                case .shouldRequest:
+                    completion(.notDetermined)
+                default:
+                    return completion(.unknown)
+                }
             }
         }
     }
