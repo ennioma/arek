@@ -28,12 +28,10 @@ import HealthKit
 
 open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
     public struct ArekHealthConfiguration {
-        public var hkObjectType: HKObjectType?
         public var hkSampleTypesToShare: Set<HKSampleType>?
         public var hkSampleTypesToRead: Set<HKObjectType>?
 
-        public init(hkObjectType: HKObjectType? = nil, hkSampleTypesToShare: Set<HKSampleType>? = nil, hkSampleTypesToRead: Set<HKObjectType>? = nil) {
-            self.hkObjectType = hkObjectType
+        public init(hkSampleTypesToShare: Set<HKSampleType>? = nil, hkSampleTypesToRead: Set<HKObjectType>? = nil) {
             self.hkSampleTypesToShare = hkSampleTypesToShare
             self.hkSampleTypesToRead = hkSampleTypesToRead
         }
@@ -59,19 +57,20 @@ open class ArekHealth: ArekBasePermission, ArekPermissionProtocol {
     }
 
     open func status(completion: @escaping ArekPermissionResponse) {
-        guard let objectType = self.healthConfiguration?.hkObjectType else {
-            return completion(.notDetermined)
-        }
-        
-        switch HKHealthStore().authorizationStatus(for: objectType) {
-        case .notDetermined:
-            return completion(.notDetermined)
-        case .sharingDenied:
-            return completion(.denied)
-        case .sharingAuthorized:
-            return completion(.authorized)
-        @unknown default:
-            return completion(.unknown)
+        HKHealthStore().getRequestStatusForAuthorization(toShare: self.healthConfiguration?.hkSampleTypesToShare ?? Set(), read: self.healthConfiguration?.hkSampleTypesToRead ?? Set()) { status, error in
+            guard error == nil else {
+                completion(.unknown)
+                return
+            }
+            switch status {
+            case .unnecessary:
+                // The application has already requested authorization for all the specified data types. But authorization status could be authorized, limited or denied.
+                completion(.authorized)
+            case .shouldRequest:
+                completion(.notDetermined)
+            default:
+                return completion(.unknown)
+            }
         }
     }
         
