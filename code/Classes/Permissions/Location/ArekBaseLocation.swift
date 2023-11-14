@@ -48,17 +48,26 @@ public class ArekBaseLocation: ArekBasePermission, ArekPermissionProtocol {
     }
 
     public func status(completion: @escaping ArekPermissionResponse) {
-        guard CLLocationManager.locationServicesEnabled() else { return completion(.notDetermined) }
-        
-        switch CLLocationManager.authorizationStatus() {
-        case .notDetermined:
-            return completion(.notDetermined)
-        case .restricted, .denied:
-            return completion(.denied)
-        case .authorizedAlways, .authorizedWhenInUse:
-            return completion(.authorized)
-        @unknown default:
-            return completion(.unknown)
+        DispatchQueue.global().async {
+            guard CLLocationManager.locationServicesEnabled() else {
+                DispatchQueue.main.async {
+                    completion(.notDetermined)
+                }
+                return
+            }
+            
+            DispatchQueue.main.async {
+                switch CLLocationManager.authorizationStatus() {
+                case .notDetermined:
+                    return completion(.notDetermined)
+                case .restricted, .denied:
+                    return completion(.denied)
+                case .authorizedAlways, .authorizedWhenInUse:
+                    return completion(.authorized)
+                @unknown default:
+                    return completion(.unknown)
+                }
+            }
         }
     }
     
