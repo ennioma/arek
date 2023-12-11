@@ -23,7 +23,7 @@
 //  THE SOFTWARE.
 //
 
-import Foundation
+import UIKit
 
 public struct ArekPopupStyle {
     var cornerRadius: CGFloat?

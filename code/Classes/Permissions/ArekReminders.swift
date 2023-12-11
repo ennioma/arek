@@ -46,6 +46,12 @@ open class ArekReminders: ArekBasePermission, ArekPermissionProtocol {
             return completion(.denied)
         case .notDetermined:
             return completion(.notDetermined)
+        case .fullAccess:
+            return completion(.authorized)
+        case .writeOnly:
+            return completion(.limited)
+        @unknown default:
+            return completion(.unknown)
         }
     }
     

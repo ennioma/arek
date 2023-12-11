@@ -26,8 +26,8 @@
 import Foundation
 
 public enum ArekPopupType {
-    case codeido
     case native
+    case custom
 }
 
 public struct ArekPopupData {
@@ -44,7 +44,7 @@ public struct ArekPopupData {
                 image: String = "",
                 allowButtonTitle: String = "",
                 denyButtonTitle: String = "",
-                type: ArekPopupType = .codeido,
+                type: ArekPopupType = .native,
                 styling: ArekPopupStyle? = nil) {
         
         self.title = title

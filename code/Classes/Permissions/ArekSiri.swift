@@ -45,6 +45,8 @@ open class ArekSiri: ArekBasePermission, ArekPermissionProtocol {
             return completion(.denied)
         case .notDetermined:
             return completion(.notDetermined)
+        @unknown default:
+            return completion(.unknown)
         }
     }
 
@@ -60,6 +62,8 @@ open class ArekSiri: ArekBasePermission, ArekPermissionProtocol {
             case.authorized:
                 print("[🚨 Arek 🚨] 🎤 permission authorized by user ✅")
                 return completion(.authorized)
+            @unknown default:
+                return completion(.unknown)
             }
         }
     }

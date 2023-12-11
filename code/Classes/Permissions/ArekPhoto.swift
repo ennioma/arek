@@ -45,6 +45,10 @@ open class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
             return completion(.denied)
         case.authorized:
             return completion(.authorized)
+        case .limited:
+            return completion(.limited)
+        @unknown default:
+            return completion(.unknown)
         }
     }
         
@@ -60,6 +64,10 @@ open class ArekPhoto: ArekBasePermission, ArekPermissionProtocol {
             case.authorized:
                 print("[🚨 Arek 🚨] 🌅 permission authorized by user ✅")
                 return completion(.authorized)
+            case .limited:
+                return completion(.limited)
+            @unknown default:
+                return completion(.unknown)
             }
         }
     }
